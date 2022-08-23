@@ -34,10 +34,9 @@ const Header = () => {
                     Start Today
                 </h1>
                 <div className="button_section mt-8">
-                    <Link to="/join-us" className="btn btn-primary w-[150px] h-[60px] text-xl font-bold">JOIN GYM</Link>
-                    <Link to="/packages" className="btn btn-outline ml-4 btn-accent w-[150px] h-[60px] text-xl font-bold">PACKAGE</Link>
+                    <Link to="/join-us" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[60px] md:h-[55px]  lg:text-xl font-bold">JOIN GYM</Link>
+                    <Link to="/packages" className="btn btn-outline ml-4 btn-accent lg:w-[150px] md:w-[140px] lg:h-[60px] md:h-[55px]  lg:text-xl font-bold">PACKAGE</Link>
                 </div>
-
             </div>
         </div>
         </div>
