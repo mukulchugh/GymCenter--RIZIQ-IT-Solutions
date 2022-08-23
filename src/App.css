@@ -33,18 +33,26 @@
 }
 
 /* media query */
-@media (min-width: 768px) {
-    .mid-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 40px;
-    }
-}
-
-@media (min-width: 1024px) {
+@media only screen and (max-width: 1280px) {
     .mid-container {
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 70px;
     }
-}
+  }
+  @media only screen and (max-width: 1000px) {
+    .mid-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+  }
+@media only screen and (max-width: 768px) {
+    .mid-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+  }
+
+
