@@ -3,7 +3,7 @@ import logo from '../../../assets/Logo.svg'
 
 const Navbar = () => {
     return (
-        <div class="navbar bg-transparent  text-white">
+        <div class="navbar bg-transparent text-white">
             <div class="navbar-start">
 
                 <img src={logo} alt="" />
