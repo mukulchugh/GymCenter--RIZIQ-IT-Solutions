@@ -21,10 +21,10 @@ const Header = () => {
                 </div>
             </div>
 
-            <nav className="bg-transparent text-white absolute header_main_nav py-4 ">
+            <nav className="bg-transparent text-white header_main_nav py-4 ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between md:block">
-                        <div className="flex container w-[100vw] mx-auto items-center">
+                        <div className="flex container mx-auto items-center">
                             <div className="flex-shrink-0 w-fit">
                                 <img className='w-3/4' onClick={() => navigate('/')} src={HeaderLogo} alt="" />
                             </div>
@@ -143,13 +143,13 @@ const Header = () => {
                             <div ref={ref} className="mobile-nav px-2 pt-2 pb-3 space-y-1 sm:px-3">
                                 <Link
                                     to="/"
-                                    className="hover:bg-gray-700 hover:text-white text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    className="hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     to="/tools"
-                                    className="hover:bg-gray-700 hover:text-white text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    className="hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Tools
                                 </Link>
@@ -158,14 +158,14 @@ const Header = () => {
 
                                 <Link
                                     to="/blog"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    className=" hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Blog
                                 </Link>
 
                                 <Link
                                     to="portfolio"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    className=" hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Portfolio
                                 </Link>
@@ -181,7 +181,7 @@ const Header = () => {
                     )}
                 </Transition>
             </nav>
-            <div className="banner flex items-center justify-center flex-col">
+            <div className="banner mt-[-86px] flex items-center justify-center flex-col">
                 <h1 className='text-5xl font-semibold w-1/2 mx-auto text-center text-white'>
                     Every step is progress <br />Start Today
                 </h1>
