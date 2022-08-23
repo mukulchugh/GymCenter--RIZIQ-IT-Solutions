@@ -10,7 +10,7 @@ const Header = () => {
     const navigate = useNavigate();
     return (
         <div className=' sticky top-0 z-50 shadow-sm'>
-            <div className="bg-gradient-to-b from-primary to-secondary hidden md:block">
+            <div className="bg-[#0E1329] hidden md:block">
                 <div className="flex justify-end items-center text-white h-12 container mx-auto">
 
 
@@ -49,7 +49,7 @@ const Header = () => {
                                                 Parent
 
                                             </Link>
-                                            <ul class="p-2 bg-gray-600">
+                                            <ul class="p-2 bg-[#0E1329]">
                                                 <li><Link to="#">Submenu 1</Link></li>
                                                 <li><Link to="#">Submenu 2</Link></li>
                                             </ul>
@@ -186,9 +186,9 @@ const Header = () => {
                     Every step is progress
                     Start Today
                 </h1>
-                <div className="button_section">
-                    <Link to="/join-us" className="btn btn-danger">Contact Us</Link>
-                    <Link to="/packages" className="btn btn-outline btn-primary">Contact Us</Link>
+                <div className="button_section mt-6">
+                    <Link to="/join-us" className="btn btn-primary">Contact Us</Link>
+                    <Link to="/packages" className="btn btn-outline ml-4 btn-primary">Contact Us</Link>
                 </div>
 
             </div>
