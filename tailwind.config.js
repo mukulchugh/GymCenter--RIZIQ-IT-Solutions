@@ -1,10 +1,5 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
+  content: ["./src/**/*.{html,js}"],
   daisyui: {
     themes: [
       {
@@ -15,9 +10,7 @@ module.exports = {
           "neutral": "#292929",
           "base-100": "#ffffff",
         },
-      },
-      "dark",
-      "cupcake",
+      }
     ],
   },
   plugins: [require("daisyui")],

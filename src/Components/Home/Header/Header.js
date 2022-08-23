@@ -21,7 +21,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <nav className="bg-transparent text-white absolute py-4 ">
+            <nav className="bg-transparent text-white absolute header_main_nav py-4 ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between md:block">
                         <div className="flex container w-[100vw] mx-auto items-center">
@@ -32,26 +32,26 @@ const Header = () => {
                                 <div className="nav-item ml-10 flex items-baseline space-x-4 text-lg">
                                     <Link
                                         to="/"
-                                        className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
+                                        className="nav-btn px-2 py-2 rounded-md text-sm font-medium"
                                     >
                                         Home
                                     </Link>
                                     <Link
                                         to="/tools"
-                                        className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
+                                        className="nav-btn px-2 py-2 rounded-md text-sm font-medium"
                                     >
                                         Tools
                                     </Link>
 
                                     <ul class="menu menu-horizontal p-0">
                                         <li tabindex="0">
-                                            <Link to="#">
+                                            <Link className="nav-btn px-2 py-2 rounded-md text-sm font-medium" to="#">
                                                 Parent
 
                                             </Link>
                                             <ul class="p-2 bg-[#0E1329]">
-                                                <li><Link to="#">Submenu 1</Link></li>
-                                                <li><Link to="#">Submenu 2</Link></li>
+                                                <li><Link className="nav-btn px-2 py-2 rounded-md text-sm font-medium" to="#">Submenu 2</Link></li>
+                                                <li><Link className="nav-btn px-2 py-2 rounded-md text-sm font-medium" to="#">Submenu 1</Link></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -59,21 +59,21 @@ const Header = () => {
 
                                     <Link
                                         to="/blog"
-                                        className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
+                                        className="nav-btn px-2 py-2 rounded-md text-sm font-medium"
                                     >
                                         Blog
                                     </Link>
 
                                     <Link
                                         to="portfolio"
-                                        className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
+                                        className="nav-btn px-2 py-2 rounded-md text-sm font-medium"
                                     >
                                         Portfolio
                                     </Link>
 
                                     <Link
                                         to="contact-us"
-                                        className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
+                                        className="nav-btn pl-2 py-2 rounded-md text-sm font-medium"
                                     >
                                         Contact
                                     </Link>
@@ -182,13 +182,12 @@ const Header = () => {
                 </Transition>
             </nav>
             <div className="banner flex items-center justify-center flex-col">
-                <h1 className='text-4xl text-white'>
-                    Every step is progress
-                    Start Today
+                <h1 className='text-5xl font-semibold w-1/2 mx-auto text-center text-white'>
+                    Every step is progress <br />Start Today
                 </h1>
                 <div className="button_section mt-6">
                     <Link to="/join-us" className="btn btn-primary">Contact Us</Link>
-                    <Link to="/packages" className="btn btn-outline ml-4 btn-primary">Contact Us</Link>
+                    <Link to="/packages" className="btn package_button ml-4 btn-primary">Contact Us</Link>
                 </div>
 
             </div>

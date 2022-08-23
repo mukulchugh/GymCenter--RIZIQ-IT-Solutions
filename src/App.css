@@ -1,7 +1,24 @@
+/* Banner */
 .banner {
     height: calc(100vh - 48px);
     background: linear-gradient(to bottom, rgba(52, 52, 52, 0.8), rgba(24, 24, 24, 0.7)), url(./assets/BG.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.header_main_nav {
+    max-width: 100vw !important;
+}
+
+.banner h1 {
+    line-height: 64px;
+}
+
+.package_button {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5em 1em;
+    cursor: pointer;
 }
