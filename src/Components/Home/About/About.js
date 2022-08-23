@@ -4,9 +4,9 @@ import img from '../../../assets/Image.png'
 const About = () => {
     return (
         <div className='mid-container'>
-            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 my-10'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-7 md:gap-5 my-10'>
                 <div className='flex md:justify-start justify-center w-full mb-10'>
-                    <img className='lg:w-[500px] md:w-[350px]' src={img} alt="" />
+                    <img className='lg:w-[500px] md:w-[350px] w-full' src={img} alt="" />
                 </div>
                 <div className='flex items-center'>
                     <div>
