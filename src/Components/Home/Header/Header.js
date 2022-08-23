@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className='relative'>
             <div className='z-50 shadow-sm '>
-                <div className=' bg-[#0E1329] pr-4'>
+                <div className=' bg-[#0E1329] lg:pr-10 md:pr-4'>
                     <div className=" hidden md:block mid-container">
                         <div className="flex justify-end items-center text-white h-12">
 

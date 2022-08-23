@@ -7,7 +7,7 @@ const SpecialOffer = () => {
         <div className='mid-container'>
             <h1 className='text-4xl font-bold text-primary mb-10'>Special Offers</h1>
 
-            <div className='lg:flex md:flex gap-10'>
+            <div className='lg:flex md:flex gap-10 pb-20'>
                 <div className='lg:w-[40%] md:w-[40%]'>
                     <button className='btn btn-sm px-8 btn-primary text-white mb-5' type="">SALE</button>
                     <img className='mx-auto' src={productImg} alt="" />

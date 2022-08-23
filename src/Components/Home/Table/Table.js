@@ -30,7 +30,7 @@ const Table = () => {
     ];
     return (
         <div className='mid-container mx-auto'>
-            <h1 className='text-primary text-[35px] font-semibold mb-5'>Work Schedule</h1>
+            <h1 className='text-4xl font-bold text-primary mb-10'>Work Schedule</h1>
             <SingleTable tableData={morningSchedule} topic="Morning Schedule" />
             <SingleTable tableData={afternoonSchedule} topic="Afternoon Schedule" />
             <SingleTable tableData={eveningSchedule} topic="Evening Schedule" />
