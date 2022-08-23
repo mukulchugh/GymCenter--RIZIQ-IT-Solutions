@@ -43,6 +43,20 @@ const Header = () => {
                                         Tools
                                     </Link>
 
+                                    <ul class="menu menu-horizontal p-0">
+                                        <li tabindex="0">
+                                            <Link to="#">
+                                                Parent
+
+                                            </Link>
+                                            <ul class="p-2 bg-gray-600">
+                                                <li><Link to="#">Submenu 1</Link></li>
+                                                <li><Link to="#">Submenu 2</Link></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
                                     <Link
                                         to="/blog"
                                         className="nav-btn px-3 py-2 rounded-md text-sm font-medium"
