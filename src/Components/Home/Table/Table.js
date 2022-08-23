@@ -15,7 +15,7 @@ const Table = () => {
     ]
     return (
         <div className='mid-container mx-auto'>
-            <h1 className='text-primary'>Work Schedule</h1>
+            <h1 className='text-primary text-[35px] font-semibold mb-5'>Work Schedule</h1>
             <div className="schedule flex items-center">
                 <div className="schedule_item">
                     <h1 className='text-[20px] font-bold mr-5'>Morning Schedule</h1>
