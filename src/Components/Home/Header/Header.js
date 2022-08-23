@@ -167,11 +167,15 @@ const Header = () => {
                     )}
                 </Transition>
             </nav>
-            <div className="banner">
-                <h1 className='text-2xl'>
+            <div className="banner flex items-center justify-center flex-col">
+                <h1 className='text-4xl text-white'>
                     Every step is progress
                     Start Today
                 </h1>
+                <div className="button_section">
+                    <Link to="/join-us" className="btn btn-danger">Contact Us</Link>
+                    <Link to="/packages" className="btn btn-outline btn-primary">Contact Us</Link>
+                </div>
 
             </div>
         </div>
