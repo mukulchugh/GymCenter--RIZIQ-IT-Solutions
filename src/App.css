@@ -25,12 +25,9 @@
     border: 1px solid #F04F23;
 }
 
-
 /* Table */
-.schedule_item {
-    width: 15%;
-}
-
-.schedule_time {
-    width: 83%;
+.table_border {
+    border-collapse: unset;
+    border: 1px solid #E6E6E6;
+    border-radius: 10px;
 }

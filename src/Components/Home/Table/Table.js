@@ -1,7 +1,8 @@
 import React from 'react';
+import SingleTable from './SingleTable';
 
 const Table = () => {
-    const tableData = [
+    const morningSchedule = [
         { id: 1, time: '06:00 am', data: 'Cross Fit' },
         { id: 2, time: '06:30 am', data: 'Cross Fit' },
         { id: 3, time: '06:00 am', data: 'Cross Fit' },
@@ -11,54 +12,28 @@ const Table = () => {
         { id: 7, time: '08:00 am', data: 'Cross Fit' },
         { id: 8, time: '08:30 am', data: 'Cross Fit' },
         { id: 9, time: '09:00 am', data: 'Cross Fit' },
-        { id: 10, time: '09:30 am', data: 'Cross Fit' },
-    ]
+        { id: 10, time: '09:30 am', data: 'Cross Fit' }
+    ];
+    const afternoonSchedule = [
+        { id: 1, time: '12:00 pm', data: 'Cross Fit' },
+        { id: 2, time: '12:30 pm', data: 'Cross Fit' },
+        { id: 3, time: '01:00 pm', data: 'Cross Fit' },
+    ];
+    const eveningSchedule = [
+        { id: 1, time: '03:00 am', data: 'Cross Fit' },
+        { id: 2, time: '03:30 am', data: 'Cross Fit' },
+        { id: 3, time: '04:00 am', data: 'Cross Fit' },
+        { id: 4, time: '04:30 am', data: 'Cross Fit' },
+        { id: 5, time: '05:00 am', data: 'Cross Fit' },
+        { id: 6, time: '05:30 am', data: 'Cross Fit' },
+        { id: 7, time: '06:00 am', data: 'Cross Fit' },
+    ];
     return (
         <div className='mid-container mx-auto'>
             <h1 className='text-primary text-[35px] font-semibold mb-5'>Work Schedule</h1>
-            <div className="schedule flex items-center">
-                <div className="schedule_item">
-                    <h1 className='text-[20px] font-bold mr-5'>Morning Schedule</h1>
-                </div>
-                <div className="schedule_time">
-                    <div class="overflow-x-auto">
-                        <table class="table table-compact w-full">
-                            <thead>
-                                <tr>
-                                    <th className='text-primary'>Time</th>
-                                    <th>mon</th>
-                                    <th>tue</th>
-                                    <th>wed</th>
-                                    <th>thu</th>
-                                    <th>fri</th>
-                                    <th>sat</th>
-                                    <th>sun</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    tableData.map(item => {
-                                        return (
-                                            <tr key={item.id}>
-                                                <td className='text-primary'>{item.time}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                                <td>{item.data}</td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            <SingleTable tableData={morningSchedule} topic="Morning Schedule" />
+            <SingleTable tableData={afternoonSchedule} topic="Afternoon Schedule" />
+            <SingleTable tableData={eveningSchedule} topic="Evening Schedule" />
         </div>
     );
 };
