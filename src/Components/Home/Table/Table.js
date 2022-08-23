@@ -14,11 +14,11 @@ const Table = () => {
         { id: 10, time: '09:30 am', data: 'Cross Fit' },
     ]
     return (
-        <div className='container mx-auto'>
+        <div className='mid-container mx-auto'>
             <h1 className='text-primary'>Work Schedule</h1>
-            <div className="schedule ">
+            <div className="schedule flex items-center">
                 <div className="schedule_item">
-                    <h1>Morning Schedule</h1>
+                    <h1 className='text-[20px] font-bold mr-5'>Morning Schedule</h1>
                 </div>
                 <div className="schedule_time">
                     <div class="overflow-x-auto">
