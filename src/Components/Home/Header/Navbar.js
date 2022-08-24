@@ -37,9 +37,9 @@ const Navbar = () => {
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-[#dbe5fa] z-50 text-neutral ">
                         <li><a className="uppercase hover_effect font-bold" href="#">Home</a></li>
                         <li><a className="uppercase hover_effect font-bold" href="#">About</a></li>
-                        <li><a className="uppercase hover_effect font-semibold" href="#">Fitness</a></li>
-                        <li><a className="uppercase hover_effect font-semibold" href="#">Trainers</a></li>
-                        <li><a className="uppercase hover_effect font-semibold" href="#">Testimonials</a></li>
+                        <li><a className="uppercase hover_effect font-bold" href="#">Fitness</a></li>
+                        <li><a className="uppercase hover_effect font-bold" href="#">Trainers</a></li>
+                        <li><a className="uppercase hover_effect font-bold" href="#">Testimonials</a></li>
                         <li><a className="uppercase hover_effect font-bold" href="#">Blog</a></li>
                         <li><a className="uppercase hover_effect font-bold" href="#">Shop</a></li>
                         <li><a className="uppercase hover_effect font-bold" href="#">Contact</a></li>
