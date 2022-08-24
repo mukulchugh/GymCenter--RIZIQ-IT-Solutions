@@ -9,13 +9,13 @@ const Header = () => {
     return (
         <div className='relative'>
             <div className='z-50 shadow-sm '>
-                <div className=' bg-[#0E1329] lg:pr-10 md:pr-4'>
+                <div className=' bg-[#333333] lg:pr-10 md:pr-4'>
                     <div className=" hidden md:block mid-container">
-                        <div className="flex justify-end items-center text-white h-12">
+                        <div className="flex justify-end items-center text-white h-10">
 
-                            <Link to="https://www.facebook.com/ayon.jodder.75/"><BsBell className='ml-8 text-xl'></BsBell></Link>
-                            <Link to="https://github.com/AyonJD"><BsCart3 className='ml-8 text-xl'></BsCart3></Link>
-                            <Link to="https://github.com/AyonJD"><HiOutlineUser className='ml-8 text-xl'></HiOutlineUser></Link>
+                            <Link to="#"><BsBell className='ml-8 text-xl'></BsBell></Link>
+                            <Link to="#"><BsCart3 className='ml-8 text-xl'></BsCart3></Link>
+                            <Link to="#"><HiOutlineUser className='ml-8 text-xl'></HiOutlineUser></Link>
 
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const Header = () => {
                     </h1>
                     <div className="button_section mt-8">
                         <Link to="/join-us" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold ">JOIN GYM</Link>
-                        <Link to="/packages" className="btn btn-outline ml-4 btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PACKAGE</Link>
+                        <Link to="/packages" className="btn btn-outline ml-4 package_button btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PACKAGE</Link>
                     </div>
                 </div>
             </div>
