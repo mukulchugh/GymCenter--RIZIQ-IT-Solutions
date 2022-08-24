@@ -6,7 +6,7 @@ import { TbCurrencyTaka } from 'react-icons/tb';
 const SpecialOffer = () => {
     return (
         <div className='mid-container'>
-            <h1 className='text-4xl font-bold text-primary mb-10'>Special Offers</h1>
+            <h1 className='text-4xl font-bold text-primary mb-8 mt-12'>Special Offers</h1>
 
             <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-10 pb-20'>
                 <div >

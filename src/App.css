@@ -12,7 +12,7 @@ body{
 /* Banner */
 .banner {
     height: calc(100vh - 48px);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(./assets/BG.png);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0.849)), url(./assets/BG.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
