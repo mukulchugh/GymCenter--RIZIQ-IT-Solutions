@@ -15,7 +15,7 @@ const SpecialOffer = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus repellat autem officia voluptatem quis optio ullam doloribus ipsam, rem deleniti minus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus repellat autem officia voluptatem quis optio ullam doloribus ipsam, rem deleniti minus.</p>
 
                     <div className='flex justify-between my-10'>
-                        <h1 className='text-3xl font-extrabold'>$100</h1>
+                        <h1 className='text-3xl font-extrabold'>599Tk</h1>
                         <button className='btn btn-neutral rounded-full px-6 text-white font-bold' type="">ADD TO CART</button>
                     </div>
                 </div>

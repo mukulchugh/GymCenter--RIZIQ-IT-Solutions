@@ -11,7 +11,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>$20</p>
+                    <p className='text-2xl font-bold text-primary'>199Tk</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -23,7 +23,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>$20</p>
+                    <p className='text-2xl font-bold text-primary'>199Tk</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -35,7 +35,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>$20</p>
+                    <p className='text-2xl font-bold text-primary'>199Tk</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -47,7 +47,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>$20</p>
+                    <p className='text-2xl font-bold text-primary'>199Tk</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
