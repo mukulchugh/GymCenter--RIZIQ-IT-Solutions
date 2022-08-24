@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../../../assets/Image.png'
+import './About.css'
 
 const About = () => {
     return (
@@ -8,13 +9,22 @@ const About = () => {
                 <div className='flex items-center md:justify-start justify-center  w-full'>
                     <img className='lg:w-[500px] md:w-[350px] w-full' src={img} alt="" />
                 </div>
-                <div className='flex items-center'>
+                <div className='flex '>
                     <div>
-                        <button className='btn btn-primary btn-sm md:mt-0 mt-5' type="">About US</button>
                         <h1 className='lg:text-4xl md:text-3xl text-3xl font-bold lg:my-5 md:my-3 my-4'>ALL progress takes place outside the comfort zone</h1>
-                        <p className='text-secondary lg:leading-[25px] md:leading-[25px]'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus repellat autem officia voluptatem quis optio ullam doloribus ipsam, rem deleniti minus.</p>
+                        <div className='mb-10'>
+                            <div className='mb-5'>
+                                <h1 className='text-2xl font-bold mb-2 text-primary about'>Mission</h1>
+                                <p className='text-secondary'>We want to forge a community through elite functional fitness that drives people to be fit and live a healthy life.</p>
+                            </div>
 
-                        <p className='mt-5'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus repellat autem officia voluptatem quis optio ullam doloribus ipsam,</p>
+                            <div>
+                                <h1 className='text-2xl font-bold text-primary about'>Vission</h1>
+                                <p className='text-secondary'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
+                            </div>
+                        </div>
+
+                        <button className='btn btn-primary btn-md md:mt-0 px-5' type="">About US</button>
                     </div>
                 </div>
             </div>
