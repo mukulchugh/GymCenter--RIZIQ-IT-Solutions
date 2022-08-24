@@ -1,6 +1,7 @@
 import React from 'react';
 import itemImg from '../../../assets/Special/Rectangle 8.png';
 import { FaCartPlus } from 'react-icons/fa';
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 const Product = () => {
     return (
@@ -11,7 +12,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>199Tk</p>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -23,7 +24,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>199Tk</p>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -35,7 +36,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>199Tk</p>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
@@ -47,7 +48,7 @@ const Product = () => {
                 </figure>
                 <div class="card-body items-center text-center">
                     <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-2xl font-bold text-primary'>199Tk</p>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
                     <div class="card-actions">
                         <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
