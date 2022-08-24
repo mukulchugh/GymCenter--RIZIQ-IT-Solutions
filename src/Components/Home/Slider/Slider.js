@@ -30,18 +30,51 @@ export default function App() {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className="image-slide-bgOne relative px-10 py-32 flex items-center justify-between">
-                        <div className="w-[70%] flex">
+                    <div className="image-slide-bgOne relative md:px-10 md:py-24 px-5 py-20 md:flex items-center justify-between">
+                        <div className="md:w-[70%] flex">
                             <img className="quote_image relative top-[-35px]  quote_image_one inline-block" src={quote} alt="" />
-                            <span className="text-white  mx-auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
-                            <img className="quote_image quote_image_two inline-block align-bottom" src={quote} alt="" />
+                            <span className="text-white italic mx-auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+                            <img className="quote_image quote_image_two inline-block align-bottom -mb-5" src={quote} alt="" />
                         </div>
-                        <div className="w-[25%] text-right">
-                            <img className="user_image ml-auto" src={userImage} alt="" />
+                        <div className="md:w-[25%] lg:mr-[-35px] mt-8 md:mt-0 flex flex-col items-center justify-center">
+                            <img className="user_image" src={userImage} alt="" />
+                            <h1 className="text-white text-3xl font-bold py-4">John Doe</h1>
+                            <p className="text-white font-xl">Gym User</p>
                         </div>
 
                     </div>
                 </SwiperSlide>
+                <SwiperSlide>
+                    <div className="image-slide-bgOne relative md:px-10 md:py-24 px-5 py-20 md:flex items-center justify-between">
+                        <div className="md:w-[70%] flex">
+                            <img className="quote_image relative top-[-35px]  quote_image_one inline-block" src={quote} alt="" />
+                            <span className="text-white italic mx-auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+                            <img className="quote_image quote_image_two inline-block align-bottom -mb-5" src={quote} alt="" />
+                        </div>
+                        <div className="md:w-[25%] lg:mr-[-35px] mt-8 md:mt-0 flex flex-col items-center justify-center">
+                            <img className="user_image" src={userImage} alt="" />
+                            <h1 className="text-white text-3xl font-bold py-4">John Doe</h1>
+                            <p className="text-white font-xl">Gym User</p>
+                        </div>
+
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="image-slide-bgOne relative md:px-10 md:py-24 px-5 py-20 md:flex items-center justify-between">
+                        <div className="md:w-[70%] flex">
+                            <img className="quote_image relative top-[-35px]  quote_image_one inline-block" src={quote} alt="" />
+                            <span className="text-white italic mx-auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+                            <img className="quote_image quote_image_two inline-block align-bottom -mb-5" src={quote} alt="" />
+                        </div>
+                        <div className="md:w-[25%] lg:mr-[-35px] mt-8 md:mt-0 flex flex-col items-center justify-center">
+                            <img className="user_image" src={userImage} alt="" />
+                            <h1 className="text-white text-3xl font-bold py-4">John Doe</h1>
+                            <p className="text-white font-xl">Gym User</p>
+                        </div>
+
+                    </div>
+                </SwiperSlide>
+
             </Swiper>
         </div >
     );
