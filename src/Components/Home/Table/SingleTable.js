@@ -3,12 +3,9 @@ import React from 'react';
 const SingleTable = ({ tableData, topic }) => {
     return (
         <div className="schedule lg:mb-20 md:mb-16 sm:mb-10 mb-10 md:flex items-center">
-            <div className="schedule_item w-full md:w-[15%]">
-                <h1 className='text-[20px] mb-5 md:mb-0 font-bold  md:mr-6'>{topic}</h1>
-            </div>
-            <div className="schedule_time w-full md:w-[85%]">
+            <div className="schedule_time w-full">
                 <div class="overflow-x-auto">
-                    <table class="table table_border table-compact w-full">
+                    <table class="table table-zebra table_border table-compact w-full">
                         <thead className='table_border rounded-2xl'>
                             <tr >
                                 <th className='text-primary'>Time</th>
