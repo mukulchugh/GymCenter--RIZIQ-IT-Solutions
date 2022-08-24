@@ -19,7 +19,7 @@ const About = () => {
                             </div>
 
                             <div>
-                                <h1 className='text-2xl font-bold text-primary about'>Vission</h1>
+                                <h1 className='text-2xl font-bold text-primary about mb-2'>Vission</h1>
                                 <p className='text-secondary'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
                             </div>
                         </div>
