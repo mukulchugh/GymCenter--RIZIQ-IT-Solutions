@@ -61,27 +61,26 @@ const Tabs = props => {
     return (
         <div className="z-0">
             <TabsWrapper>
-                <div className="d-flex justify-content-between">
-                    <TabList>
-                        {props?.items?.map(item => {
-                            return (
-                                <TabItem
-                                    key={item.to}
-                                    ref={selected === item.to ? activeRef : none}
-                                    className={`font-bold ${selected === item.to ? "is-active" : ""}`}
-                                    onClick={() => {
-                                        setSelected(item.to)
-                                        props.setSelectedTab(item.to)
-                                    }}
-                                >
-                                    {item.name}
-                                </TabItem>
-                            );
-                        })}
 
-                    </TabList>
+                <TabList>
+                    {props?.items?.map(item => {
+                        return (
+                            <TabItem
+                                key={item.to}
+                                ref={selected === item.to ? activeRef : none}
+                                className={`font-bold ${selected === item.to ? "is-active" : ""}`}
+                                onClick={() => {
+                                    setSelected(item.to)
+                                    props.setSelectedTab(item.to)
+                                }}
+                            >
+                                {item.name}
+                            </TabItem>
+                        );
+                    })}
 
-                </div>
+                </TabList>
+
                 <ActiveLine width={width} offset={offset} />
             </TabsWrapper>
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AssembleCompo = () => {
     return (
-        <div className='mid-container mx-auto'>
+        <div className='mx-auto'>
             <h1 className='text-md mt-5 mb-3'>For those who want the best of both worlds. This is a combination of CrossFit and Legion. Which means you unlock all the classes offered in our facility.</h1>
             <h1 className='text-md mb-3'>Class Type: <span className='text-primary'>Combination of CrossFit and Legion</span></h1>
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const OnRampCompo = () => {
     return (
-        <div className='mid-container mx-auto'>
+        <div className='mx-auto'>
             <h1 className='text-md my-5'>For those looking to ease their way into CrossFit, we offer an On Ramp Program. This program is designed to ramp up your fitness and give you more exposure to the movements involved in CrossFit before CrossFit general classes. This is a four classes package.</h1>
 
 
