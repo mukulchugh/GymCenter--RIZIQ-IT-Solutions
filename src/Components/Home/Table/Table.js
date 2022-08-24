@@ -16,7 +16,7 @@ const Table = () => {
     ];
     return (
         <div className='mid-container mx-auto'>
-            <h1 className='text-4xl font-bold text-primary mb-10'>Work Schedule</h1>
+            <h1 className='text-4xl font-bold text-primary mb-8 '>Work Schedule</h1>
             <SingleTable tableData={morningSchedule}/>
         </div>
     );

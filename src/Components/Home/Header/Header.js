@@ -26,13 +26,13 @@ const Header = () => {
                 </div>
 
                 <div className="banner -mt-[88px] z-0 w-full flex items-center justify-center flex-col">
-                    <h1 className='lg:text-5xl uppercase md:text-4xl text-3xl font-bold text-white text-center'>
+                    <h1 className='lg:text-5xl uppercase md:text-4xl text-3xl font-extrabold text-white text-center'>
                         Every step is progress <br />
                         Start Today
                     </h1>
                     <div className="button_section mt-8">
-                        <Link to="/join-us" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold">JOIN GYM</Link>
-                        <Link to="/packages" className="btn btn-outline ml-4 btn-accent lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold">PACKAGE</Link>
+                        <Link to="/join-us" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold ">JOIN GYM</Link>
+                        <Link to="/packages" className="btn btn-outline ml-4 btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PACKAGE</Link>
                     </div>
                 </div>
             </div>
