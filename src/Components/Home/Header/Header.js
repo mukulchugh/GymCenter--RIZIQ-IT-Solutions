@@ -8,9 +8,9 @@ import Navbar from './Navbar';
 const Header = () => {
     return (
         <div className='relative'>
-            <div className='z-50 shadow-sm '>
+            <div className='z-10 shadow-sm '>
                 <div className=' bg-[#333333] lg:pr-10 md:pr-4'>
-                    <div className=" hidden md:block mid-container">
+                    <div className=" mid-container">
                         <div className="flex justify-end items-center text-white h-10">
 
                             <Link to="#"><BsBell className='ml-8 text-xl'></BsBell></Link>
