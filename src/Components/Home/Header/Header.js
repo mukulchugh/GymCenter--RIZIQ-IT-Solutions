@@ -26,7 +26,7 @@ const Header = () => {
                 </div>
 
                 <div className="banner -mt-[88px] z-0 w-full flex items-center justify-center flex-col">
-                    <h1 className='lg:text-5xl md:text-4xl text-3xl font-bold text-white text-center'>
+                    <h1 className='lg:text-5xl uppercase md:text-4xl text-3xl font-bold text-white text-center'>
                         Every step is progress <br />
                         Start Today
                     </h1>

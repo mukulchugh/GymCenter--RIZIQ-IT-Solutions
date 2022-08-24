@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import SpecialOffer from './SpecialOffer/SpecialOffer';
 import Table from './Table/Table';
+import Slider from './Slider/Slider';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
             {/* Work Schedule */}
             <About />
             <Table />
+            <Slider />
             <SpecialOffer />
             <Contact />
             <Footer />
