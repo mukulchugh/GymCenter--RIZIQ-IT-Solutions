@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import SpecialOffer from './SpecialOffer/SpecialOffer';
 import Table from './Table/Table';
 import Slider from './Slider/Slider';
+import Programme from './Programme/Programme';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             {/* Work Schedule */}
             <About />
             <Table />
+            <Programme />
             <Slider />
             <SpecialOffer />
             <Contact />
