@@ -7,7 +7,7 @@ import './CrossFit.css'
 const CrossFit = () => {
     return (
         <div className='mid-container'>
-            <div className='grid grid-cols-2 gap-10 py-16'>
+            <div className='grid md:grid-cols-2 gap-10 py-16'>
                 <div className='flex items-center '>
                     <div>
                         <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CROSSFIT?</h1>
@@ -16,15 +16,15 @@ const CrossFit = () => {
                         <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                     </div>
                 </div>
-                <div>
-                    <img src={img1} alt="" />
+                <div className='w-full'>
+                    <img className='w-full' src={img1} alt="" />
                 </div>
             </div>
-            <div className='grid grid-cols-2 gap-10 py-16'>
-                <div>
-                    <img src={img2} alt="" />
+            <div className='grid md:grid-cols-2 gap-10 py-16'>
+                <div className='w-full md:order-1 order-2'>
+                    <img className='w-full' src={img2} alt="" />
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center md:order-2 order-1'>
                     <div>
                         <h1 className='text-3xl text-primary font-extrabold mb-5'>All sessions are led by a fully qualified CrossFit coach.</h1>
                         <p className='font-bold lg:w-[90%] '>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!</p>
