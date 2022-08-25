@@ -10,13 +10,13 @@ const Footer = () => {
             <footer class="mid-container items-center p-4 text-neutral-content">
                 <div className='sm:flex sm:justify-between'>
                     <div class="flex gap-5 py-2 text-white justify-center">
-                        <a  href="#"><FaFacebook/></a>
-                        <a href="#"><AiOutlineInstagram/></a>
-                        <a href="#"><FaTwitter/></a>
-                        <a href="#"><BsYoutube/></a>
+                        <a href="#"><FaFacebook /></a>
+                        <a href="#"><AiOutlineInstagram /></a>
+                        <a href="#"><FaTwitter /></a>
+                        <a href="#"><BsYoutube /></a>
                     </div>
                     <div className='flex items-center justify-center'>
-                        <p className='text-sm'>POWERD BY -<span className='font-bold text-white'> RIZIQ IT SOLUTIONS</span></p>
+                        <p className='text-sm'><sup>POWERD BY -</sup><span className='font-bold text-white'> RIZIQ IT SOLUTIONS</span></p>
                     </div>
                 </div>
             </footer>

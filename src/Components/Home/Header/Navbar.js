@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/Logo.svg'
 import { Link } from "react-router-dom";
 import './Navbar.css'
 
 const Navbar = () => {
+    const [background, setBackground] = useState(false);
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 150) {
+                setBackground(true);
+            } else {
+                setBackground(false);
+            }
+        })
+    })
     return (
         <div class="navbar bg-transparent text-white z-50">
             <div class="navbar-start">
@@ -20,13 +30,13 @@ const Navbar = () => {
                         </Link>
                         <ul class="p-2 bg-[#dbe5fa] text-neutral">
                             <li><Link to='/fitness' className="uppercase hover_effect font-semibold" href="#">Fitness</Link></li>
-                            <li><Link to='/trainers'  className="uppercase hover_effect font-semibold" href="#">Trainers</Link></li>
-                            <li><Link to='/testimonials'  className="uppercase hover_effect font-semibold" href="#">Testimonials</Link></li>
+                            <li><Link to='/trainers' className="uppercase hover_effect font-semibold" href="#">Trainers</Link></li>
+                            <li><Link to='/testimonials' className="uppercase hover_effect font-semibold" href="#">Testimonials</Link></li>
                         </ul>
                     </li>
-                    <li><Link to='/blog'  className="uppercase hover_effect font-semibold" href="#">Blog</Link></li>
-                    <li><Link to='/shop'  className="uppercase hover_effect font-semibold" href="#">Shop</Link></li>
-                    <li><Link to='/contact'  className="uppercase hover_effect font-semibold" href="#">Contact</Link></li>
+                    <li><Link to='/blog' className="uppercase hover_effect font-semibold" href="#">Blog</Link></li>
+                    <li><Link to='/shop' className="uppercase hover_effect font-semibold" href="#">Shop</Link></li>
+                    <li><Link to='/contact' className="uppercase hover_effect font-semibold" href="#">Contact</Link></li>
                 </ul>
             </div>
             <div className='navbar-end lg:hidden'>
