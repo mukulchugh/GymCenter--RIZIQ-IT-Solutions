@@ -1,9 +1,11 @@
 import React from 'react';
 import img from '../../../assets/Image/AboutUs/abb-bg.png'
+import SharedNav from '../Shared/SharedNav';
 
 const AboutUs = () => {
     return (
         <div>
+            <SharedNav />
             <img className='w-full' src={img} alt="" />
             <div className='mid-container'>
                 <h1 className='text-center text-5xl font-bold mb-16 mt-10 mx-auto'>Lorem Ipsum is simple dummy text of the printing</h1>
