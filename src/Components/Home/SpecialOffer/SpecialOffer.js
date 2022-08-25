@@ -18,7 +18,7 @@ const SpecialOffer = () => {
 
                     <div className='flex justify-between my-10'>
                         <h1 className='text-3xl font-extrabold flex'><TbCurrencyTaka /> 599</h1>
-                        <button className='btn btn-neutral rounded-full px-6 text-white font-bold' type="">ADD TO CART</button>
+                        <button className='btn btn-neutral rounded-full px-6 text-white font-bold hover:btn-primary' type="">ADD TO CART</button>
                     </div>
                 </div>
                 <div>
