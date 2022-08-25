@@ -10,7 +10,7 @@ const CrossFit = () => {
         <>
             <SharedNav />
             <div className='mid-container'>
-                <div className='grid md:grid-cols-2 gap-10 md:py-16 py-10'>
+                <div className='grid md:grid-cols-2 gap-10  mt-16'>
                     <div className='flex items-center '>
                         <div>
                             <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CROSSFIT?</h1>
@@ -23,7 +23,7 @@ const CrossFit = () => {
                         <img className='w-full' src={img1} alt="" />
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 gap-10 md:py-16 py-10'>
+                <div className='grid md:grid-cols-2 gap-10 my-16'>
                     <div className='w-full md:order-1 order-2'>
                         <img className='w-full' src={img2} alt="" />
                     </div>
