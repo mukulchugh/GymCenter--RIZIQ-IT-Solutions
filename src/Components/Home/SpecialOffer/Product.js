@@ -6,7 +6,7 @@ import { TbCurrencyTaka } from 'react-icons/tb';
 const Product = () => {
     return (
         <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-5 '>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card  shadow-xl bg-accent">
                 <figure class="px-10 pt-10">
                     <img src={itemImg} alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -18,7 +18,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-accent shadow-xl">
                 <figure class="px-10 pt-10">
                     <img src={itemImg} alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -30,7 +30,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-accent shadow-xl">
                 <figure class="px-10 pt-10">
                     <img src={itemImg} alt="Shoes" class="rounded-xl" />
                 </figure>
@@ -42,7 +42,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
+            <div class="card bg-accent shadow-xl">
                 <figure class="px-10 pt-10">
                     <img src={itemImg} alt="Shoes" class="rounded-xl" />
                 </figure>

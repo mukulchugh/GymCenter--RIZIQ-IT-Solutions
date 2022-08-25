@@ -29,9 +29,11 @@ const CrossFit = () => {
 
                         <h1 className='uppercase text-primary font-bold mt-5 cursor-pointer'>see more</h1>
                     </div>
-                </div>
+                </div> 
 
             </div>
+
+            <h1 className='text-4xl font-bold text-primary mb-10'>Recomended <br/> Packeges for you</h1>
         </div>
     );
 };
