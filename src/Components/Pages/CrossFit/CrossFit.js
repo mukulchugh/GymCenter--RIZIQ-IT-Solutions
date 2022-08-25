@@ -1,6 +1,7 @@
 import React from 'react';
 import img1 from '../../../assets/Image/CrossFit/pic1.png'
 import img2 from '../../../assets/Image/CrossFit/pic2.png'
+import Package from '../Package/Package';
 import './CrossFit.css'
 
 const CrossFit = () => {
@@ -31,11 +32,13 @@ const CrossFit = () => {
                         {/* <h1 className='uppercase text-primary font-bold mt-5 cursor-pointer'>see more</h1> */}
                         <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                     </div>
-                </div> 
+                </div>
 
             </div>
 
-            <h1 className='text-4xl font-bold text-primary mb-10'>Recomended <br/> Packeges for you</h1>
+            <h1 className='text-4xl font-bold text-primary mb-10'>Recommended <br /> Packages for you</h1>
+
+            <Package />
         </div>
     );
 };
