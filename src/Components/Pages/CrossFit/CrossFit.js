@@ -7,11 +7,11 @@ import './CrossFit.css'
 const CrossFit = () => {
     return (
         <div className='mid-container'>
-            <div className='grid md:grid-cols-2 gap-10 py-16'>
+            <div className='grid md:grid-cols-2 gap-10 md:py-16 py-10'>
                 <div className='flex items-center '>
                     <div>
                         <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CROSSFIT?</h1>
-                        <p className='font-bold lg:w-[90%] '>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!</p>
+                        <p className='font-bold lg:w-[90%] '>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal kfitness goals – for free!</p>
 
                         <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                     </div>
@@ -20,7 +20,7 @@ const CrossFit = () => {
                     <img className='w-full' src={img1} alt="" />
                 </div>
             </div>
-            <div className='grid md:grid-cols-2 gap-10 py-16'>
+            <div className='grid md:grid-cols-2 gap-10 md:py-16 py-10'>
                 <div className='w-full md:order-1 order-2'>
                     <img className='w-full' src={img2} alt="" />
                 </div>
