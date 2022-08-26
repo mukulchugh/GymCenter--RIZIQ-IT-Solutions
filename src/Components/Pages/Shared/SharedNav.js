@@ -23,7 +23,7 @@ const SharedNav = () => {
                 <div className='mid-container'>
                     <div class="navbar text-white z-50">
                         <div class="navbar-start">
-                            <img className='w-24' src={logo} alt="" />
+                            <img style={{ height: '50px' }} className='w-24' src={logo} alt="" />
                         </div>
                         <div class="navbar-end hidden lg:flex">
                             <ul class="menu menu-horizontal p-0">

@@ -2,22 +2,14 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/Logo.svg'
 import { Link } from "react-router-dom";
 import './Navbar.css'
+import useNavBg from '../../Hooks/useNavBg';
 
 const Navbar = () => {
-    const [background, setBackground] = useState(false);
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 150) {
-                setBackground(true);
-            } else {
-                setBackground(false);
-            }
-        })
-    })
+    const makeSmallNav = useNavBg()
     return (
-        <div class="navbar bg-transparent text-white z-50">
+        <div  class="navbar bg-transparent text-white z-50">
             <div class="navbar-start">
-                <img className='w-24' src={logo} alt="" />
+                <img style={{ height: '50px' }}  src={logo} alt="" />
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">

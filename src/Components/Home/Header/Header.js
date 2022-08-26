@@ -21,7 +21,7 @@ const Header = () => {
         <>
             {/* <div className='relative'>
                 <div className='z-20 shadow-sm '> */}
-            <div className='bg-gray-800 border-b lg:pr-10 md:pr-4 z-50 pb-1'>
+            <div className='bg-gray-800 border-b h-14 lg:pr-10 md:pr-4 z-50'>
                 <div className="mid-container">
                     <div className="flex justify-end items-center text-white py-2">
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
