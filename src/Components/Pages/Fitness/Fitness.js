@@ -1,9 +1,10 @@
 import React from 'react';
+import SharedNav from '../Shared/SharedNav';
 
 const Fitness = () => {
     return (
         <div>
-            <h1>Fitness page</h1>
+            <SharedNav/>
         </div>
     );
 };
