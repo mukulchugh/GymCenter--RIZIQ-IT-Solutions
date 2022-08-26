@@ -23,11 +23,11 @@ const Header = () => {
                 <div className='z-20 shadow-sm '> */}
             <div className=' bg-gray-800 lg:pr-10 md:pr-4'>
                 <div className="mid-container">
-                    <div className="flex justify-end items-center text-white h-10">
+                    <div className="flex justify-end items-center text-white py-2">
 
-                        <Link to="#"><BsBell className='ml-8 text-xl'></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 text-xl'></BsCart3></Link>
-                        <Link to="#"><HiOutlineUser className='ml-8 text-xl'></HiOutlineUser></Link>
+                        <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
+                        <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
+                        <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
 
                     </div>
                 </div>

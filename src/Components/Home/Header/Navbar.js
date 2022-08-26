@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <div class="navbar bg-transparent text-white z-50">
             <div class="navbar-start">
-                <img src={logo} alt="" />
+                <img className='w-24' src={logo} alt="" />
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">

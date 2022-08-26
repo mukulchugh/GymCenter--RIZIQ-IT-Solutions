@@ -10,12 +10,11 @@ const SharedNav = () => {
         <>
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4'>
                 <div className="mid-container">
-                    <div className="flex justify-end items-center text-white h-10">
+                    <div className="flex justify-end items-center text-white py-2">
 
-                        <Link to="#"><BsBell className='ml-8 text-xl'></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 text-xl'></BsCart3></Link>
-                        <Link to="#"><HiOutlineUser className='ml-8 text-xl'></HiOutlineUser></Link>
-
+                        <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
+                        <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
+                        <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
                     </div>
                 </div>
             </div>
@@ -24,7 +23,7 @@ const SharedNav = () => {
                 <div className='mid-container'>
                     <div class="navbar text-white z-50">
                         <div class="navbar-start">
-                            <img src={logo} alt="" />
+                            <img className='w-24' src={logo} alt="" />
                         </div>
                         <div class="navbar-end hidden lg:flex">
                             <ul class="menu menu-horizontal p-0">
