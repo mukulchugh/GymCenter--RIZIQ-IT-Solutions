@@ -2,6 +2,7 @@ import React from 'react';
 import SharedNav from '../Shared/SharedNav';
 import FitnessOneImage from '../../../assets/Image/Fitness/kik.png'
 import FitnessTwoImage from '../../../assets/Image/Fitness/nu.png'
+import Package from '../Package/Package';
 
 const Fitness = () => {
     return (
@@ -40,6 +41,10 @@ const Fitness = () => {
                     </div>
                 </div>
 
+            </div>
+            <div className="mid-container">
+                <h1 className='uppercase mt-10 mb-5 text-primary font-extrabold text-2xl'>recomended<br /> packeges for you</h1>
+                <Package />
             </div>
         </>
     );
