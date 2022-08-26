@@ -37,6 +37,11 @@
     visibility: visible;
 }
 
-.home_navbar{
+.home_navbar {
     background-color: #444444;
 }
+
+/* .top_small_nav {
+    height: 50px !important;
+    padding: 4px 0 !important;
+} */
