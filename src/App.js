@@ -12,10 +12,11 @@ import Shop from './Components/Pages/Shop/Shop';
 import Testimonials from './Components/Pages/Testimonials/Testimonials';
 import Trainers from './Components/Pages/Trainers/Trainers';
 import Login from './Components/Pages/Shared/Login';
+import FigmaLogin from './Components/Pages/Shared/FigmaLogin';
 
 function App() {
   return (
-    <div>
+    <div className='bg-white'>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />
@@ -26,7 +27,7 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<FigmaLogin />} />
       </Routes>
       <Footer />
       <Toaster
