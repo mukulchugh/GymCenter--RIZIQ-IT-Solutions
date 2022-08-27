@@ -19,14 +19,14 @@ const Trending = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-7'>
-                <div class=" p-0">
+            <div className='grid md:grid-cols-3 sm:grid-cols-2 gap-7'>
+                <div className="p-0">
                     <div>
                         <img className='w-full rounded' src={img1} alt="img" />
                     </div>
-                    <div class=" px-0 py-3">
+                    <div className=" px-0 py-3">
                         <p className='text-xs'>Drama <span className='ml-4'>1 Month Ago</span></p>
-                        <h2 class="text-xl font-semibold py-2">Second Chance</h2>
+                        <h2 className="text-xl font-semibold py-2">Second Chance</h2>
                         <p className='text-sm'>lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
 
                         <div className='mt-4 flex items-center justify-between'>
@@ -40,9 +40,9 @@ const Trending = () => {
                     <div>
                         <img className='w-full rounded' src={img2} alt="img" />
                     </div>
-                    <div class=" px-0 py-3">
+                    <div className=" px-0 py-3">
                         <p className='text-xs'>Drama <span className='ml-4'>1 Month Ago</span></p>
-                        <h2 class="text-xl font-semibold py-2">Second Chance</h2>
+                        <h2 className="text-xl font-semibold py-2">Second Chance</h2>
                         <p className='text-sm'>lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
 
                         <div className='mt-4 flex items-center justify-between'>
@@ -56,9 +56,9 @@ const Trending = () => {
                     <div>
                         <img className='w-full rounded' src={img3} alt="img" />
                     </div>
-                    <div class=" px-0 py-3">
+                    <div className=" px-0 py-3">
                         <p className='text-xs'>Drama <span className='ml-4'>1 Month Ago</span></p>
-                        <h2 class="text-xl font-semibold py-2">Second Chance</h2>
+                        <h2 className="text-xl font-semibold py-2">Second Chance</h2>
                         <p className='text-sm'>lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
 
                         <div className='mt-4 flex items-center justify-between'>

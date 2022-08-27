@@ -18,9 +18,9 @@ const ShortReads = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-7'>
+            <div className='grid md:grid-cols-3 gap-7'>
                 <div className='flex items-center gap-5'>
-                    <div className='w-[40%] h-28'>
+                    <div className='w-[40%] md:h-28 h-32'>
                         <img className='w-full h-full' src={img1} alt="" />
                     </div>
                     <div className='w-[60%]'>
@@ -30,7 +30,7 @@ const ShortReads = () => {
                     </div>
                 </div>
                 <div className='flex items-center gap-5'>
-                    <div className='w-[40%] h-28'>
+                    <div className='w-[40%] md:h-28 h-32'>
                         <img className='w-full h-full' src={img2} alt="" />
                     </div>
                     <div className='w-[60%]'>
@@ -40,7 +40,7 @@ const ShortReads = () => {
                     </div>
                 </div>
                 <div className='flex items-center gap-5'>
-                    <div className='w-[40%] h-28'>
+                    <div className='w-[40%] md:h-28 h-32'>
                         <img className='w-full h-full' src={img3} alt="" />
                     </div>
                     <div className='w-[60%]'>
