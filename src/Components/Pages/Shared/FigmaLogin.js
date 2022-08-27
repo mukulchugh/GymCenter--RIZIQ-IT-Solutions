@@ -40,7 +40,7 @@ const FigmaLogin = () => {
                                     trigger('email')
                                 }}
                             />
-                            <small className='text-[#FF4B2B] text-sm font-medium mx-auto my-2'>{errors?.email?.message}</small>
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.email?.message}</small>
                         </div>
                         <div className="flex  w-full mx-auto flex-col mt-5">
                             <label className='text-[#747474] text-sm font-medium ml-4 mb-2' >Password</label>
@@ -56,7 +56,7 @@ const FigmaLogin = () => {
                                     trigger('password')
                                 }}
                             />
-                            <small className='text-[#FF4B2B] text-sm font-medium mx-auto my-2'>{errors?.password?.message}</small>
+                            <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.password?.message}</small>
                         </div>
 
                         <div className='flex mt-[35px] w-full mx-auto justify-between items-center'>
