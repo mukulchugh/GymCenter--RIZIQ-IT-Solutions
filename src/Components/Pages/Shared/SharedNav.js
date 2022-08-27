@@ -19,6 +19,7 @@ const SharedNav = () => {
             navigate('/login');
         }
     }
+    
     return (
         <>
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4'>

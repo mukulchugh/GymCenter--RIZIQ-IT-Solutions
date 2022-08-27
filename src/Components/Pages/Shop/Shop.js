@@ -1,10 +1,14 @@
 import React from 'react';
+import SharedNav from '../Shared/SharedNav';
 
 const Shop = () => {
     return (
-        <div>
-            this is shop page
-        </div>
+        <>
+            <SharedNav />
+            <div>
+                this is shop page
+            </div>
+        </>
     );
 };
 
