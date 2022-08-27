@@ -38,7 +38,7 @@ const SharedNav = () => {
                 <div className='mid-container'>
                     <div className="navbar text-white z-50">
                         <div className="navbar-start">
-                        <Link to='/'><img style={{ height: '50px' }} src={logo} alt="" /></Link>
+                            <Link to='/'><img style={{ height: '50px' }} src={logo} alt="" /></Link>
                         </div>
                         <div className="navbar-end hidden lg:flex">
                             <ul className="menu menu-horizontal p-0">
@@ -67,15 +67,15 @@ const SharedNav = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                                 </label>
                                 <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-[#dbe5fa] z-50 text-neutral ">
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Home</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">About</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Fitness</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Trainers</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Testimonials</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Blog</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Shop</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Contact</a></li>
-                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Login</a></li>
+                                    <li><Link to='/' className="uppercase hover_effect font-bold text-sm" href="#">Home</Link></li>
+                                    <li><Link to='/about' className="uppercase hover_effect font-bold text-sm" href="#">About</Link></li>
+                                    <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm" href="#">Fitness</Link></li>
+                                    <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm" href="#">Trainers</Link></li>
+                                    <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm" href="#">Testimonials</Link></li>
+                                    <li><Link to='/blog' className="uppercase hover_effect font-bold text-sm" href="#">Blog</Link></li>
+                                    <li><Link to='/shop' className="uppercase hover_effect font-bold text-sm" href="#">Shop</Link></li>
+                                    <li><Link to='/contact' className="uppercase hover_effect font-bold text-sm" href="#">Contact</Link></li>
+                                    <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
                                 </ul>
                             </div>
                         </div>
