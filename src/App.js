@@ -16,7 +16,7 @@ import FigmaLogin from './Components/Pages/Shared/FigmaLogin';
 
 function App() {
   return (
-    <div className='bg-white'>
+    <div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />

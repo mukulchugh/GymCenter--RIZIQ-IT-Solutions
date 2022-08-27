@@ -73,12 +73,6 @@ const Contact = () => {
                                 </ul>
                             </div>
                             <div>
-                                <h1 className='text-2xl mb-3 font-semibold'>Services</h1>
-                                <p className='text-sm mb-2'>Digital Management</p>
-                                <p className='text-sm'>Media Art Production</p>
-                            </div>
-
-                            <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Contact Us</h1>
                                 <h1 className='mb-2 text-lg'>Call Us</h1>
                                 <p className='text-sm'>+000-0-000-0000<br />
@@ -89,6 +83,13 @@ const Contact = () => {
                                 <p className='text-sm'>+000-0-000-0000<br />
                                     +000-0-000-0000</p>
                             </div>
+                            <div>
+                                <h1 className='text-2xl mb-3 font-semibold'>Services</h1>
+                                <p className='text-sm mb-2'>Digital Management</p>
+                                <p className='text-sm'>Media Art Production</p>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
