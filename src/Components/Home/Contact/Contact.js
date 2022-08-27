@@ -47,7 +47,7 @@ const Contact = () => {
 
             <div className='grid lg:grid-cols-2 md:grid-cols-2 lg:pb-24 pb-10 md:gap-10' >
                 <div className='w-full h-full rounded '>
-                    <iframe class="w-full h-full rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1641716772852!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe className="w-full h-full rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1641716772852!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
 
                 </div>
 
@@ -81,17 +81,17 @@ const Contact = () => {
                 </div> */}
 
                 <div className='mt-5'>
-                    <div class="form-control mb-3">
-                        <input type="text" placeholder="Name" class="input input-bordered" />
+                    <div className="form-control mb-3">
+                        <input type="text" placeholder="Name" className="input input-bordered" />
                     </div>
-                    <div class="form-control">
-                        <input type="text" placeholder="Email" class="input input-bordered mb-3" />
+                    <div className="form-control">
+                        <input type="text" placeholder="Email" className="input input-bordered mb-3" />
                     </div>
-                    <div class="form-control h-32">
-                    <textarea class="textarea textarea-bordered h-full" placeholder="Your Message"></textarea>
+                    <div className="form-control h-32">
+                        <textarea className="textarea textarea-bordered h-full" placeholder="Your Message"></textarea>
                     </div>
-                    <div class="form-control mt-6">
-                        <button class="btn btn-primary">Send Message</button>
+                    <div className="form-control mt-6">
+                        <button className="btn btn-primary">Send Message</button>
                     </div>
                 </div>
             </div>

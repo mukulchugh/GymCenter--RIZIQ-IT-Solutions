@@ -3,34 +3,65 @@ import LoginImage from '../../../assets/Image/Login/log.PNG'
 import Logo from '../../../assets/Image/Logo/logo2.png'
 import GoogleLogo from '../../../assets/Image/Login/icons8-google.svg'
 import SharedNav from './SharedNav';
+import { useForm } from 'react-hook-form';
 
 const FigmaLogin = () => {
+    const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
+
+    const onSubmitParam = async (data) => {
+        console.log(data);
+        reset();
+    }
     return (
         <>
             <SharedNav />
-            <div className='flex  justify-between h-[92vh]'>
+            <div className='flex justify-between min-h-[92vh]'>
                 <div className="login_image md:w-[60%] hidden  md:block">
                     <img className="w-full h-full" src={LoginImage} alt="" />
                 </div>
                 <div className="login_form md:w-[40%] w-full px-5 mt-10 ">
 
                     <img className='mx-auto' src={Logo} alt="" />
-                    <h1 class="text-xl font-bold text-center mt-2 mb-3">Nice to see you again!</h1>
+                    <h1 className="text-xl font-bold text-center mt-2 mb-3">Nice to see you again!</h1>
 
 
-                    <form className="lg:w-[85%] md:w-full sm:w-2/3 w-full mx-auto" action="#">
+                    <form onSubmit={handleSubmit(onSubmitParam)} className="lg:w-[85%] md:w-full sm:w-2/3 w-full mx-auto">
                         <div className="flex  w-full mx-auto flex-col">
-                            <label className='text-[#747474] text-sm font-medium ml-4 mb-2' for="email">Login</label>
-                            <input className='py-3 px-5 bg-[#F2F2F2] rounded-md' type="email" name="email" id="" placeholder='Email or phone number' />
+                            <label className='text-[#747474] text-sm font-medium ml-4 mb-2'>Login</label>
+                            <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="email" name="email" id="" placeholder='Email or phone number'
+                                {...register("email", {
+                                    required: 'Email is required',
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                        message: "Please enter a valid Email"
+                                    }
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('email')
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-sm font-medium mx-auto my-2'>{errors?.email?.message}</small>
                         </div>
                         <div className="flex  w-full mx-auto flex-col mt-5">
-                            <label className='text-[#747474] text-sm font-medium ml-4 mb-2' for="password">Password</label>
-                            <input className='py-3 rounded-md bg-[#F2F2F2] px-5' type="password" name="password" id="" placeholder='Enter password' />
+                            <label className='text-[#747474] text-sm font-medium ml-4 mb-2' >Password</label>
+                            <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="password" name="password" id="" placeholder='Enter password'
+                                {...register('password', {
+                                    required: 'Password is required',
+                                    minLength: {
+                                        value: 3,
+                                        message: 'Minimum 3 character required'
+                                    }
+                                })}
+                                onKeyUp={() => {
+                                    trigger('password')
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-sm font-medium mx-auto my-2'>{errors?.password?.message}</small>
                         </div>
 
                         <div className='flex mt-[35px] w-full mx-auto justify-between items-center'>
 
-                            <div class="checkbpox_container w-[30%]">
+                            <div className="checkbpox_container w-[30%]">
                                 <input type="checkbox" />
                             </div>
                             <div className="flex remember_forget items-center justify-between w-[70%]">
