@@ -8,7 +8,7 @@ const Shop = () => {
         <>
             <SharedNav />
             <div className='mid-container'>
-                <div className='my-16  grid grid-cols-5 gap-6'>
+                <div className='my-16 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
                     <div className="card bg-accent border rounded">
                         <figure className="px-5 pt-5">
                             <img src={img} alt="Shoes" className="w-full" />
