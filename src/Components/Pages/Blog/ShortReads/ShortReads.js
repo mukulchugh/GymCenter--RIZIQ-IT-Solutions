@@ -8,7 +8,7 @@ import img3 from '../../../../assets/Image/blog/short3.png'
 const ShortReads = () => {
     return (
         <div className='mt-16'>
-            <div className='pb-2 flex justify-between border-b-[1px] border-[#00000040] mb-7'>
+            <div className='pb-2 flex justify-between border-b-[1px] border-[#00000018] mb-7'>
                 <div>
                     <h2 className='text-xl font-semibold  '>Short Reads</h2>
                 </div>
@@ -34,8 +34,8 @@ const ShortReads = () => {
                         <img className='w-full h-full' src={img2} alt="" />
                     </div>
                     <div className='w-[60%]'>
-                        <h2 className='font-semibold'>Akame Ga Kill:</h2>
-                        <h2 className='font-semibold'>Season Finale</h2>
+                        <h2 className='font-semibold'>Naruto Uzumaki:</h2>
+                        <h2 className='font-semibold'>Hidden Village</h2>
                         <p className='text-xs mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ const ShortReads = () => {
                         <img className='w-full h-full' src={img3} alt="" />
                     </div>
                     <div className='w-[60%]'>
-                        <h2 className='font-semibold'>Akame Ga Kill:</h2>
-                        <h2 className='font-semibold'>Season Finale</h2>
+                        <h2 className='font-semibold'>Love Juice Season:</h2>
+                        <h2 className='font-semibold'> Priemere</h2>
                         <p className='text-xs mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     </div>
                 </div>

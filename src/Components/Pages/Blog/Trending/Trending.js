@@ -9,7 +9,7 @@ import { HiArrowNarrowRight } from 'react-icons/hi';
 const Trending = () => {
     return (
         <div className='mt-16'>
-            <div className='pb-2 flex justify-between border-b-[1px] border-[#00000040] mb-5'>
+            <div className='pb-2 flex justify-between border-b-[1px] border-[#00000018] mb-5'>
                 <div>
                     <h2 className='text-xl font-semibold  '>Now Trending</h2>
                 </div>
