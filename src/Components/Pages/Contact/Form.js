@@ -4,7 +4,7 @@ import CountrySelect from './CountrySelect';
 const Form = () => {
 
     return (
-        <div className='mt-16 bg-[#1A191A] py-20'>
+        <div className='mt-16 bg-[#1A191A] py-24'>
             <div className='mid-container flex justify-between items-center  '>
                 <div className='w-[50%]'>
                     <h2 className='text-4xl font-semibold text-white'>Want to join us?</h2>
