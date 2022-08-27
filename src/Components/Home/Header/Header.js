@@ -35,7 +35,7 @@ const Header = () => {
         <>
             {/* <div className='relative'>
                 <div className='z-20 shadow-sm '> */}
-            <div className='bg-gray-800 border-b h-14 lg:pr-10 md:pr-4 z-50'>
+            <div className='bg-gray-800 border-b lg:pr-10 md:pr-4 z-50'>
                 <div className="mid-container">
                     <div className="flex justify-end items-center text-white py-2">
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
@@ -51,7 +51,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="banner -mt-[88px] z-0 w-full flex items-center justify-center flex-col">
+            <div className="banner -mt-[68px] z-0 w-full flex items-center justify-center flex-col">
                 <h1 className='lg:text-5xl uppercase md:text-4xl text-3xl font-extrabold text-white text-center'>
                     Every step is progress <br />
                     Start Today
