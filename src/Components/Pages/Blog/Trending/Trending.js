@@ -19,8 +19,8 @@ const Trending = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-7'>
-                <div class=" p-0">
+            <div className='grid md:grid-cols-3 sm:grid-cols-2 gap-7'>
+                <div class="p-0">
                     <div>
                         <img className='w-full rounded' src={img1} alt="img" />
                     </div>
