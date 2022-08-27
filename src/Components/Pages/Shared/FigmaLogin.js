@@ -8,7 +8,7 @@ const FigmaLogin = () => {
     return (
         <>
             <SharedNav />
-            <div className='flex  justify-between h-[92vh]'>
+            <div className='flex  justify-between min-h-[92vh]'>
                 <div className="login_image md:w-[60%] hidden  md:block">
                     <img className="w-full h-full" src={LoginImage} alt="" />
                 </div>

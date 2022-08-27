@@ -1,0 +1,15 @@
+.css-1s2u09g-control{
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.css-qc6sy-singleValue{
+    color: rgba(231, 240, 255, 0.526) !important;
+}
+.css-319lph-ValueContainer:focus .css-1s2u09g-control{
+    background-color: red !important;
+    color: black !important;
+}
