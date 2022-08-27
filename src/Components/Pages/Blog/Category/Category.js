@@ -30,8 +30,8 @@ const Category = () => {
             </div>
 
 
-            <div className='flex gap-7 mt-5'>
-                <div className='w-[70%] p-5 grid grid-cols-2 gap-7 rounded-xl border border-[#00000025]'>
+            <div className='md:flex gap-7 mt-5'>
+                <div className='md:w-[70%] w-full p-5 grid sm:grid-cols-2 gap-7 rounded-xl border border-[#00000025] md:mb-0 mb-7'>
                     <div>
                         <img className='w-full' src={img1} alt="" />
                         <div className='mt-5'>
@@ -40,17 +40,17 @@ const Category = () => {
                             <p className='text-xs'>lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
                         </div>
 
-                        <h2 className='flex items-center text-xs font-bold mt-16 cursor-pointer hover:text-primary'>Load more <HiArrowNarrowRight className='ml-2' /></h2>
+                        <h2 className='flex items-center text-xs font-bold sm:mt-16 mt-7 cursor-pointer hover:text-primary'>Load more <HiArrowNarrowRight className='ml-2' /></h2>
                     </div>
 
-                    <div className='grid'>
+                    <div className='grid gap-5'>
                         <div className='flex items-center gap-5'>
                             <div className='w-[40%] h-24'>
                                 <img className='w-full h-full' src={img3} alt="" />
                             </div>
                             <div className='w-[60%]'>
-                                <h2 className='font-semibold'>Love Juice Season:</h2>
-                                <h2 className='font-semibold'> Priemere</h2>
+                                <h2 className='font-semibold '>Love Juice Season:</h2>
+                                <h2 className='font-semibold '> Priemere</h2>
                                 <p className='text-xs mt-2'>21 March 2022</p>
                             </div>
                         </div>
@@ -87,11 +87,11 @@ const Category = () => {
                     </div>
                 </div>
 
-                <div className='w-[30%] p-5  border border-[#00000025] rounded-xl'>
+                <div className='md:w-[30%] w-full p-5  border border-[#00000025] rounded-xl'>
                     <h1 className='mb-2 font-semibold'>Archive</h1>
                     <div className='grid gap-5'>
                         <div className='flex items-center gap-5'>
-                            <div className='w-[40%] h-20'>
+                            <div className='w-[40%] md:h-20 h-28'>
                                 <img className='w-full h-full' src={img6} alt="" />
                             </div>
                             <div className='w-[60%]'>
@@ -101,7 +101,7 @@ const Category = () => {
                             </div>
                         </div>
                         <div className='flex items-center gap-5'>
-                            <div className='w-[40%] h-20'>
+                            <div className='w-[40%] md:h-20 h-28'>
                                 <img className='w-full h-full' src={img7} alt="" />
                             </div>
                             <div className='w-[60%]'>
@@ -111,7 +111,7 @@ const Category = () => {
                             </div>
                         </div>
                         <div className='flex items-center gap-5'>
-                            <div className='w-[40%] h-20'>
+                            <div className='w-[40%] md:h-20 h-28'>
                                 <img className='w-full h-full' src={img8} alt="" />
                             </div>
                             <div className='w-[60%]'>
@@ -121,7 +121,7 @@ const Category = () => {
                             </div>
                         </div>
                         <div className='flex items-center gap-5'>
-                            <div className='w-[40%] h-20'>
+                            <div className='w-[40%] md:h-20 h-28'>
                                 <img className='w-full h-full' src={img9} alt="" />
                             </div>
                             <div className='w-[60%]'>
@@ -131,7 +131,7 @@ const Category = () => {
                             </div>
                         </div>
                         <div className='flex items-center gap-5'>
-                            <div className='w-[40%] h-20'>
+                            <div className='w-[40%] md:h-20 h-28'>
                                 <img className='w-full h-full' src={img10} alt="" />
                             </div>
                             <div className='w-[60%]'>
