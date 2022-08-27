@@ -11,6 +11,7 @@ import Fitness from './Components/Pages/Fitness/Fitness';
 import Shop from './Components/Pages/Shop/Shop';
 import Testimonials from './Components/Pages/Testimonials/Testimonials';
 import Trainers from './Components/Pages/Trainers/Trainers';
+import Login from './Components/Pages/Shared/Login';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />
       <Toaster
