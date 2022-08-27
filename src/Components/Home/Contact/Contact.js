@@ -12,34 +12,34 @@ const Contact = () => {
             <h1 className='text-4xl font-bold text-primary mb-10'>Contact us</h1>
             <div className='mb-10 grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 gap-5'>
 
-                <div className=" rounded-2xl shadow-md p-3 text-center bg-accent">
+                <div className=" rounded-2xl shadow-md p-3 text-center ">
                     <div className='flex justify-center'>
                         <img src={img1} alt="" />
                     </div>
                     <div>
 
-                        <h2 className=' font-bold'>7:00AM To 12:30AM</h2>
-                        <h2 className=' font-bold'>fb.com/CrossFitBoxDHK</h2>
-                        <h2 className=' font-bold'>@CrossFitBoxDHK</h2>
+                        <h2 className=' font-semibold text-sm'>7:00AM To 12:30AM</h2>
+                        <h2 className=' font-semibold text-sm'>fb.com/CrossFitBoxDHK</h2>
+                        <h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2>
                     </div>
                 </div>
-                <div className=" rounded-2xl shadow-md p-3 text-center bg-accent">
+                <div className=" rounded-2xl shadow-md p-3 text-center">
                     <div className='flex justify-center'>
                         <img src={img2} alt="" />
                     </div>
                     <div>
-                        <h2 className=' font-bold '>880 18475 46080</h2>
-                        <h2 className=' font-bold '>880 18475 46081</h2>
+                        <h2 className=' font-semibold  text-sm'>880 18475 46080</h2>
+                        <h2 className=' font-semibold  text-sm'>880 18475 46081</h2>
                     </div>
                 </div>
-                <div className=" rounded-2xl shadow-md p-3 text-center bg-accent">
+                <div className=" rounded-2xl shadow-md p-3 text-center ">
                     <div className='flex justify-center'>
                         <img src={img3} alt="" />
                     </div>
                     <div className='pb-2'>
-                        <h2 className='font-bold  '>Green Grandeur (8th floor) 58/E,</h2>
-                        <h2 className='font-bold '>Kemal Ataturk Avenue</h2>
-                        <h2 className='font-bold '>Banani, Dhaka, Bangladesh</h2>
+                        <h2 className='font-semibold text-sm  '>Green Grandeur (8th floor) 58/E,</h2>
+                        <h2 className='font-semibold text-sm '>Kemal Ataturk Avenue</h2>
+                        <h2 className='font-semibold text-sm '>Banani, Dhaka, Bangladesh</h2>
                     </div>
                 </div>
             </div>
