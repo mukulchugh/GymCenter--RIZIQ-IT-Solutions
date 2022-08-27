@@ -1,10 +1,14 @@
 import React from 'react';
+import SharedNav from '../Shared/SharedNav';
 
 const Contact = () => {
     return (
-        <div>
-            this is contact page
-        </div>
+        <>
+            <SharedNav />
+            <div>
+                this is contact page
+            </div>
+        </>
     );
 };
 
