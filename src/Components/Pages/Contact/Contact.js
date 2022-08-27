@@ -40,6 +40,35 @@ const Contact = () => {
 
 
             </div>
+
+            <div className='bg-primary border-b'>
+                <div className="mid-container">
+                    <div className="grid grid-colls-2 sm:grid-cols-3 md:grid-cols-5 gap-10 ">
+                        <div className='w-1/2'>
+                            <img className='' src={logo} alt="" />
+                        </div>
+                        <div>
+                            <h1 className='text-2xl font-semibold'>Office</h1>
+                            <p>Office no. G-02.<br />
+                                Building 1, Ground Floor.<br />
+                                Dubai Media City - Dubai<br />
+                                <span className='font-bold'>
+                                    Available Everyday<br />
+                                    From 9:00 AM to 6:00 PM</span>
+                            </p>
+                        </div>
+                        <div>
+                            Office
+                        </div>
+                        <div>
+                            Office
+                        </div>
+                        <div>
+                            Office
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
