@@ -3,8 +3,15 @@
 
 body {
     font-family: 'Nunito', sans-serif;
+
 }
-h2{
+
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+h2 {
     font-family: 'Poppins', sans-serif !important;
 }
 
@@ -235,6 +242,7 @@ input[type="checkbox"]:checked:before {
 input[type="checkbox"]:checked:after {
     background-color: #55f696;
 }
+
 
 
 

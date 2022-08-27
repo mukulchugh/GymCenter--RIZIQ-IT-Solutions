@@ -47,38 +47,9 @@ const Contact = () => {
 
             <div className='grid lg:grid-cols-2 md:grid-cols-2 lg:pb-24 pb-10 md:gap-10' >
                 <div className='w-full h-full rounded '>
-                    <iframe className="w-full h-full rounded-xl" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1641716772852!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                <iframe className='w-full h-full rounded-xl border' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.16975104848854!2d90.4090285514542!3d23.793124890614084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70eb0eecca3%3A0x57d900b91d331294!2sGreen%20Grandeur!5e0!3m2!1sen!2sbd!4v1661632020017!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 </div>
-
-                {/* <div className='pt-10 pb-5'>
-                    <button className='btn btn-xs btn-primary mb-3' type="">CONTACT US</button>
-                    <h1 className='text-3xl font-bold'>Start Today</h1>
-                    <h1 className='text-3xl font-bold'>Start Here</h1>
-                    <p className='mt-5 text-secondary text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus repellat autem officia voluptatem quis optio ullam doloribus ipsam,</p>
-
-                    <button className='btn btn-primary font-bold  mt-5 text-white px-8 mr-3 rounded-none' type="">JOIN CFA NOW</button>
-                    <button className='btn btn-primary font-bold  mt-5 text-white px-5 rounded-none' type="">call</button>
-
-                    <div className='mt-7 grid grid-cols-2 gap-5'>
-                        <div className='flex '>
-                            <GoLocation className='mr-2 mt-1 text-primary' />
-                            <div>
-                                <h2 className=' font-bold text-secondary'>Green Grandeur (8th floor) 58/E,</h2>
-                                <h2 className=' font-bold text-secondary'>Kemal Ataturk Avenue</h2>
-                                <h2 className=' font-bold text-secondary'>Banani, Dhaka, Bangladesh</h2>
-                            </div>
-                        </div>
-                        <div className='flex '>
-                            <BsWhatsapp className='mr-2 mt-1 text-primary' />
-
-                            <div>
-                                <h2 className=' font-bold text-secondary'>880 18475 46080</h2>
-                                <h2 className=' font-bold text-secondary'>880 18475 46081</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 
                 <div className='mt-5'>
                     <div className="form-control mb-3">

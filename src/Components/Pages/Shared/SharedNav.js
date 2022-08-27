@@ -38,7 +38,7 @@ const SharedNav = () => {
                 <div className='mid-container'>
                     <div className="navbar text-white z-50">
                         <div className="navbar-start">
-                            <img style={{ height: '50px' }} className='w-24' src={logo} alt="" />
+                        <Link to='/'><img style={{ height: '50px' }} src={logo} alt="" /></Link>
                         </div>
                         <div className="navbar-end hidden lg:flex">
                             <ul className="menu menu-horizontal p-0">
