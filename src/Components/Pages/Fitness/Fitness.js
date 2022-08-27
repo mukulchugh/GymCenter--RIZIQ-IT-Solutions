@@ -43,7 +43,7 @@ const Fitness = () => {
 
             </div>
             <div className="mid-container">
-                <h1 className='uppercase mt-10 mb-5 text-primary font-extrabold text-2xl'>recomended<br /> packeges for you</h1>
+                <h1 className='uppercase mt-16 mb-5 text-primary font-extrabold text-3xl '>recomended<br /> packeges for you</h1>
                 <Package />
             </div>
         </>
