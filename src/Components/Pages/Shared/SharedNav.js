@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import '../../Home/Header/Navbar.css'
 import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
+import { MdOutlineSpaceDashboard } from 'react-icons/md';
 
 const SharedNav = () => {
     return (
@@ -15,6 +16,7 @@ const SharedNav = () => {
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
+                        <Link to="#"><MdOutlineSpaceDashboard className='ml-8 '></MdOutlineSpaceDashboard></Link>
                     </div>
                 </div>
             </div>

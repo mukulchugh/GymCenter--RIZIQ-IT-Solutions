@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Toaster } from 'react-hot-toast';
 import Footer from './Components/Home/Footer/Footer';
 import Home from './Components/Home/Home';
 import AboutUs from './Components/Pages/AboutUs/AboutUs';
@@ -25,7 +26,11 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
-      <Footer/>
+      <Footer />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }

@@ -1,13 +1,17 @@
-
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { MdOutlineSpaceDashboard } from 'react-icons/md';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useState(null);
     const [background, setBackground] = useState(false);
+    const navigate = useNavigate();
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY >= 80) {
@@ -17,6 +21,16 @@ const Header = () => {
             }
         })
     })
+
+    const handleDashboardNavigation = () => {
+        if (loggedInUser) {
+            navigate('/dashboard');
+        } else {
+            toast.error('Please Login to access this page');
+            navigate('/login');
+        }
+    }
+
     return (
         <>
             {/* <div className='relative'>
@@ -27,6 +41,7 @@ const Header = () => {
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
+                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
                     </div>
                 </div>
             </div>
