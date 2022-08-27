@@ -58,6 +58,7 @@ const SharedNav = () => {
                                 <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm" href="#">Blog</Link></li>
                                 <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm" href="#">Shop</Link></li>
                                 <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm" href="#">Contact</Link></li>
+                                <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
                             </ul>
                         </div>
                         <div className='navbar-end lg:hidden'>
@@ -74,6 +75,7 @@ const SharedNav = () => {
                                     <li><a className="uppercase hover_effect font-bold text-sm" href="#">Blog</a></li>
                                     <li><a className="uppercase hover_effect font-bold text-sm" href="#">Shop</a></li>
                                     <li><a className="uppercase hover_effect font-bold text-sm" href="#">Contact</a></li>
+                                    <li><a className="uppercase hover_effect font-bold text-sm" href="#">Login</a></li>
                                 </ul>
                             </div>
                         </div>
