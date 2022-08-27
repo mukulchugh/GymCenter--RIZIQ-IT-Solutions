@@ -6,51 +6,51 @@ import { TbCurrencyTaka } from 'react-icons/tb';
 const Product = () => {
     return (
         <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-5 '>
-            <div class="card  shadow-xl bg-accent">
-                <figure class="px-10 pt-10">
-                    <img src={itemImg} alt="Shoes" class="rounded-xl" />
+            <div className="card  shadow-xl ">
+                <figure className="px-10 pt-10">
+                    <img src={itemImg} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title font-semibold">Product Name</h2>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl' />199</p>
+                    <div className="card-actions">
+                        <button className="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
                 </div>
             </div>
-            <div class="card bg-accent shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={itemImg} alt="Shoes" class="rounded-xl" />
+            <div className="card  shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src={itemImg} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title font-semibold">Product Name</h2>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl' />199</p>
+                    <div className="card-actions">
+                        <button className="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
                 </div>
             </div>
-            <div class="card bg-accent shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={itemImg} alt="Shoes" class="rounded-xl" />
+            <div className="card  shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src={itemImg} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title font-semibold">Product Name</h2>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl' />199</p>
+                    <div className="card-actions">
+                        <button className="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
                 </div>
             </div>
-            <div class="card bg-accent shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={itemImg} alt="Shoes" class="rounded-xl" />
+            <div className="card shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src={itemImg} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title font-bold">Product Name</h2>
-                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl'/>199</p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title font-semibold">Product Name</h2>
+                    <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl' />199</p>
+                    <div className="card-actions">
+                        <button className="btn btn-primary btn-sm mt-2">{FaCartPlus} Add to cart</button>
                     </div>
                 </div>
             </div>

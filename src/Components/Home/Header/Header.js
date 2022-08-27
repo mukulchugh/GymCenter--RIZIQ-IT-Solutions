@@ -1,13 +1,17 @@
-
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { MdOutlineSpaceDashboard } from 'react-icons/md';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useState(null);
     const [background, setBackground] = useState(false);
+    const navigate = useNavigate();
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY >= 80) {
@@ -17,16 +21,27 @@ const Header = () => {
             }
         })
     })
+
+    const handleDashboardNavigation = () => {
+        if (loggedInUser) {
+            navigate('/dashboard');
+        } else {
+            toast.error('Please Login to access this page');
+            navigate('/login');
+        }
+    }
+
     return (
         <>
             {/* <div className='relative'>
                 <div className='z-20 shadow-sm '> */}
-            <div className='bg-gray-800 border-b lg:pr-10 md:pr-4'>
+            <div className='bg-gray-800 border-b lg:pr-10 md:pr-4 z-50'>
                 <div className="mid-container">
                     <div className="flex justify-end items-center text-white py-2">
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
+                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
                     </div>
                 </div>
             </div>
@@ -36,7 +51,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="banner -mt-[88px] z-0 w-full flex items-center justify-center flex-col">
+            <div className="banner -mt-[68px] z-0 w-full flex items-center justify-center flex-col">
                 <h1 className='lg:text-5xl uppercase md:text-4xl text-3xl font-extrabold text-white text-center'>
                     Every step is progress <br />
                     Start Today

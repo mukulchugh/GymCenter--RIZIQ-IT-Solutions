@@ -7,9 +7,9 @@ import { BsYoutube } from 'react-icons/bs';
 const Footer = () => {
     return (
         <div className='bg-primary'>
-            <footer class="mid-container items-center p-4 text-neutral-content">
+            <footer className="mid-container items-center p-4 text-neutral-content">
                 <div className='sm:flex sm:justify-between'>
-                    <div class="flex gap-5 py-2 text-white justify-center">
+                    <div className="flex gap-5 py-2 text-white justify-center">
                         <a href="#"><FaFacebook /></a>
                         <a href="#"><AiOutlineInstagram /></a>
                         <a href="#"><FaTwitter /></a>
