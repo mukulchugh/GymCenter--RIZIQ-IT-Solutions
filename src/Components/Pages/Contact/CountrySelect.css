@@ -26,3 +26,8 @@
     border: none !important;
     outline: none !important;
 }
+
+#join-us{
+    background-image: url('../../../assets//Image/contact/crossfit.png');
+    background-repeat: no-repeat;
+}

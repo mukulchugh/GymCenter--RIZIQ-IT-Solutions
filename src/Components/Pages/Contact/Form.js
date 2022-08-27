@@ -5,7 +5,7 @@ const Form = () => {
 
     return (
         <div className='mt-16 bg-[#1A191A] py-24'>
-            <div className='mid-container flex justify-between items-center  '>
+            <div className='mid-container flex justify-between items-center ' id='join-us'>
                 <div className='w-[50%]'>
                     <h2 className='text-4xl font-semibold text-white'>Want to join us?</h2>
                     <h2 className='text-4xl font-semibold text-white mt-1'>Let's discuss</h2>
