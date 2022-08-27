@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../../assets/Logo.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../../Home/Header/Navbar.css'
 import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
+import { MdOutlineSpaceDashboard } from 'react-icons/md';
+import toast from 'react-hot-toast';
 
 const SharedNav = () => {
+    const [loggedInUser, setLoggedInUser] = useState(null);
+    const navigate = useNavigate();
+
+    const handleDashboardNavigation = () => {
+        if (loggedInUser) {
+            navigate('/dashboard');
+        } else {
+            toast.error('Please Login to access this page');
+            navigate('/login');
+        }
+    }
     return (
         <>
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4'>
@@ -15,6 +28,7 @@ const SharedNav = () => {
                         <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
+                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
                     </div>
                 </div>
             </div>
