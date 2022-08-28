@@ -3,6 +3,7 @@ import { BiSearch } from 'react-icons/bi';
 import { VscBellDot } from 'react-icons/vsc';
 import { TbCurrencyTaka } from 'react-icons/tb';
 import AccountsTable from './AccountsTable';
+import { BsPlusLg } from 'react-icons/bs';
 
 const AccountsHome = () => {
     return (
@@ -28,19 +29,27 @@ const AccountsHome = () => {
 
             <div className='grid grid-cols-3 bg-neutral py-8 mb-8'>
                 <div className='flex items-center justify-center border-r-2 border-white'>
-                    <div className='py-10 '>
+                    <div className='py-8 '>
                         <h1 className='font-bold text-xl'>Current Balance</h1>
                         <h2 className='flex items-center justify-center text-3xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
-                <div className='flex items-center justify-center border-r-2 border-white'>
-                    <div className='text-primary py-10'>
+
+                <div className='flex items-center justify-center border-r-2 border-white relative'>
+                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute -mt-32 -mr-60'>
+                        <BsPlusLg className=' font-extrabold' />
+                    </div>
+                    <div className='text-primary py-8'>
                         <h1 className='font-bold text-xl'>Total Expense</h1>
                         <h2 className='flex items-center justify-center text-3xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
-                <div className='flex items-center justify-center'>
-                    <div className='text-success py-10'>
+
+                <div className='flex items-center justify-center relative'>
+                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute -mt-32 -mr-60'>
+                        <BsPlusLg className=' font-extrabold' />
+                    </div>
+                    <div className='text-success py-8'>
                         <h1 className='font-bold text-xl'>Total Income</h1>
                         <h2 className='flex items-center justify-center text-3xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
