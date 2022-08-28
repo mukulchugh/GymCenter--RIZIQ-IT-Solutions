@@ -38,11 +38,11 @@ const Header = () => {
                 <div className='z-20 shadow-sm '> */}
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4 z-50'>
                 <div className="mid-container">
-                    <div className="flex sm:justify-end justify-evenly items-center text-white py-2">
-                        <Link to="#"><BsBell className=''></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
-                        <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
-                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
+                    <div className="flex sm:justify-end justify-evenly items-center text-white py-2 ">
+                        <Link className='hover:text-primary ' to="#"><BsBell ></BsBell></Link>
+                        <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
+                        <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
+                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                     </div>
                 </div>
             </div>
