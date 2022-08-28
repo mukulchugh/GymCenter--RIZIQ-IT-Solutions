@@ -6,10 +6,11 @@ body {
 
 }
 
+/* 
 html,
 body {
     overflow-x: hidden !important;
-}
+} */
 
 h2 {
     font-family: 'Poppins', sans-serif !important;
@@ -241,6 +242,12 @@ input[type="checkbox"]:checked:before {
 
 input[type="checkbox"]:checked:after {
     background-color: #55f696;
+}
+
+.shared_nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 500 !important;
 }
 
 
