@@ -27,10 +27,10 @@ const SharedNav = () => {
                 <div className="mid-container">
                     <div className="flex sm:justify-end justify-evenly text-white py-2">
 
-                        <Link to="#"><BsBell ></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
-                        <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
-                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
+                        <Link className='hover:text-primary' to="#"><BsBell ></BsBell></Link>
+                        <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
+                        <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
+                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ const SharedNav = () => {
                                 <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm" href="#">Home</Link></li>
                                 <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm" href="#">About</Link></li>
                                 <li tabIndex="0">
-                                    <Link to='/crossFit' className='uppercase hover_effect font-semibold text-sm'>
+                                    <Link to='/crossFit' className=' hover_effect font-semibold text-sm'>
                                         CrossFit
                                         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                     </Link>
@@ -70,6 +70,7 @@ const SharedNav = () => {
                                 <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-[#dbe5fa] z-50 text-black ">
                                     <li><Link to='/' className="uppercase hover_effect font-bold text-sm" href="#">Home</Link></li>
                                     <li><Link to='/about' className="uppercase hover_effect font-bold text-sm" href="#">About</Link></li>
+                                    <li><Link to='/crossFit' className=" hover_effect font-bold text-sm" href="#">CrossFit</Link></li>
                                     <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm" href="#">Fitness</Link></li>
                                     <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm" href="#">Trainers</Link></li>
                                     <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm" href="#">Testimonials</Link></li>
