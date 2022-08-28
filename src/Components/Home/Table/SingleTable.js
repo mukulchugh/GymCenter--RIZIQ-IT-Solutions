@@ -9,13 +9,13 @@ const SingleTable = ({ tableData, topic }) => {
                         <thead className='table_border rounded-2xl'>
                             <tr >
                                 <th className='text-primary'>Time</th>
+                                <th>sat</th>
+                                <th>sun</th>
                                 <th>mon</th>
                                 <th>tue</th>
                                 <th>wed</th>
                                 <th>thu</th>
                                 <th>fri</th>
-                                <th>sat</th>
-                                <th>sun</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,13 +24,13 @@ const SingleTable = ({ tableData, topic }) => {
                                     return (
                                         <tr key={item.id} className="hover">
                                             <td className='text-primary'>{item.time}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
-                                            <td>{item.data}</td>
+                                            <td>{item.data[0]}</td>
+                                            <td>{item.data[1]}</td>
+                                            <td>{item.data[2]}</td>
+                                            <td>{item.data[3]}</td>
+                                            <td>{item.data[4]}</td>
+                                            <td>{item.data[5]}</td>
+                                            <td>{item.data[6]}</td>
                                         </tr>
                                     )
                                 })

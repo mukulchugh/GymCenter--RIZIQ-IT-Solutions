@@ -29,7 +29,7 @@ const TabList = styled.ul`
 `;
 const TabItem = styled.li`
   display: inline-block;
-  padding: 8px 20px;
+  padding: 8px 15px;
   cursor: pointer;
   &.is-active {
   }

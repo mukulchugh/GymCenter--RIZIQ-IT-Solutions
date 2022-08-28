@@ -40,6 +40,7 @@ const Navbar = () => {
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-[#dbe5fa] z-50 text-neutral ">
                         <li><Link to='/' className="uppercase hover_effect font-bold text-sm" href="#">Home</Link></li>
                         <li><Link to='/about' className="uppercase hover_effect font-bold text-sm" href="#">About</Link></li>
+                        <li><Link to='/crossfit' className="uppercase hover_effect font-bold text-sm" href="#">CrossFit</Link></li>
                         <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm" href="#">Fitness</Link></li>
                         <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm" href="#">Trainers</Link></li>
                         <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm" href="#">Testimonials</Link></li>
