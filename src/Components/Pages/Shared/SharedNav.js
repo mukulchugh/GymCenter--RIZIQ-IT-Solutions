@@ -12,21 +12,22 @@ const SharedNav = () => {
     const navigate = useNavigate();
 
     const handleDashboardNavigation = () => {
-        if (loggedInUser) {
-            navigate('/dashboard');
-        } else {
-            toast.error('Please Login to access this page');
-            navigate('/login');
-        }
+        // if (loggedInUser) {
+        //     navigate('/dashboard');
+        // } else {
+        //     toast.error('Please Login to access this page');
+        //     navigate('/login');
+        // }
+        navigate('/dashboard/accounts-home')
     }
 
     return (
         <>
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4'>
                 <div className="mid-container">
-                    <div className="flex justify-end items-center text-white py-2">
+                    <div className="flex sm:justify-end justify-evenly text-white py-2">
 
-                        <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
+                        <Link to="#"><BsBell ></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
                         <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>

@@ -23,12 +23,13 @@ const Header = () => {
     })
 
     const handleDashboardNavigation = () => {
-        if (loggedInUser) {
-            navigate('/dashboard');
-        } else {
-            toast.error('Please Login to access this page');
-            navigate('/login');
-        }
+        // if (loggedInUser) {
+        //     navigate('/dashboard');
+        // } else {
+        //     toast.error('Please Login to access this page');
+        //     navigate('/login');
+        // }
+        navigate('/dashboard/accounts-home')
     }
 
     return (
@@ -37,8 +38,8 @@ const Header = () => {
                 <div className='z-20 shadow-sm '> */}
             <div className='bg-gray-800 border-b lg:pr-10 md:pr-4 z-50'>
                 <div className="mid-container">
-                    <div className="flex justify-end items-center text-white py-2">
-                        <Link to="#"><BsBell className='ml-8 '></BsBell></Link>
+                    <div className="flex sm:justify-end justify-evenly items-center text-white py-2">
+                        <Link to="#"><BsBell className=''></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 '></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 '></HiOutlineUser></Link>
                         <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer'></MdOutlineSpaceDashboard>
