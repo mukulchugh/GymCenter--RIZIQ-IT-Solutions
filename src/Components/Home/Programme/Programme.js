@@ -13,7 +13,7 @@ const Programme = () => {
                 className=""
                 setSelectedTab={setSelectedTab}
                 items={[
-                    { to: "crossfit", name: 'CROSSFIT' },
+                    { to: "crossfit", name: 'CrossFit' },
                     { to: "on-ramp", name: "ON RAMP" },
                     { to: "assemble", name: "ASSEMBLE" }
                 ]}
