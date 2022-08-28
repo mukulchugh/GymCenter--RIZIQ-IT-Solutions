@@ -20,6 +20,11 @@ import Orders from './Dashboard/AdminDashboard/Orders/Orders';
 import Applications from './Dashboard/AdminDashboard/Applications/Applications';
 import AccountsTransactions from './Dashboard/AdminDashboard/Transactions/AccountsTransactions';
 import AccountsSettings from './Dashboard/AdminDashboard/Settings/AccountsSettings';
+import Salary from './Dashboard/AdminDashboard/Salary/Salary';
+import Form from './Dashboard/AdminDashboard/ManageForm/ManageForm';
+import ManageForm from './Dashboard/AdminDashboard/ManageForm/ManageForm';
+import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
+import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 
 function App() {
   return (
@@ -40,11 +45,11 @@ function App() {
         <Route path="dashboard" element={<Dashboard />}>
           <Route path="accounts-home" element={<AccountsHome />} />
           <Route path="accounts-profile" element={<AccountsProfile />} />
-          <Route path="manage-products" element={<Products />} />
+          <Route path="accounts-salary" element={<Salary />} />
+          <Route path="manage-form" element={<ManageForm />} />
           <Route path="manage-orders" element={<Orders />} />
-          <Route path="applications" element={<Applications />} />
-          <Route path="accounts-transactions" element={<AccountsTransactions />} />
-          <Route path="accounts-settings" element={<AccountsSettings />} />
+          <Route path="accounts-income" element={<Incomes />} />
+          <Route path="accounts-expense" element={<Expense />} />
         </Route>
       </Routes>
       <Footer />
