@@ -11,8 +11,15 @@ import Fitness from './Components/Pages/Fitness/Fitness';
 import Shop from './Components/Pages/Shop/Shop';
 import Testimonials from './Components/Pages/Testimonials/Testimonials';
 import Trainers from './Components/Pages/Trainers/Trainers';
-import Login from './Components/Pages/Shared/Login';
 import FigmaLogin from './Components/Pages/Shared/FigmaLogin';
+import Dashboard from './Dashboard/Dashboard';
+import AccountsHome from './Dashboard/AdminDashboard/Home/AccountsHome';
+import AccountsProfile from './Dashboard/AdminDashboard/Profile/AccountsProfile';
+import Products from './Dashboard/AdminDashboard/Products/Products';
+import Orders from './Dashboard/AdminDashboard/Orders/Orders';
+import Applications from './Dashboard/AdminDashboard/Applications/Applications';
+import AccountsTransactions from './Dashboard/AdminDashboard/Transactions/AccountsTransactions';
+import AccountsSettings from './Dashboard/AdminDashboard/Settings/AccountsSettings';
 
 function App() {
   return (
@@ -28,6 +35,17 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<FigmaLogin />} />
+
+
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route path="accounts-home" element={<AccountsHome />} />
+          <Route path="accounts-profile" element={<AccountsProfile />} />
+          <Route path="manage-products" element={<Products />} />
+          <Route path="manage-orders" element={<Orders />} />
+          <Route path="applications" element={<Applications />} />
+          <Route path="accounts-transactions" element={<AccountsTransactions />} />
+          <Route path="accounts-settings" element={<AccountsSettings />} />
+        </Route>
       </Routes>
       <Footer />
       <Toaster

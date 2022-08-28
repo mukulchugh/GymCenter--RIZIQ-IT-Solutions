@@ -12,12 +12,13 @@ const SharedNav = () => {
     const navigate = useNavigate();
 
     const handleDashboardNavigation = () => {
-        if (loggedInUser) {
-            navigate('/dashboard');
-        } else {
-            toast.error('Please Login to access this page');
-            navigate('/login');
-        }
+        // if (loggedInUser) {
+        //     navigate('/dashboard');
+        // } else {
+        //     toast.error('Please Login to access this page');
+        //     navigate('/login');
+        // }
+        navigate('/dashboard/accounts-home')
     }
 
     return (
