@@ -7,7 +7,7 @@ import { BsPlusLg } from 'react-icons/bs';
 
 const AccountsHome = () => {
     return (
-        <div className='p-5 mt-10'>
+        <div className='p-5 mt-4'>
             <div className='flex justify-between'>
                 <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
                 <div className='flex items-center gap-3'>
