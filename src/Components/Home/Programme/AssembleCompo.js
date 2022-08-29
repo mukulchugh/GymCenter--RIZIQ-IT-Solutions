@@ -22,12 +22,6 @@ const AssembleCompo = () => {
                             </thead>
                             <tbody>
                                 <tr className="hover">
-                                    <td>22,000 bdt</td>
-                                    <td>62,700 bdt</td>
-                                    <td>1,18,800 bdt</td>
-                                    <td>2,24,400 bdt</td>
-                                </tr>
-                                <tr className="hover">
                                     <td></td>
                                     <td>Save 5%</td>
                                     <td>Save 10%</td>

@@ -13,14 +13,12 @@ const OnRampCompo = () => {
                         <table className="table table-zebra table_border table-compact w-full">
                             <thead className='table_border rounded-2xl'>
                                 <tr >
-                                    <th>Cost</th>
                                     <th>Validity</th>
                                     <th>Notes</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr className="hover">
-                                    <td>8000 bdt</td>
                                     <td>60 days from purchase</td>
                                     <td>For CrossFit/Legion</td>
                                 </tr>
