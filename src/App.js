@@ -11,8 +11,15 @@ import Fitness from './Components/Pages/Fitness/Fitness';
 import Shop from './Components/Pages/Shop/Shop';
 import Testimonials from './Components/Pages/Testimonials/Testimonials';
 import Trainers from './Components/Pages/Trainers/Trainers';
-import Login from './Components/Pages/Shared/Login';
 import FigmaLogin from './Components/Pages/Shared/FigmaLogin';
+import Dashboard from './Dashboard/Dashboard';
+import AccountsHome from './Dashboard/AdminDashboard/Home/AccountsHome';
+import AccountsProfile from './Dashboard/AdminDashboard/Profile/AccountsProfile';
+import Orders from './Dashboard/AdminDashboard/Orders/Orders';
+import Salary from './Dashboard/AdminDashboard/Salary/Salary';
+import ManageForm from './Dashboard/AdminDashboard/ManageForm/ManageForm';
+import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
+import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 
 function App() {
   return (
@@ -28,6 +35,17 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<FigmaLogin />} />
+
+
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route path="accounts-home" element={<AccountsHome />} />
+          <Route path="accounts-profile" element={<AccountsProfile />} />
+          <Route path="accounts-salary" element={<Salary />} />
+          <Route path="manage-form" element={<ManageForm />} />
+          <Route path="manage-orders" element={<Orders />} />
+          <Route path="accounts-income" element={<Incomes />} />
+          <Route path="accounts-expense" element={<Expense />} />
+        </Route>
       </Routes>
       <Footer />
       <Toaster
