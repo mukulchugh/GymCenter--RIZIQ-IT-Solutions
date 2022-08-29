@@ -8,6 +8,7 @@ import { AiOutlineForm } from 'react-icons/ai';
 import { HiShoppingCart } from 'react-icons/hi';
 import { FaMoneyCheck } from 'react-icons/fa';
 import { RiOrderPlayLine } from 'react-icons/ri';
+import { GoSignOut } from 'react-icons/go';
 
 const Dashboard = () => {
     return (
@@ -24,51 +25,60 @@ const Dashboard = () => {
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-home'}> Home</Link>
                             </div>
                         </div>
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-profile'}> Profile</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-salary'}> Salary</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/manage-form'}> Form</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/manage-orders'}> Orders</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-income'}> Incomes</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto text-2xl' /></Link>
+                                <Link to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-expense'}> Expense</Link>
                             </div>
                         </div>
+                        
+
+                        <div className='flex items-center justify-center mb-4'>
+                            <div>
+                                <Link to='/'> <GoSignOut className='mx-auto text-xl' /></Link>
+                                <Link className='' to={'/'}> LogOut</Link>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
