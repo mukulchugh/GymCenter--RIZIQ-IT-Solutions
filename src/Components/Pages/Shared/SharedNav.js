@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import logo from '../../../assets/Logo.svg'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../../Home/Header/Navbar.css'
 import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import { MdOutlineSpaceDashboard } from 'react-icons/md';
 import toast from 'react-hot-toast';
+import { MdDashboard } from 'react-icons/md';
 
 const SharedNav = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
     const navigate = useNavigate();
+    const { pathname } = useLocation()
 
     const handleDashboardNavigation = () => {
         // if (loggedInUser) {
@@ -62,7 +64,16 @@ const SharedNav = () => {
                                 <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
                             </ul>
                         </div>
+
                         <div className='navbar-end lg:hidden'>
+                            <div className='lg:hidden '>
+                                {
+                                    pathname.includes("dashboard") && (<label htmlFor="my-drawer-2" tabIndex="1" className="">
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg> */}
+                                        <MdDashboard className='text-xl'/>
+                                    </label>)
+                                }
+                            </div>
                             <div className="dropdown dropdown-end ">
                                 <label tabIndex="0" className="btn btn-ghost lg:hidden pr-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

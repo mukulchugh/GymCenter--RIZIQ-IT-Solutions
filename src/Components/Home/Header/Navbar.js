@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/Logo.svg'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './Navbar.css'
 import useNavBg from '../../Hooks/useNavBg';
 
 const Navbar = () => {
     const makeSmallNav = useNavBg()
+    
+
     return (
         <div className="navbar bg-transparent text-white z-50">
             <div className="navbar-start">
@@ -32,6 +34,7 @@ const Navbar = () => {
                     <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
                 </ul>
             </div>
+            
             <div className='navbar-end lg:hidden'>
                 <div className="dropdown dropdown-end ">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden pr-0">

@@ -27,7 +27,7 @@ const AccountsHome = () => {
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
 
-            <div className='grid sm:grid-cols-3 bg-neutral sm:py-8 mb-8'>
+            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-8 mb-8'>
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white mb-5'>
                     <div className='sm:py-8 pt-5 pb-2'>
                         <h1 className='font-bold text-xl text-center'>Current Balance</h1>
