@@ -9,8 +9,10 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { FaMoneyCheck } from 'react-icons/fa';
 import { RiOrderPlayLine } from 'react-icons/ri';
 import { GoSignOut } from 'react-icons/go';
+import AuthUser from '../hooks/AuthUser/AuthUser';
 
 const Dashboard = () => {
+    const { logout } = AuthUser()
     return (
         <>
             <SharedNav />
@@ -24,58 +26,58 @@ const Dashboard = () => {
                     <div className=" p-4 lg:w-36 w-36  bg-accent font-bold py-10 text-center">
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-home'}> Home</Link>
                             </div>
                         </div>
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-profile'}> Profile</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-salary'}> Salary</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/manage-form'}> Form</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/manage-orders'}> Orders</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-income'}> Incomes</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
-                            <div>
+                            <div className='hover:text-primary'>
                                 <Link to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto xl:text-xl' /></Link>
                                 <Link className='' to={'/dashboard/accounts-expense'}> Expense</Link>
                             </div>
                         </div>
-                        
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div>
-                                <Link to='/'> <GoSignOut className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/'}> LogOut</Link>
+
+                        <div className='flex items-center justify-center mb-4 cursor-pointer'>
+                            <div className='hover:text-primary' onClick={logout}>
+                                <GoSignOut className='mx-auto xl:text-xl' />
+                                <button> LogOut</button>
                             </div>
                         </div>
 

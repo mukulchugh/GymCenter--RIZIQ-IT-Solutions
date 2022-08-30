@@ -1,8 +1,7 @@
 import React from 'react';
-import { TbCurrencyTaka } from 'react-icons/tb';
 
-const AccountsTable = ({ orders }) => {
-    // console.log(orders)
+const SalaryTable = ({ salaryDetails }) => {
+    console.log(salaryDetails)
     return (
         <div className='mb-5'>
             <div class="overflow-x-auto ">
@@ -10,22 +9,26 @@ const AccountsTable = ({ orders }) => {
                     <thead>
                         <tr className='bg-accent'>
                             <th className='bg-accent'></th>
-                            <th className='bg-accent'>Name</th>
+                            <th className='bg-accent'>User</th>
+                            <th className='bg-accent'>Email</th>
                             <th className='bg-accent'>Date</th>
                             <th className='bg-accent'>Amount</th>
-                            <th className='bg-accent'>Payment Type</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => {
+                            salaryDetails.map((data, index) => {
                                 return (
                                     <tr>
                                         <th>{++index}</th>
-                                        <td>{order?.email}</td>
-                                        <td>{order?.order_date}</td>
-                                        <td className='font-bold'>৳ {order?.total_price}</td>
-                                        <td>{order?.payment_type_value}</td>
+                                        <td>
+                                            <div className='flex gap-3 items-center font-bold'>
+                                                <img className='w-12 h-12 rounded-full' src={data?.user?.profile_image} alt="" />{data?.user?.name}
+                                            </div>
+                                        </td>
+                                        <td>{data?.user?.email}</td>
+                                        <td>{data?.date}</td>
+                                        <td className='font-bold'>৳ {data?.amount}</td>
                                     </tr>
                                 )
                             })
@@ -37,4 +40,4 @@ const AccountsTable = ({ orders }) => {
     );
 };
 
-export default AccountsTable;
+export default SalaryTable;

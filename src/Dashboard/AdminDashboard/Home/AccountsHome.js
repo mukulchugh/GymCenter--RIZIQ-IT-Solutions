@@ -4,8 +4,29 @@ import { VscBellDot } from 'react-icons/vsc';
 import { TbCurrencyTaka } from 'react-icons/tb';
 import AccountsTable from './AccountsTable';
 import { BsPlusLg } from 'react-icons/bs';
+import { useQuery } from 'react-query';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import Loading from '../../../hooks/Loading/Loading';
 
 const AccountsHome = () => {
+    const { token } = AuthUser()
+
+
+    const { data: orders, isLoading, refetch } = useQuery('users', () =>
+        fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then(res => res.json())
+    )
+    if (isLoading) {
+        return <Loading />
+    }
+
+    // console.log(orders.data)
+
+
     return (
         <div className='p-5 mt-4'>
             <div className='flex justify-between'>
@@ -60,7 +81,7 @@ const AccountsHome = () => {
                 03 Mar 2022, Thursday
             </div>
 
-            <AccountsTable />
+            <AccountsTable orders={orders.data}/>
         </div>
     );
 };
