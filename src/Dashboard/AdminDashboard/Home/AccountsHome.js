@@ -7,7 +7,6 @@ import { BsPlusLg } from 'react-icons/bs';
 import { useQuery } from 'react-query';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
-import { data } from 'autoprefixer';
 
 const AccountsHome = () => {
     const { token } = AuthUser()
