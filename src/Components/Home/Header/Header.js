@@ -9,7 +9,6 @@ import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Navbar from './Navbar';
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useState(null);
     const [background, setBackground] = useState(false);
     const navigate = useNavigate();
     const {email} = AuthUser();

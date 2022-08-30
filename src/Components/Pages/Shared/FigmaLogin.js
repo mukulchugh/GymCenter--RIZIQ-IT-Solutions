@@ -13,7 +13,7 @@ const FigmaLogin = () => {
 
     const onSubmitForm = async (data) => {
         http.post("/auth/", { email: data.email, password: data.password }).then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setToken( res.data.data.email, res.data.data.access, res.data.data.role );
           });
         reset();

@@ -6,18 +6,18 @@ export default function AuthUser() {
   const navigate = useNavigate();
 
   const getToken = () => {
-    const tokenString = sessionStorage.getItem("access");
+    const tokenString = localStorage.getItem("access");
     const userToken = JSON.parse(tokenString);
     return userToken;
   };
 
   const getUser = () => {
-    const userString = sessionStorage.getItem("email");
+    const userString = localStorage.getItem("email");
     const user_detail = JSON.parse(userString);
     return user_detail;
   };
   const getUserRole = () => {
-    const roleString = sessionStorage.getItem("role");
+    const roleString = localStorage.getItem("role");
     const role_name = JSON.parse(roleString);
     return role_name;
   };
@@ -30,9 +30,9 @@ export default function AuthUser() {
   // console.log("userRole", userRole);
   
   const saveToken = (email, access, role) => {
-    sessionStorage.setItem("access", JSON.stringify(access));
-    sessionStorage.setItem("email", JSON.stringify(email));
-    sessionStorage.setItem("role", JSON.stringify(role));
+    localStorage.setItem("access", JSON.stringify(access));
+    localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("role", JSON.stringify(role));
     
     setEmail(email);
     setToken(token);
