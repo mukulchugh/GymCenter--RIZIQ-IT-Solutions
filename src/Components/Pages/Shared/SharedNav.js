@@ -7,11 +7,13 @@ import { HiOutlineUser } from 'react-icons/hi';
 import { MdOutlineSpaceDashboard } from 'react-icons/md';
 import toast from 'react-hot-toast';
 import { MdDashboard } from 'react-icons/md';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 const SharedNav = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
     const navigate = useNavigate();
-    const { pathname } = useLocation()
+    const { pathname } = useLocation();
+    const { email, logout } = AuthUser();
 
     const handleDashboardNavigation = () => {
         // if (loggedInUser) {
@@ -32,7 +34,9 @@ const SharedNav = () => {
                         <Link className='hover:text-primary' to="#"><BsBell ></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
-                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        {
+                            email && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        }
                     </div>
                 </div>
             </div>
@@ -61,7 +65,9 @@ const SharedNav = () => {
                                 <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm" href="#">Blog</Link></li>
                                 <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm" href="#">Shop</Link></li>
                                 <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm" href="#">Contact</Link></li>
-                                <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
+                                {
+                                    email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                                }
                             </ul>
                         </div>
 
@@ -69,7 +75,7 @@ const SharedNav = () => {
                             <div className='lg:hidden '>
                                 {
                                     pathname.includes("dashboard") && (<label htmlFor="my-drawer-2" tabIndex="1" className="">
-                                        <MdDashboard className='text-xl'/>
+                                        <MdDashboard className='text-xl' />
                                     </label>)
                                 }
                             </div>
@@ -87,7 +93,9 @@ const SharedNav = () => {
                                     <li><Link to='/blog' className="uppercase hover_effect font-bold text-sm" href="#">Blog</Link></li>
                                     <li><Link to='/shop' className="uppercase hover_effect font-bold text-sm" href="#">Shop</Link></li>
                                     <li><Link to='/contact' className="uppercase hover_effect font-bold text-sm" href="#">Contact</Link></li>
-                                    <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                                    {
+                                        email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                                    }
                                 </ul>
                             </div>
                         </div>
