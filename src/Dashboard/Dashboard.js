@@ -9,8 +9,10 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { FaMoneyCheck } from 'react-icons/fa';
 import { RiOrderPlayLine } from 'react-icons/ri';
 import { GoSignOut } from 'react-icons/go';
+import AuthUser from '../hooks/AuthUser/AuthUser';
 
 const Dashboard = () => {
+    const { logout } = AuthUser()
     return (
         <>
             <SharedNav />
@@ -70,12 +72,12 @@ const Dashboard = () => {
                                 <Link className='' to={'/dashboard/accounts-expense'}> Expense</Link>
                             </div>
                         </div>
-                        
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div>
-                                <Link to='/'> <GoSignOut className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/'}> LogOut</Link>
+
+                        <div className='flex items-center justify-center mb-4 cursor-pointer'>
+                            <div onClick={logout}>
+                                <GoSignOut className='mx-auto xl:text-xl' />
+                                <button> LogOut</button>
                             </div>
                         </div>
 

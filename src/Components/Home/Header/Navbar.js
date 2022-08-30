@@ -3,10 +3,12 @@ import logo from '../../../assets/Logo.svg'
 import { Link, useLocation } from "react-router-dom";
 import './Navbar.css'
 import useNavBg from '../../Hooks/useNavBg';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 const Navbar = () => {
-    const makeSmallNav = useNavBg()
-    
+    const makeSmallNav = useNavBg();
+    const { email } = AuthUser()
+
 
     return (
         <div className="navbar bg-transparent text-white z-50">
@@ -31,10 +33,12 @@ const Navbar = () => {
                     <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm" href="#">Blog</Link></li>
                     <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm" href="#">Shop</Link></li>
                     <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm" href="#">Contact</Link></li>
-                    <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
+                    {
+                        !email && <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                    }
                 </ul>
             </div>
-            
+
             <div className='navbar-end lg:hidden'>
                 <div className="dropdown dropdown-end ">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden pr-0">
@@ -50,7 +54,9 @@ const Navbar = () => {
                         <li><Link to='/blog' className="uppercase hover_effect font-bold text-sm" href="#">Blog</Link></li>
                         <li><Link to='/shop' className="uppercase hover_effect font-bold text-sm" href="#">Shop</Link></li>
                         <li><Link to='/contact' className="uppercase hover_effect font-bold text-sm" href="#">Contact</Link></li>
-                        <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                        {
+                        !email && <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                    }
                     </ul>
                 </div>
             </div>
