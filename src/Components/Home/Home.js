@@ -8,8 +8,12 @@ import Table from './Table/Table';
 import Slider from './Slider/Slider';
 import Programme from './Programme/Programme';
 import Testimonials from '../Pages/Testimonials/Testimonials';
+import AuthUser from '../../hooks/AuthUser/AuthUser';
 
 const Home = () => {
+
+    const {email} = AuthUser()
+    console.log(email)
 
     return (
         <div>
