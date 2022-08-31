@@ -43,7 +43,7 @@ export default function AuthUser() {
 
 
   const logout = () => {
-    sessionStorage.clear();
+    localStorage.clear();
     navigate("/login");
   };
 
