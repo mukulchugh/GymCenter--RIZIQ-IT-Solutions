@@ -9,8 +9,8 @@ import Package from './Package';
 
 const Orders = () => {
     const { token } = AuthUser()
-    const{packages} = Package()
-    
+    const { packages } = Package()
+
 
     const { data: products, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/product_orders`, {
@@ -25,8 +25,20 @@ const Orders = () => {
         return <Loading />
     }
 
-    console.log(packages.data)
- 
+    console.log(products?.data)
+    // useEffect(() => {
+    //     const url = "https://gym-management97.herokuapp.com/api/package_order";
+
+    //     fetch(url, {
+    //       method: "GET",
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       },
+    //     })
+    //       .then((res) => res.json())
+    //       .then((data) => setPackages(data.data));
+    //   }, [token]);
+
 
     return (
         <div className='p-5 mt-4'>
@@ -67,9 +79,9 @@ const Orders = () => {
                         <tbody>
                             {
                                 products?.data?.map((product, index) => <OrdersTable
-                                key={product?.id}
-                                product={product}
-                                index={index}
+                                    key={product?.id}
+                                    product={product}
+                                    index={index}
                                 ></OrdersTable>)
                             }
                             {/* {
