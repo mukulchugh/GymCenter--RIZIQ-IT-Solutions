@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
+import { useForm } from 'react-hook-form';
 
 
 const customStyles = {
@@ -23,8 +24,9 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 
-export default function AddExpenseModal({ todo }) {
+export default function AddExpenseModal({ refetch }) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
 
 
     function openModal() {
@@ -40,8 +42,8 @@ export default function AddExpenseModal({ todo }) {
     }
 
 
-    const handleSubmit = (todo) => {
-
+    const onSubmitForm = (data) => {
+        console.log(data)
         // setIsReload(true);
         closeModal();
     }
@@ -67,13 +69,24 @@ export default function AddExpenseModal({ todo }) {
 
                 <div className="text-xl font-bold border-b-[1px] border-[#8f8f8f66] pb-1">Add Expense</div>
 
-                <div>
+                <form onSubmit={handleSubmit(onSubmitForm)}>
                     <div className=" mt-3">
                         <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Source Name</span>
                             </label>
-                            <input type="text" placeholder="Enter The Name of Expense Source" class="input input-bordered w-full focus:outline-none" />
+                            <input type="text" placeholder="Enter The Name of Expense Source" class="input input-bordered w-full focus:outline-none"
+                                {...register("name", {
+                                    required: 'Name is required',
+                                    minLength: {
+                                        value: 3,
+                                        message: 'Name must be at least 3 characters'
+                                    }
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('name');
+                                }} />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.name?.message}</small>
                         </div>
                     </div>
                     <div className=" mt-3 ">
@@ -81,7 +94,15 @@ export default function AddExpenseModal({ todo }) {
                             <label class="label">
                                 <span class="label-text">Amount</span>
                             </label>
-                            <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none" />
+                            <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none"
+                                {...register("amount", {
+                                    required: 'Amount is required',
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('amount');
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.amount?.message}</small>
                         </div>
                     </div>
                     <div className=" mt-3">
@@ -89,7 +110,15 @@ export default function AddExpenseModal({ todo }) {
                             <label class="label">
                                 <span class="label-text">Expense Date</span>
                             </label>
-                            <input type="date" class="input input-bordered w-full focus:outline-none" />
+                            <input type="date" class="input input-bordered w-full focus:outline-none"
+                                {...register("date", {
+                                    required: 'Date is required',
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('date');
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.date?.message}</small>
                         </div>
                     </div>
                     <div className=" mt-3">
@@ -97,7 +126,15 @@ export default function AddExpenseModal({ todo }) {
                             <label class="label">
                                 <span class="label-text">Upload File</span>
                             </label>
-                            <input type="file" placeholder="Write Any Message For This Income" class="input w-full focus:outline-none h-full pl-0 rounded-none shadow-none border-none" />
+                            <input type="file" placeholder="Write Any Message For This Income" class="input w-full focus:outline-none h-full pl-0 rounded-none shadow-none border-none"
+                                {...register("file", {
+                                    required: 'File is required',
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('file');
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.file?.message}</small>
                         </div>
                     </div>
 
@@ -110,11 +147,11 @@ export default function AddExpenseModal({ todo }) {
                         </div>
                         <div className="text-end">
                             <button
-                                onClick={() => handleSubmit(todo)}
+                                type='submit'
                                 className="btn bg-green-500 px-3 py-1 rounded-md cursor-pointer btn-sm">Submit</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </Modal>
         </div>
     );

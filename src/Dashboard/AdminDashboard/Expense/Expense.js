@@ -56,7 +56,7 @@ const Expense = () => {
                 </div>
             </div>
 
-            <AddExpenseModal />
+            <AddExpenseModal refetch={refetch}/>
 
             <div className='mt-10'>
                 <div className='mb-5'>
@@ -74,7 +74,6 @@ const Expense = () => {
                             <tbody>
                                 {
                                     expenses?.data?.map((expense, index) => {
-                                        console.log(expense)
                                         return (
                                             <tr>
                                                 <th>{++index}</th>
@@ -91,8 +90,6 @@ const Expense = () => {
                     </div>
                 </div>
             </div>
-
-
         </div>
     );
 };
