@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import Loading from '../../../hooks/Loading/Loading';
 import ControlledPopup from '../../Modal/ControlledPopup';
 import AddExpenseModal from './AddExpenseModal';
+import { useQuery } from 'react-query';
 
 
 const Expense = () => {
-    const getUser = AuthUser();
+    const { token, getUser } = AuthUser()
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
@@ -18,6 +20,21 @@ const Expense = () => {
     const date = `${day} ${monthName} ${year}`;
 
     const [selectedDate, setSelectedDate] = useState(date);
+
+
+    const { data: expenses, isLoading, refetch } = useQuery('users', () =>
+        fetch(`https://gym-management97.herokuapp.com/api/expense`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then(res => res.json())
+    )
+    if (isLoading) {
+        return <Loading />
+    }
+
+    // console.log(expenses.data)
 
     return (
         <div className='p-5 mt-4'>
@@ -41,7 +58,40 @@ const Expense = () => {
                 </div>
             </div>
 
-            <AddExpenseModal />
+            <AddExpenseModal refetch={refetch}/>
+
+            <div className='mt-10'>
+                <div className='mb-5'>
+                    <div className="overflow-x-auto ">
+                        <table className="table table-compact w-full">
+                            <thead>
+                                <tr className='bg-accent'>
+                                    <th className='bg-accent'></th>
+                                    <th className='bg-accent'>Name</th>
+                                    <th className='bg-accent'>Date</th>
+                                    <th className='bg-accent'>Amount</th>
+                                    <th className='bg-accent'>Payment Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    expenses?.data?.map((expense, index) => {
+                                        return (
+                                            <tr>
+                                                <th>{++index}</th>
+                                                <td>{expense?.name}</td>
+                                                <td>{expense?.expense_date}</td>
+                                                <td className='font-bold'>৳ {expense?.amount}</td>
+                                                <td>{expense?.message}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
