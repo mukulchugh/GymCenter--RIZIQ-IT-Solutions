@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import './Navbar.css'
 import useNavBg from '../../Hooks/useNavBg';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import CustomLink from '../../../hooks/CustomLink/CustomLink';
 
 const Navbar = () => {
     const makeSmallNav = useNavBg();
@@ -17,8 +18,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Home</Link></li>
-                    <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">About</Link></li>
+                    <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm text-[12px] p-2" href="#">Home</Link></li>
+
+                    <li><CustomLink to='/about' className="uppercase hover_effect font-semibold text-sm text-[12px] p-2" href="#">About</CustomLink></li>
 
                     {/* <li tabIndex="0">
                         <Link to='/crossFit' className=' hover_effect font-semibold text-sm'>
@@ -31,16 +33,16 @@ const Navbar = () => {
                             <li><Link to='/testimonials' className="uppercase hover_effect font-semibold text-sm" href="#">Testimonials</Link></li>
                         </ul>
                     </li> */}
-                    <li><Link to='/crossfit' className=" hover_effect font-bold text-sm text-[12px] px-2" href="#">CrossFit</Link></li>
-                    <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Fitness</Link></li>
-                    <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Trainers</Link></li>
-                    <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Testimonials</Link></li>
+                    <li><CustomLink to='/crossfit' className=" hover_effect font-bold text-sm text-[12px] p-2" href="#">CrossFit</CustomLink></li>
+                    <li><CustomLink to='/fitness' className="uppercase hover_effect font-bold text-sm text-[12px] p-2" href="#">Fitness</CustomLink></li>
+                    <li><CustomLink to='/trainers' className="uppercase hover_effect font-bold text-sm text-[12px] p-2" href="#">Trainers</CustomLink></li>
+                    <li><CustomLink to='/testimonials' className="uppercase hover_effect font-bold text-sm text-[12px] p-2" href="#">Testimonials</CustomLink></li>
 
-                    <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Blog</Link></li>
-                    <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Shop</Link></li>
-                    <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Contact</Link></li>
+                    <li><CustomLink to='/blog' className="uppercase hover_effect font-semibold text-sm text-[12px] p-2" href="#">Blog</CustomLink></li>
+                    <li><CustomLink to='/shop' className="uppercase hover_effect font-semibold text-sm text-[12px] p-2" href="#">Shop</CustomLink></li>
+                    <li><CustomLink to='/contact' className="uppercase hover_effect font-semibold text-sm text-[12px] p-2" href="#">Contact</CustomLink></li>
                     {
-                        email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Login</Link></li>
+                        email ? <li onClick={logout}><CustomLink to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] p-2" href="#">LogOut</CustomLink></li> : <li><CustomLink to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] p-2" href="#">Login</CustomLink></li>
                     }
                 </ul>
             </div>
