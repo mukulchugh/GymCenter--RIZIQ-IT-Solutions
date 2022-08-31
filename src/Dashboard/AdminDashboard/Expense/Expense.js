@@ -34,6 +34,8 @@ const Expense = () => {
         return <Loading />
     }
 
+    // console.log(expenses.data)
+
     return (
         <div className='p-5 mt-4'>
             <div className='flex justify-between'>

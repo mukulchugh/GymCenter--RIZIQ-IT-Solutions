@@ -4,6 +4,8 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
+import { BiRefresh } from 'react-icons/bi';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 
 const customStyles = {
@@ -27,6 +29,7 @@ Modal.setAppElement("#root");
 export default function AddExpenseModal({ refetch }) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
+    const { token } = AuthUser()
 
 
     function openModal() {
@@ -43,10 +46,36 @@ export default function AddExpenseModal({ refetch }) {
 
 
     const onSubmitForm = (data) => {
-        console.log(data)
-        // setIsReload(true);
-        closeModal();
+
+        const expense = {
+            amount: data.amount,
+            expense_date: data.expense_date,
+            // image: data.image,
+            name: data.name,
+            message: data.message,
+            // make unique id
+            id: Math.random().toString(36).substr(2, 9)
+        }
+        // console.log(expense)
+        // post data to database 
+        fetch("https://gym-management97.herokuapp.com/api/expense/",
+            {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(expense)
+            }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                refetch()
+                reset()
+                closeModal()
+            })
     }
+
 
 
     return (
@@ -111,32 +140,50 @@ export default function AddExpenseModal({ refetch }) {
                                 <span class="label-text">Expense Date</span>
                             </label>
                             <input type="date" class="input input-bordered w-full focus:outline-none"
-                                {...register("date", {
+                                {...register("expense_date", {
                                     required: 'Date is required',
                                 })}
                                 onKeyUp={(e) => {
-                                    trigger('date');
+                                    trigger('expense_date');
                                 }}
                             />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.date?.message}</small>
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.expense_date?.message}</small>
                         </div>
                     </div>
+
                     <div className=" mt-3">
+                        <div class="form-control w-full">
+                            <label class="label">
+                                <span class="label-text">Message</span>
+                            </label>
+                            <input placeholder="Enter your Message" type="text" class="input input-bordered w-full focus:outline-none"
+                                {...register("message", {
+                                    required: 'Message is required',
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('message');
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.message?.message}</small>
+                        </div>
+                    </div>
+
+                    {/* <div className=" mt-3">
                         <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Upload File</span>
                             </label>
                             <input type="file" placeholder="Write Any Message For This Income" class="input w-full focus:outline-none h-full pl-0 rounded-none shadow-none border-none"
-                                {...register("file", {
-                                    required: 'File is required',
+                                {...register("image", {
+                                    required: 'Image is required',
                                 })}
                                 onKeyUp={(e) => {
-                                    trigger('file');
+                                    trigger('image');
                                 }}
                             />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.file?.message}</small>
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.image?.message}</small>
                         </div>
-                    </div>
+                    </div> */}
 
 
                     <div className="flex gap-2 mt-12">
