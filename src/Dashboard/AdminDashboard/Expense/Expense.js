@@ -23,7 +23,7 @@ const Expense = () => {
 
 
     const { data: expenses, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
+        fetch(`https://gym-management97.herokuapp.com/api/expense`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
@@ -74,13 +74,14 @@ const Expense = () => {
                             <tbody>
                                 {
                                     expenses?.data?.map((expense, index) => {
+                                        console.log(expense)
                                         return (
                                             <tr>
                                                 <th>{++index}</th>
-                                                <td>{expense?.email}</td>
-                                                <td>{expense?.order_date}</td>
-                                                <td className='font-bold'>৳ {expense?.total_price}</td>
-                                                <td>{expense?.payment_type_value}</td>
+                                                <td>{expense?.name}</td>
+                                                <td>{expense?.expense_date}</td>
+                                                <td className='font-bold'>৳ {expense?.amount}</td>
+                                                <td>{expense?.message}</td>
                                             </tr>
                                         )
                                     })
