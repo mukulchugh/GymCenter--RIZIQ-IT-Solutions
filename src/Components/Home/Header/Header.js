@@ -5,12 +5,13 @@ import { BsBell, BsCart3 } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import { MdOutlineSpaceDashboard } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Navbar from './Navbar';
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useState(null);
     const [background, setBackground] = useState(false);
     const navigate = useNavigate();
+    const {email} = AuthUser();
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -42,7 +43,9 @@ const Header = () => {
                         <Link className='hover:text-primary ' to="#"><BsBell ></BsBell></Link>
                         <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
-                        <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        {
+                            email && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        }
                     </div>
                 </div>
             </div>
@@ -59,7 +62,7 @@ const Header = () => {
                 </h1>
                 <div className="button_section mt-8">
                     <Link to="/join-us" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold ">JOIN GYM</Link>
-                    <Link to="/packages" className="btn btn-outline ml-4 package_button btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PACKAGE</Link>
+                    <Link to="/packages" className="btn btn-outline ml-4 package_button btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PROGRAMS</Link>
                 </div>
             </div>
             {/* </div>

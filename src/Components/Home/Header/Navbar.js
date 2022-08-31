@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/Logo.svg'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './Navbar.css'
 import useNavBg from '../../Hooks/useNavBg';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 const Navbar = () => {
-    const makeSmallNav = useNavBg()
+    const makeSmallNav = useNavBg();
+    const { email, logout } = AuthUser()
+
+
     return (
         <div className="navbar bg-transparent text-white z-50">
             <div className="navbar-start">
@@ -13,9 +17,10 @@ const Navbar = () => {
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm" href="#">Home</Link></li>
-                    <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm" href="#">About</Link></li>
-                    <li tabIndex="0">
+                    <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Home</Link></li>
+                    <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">About</Link></li>
+
+                    {/* <li tabIndex="0">
                         <Link to='/crossFit' className=' hover_effect font-semibold text-sm'>
                             CrossFit
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
@@ -25,13 +30,21 @@ const Navbar = () => {
                             <li><Link to='/trainers' className="uppercase hover_effect font-semibold text-sm" href="#">Trainers</Link></li>
                             <li><Link to='/testimonials' className="uppercase hover_effect font-semibold text-sm" href="#">Testimonials</Link></li>
                         </ul>
-                    </li>
-                    <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm" href="#">Blog</Link></li>
-                    <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm" href="#">Shop</Link></li>
-                    <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm" href="#">Contact</Link></li>
-                    <li><Link to='/login' className="uppercase hover_effect font-semibold text-sm" href="#">Login</Link></li>
+                    </li> */}
+                    <li><Link to='/crossfit' className=" hover_effect font-bold text-sm text-[12px] px-2" href="#">CrossFit</Link></li>
+                    <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Fitness</Link></li>
+                    <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Trainers</Link></li>
+                    <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Testimonials</Link></li>
+
+                    <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Blog</Link></li>
+                    <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Shop</Link></li>
+                    <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Contact</Link></li>
+                    {
+                        email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Login</Link></li>
+                    }
                 </ul>
             </div>
+
             <div className='navbar-end lg:hidden'>
                 <div className="drawer drawer-end ">
                     <label htmlFor='my-drawer-4' tabIndex="my-drawer-4" className="btn btn-ghost lg:hidden pr-0">
@@ -47,17 +60,19 @@ const Navbar = () => {
                         <li><Link to='/blog' className="uppercase hover_effect font-bold text-sm" href="#">Blog</Link></li>
                         <li><Link to='/shop' className="uppercase hover_effect font-bold text-sm" href="#">Shop</Link></li>
                         <li><Link to='/contact' className="uppercase hover_effect font-bold text-sm" href="#">Contact</Link></li>
-                        <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                        {
+                            email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
+                        }
                     </ul>
                 </div>
             </div>
 
-            {/* <div class="drawer lg:hidden drawer-end">
-                <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content">
+            {/* <div className="drawer lg:hidden drawer-end">
+                <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content">
                 </div>
-                <div class="drawer-side absolute right-0">
-                    <label for="my-drawer-4" class="drawer-overlay"></label>
+                <div className="drawer-side absolute right-0">
+                    <label for="my-drawer-4" className="drawer-overlay"></label>
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-[#dbe5fa] z-50 text-black ">
                         <li><Link to='/' className="uppercase hover_effect font-bold text-sm" href="#">Home</Link></li>
                         <li><Link to='/about' className="uppercase hover_effect font-bold text-sm" href="#">About</Link></li>

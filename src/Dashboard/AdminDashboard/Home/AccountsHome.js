@@ -4,10 +4,31 @@ import { VscBellDot } from 'react-icons/vsc';
 import { TbCurrencyTaka } from 'react-icons/tb';
 import AccountsTable from './AccountsTable';
 import { BsPlusLg } from 'react-icons/bs';
+import { useQuery } from 'react-query';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import Loading from '../../../hooks/Loading/Loading';
 
 const AccountsHome = () => {
+    const { token } = AuthUser()
+
+
+    const { data: orders, isLoading, refetch } = useQuery('users', () =>
+        fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then(res => res.json())
+    )
+    if (isLoading) {
+        return <Loading />
+    }
+
+    // console.log(orders.data)
+
+
     return (
-        <div className='p-5 mt-10'>
+        <div className='p-5 mt-4'>
             <div className='flex justify-between'>
                 <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
                 <div className='flex items-center gap-3'>
@@ -22,12 +43,12 @@ const AccountsHome = () => {
                 </div>
             </div>
 
-            <div className='mt-7 border-b-[1px] pb-3'>
+            <div className='mt-7 border-b-[1px] pb-3 mb-5'>
                 <h2 className='font-semibold'>Account Overview</h2>
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
 
-            <div className='grid sm:grid-cols-3 bg-neutral sm:py-8 mb-8'>
+            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-8 mb-8'>
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white mb-5'>
                     <div className='sm:py-8 pt-5 pb-2'>
                         <h1 className='font-bold text-xl text-center'>Current Balance</h1>
@@ -60,7 +81,7 @@ const AccountsHome = () => {
                 03 Mar 2022, Thursday
             </div>
 
-            <AccountsTable />
+            <AccountsTable orders={orders.data}/>
         </div>
     );
 };
