@@ -21,9 +21,9 @@ const Dashboard = () => {
                 <div className="drawer-content pl-1">
                     <Outlet />
                 </div>
-                <div className="drawer-side  h-[100vh]">
+                <div className="drawer-side ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <div className=" p-4 lg:w-36 w-36  bg-accent font-bold py-10 text-center">
+                    <div className=" p-4 lg:w-32 w-28  bg-accent font-bold py-10 text-center min-h-[100vh]">
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>

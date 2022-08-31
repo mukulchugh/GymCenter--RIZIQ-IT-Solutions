@@ -5,8 +5,8 @@ const AccountsTable = ({ orders }) => {
     // console.log(orders)
     return (
         <div className='mb-5'>
-            <div class="overflow-x-auto ">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto ">
+                <table className="table table-compact w-full">
                     <thead>
                         <tr className='bg-accent'>
                             <th className='bg-accent'></th>
@@ -18,7 +18,7 @@ const AccountsTable = ({ orders }) => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => {
+                            orders?.map((order, index) => {
                                 return (
                                     <tr>
                                         <th>{++index}</th>

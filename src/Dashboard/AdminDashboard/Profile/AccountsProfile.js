@@ -24,29 +24,29 @@ const AccountsProfile = () => {
 
             <div className='mt-5  '>
                 <div className='grid grid-cols-2 gap-5 border-dashed border-b-2 pb-10'>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
                 </div>
 
@@ -56,29 +56,29 @@ const AccountsProfile = () => {
                 </div>
 
                 <div className='grid grid-cols-2 gap-5'>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Text Level 01</span>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Text Level 01</span>
                         </label>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full focus:outline-none shadow" />
+                        <input type="text" placeholder="Type here" className="input input-bordered w-full focus:outline-none shadow" />
                     </div>
                 </div>
 
