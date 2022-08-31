@@ -25,20 +25,8 @@ const Orders = () => {
         return <Loading />
     }
 
-    console.log(products.data)
-    // useEffect(() => {
-    //     const url = "https://gym-management97.herokuapp.com/api/package_order";
-    
-    //     fetch(url, {
-    //       method: "GET",
-    //       headers: {
-    //         Authorization: `Bearer ${token}`,
-    //       },
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => setPackages(data.data));
-    //   }, [token]);
-
+    console.log(packages.data)
+ 
 
     return (
         <div className='p-5 mt-4'>
