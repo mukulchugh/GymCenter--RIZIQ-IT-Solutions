@@ -1,10 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
-import { BiRefresh } from 'react-icons/bi';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 
@@ -58,28 +55,26 @@ export default function AddExpenseModal({ refetch }) {
         }
         // console.log(expense)
         // post data to database 
-        fetch("https://gym-management97.herokuapp.com/api/expense/",
-            {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                },
-                body: JSON.stringify(expense)
-            }).then(res => res.json())
+        fetch(`https://gym-management97.herokuapp.com/api/expense/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(expense)
+        }).then(res => res.json())
             .then(data => {
                 console.log(data)
                 refetch()
                 reset()
                 closeModal()
-            })
+            }).catch(err => console.log(err))
     }
 
 
 
     return (
-        <div className='mt-8'>
+        <div className='mt-20'>
             {/* <button onClick={openModal}>
                 <FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon>
             </button> */}
