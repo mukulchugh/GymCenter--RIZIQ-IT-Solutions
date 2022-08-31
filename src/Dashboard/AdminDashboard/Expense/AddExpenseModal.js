@@ -16,6 +16,7 @@ const customStyles = {
         transform: "translate(-50%, -50%)",
         padding: "30px",
         backgroundColor: "#f3f4f6",
+        border: "1px solid #8f8f8f66",
     },
 };
 
@@ -67,7 +68,7 @@ export default function AddExpenseModal({ todo }) {
                 <div className="text-xl font-bold border-b-[1px] border-[#8f8f8f66] pb-1">Add Expense</div>
 
                 <div>
-                    <div className=" mt-3 bg-secondary">
+                    <div className=" mt-3">
                         <div class="form-control w-full  bg-accent">
                             <label class="label">
                                 <span class="label-text">Source Name</span>
@@ -83,7 +84,7 @@ export default function AddExpenseModal({ todo }) {
                             <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none" />
                         </div>
                     </div>
-                    <div className=" mt-3 bg-secondary">
+                    <div className=" mt-3">
                         <div class="form-control w-full  bg-accent">
                             <label class="label">
                                 <span class="label-text">Expense Date</span>
@@ -91,7 +92,7 @@ export default function AddExpenseModal({ todo }) {
                             <input type="date" class="input input-bordered w-full focus:outline-none" />
                         </div>
                     </div>
-                    <div className=" mt-3 bg-secondary">
+                    <div className=" mt-3">
                         <div class="form-control w-full  bg-accent">
                             <label class="label">
                                 <span class="label-text">Upload File</span>
