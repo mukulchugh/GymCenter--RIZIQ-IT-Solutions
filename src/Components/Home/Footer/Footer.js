@@ -16,7 +16,7 @@ const Footer = () => {
                         <a href="#"><BsYoutube /></a>
                     </div>
                     <div className='flex items-center justify-center'>
-                        <p className='text-sm'><sup>POWERD BY -</sup><span className='font-bold text-white'> RIZIQ IT SOLUTIONS</span></p>
+                        <p className='text-sm'><sup className='text-[#ffefba]'>POWERD BY -</sup><span className='font-bold text-white'> RIZIQ IT SOLUTIONS</span></p>
                     </div>
                 </div>
             </footer>
