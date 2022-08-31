@@ -48,27 +48,33 @@ const SharedNav = () => {
                             <Link to='/'><img style={{ height: '50px' }} src={logo} alt="" /></Link>
                         </div>
                         <div className="navbar-end hidden lg:flex">
-                            <ul className="menu menu-horizontal p-0">
-                                <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm" href="#">Home</Link></li>
-                                <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm" href="#">About</Link></li>
-                                <li tabIndex="0">
-                                    <Link to='/crossFit' className=' hover_effect font-semibold text-sm'>
-                                        CrossFit
-                                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                                    </Link>
-                                    <ul className="p-2 bg-[#dbe5fa] text-black">
-                                        <li><Link to='/fitness' className="uppercase hover_effect font-semibold text-sm" href="#">Fitness</Link></li>
-                                        <li><Link to='/trainers' className="uppercase hover_effect font-semibold text-sm" href="#">Trainers</Link></li>
-                                        <li><Link to='/testimonials' className="uppercase hover_effect font-semibold text-sm" href="#">Testimonials</Link></li>
-                                    </ul>
-                                </li>
-                                <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm" href="#">Blog</Link></li>
-                                <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm" href="#">Shop</Link></li>
-                                <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm" href="#">Contact</Link></li>
-                                {
-                                    email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm" href="#">Login</Link></li>
-                                }
-                            </ul>
+                        <ul className="menu menu-horizontal p-0">
+                    <li className=""><Link to='/' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Home</Link></li>
+                    <li><Link to='/about' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">About</Link></li>
+
+                    {/* <li tabIndex="0">
+                        <Link to='/crossFit' className=' hover_effect font-semibold text-sm'>
+                            CrossFit
+                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                        </Link>
+                        <ul className="p-2 bg-[#dbe5fa] text-black">
+                            <li><Link to='/fitness' className="uppercase hover_effect font-semibold text-sm" href="#">Fitness</Link></li>
+                            <li><Link to='/trainers' className="uppercase hover_effect font-semibold text-sm" href="#">Trainers</Link></li>
+                            <li><Link to='/testimonials' className="uppercase hover_effect font-semibold text-sm" href="#">Testimonials</Link></li>
+                        </ul>
+                    </li> */}
+                    <li><Link to='/crossfit' className=" hover_effect font-bold text-sm text-[12px] px-2" href="#">CrossFit</Link></li>
+                    <li><Link to='/fitness' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Fitness</Link></li>
+                    <li><Link to='/trainers' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Trainers</Link></li>
+                    <li><Link to='/testimonials' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Testimonials</Link></li>
+
+                    <li><Link to='/blog' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Blog</Link></li>
+                    <li><Link to='/shop' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Shop</Link></li>
+                    <li><Link to='/contact' className="uppercase hover_effect font-semibold text-sm text-[12px] px-2" href="#">Contact</Link></li>
+                    {
+                        email ? <li onClick={logout}><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">LogOut</Link></li> : <li><Link to='/login' className="uppercase hover_effect font-bold text-sm text-[12px] px-2" href="#">Login</Link></li>
+                    }
+                </ul>
                         </div>
 
                         <div className='navbar-end lg:hidden'>

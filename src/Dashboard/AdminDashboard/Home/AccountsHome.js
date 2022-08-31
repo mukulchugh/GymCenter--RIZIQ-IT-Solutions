@@ -43,7 +43,7 @@ const AccountsHome = () => {
                 </div>
             </div>
 
-            <div className='mt-7 border-b-[1px] pb-3'>
+            <div className='mt-7 border-b-[1px] pb-3 mb-5'>
                 <h2 className='font-semibold'>Account Overview</h2>
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
