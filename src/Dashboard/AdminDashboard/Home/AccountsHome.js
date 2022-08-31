@@ -10,7 +10,13 @@ import Loading from '../../../hooks/Loading/Loading';
 
 const AccountsHome = () => {
     const { token } = AuthUser()
-
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthName = monthNames[month];
+    const date = `${day} ${monthName} ${year}`;
 
     const { data: orders, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
@@ -32,7 +38,7 @@ const AccountsHome = () => {
             <div className='flex justify-between'>
                 <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
                 <div className='flex items-center gap-3'>
-                    <p className='text-sm font-bold text-secondary'>12 Apr 2022, Tuesday</p>
+                    <p className='text-sm font-bold text-secondary'>{date}</p>
                     <div className='bg-accent px-3 py-2 rounded cursor-pointer'>
                         <BiSearch className='text-xl ' />
                     </div>
@@ -81,7 +87,7 @@ const AccountsHome = () => {
                 03 Mar 2022, Thursday
             </div>
 
-            <AccountsTable orders={orders.data}/>
+            <AccountsTable orders={orders.data} />
         </div>
     );
 };
