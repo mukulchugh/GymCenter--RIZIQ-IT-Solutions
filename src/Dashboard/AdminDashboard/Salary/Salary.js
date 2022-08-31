@@ -19,6 +19,7 @@ const Salary = () => {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
+            
     )
     if (isLoading) {
         return <Loading />
@@ -43,7 +44,7 @@ const Salary = () => {
                 </div>
             </div>
 
-            <div className='mt-7 border-b-[1px] pb-3'>
+            <div className='mt-7 border-b-[1px] pb-3 mb-5'>
                 <h2 className='font-semibold'>Salary Overview</h2>
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
