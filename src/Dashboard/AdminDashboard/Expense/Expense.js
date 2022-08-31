@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import ControlledPopup from '../../Modal/ControlledPopup';
 
 
 const Expense = () => {
     const getUser = AuthUser();
-
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
 
     const today = new Date();
     const day = today.getDate();
@@ -37,6 +39,8 @@ const Expense = () => {
                     <button className='btn btn-sm btn-primary rounded-md'>Petty Cash</button>
                 </div>
             </div>
+
+            <ControlledPopup />
         </div>
     );
 };
