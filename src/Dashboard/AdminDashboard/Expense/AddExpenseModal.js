@@ -69,7 +69,7 @@ export default function AddExpenseModal({ todo }) {
 
                 <div>
                     <div className=" mt-3">
-                        <div class="form-control w-full  bg-accent">
+                        <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Source Name</span>
                             </label>
@@ -77,7 +77,7 @@ export default function AddExpenseModal({ todo }) {
                         </div>
                     </div>
                     <div className=" mt-3 ">
-                        <div class="form-control w-full  bg-accent">
+                        <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Amount</span>
                             </label>
@@ -85,7 +85,7 @@ export default function AddExpenseModal({ todo }) {
                         </div>
                     </div>
                     <div className=" mt-3">
-                        <div class="form-control w-full  bg-accent">
+                        <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Expense Date</span>
                             </label>
@@ -93,7 +93,7 @@ export default function AddExpenseModal({ todo }) {
                         </div>
                     </div>
                     <div className=" mt-3">
-                        <div class="form-control w-full  bg-accent">
+                        <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Upload File</span>
                             </label>
