@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
 import ControlledPopup from '../../Modal/ControlledPopup';
@@ -19,7 +19,8 @@ const Expense = () => {
     const monthName = monthNames[month];
     const date = `${day} ${monthName} ${year}`;
 
-    const [selectedDate, setSelectedDate] = useState(date);
+    const [selectedDate, setSelectedDate] = useState(null);
+    // const [filterExpenses, setFilterExpenses] = useState([]);
 
 
     const { data: expenses, isLoading, refetch } = useQuery('users', () =>
@@ -34,7 +35,18 @@ const Expense = () => {
         return <Loading />
     }
 
-    // console.log(expenses.data)
+    //filter expenses by date and auto update when date is changed
+    let filterExpenses;
+    //filter expenses by date
+    if (selectedDate) {
+        filterExpenses = expenses?.data?.filter(expense => {
+            return expense.expense_date === selectedDate;
+        })
+    }
+
+
+    console.log(filterExpenses)
+
 
     return (
         <div className='p-5 mt-4'>
@@ -49,7 +61,9 @@ const Expense = () => {
             <div className='md:flex justify-between items-center'>
                 <div className="date_field flex md:w-[40%] w-full items-center mb-5 md:mb-0">
                     <p className='text-sm mr-5 font-bold w-fit text-secondary'>{selectedDate}</p>
-                    <input onChange={(e) => setSelectedDate(e.target.value)} className='input w-[50%] input-bordered input-md' type="date" />
+                    <input onChange={(e) => {
+                        setSelectedDate(e.target.value);
+                    }} className='input w-[50%] input-bordered input-md' type="date" />
                 </div>
                 <div className="data_field flex md:w-[60%] w-full md:justify-end">
                     <button className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
@@ -58,7 +72,7 @@ const Expense = () => {
                 </div>
             </div>
 
-            <AddExpenseModal refetch={refetch}/>
+            <AddExpenseModal refetch={refetch} />
 
             <div className='mt-10'>
                 <div className='mb-5'>
@@ -75,17 +89,31 @@ const Expense = () => {
                             </thead>
                             <tbody>
                                 {
-                                    expenses?.data?.map((expense, index) => {
-                                        return (
-                                            <tr>
-                                                <th>{++index}</th>
-                                                <td>{expense?.name}</td>
-                                                <td>{expense?.expense_date}</td>
-                                                <td className='font-bold'>৳ {expense?.amount}</td>
-                                                <td>{expense?.message}</td>
-                                            </tr>
-                                        )
-                                    })
+                                    selectedDate && filterExpenses?.length > 0 ? (
+                                        filterExpenses?.map((expense, index) => {
+                                            return (
+                                                <tr>
+                                                    <th>{++index}</th>
+                                                    <td>{expense?.name}</td>
+                                                    <td>{expense?.expense_date}</td>
+                                                    <td className='font-bold'>৳ {expense?.amount}</td>
+                                                    <td>{expense?.message}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    ) : (
+                                        expenses?.data?.map((expense, index) => {
+                                            return (
+                                                <tr>
+                                                    <th>{++index}</th>
+                                                    <td>{expense?.name}</td>
+                                                    <td>{expense?.expense_date}</td>
+                                                    <td className='font-bold'>৳ {expense?.amount}</td>
+                                                    <td>{expense?.message}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    )
                                 }
                             </tbody>
                         </table>
