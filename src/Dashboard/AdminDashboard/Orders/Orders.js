@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
 import OrdersTable from './OrdersTable';
 import { BiSearch } from 'react-icons/bi';
 import { VscBellDot } from 'react-icons/vsc';
 import { useQuery } from 'react-query';
+import Package from './Package';
 
 const Orders = () => {
     const { token } = AuthUser()
+    const { packages } = Package()
+
 
     const { data: products, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/product_orders`, {
@@ -16,11 +19,25 @@ const Orders = () => {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
-            
+
     )
     if (isLoading) {
         return <Loading />
     }
+
+    console.log(products?.data)
+    // useEffect(() => {
+    //     const url = "https://gym-management97.herokuapp.com/api/package_order";
+
+    //     fetch(url, {
+    //       method: "GET",
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       },
+    //     })
+    //       .then((res) => res.json())
+    //       .then((data) => setPackages(data.data));
+    //   }, [token]);
 
 
     return (
@@ -47,7 +64,37 @@ const Orders = () => {
                 03 Mar 2022, Thursday
             </div>
 
-            <OrdersTable salaryDetails={products.data} />
+            <div className='mb-5'>
+                <div class="overflow-x-auto ">
+                    <table class="table table-compact w-full">
+                        <thead>
+                            <tr className='bg-accent'>
+                                <th className='bg-accent'></th>
+                                <th className='bg-accent'>Name</th>
+                                <th className='bg-accent'>Date</th>
+                                <th className='bg-accent'>Amount</th>
+                                <th className='bg-accent'>Payment Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                products?.data?.map((product, index) => <OrdersTable
+                                    key={product?.id}
+                                    product={product}
+                                    index={index}
+                                ></OrdersTable>)
+                            }
+                            {/* {
+                                products?.data?.map((product, index) => <OrdersTable
+                                key={product?.id}
+                                product={product}
+                                index={index}
+                                ></OrdersTable>)
+                            } */}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };
