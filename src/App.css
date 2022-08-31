@@ -250,8 +250,14 @@ input[type="checkbox"]:checked:after {
     z-index: 500 !important;
 }
 
+.drawer-toggle~.drawer-side>.drawer-overlay {
+    grid-row-start: auto !important;
 
+}
 
+.drawer {
+    overflow-x: hidden !important;
+}
 
 @media only screen and (max-width: 1280px) {
     .mid-container {

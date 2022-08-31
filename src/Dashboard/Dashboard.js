@@ -25,20 +25,20 @@ const Dashboard = () => {
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto text-xl' /></Link>
+                                <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto text-lg' /></Link>
                                 <Link className='' to={'/dashboard/accounts-home'}> Home</Link>
                             </div>
                         </div>
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto text-xl' /></Link>
+                                <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto text-lg' /></Link>
                                 <Link className='' to={'/dashboard/accounts-profile'}> Profile</Link>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
-                                <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto text-xl' /></Link>
+                                <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto text-lg' /></Link>
                                 <Link className='' to={'/dashboard/accounts-salary'}> Salary</Link>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                                 <Link className='' to={'/dashboard/accounts-expense'}> Expense</Link>
                             </div>
                         </div>
-                        
+
 
                         <div className='flex items-center justify-center mb-4'>
                             <div>
