@@ -75,7 +75,7 @@ export default function AddExpenseModal({ refetch }) {
 
 
     return (
-        <div className='mt-20'>
+        <div className='mt-10'>
             {/* <button onClick={openModal}>
                 <FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon>
             </button> */}
