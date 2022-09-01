@@ -52,7 +52,7 @@ const Salary = () => {
             <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-8 mb-8'>
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white mb-5'>
                     <div className='sm:py-8 pt-5 pb-2'>
-                        <h1 className='font-bold text-xl text-center'>Current Balance</h1>
+                        <h1 className='font-bold text-xl text-center'>Total Pending</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const Salary = () => {
                         <BsPlusLg className=' font-extrabold' />
                     </div>
                     <div className='text-primary sm:py-8  pb-2'>
-                        <h1 className='font-bold text-xl'>Total Expense</h1>
+                        <h1 className='font-bold text-xl'>Total Unpaid</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const Salary = () => {
                         <BsPlusLg className=' font-extrabold' />
                     </div>
                     <div className='text-success sm:py-8 pt-5 pb-4'>
-                        <h1 className='font-bold text-xl'>Total Income</h1>
+                        <h1 className='font-bold text-xl'>Total Paid</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
