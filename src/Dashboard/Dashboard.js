@@ -10,6 +10,7 @@ import { FaMoneyCheck } from 'react-icons/fa';
 import { RiOrderPlayLine } from 'react-icons/ri';
 import { GoSignOut } from 'react-icons/go';
 import AuthUser from '../hooks/AuthUser/AuthUser';
+import DashLink from '../hooks/DashboardCustomLink/DashLink';
 
 const Dashboard = () => {
     const { logout } = AuthUser()
@@ -27,49 +28,49 @@ const Dashboard = () => {
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/accounts-home'}> Home</Link>
+                                <DashLink to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/accounts-home'}> Home</DashLink>
                             </div>
                         </div>
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/accounts-profile '> <FaUser className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/accounts-profile'}> Profile</Link>
-                            </div>
-                        </div>
-
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <Link to='/dashboard/accounts-salary'> <MdPaid className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/accounts-salary'}> Salary</Link>
+                                <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/manage-form'}> Form</Link>
+                                <DashLink to='/dashboard/accounts-salary'> <MdPaid className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/accounts-salary'}> Salary</DashLink>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/manage-orders'}> Orders</Link>
+                                <DashLink to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/manage-form'}> Form</DashLink>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/accounts-income'}> Incomes</Link>
+                                <DashLink to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/manage-orders'}> Orders</DashLink>
                             </div>
                         </div>
 
                         <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
-                                <Link to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto xl:text-xl' /></Link>
-                                <Link className='' to={'/dashboard/accounts-expense'}> Expense</Link>
+                                <DashLink to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/accounts-income'}> Incomes</DashLink>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center justify-center mb-4'>
+                            <div className='hover:text-primary'>
+                                <DashLink to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
+                                <DashLink className='' to={'/dashboard/accounts-expense'}> Expense</DashLink>
                             </div>
                         </div>
 
