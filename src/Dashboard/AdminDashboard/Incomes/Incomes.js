@@ -56,14 +56,14 @@ const Incomes = () => {
                     <p className='text-sm  font-bold text-secondary'>{date}</p>
                 </div>
             </div>
-            <h1 className='text-center md:text-2xl text-xl font-bold mt-4 md:mb-5 mb-5'>Expense History</h1>
+            <h1 className='text-center md:text-2xl text-xl font-bold mt-4 md:mb-5 mb-5'>Income History</h1>
 
             <div className='md:flex justify-between items-center'>
                 <div className="date_field flex md:w-[40%] w-full items-center mb-5 md:mb-0">
                     <p className='text-sm mr-5 font-bold w-fit text-secondary'>{selectedDate}</p>
                     <input onChange={(e) => {
                         setSelectedDate(e.target.value);
-                    }} className='input w-[50%] input-bordered input-md' type="date" />
+                    }} className='input w-[50%] input-bordered input-md cursor-pointer' type="date" />
                 </div>
                 <div className="data_field flex md:w-[60%] w-full md:justify-end">
                     <button className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
@@ -84,7 +84,7 @@ const Incomes = () => {
                                     <th className='bg-accent'>Name</th>
                                     <th className='bg-accent'>Date</th>
                                     <th className='bg-accent'>Amount</th>
-                                    <th className='bg-accent'>Payment Type</th>
+                                    <th className='bg-accent'>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,7 +97,7 @@ const Incomes = () => {
                                                     <td>{income?.name}</td>
                                                     <td>{income?.expense_date}</td>
                                                     <td className='font-bold'>৳ {income?.amount}</td>
-                                                    <td>{income?.message}</td>
+                                                    <td><button className='btn sm:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
@@ -109,7 +109,7 @@ const Incomes = () => {
                                                     <td>{income?.name}</td>
                                                     <td>{income?.expense_date}</td>
                                                     <td className='font-bold'>৳ {income?.amount}</td>
-                                                    <td>{income?.message}</td>
+                                                    <td><button className='btn sm:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
