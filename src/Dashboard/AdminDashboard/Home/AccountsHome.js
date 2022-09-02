@@ -32,7 +32,6 @@ const AccountsHome = () => {
 
     // console.log(orders.data)
 
-
     return (
         <div className='p-5 mt-4'>
             <div className='flex justify-between'>
@@ -54,8 +53,9 @@ const AccountsHome = () => {
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
 
-            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-8 mb-8'>
-                <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white mb-5'>
+            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-5 mb-8'>
+                
+                <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white'>
                     <div className='sm:py-8 pt-5 pb-2'>
                         <h1 className='font-bold text-xl text-center'>Current Balance</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />100</h2>
@@ -63,17 +63,17 @@ const AccountsHome = () => {
                 </div>
 
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white relative'>
-                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-32 md:-mt-24 sm:-mt-28 -mt-14 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
+                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-28 md:-mt-24 sm:-mt-28 -mt-9 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
                         <BsPlusLg className=' font-extrabold' />
                     </div>
-                    <div className='text-primary sm:py-8  pb-2'>
+                    <div className='text-primary sm:py-8 pt-5  pb-2'>
                         <h1 className='font-bold text-xl'>Total Expense</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
 
                 <div className='flex items-center justify-center relative'>
-                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-32 md:-mt-24 sm:-mt-28 -mt-10 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
+                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-28 md:-mt-24 sm:-mt-28 -mt-10 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
                         <BsPlusLg className=' font-extrabold' />
                     </div>
                     <div className='text-success sm:py-8 pt-5 pb-4'>

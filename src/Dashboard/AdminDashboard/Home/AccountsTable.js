@@ -10,7 +10,7 @@ const AccountsTable = ({ orders }) => {
                     <thead>
                         <tr className='bg-accent'>
                             <th className='bg-accent'></th>
-                            <th className='bg-accent'>Name</th>
+                            <th className='bg-accent'>Email</th>
                             <th className='bg-accent'>Date</th>
                             <th className='bg-accent'>Amount</th>
                             <th className='bg-accent'>Payment Type</th>
