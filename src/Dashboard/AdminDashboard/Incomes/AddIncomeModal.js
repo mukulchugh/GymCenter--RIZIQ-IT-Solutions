@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
+// import './AddIncomeModal.css'
 
 
 const customStyles = {
@@ -23,7 +24,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 
-export default function AddExpenseModal({ refetch }) {
+export default function AddIncomeModal({ refetch }) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser()
@@ -55,7 +56,7 @@ export default function AddExpenseModal({ refetch }) {
         }
         // console.log(expense)
         // post data to database 
-        fetch(`https://gym-management97.herokuapp.com/api/expense/`, {
+        fetch(`https://gym-management97.herokuapp.com/api/income/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +81,7 @@ export default function AddExpenseModal({ refetch }) {
             </button> */}
             <div onClick={openModal} className='bg-accent py-5 flex items-center justify-center rounded-2xl border-dashed border-2 cursor-pointer'>
                 <div>
-                    <h1 className='font-bold text-2xl'>Add Expense</h1>
+                    <h1 className='font-bold text-2xl'>Add Income</h1>
                     <IoMdAddCircleOutline className='text-3xl font-bold mx-auto mt-2' />
                 </div>
             </div>
@@ -88,9 +89,10 @@ export default function AddExpenseModal({ refetch }) {
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
+                contentLabel="Example Modal"
                 style={customStyles}
-                contentLabel="Example Modal">
-
+                >
+                
                 <div className="text-xl font-bold border-b-[1px] border-[#8f8f8f66] pb-1">Add Expense</div>
 
                 <form onSubmit={handleSubmit(onSubmitForm)}>

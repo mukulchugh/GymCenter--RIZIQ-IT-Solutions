@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
 import AddExpenseModal from '../Expense/AddExpenseModal';
+import AddIncomeModal from './AddIncomeModal';
 
 const Incomes = () => {
     const { token, getUser } = AuthUser()
@@ -22,8 +23,8 @@ const Incomes = () => {
     // const [filterExpenses, setFilterExpenses] = useState([]);
 
 
-    const { data: expenses, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://gym-management97.herokuapp.com/api/expense`, {
+    const { data: incomes, isLoading, refetch } = useQuery('users', () =>
+        fetch(`https://gym-management97.herokuapp.com/api/income`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
@@ -35,16 +36,16 @@ const Incomes = () => {
     }
 
     //filter expenses by date and auto update when date is changed
-    let filterExpenses;
+    let filterIncomes;
     //filter expenses by date
     if (selectedDate) {
-        filterExpenses = expenses?.data?.filter(expense => {
-            return expense.expense_date === selectedDate;
+        filterIncomes = incomes?.data?.filter(incomes => {
+            return incomes.expense_date === selectedDate;
         })
     }
 
 
-    console.log(filterExpenses)
+    console.log(incomes)
 
 
     return (
@@ -71,7 +72,7 @@ const Incomes = () => {
                 </div>
             </div>
 
-            <AddExpenseModal refetch={refetch} />
+            <AddIncomeModal refetch={refetch} />
 
             <div className='mt-10'>
                 <div className='mb-5'>
@@ -88,27 +89,27 @@ const Incomes = () => {
                             </thead>
                             <tbody>
                                 {
-                                    selectedDate && filterExpenses?.length > 0 ? (
-                                        filterExpenses?.map((expense, index) => {
+                                    selectedDate && filterIncomes?.length > 0 ? (
+                                        filterIncomes?.map((income, index) => {
                                             return (
                                                 <tr>
                                                     <th>{++index}</th>
-                                                    <td>{expense?.name}</td>
-                                                    <td>{expense?.expense_date}</td>
-                                                    <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td>{income?.name}</td>
+                                                    <td>{income?.expense_date}</td>
+                                                    <td className='font-bold'>৳ {income?.amount}</td>
+                                                    <td>{income?.message}</td>
                                                 </tr>
                                             )
                                         })
                                     ) : (
-                                        expenses?.data?.map((expense, index) => {
+                                        incomes?.data?.map((income, index) => {
                                             return (
                                                 <tr>
                                                     <th>{++index}</th>
-                                                    <td>{expense?.name}</td>
-                                                    <td>{expense?.expense_date}</td>
-                                                    <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td>{income?.name}</td>
+                                                    <td>{income?.expense_date}</td>
+                                                    <td className='font-bold'>৳ {income?.amount}</td>
+                                                    <td>{income?.message}</td>
                                                 </tr>
                                             )
                                         })

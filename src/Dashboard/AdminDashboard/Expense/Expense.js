@@ -45,7 +45,7 @@ const Expense = () => {
     }
 
 
-    console.log(filterExpenses)
+    console.log(expenses)
 
 
     return (
