@@ -10,7 +10,7 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { MdManageSearch } from 'react-icons/md';
 
 const Orders = () => {
-    const { token } = AuthUser()
+    const { token, userRole } = AuthUser()
     // const { packages } = Package()
 
     const [products, setProducts] = useState([]);
@@ -45,22 +45,7 @@ const Orders = () => {
             .then((data) => setPackages(data.data));
     }, [token]);
 
-
-
-    // console.log(productsLength)
-
-    // const { data: products, isLoading, refetch } = useQuery('users', () =>
-    //     fetch(`https://gym-management97.herokuapp.com/api/product_orders`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'authorization': `Bearer ${token}`
-    //         }
-    //     }).then(res => res.json())
-
-    // )
-    // if (isLoading) {
-    //     return <Loading />
-    // }
+    console.log(userRole)
 
     return (
         <div className='p-5 mt-4'>

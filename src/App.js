@@ -28,7 +28,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/crossFit' element={<CrossFit />} />
-        <Route path='/fitness' element={<Fitness />} />
+        <Route path='/programs' element={<Fitness />} />
         <Route path='/trainers' element={<Trainers />} />
         <Route path='/testimonials' element={<Testimonials />} />
         <Route path='/blog' element={<Blog />} />
