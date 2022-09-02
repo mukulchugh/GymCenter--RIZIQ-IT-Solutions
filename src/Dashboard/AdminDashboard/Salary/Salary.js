@@ -25,18 +25,27 @@ const Salary = () => {
         return <Loading />
     }
 
-    // const salaries = salaryDetails.data.map(salary => salary)
-    
-    // let paidAmount
-    // let UnpaidAmount
+ 
+    const salaryPaid = salaryDetails.data.filter(salary => {
+        if (salary.status) {
+            return salary
+        }
+    })
+    const paidAmount = salaryPaid.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
 
-    // if (salaries.status === true) {
-    //     paidAmount= salaries.reduce((acc, curr) => acc + curr.amount, 0)
-    // } else {
-    //     UnpaidAmount = salaries.reduce((acc, curr) => acc + curr.amount, 0)
-    // }
+    const salaryUnPaid = salaryDetails.data.filter(salary => {
+        if (salary.status === false) {
+            return salary
+        }
+    })
+    const unPaidAmount = salaryUnPaid.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
 
-    // console.log(paidAmount)
+
+    console.log(salaryDetails.data)
 
 
     return (
@@ -62,25 +71,26 @@ const Salary = () => {
 
             <div className='grid sm:grid-cols-3 bg-[#FEEDD1] lg:py-5 mb-8'>
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white'>
-                    <div className='sm:py-8 pt-5 pb-2'>
+                    <div className='sm:py-8 pt-5 pb-2 text-center'>
                         <h1 className='font-bold text-xl text-center'>Total Pending</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
 
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white relative'>
-                    <div className='text-primary sm:py-8 pt-5  pb-2'>
+                    <div className='text-primary sm:py-8 pt-5  pb-2 text-center'>
                         <h1 className='font-bold text-xl'>Total Unpaid</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{unPaidAmount}</h2>
                     </div>
                 </div>
 
                 <div className='flex items-center justify-center relative'>
-                    <div className='text-success sm:py-8 pt-5 pb-4'>
+                    <div className='text-success sm:py-8 pt-5 pb-4 text-center'>
                         <h1 className='font-bold text-xl'>Total Paid</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{paidAmount}</h2>
                     </div>
                 </div>
+
             </div>
 
             <div className='mb-8 '>
