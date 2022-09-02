@@ -19,13 +19,24 @@ const Salary = () => {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
-            
+
     )
     if (isLoading) {
         return <Loading />
     }
 
-    // console.log(orders.data)
+    // const salaries = salaryDetails.data.map(salary => salary)
+    
+    // let paidAmount
+    // let UnpaidAmount
+
+    // if (salaries.status === true) {
+    //     paidAmount= salaries.reduce((acc, curr) => acc + curr.amount, 0)
+    // } else {
+    //     UnpaidAmount = salaries.reduce((acc, curr) => acc + curr.amount, 0)
+    // }
+
+    // console.log(paidAmount)
 
 
     return (
