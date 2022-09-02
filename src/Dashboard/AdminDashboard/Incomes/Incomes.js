@@ -97,7 +97,7 @@ const Incomes = () => {
                                                     <td>{income?.name}</td>
                                                     <td>{income?.expense_date}</td>
                                                     <td className='font-bold'>৳ {income?.amount}</td>
-                                                    <td><button className='btn sm:btn-sm btn-xs btn-warning text-white'>Details</button></td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
@@ -109,7 +109,7 @@ const Incomes = () => {
                                                     <td>{income?.name}</td>
                                                     <td>{income?.expense_date}</td>
                                                     <td className='font-bold'>৳ {income?.amount}</td>
-                                                    <td><button className='btn sm:btn-sm btn-xs btn-warning text-white'>Details</button></td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })

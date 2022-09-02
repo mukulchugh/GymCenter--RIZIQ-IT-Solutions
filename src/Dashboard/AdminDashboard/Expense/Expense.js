@@ -97,7 +97,7 @@ const Expense = () => {
                                                     <td>{expense?.name}</td>
                                                     <td>{expense?.expense_date}</td>
                                                     <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
@@ -109,7 +109,7 @@ const Expense = () => {
                                                     <td>{expense?.name}</td>
                                                     <td>{expense?.expense_date}</td>
                                                     <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
