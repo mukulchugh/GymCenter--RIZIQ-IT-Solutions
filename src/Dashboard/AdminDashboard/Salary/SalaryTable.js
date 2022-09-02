@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SalaryTable = ({ salaryDetails }) => {
-    console.log(salaryDetails)
+    // console.log(salaryDetails)
     return (
         <div className='mb-5'>
             <div className="overflow-x-auto ">
@@ -13,6 +13,7 @@ const SalaryTable = ({ salaryDetails }) => {
                             <th className='bg-accent'>Email</th>
                             <th className='bg-accent'>Date</th>
                             <th className='bg-accent'>Amount</th>
+                            <th className='bg-accent'>Type</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,9 @@ const SalaryTable = ({ salaryDetails }) => {
                                         <td>{data?.user?.email}</td>
                                         <td>{data?.date}</td>
                                         <td className='font-bold'>৳ {data?.amount}</td>
+                                        {
+                                            data?.status ? <td ><button className='btn  btn-xs btn-success text-white'>Paid</button></td>: <td ><button className='btn btn-xs btn-error text-white'>Unpaid</button></td>
+                                        }
                                     </tr>
                                 )
                             })

@@ -19,13 +19,33 @@ const Salary = () => {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
-            
+
     )
     if (isLoading) {
         return <Loading />
     }
 
-    // console.log(orders.data)
+ 
+    const salaryPaid = salaryDetails.data.filter(salary => {
+        if (salary.status) {
+            return salary
+        }
+    })
+    const paidAmount = salaryPaid.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
+
+    const salaryUnPaid = salaryDetails.data.filter(salary => {
+        if (salary.status === false) {
+            return salary
+        }
+    })
+    const unPaidAmount = salaryUnPaid.reduce((acc, curr) => {
+        return acc + curr.amount
+    }, 0)
+
+
+    console.log(salaryDetails.data)
 
 
     return (
@@ -49,33 +69,28 @@ const Salary = () => {
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
 
-            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] sm:py-8 mb-8'>
-                <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white mb-5'>
-                    <div className='sm:py-8 pt-5 pb-2'>
-                        <h1 className='font-bold text-xl text-center'>Current Balance</h1>
+            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] lg:py-5 mb-8'>
+                <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white'>
+                    <div className='sm:py-8 pt-5 pb-2 text-center'>
+                        <h1 className='font-bold text-xl text-center'>Total Pending</h1>
                         <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />100</h2>
                     </div>
                 </div>
 
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white relative'>
-                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-32 md:-mt-24 sm:-mt-28 -mt-14 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
-                        <BsPlusLg className=' font-extrabold' />
-                    </div>
-                    <div className='text-primary sm:py-8  pb-2'>
-                        <h1 className='font-bold text-xl'>Total Expense</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                    <div className='text-primary sm:py-8 pt-5  pb-2 text-center'>
+                        <h1 className='font-bold text-xl'>Total Unpaid</h1>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{unPaidAmount}</h2>
                     </div>
                 </div>
 
                 <div className='flex items-center justify-center relative'>
-                    <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer absolute lg:-mt-32 md:-mt-24 sm:-mt-28 -mt-10 lg:-mr-60 md:-mr-52 sm:-mr-40 -mr-60'>
-                        <BsPlusLg className=' font-extrabold' />
-                    </div>
-                    <div className='text-success sm:py-8 pt-5 pb-4'>
-                        <h1 className='font-bold text-xl'>Total Income</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                    <div className='text-success sm:py-8 pt-5 pb-4 text-center'>
+                        <h1 className='font-bold text-xl'>Total Paid</h1>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{paidAmount}</h2>
                     </div>
                 </div>
+
             </div>
 
             <div className='mb-8 '>
