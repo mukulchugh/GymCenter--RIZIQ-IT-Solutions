@@ -83,7 +83,7 @@ export default function AddSalaryModal({ refetch }) {
                                 <label class="label">
                                     <span class="label-text">Source Name</span>
                                 </label>
-                                <input type="text" placeholder="Enter The Name of Expense Source" class="input input-bordered w-full focus:outline-none"
+                                <input type="text" placeholder="Enter The Name of Salary Source" class="input input-bordered w-full focus:outline-none"
                                     {...register("name", {
                                         required: 'Name is required',
                                         minLength: {
@@ -102,7 +102,7 @@ export default function AddSalaryModal({ refetch }) {
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none"
+                                <input type="number" placeholder="Enter The Amount of Salary" class="input input-bordered w-full focus:outline-none"
                                     {...register("amount", {
                                         required: 'Amount is required',
                                     })}
@@ -116,7 +116,7 @@ export default function AddSalaryModal({ refetch }) {
                         <div className=" mt-3">
                             <div class="form-control w-full">
                                 <label class="label">
-                                    <span class="label-text">Expense Date</span>
+                                    <span class="label-text">Salary Date</span>
                                 </label>
                                 <input type="date" class="input input-bordered w-full focus:outline-none"
                                     {...register("expense_date", {

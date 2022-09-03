@@ -76,96 +76,88 @@ export default function AddIncomeModal({ refetch }) {
     return (
 
         <div className='mt-10'>
-            {/* <button onClick={openModal}>
-                <FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon>
-            </button> */}
-            <div onClick={openModal} className='bg-accent py-5 flex items-center justify-center rounded-2xl border-dashed border-2 cursor-pointer'>
+            <label for="my-modal-5" className='bg-accent py-5 flex items-center justify-center rounded-2xl border-dashed border-2 cursor-pointer'>
                 <div>
                     <h1 className='font-bold text-2xl'>Add Income</h1>
                     <IoMdAddCircleOutline className='text-3xl font-bold mx-auto mt-2' />
                 </div>
-            </div>
-            <Modal
-                isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                contentLabel="Example Modal"
-                style={customStyles}
-                >
-                
-                <div className="text-xl font-bold border-b-[1px] border-[#8f8f8f66] pb-1">Add Expense</div>
+            </label>
 
-                <form onSubmit={handleSubmit(onSubmitForm)}>
-                    <div className=" mt-3">
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Source Name</span>
-                            </label>
-                            <input type="text" placeholder="Enter The Name of Expense Source" class="input input-bordered w-full focus:outline-none"
-                                {...register("name", {
-                                    required: 'Name is required',
-                                    minLength: {
-                                        value: 3,
-                                        message: 'Name must be at least 3 characters'
-                                    }
-                                })}
-                                onKeyUp={(e) => {
-                                    trigger('name');
-                                }} />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.name?.message}</small>
+            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+            <label for="my-modal-5" class="modal">
+                <label class="modal-box lg:w-[60%] relative" for="">
+                    <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-5">
+                        <label for="my-modal-5" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
+                        <div className=" mt-3">
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text">Source Name</span>
+                                </label>
+                                <input type="text" placeholder="Enter The Name of Income Source" class="input input-bordered w-full focus:outline-none"
+                                    {...register("name", {
+                                        required: 'Name is required',
+                                        minLength: {
+                                            value: 3,
+                                            message: 'Name must be at least 3 characters'
+                                        }
+                                    })}
+                                    onKeyUp={(e) => {
+                                        trigger('name');
+                                    }} />
+                                <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.name?.message}</small>
+                            </div>
                         </div>
-                    </div>
-                    <div className=" mt-3 ">
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Amount</span>
-                            </label>
-                            <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none"
-                                {...register("amount", {
-                                    required: 'Amount is required',
-                                })}
-                                onKeyUp={(e) => {
-                                    trigger('amount');
-                                }}
-                            />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.amount?.message}</small>
+                        <div className=" mt-3 ">
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text">Amount</span>
+                                </label>
+                                <input type="number" placeholder="Enter The Amount of Income" class="input input-bordered w-full focus:outline-none"
+                                    {...register("amount", {
+                                        required: 'Amount is required',
+                                    })}
+                                    onKeyUp={(e) => {
+                                        trigger('amount');
+                                    }}
+                                />
+                                <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.amount?.message}</small>
+                            </div>
                         </div>
-                    </div>
-                    <div className=" mt-3">
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Expense Date</span>
-                            </label>
-                            <input type="date" class="input input-bordered w-full focus:outline-none"
-                                {...register("expense_date", {
-                                    required: 'Date is required',
-                                })}
-                                onKeyUp={(e) => {
-                                    trigger('expense_date');
-                                }}
-                            />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.expense_date?.message}</small>
+                        <div className=" mt-3">
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text">Income Date</span>
+                                </label>
+                                <input type="date" class="input input-bordered w-full focus:outline-none"
+                                    {...register("expense_date", {
+                                        required: 'Date is required',
+                                    })}
+                                    onKeyUp={(e) => {
+                                        trigger('expense_date');
+                                    }}
+                                />
+                                <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.expense_date?.message}</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className=" mt-3">
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Message</span>
-                            </label>
-                            <input placeholder="Enter your Message" type="text" class="input input-bordered w-full focus:outline-none"
-                                {...register("message", {
-                                    required: 'Message is required',
-                                })}
-                                onKeyUp={(e) => {
-                                    trigger('message');
-                                }}
-                            />
-                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.message?.message}</small>
+                        <div className=" mt-3">
+                            <div class="form-control w-full">
+                                <label class="label">
+                                    <span class="label-text">Message</span>
+                                </label>
+                                <input placeholder="Enter your Message" type="text" class="input input-bordered w-full focus:outline-none"
+                                    {...register("message", {
+                                        required: 'Message is required',
+                                    })}
+                                    onKeyUp={(e) => {
+                                        trigger('message');
+                                    }}
+                                />
+                                <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.message?.message}</small>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* <div className=" mt-3">
+                        {/* <div className=" mt-3">
                         <div class="form-control w-full">
                             <label class="label">
                                 <span class="label-text">Upload File</span>
@@ -182,21 +174,19 @@ export default function AddIncomeModal({ refetch }) {
                         </div>
                     </div> */}
 
-
-                    <div className="flex gap-2 mt-12">
-                        <div>
-                            <button onClick={closeModal} className="btn btn-sm btn-error bg-red-400 px-3 py-1 rounded-md text-white">
-                                close
-                            </button>
+                        <div className="flex gap-2 mt-12 relative">
+                            <div>
+                                <label for="my-modal-5" class="btn btn-error text-white font-bold btn-sm">Close</label>
+                            </div>
+                            <div className="text-end">
+                                <button
+                                    type='submit'
+                                    className="btn  bg-green-500 text-white font-bold px-3 py-1 rounded-md cursor-pointer btn-sm">Submit</button>
+                            </div>
                         </div>
-                        <div className="text-end">
-                            <button
-                                type='submit'
-                                className="btn bg-green-500 px-3 py-1 rounded-md cursor-pointer btn-sm">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </Modal>
+                    </form>
+                </label>
+            </label>
         </div>
     );
 };

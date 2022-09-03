@@ -24,22 +24,9 @@ Modal.setAppElement("#root");
 
 
 export default function AddExpenseModal({ refetch }) {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser()
 
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
 
 
     const onSubmitForm = (data) => {
@@ -67,7 +54,6 @@ export default function AddExpenseModal({ refetch }) {
                 console.log(data)
                 refetch()
                 reset()
-                closeModal()
             }).catch(err => console.log(err))
     }
 
@@ -81,7 +67,7 @@ export default function AddExpenseModal({ refetch }) {
                     <IoMdAddCircleOutline className='text-3xl font-bold mx-auto mt-2' />
                 </div>
             </label>
-            
+
             <input type="checkbox" id="my-modal-5" class="modal-toggle" />
             <label for="my-modal-5" class="modal">
                 <label class="modal-box lg:w-[60%] relative" for="">
