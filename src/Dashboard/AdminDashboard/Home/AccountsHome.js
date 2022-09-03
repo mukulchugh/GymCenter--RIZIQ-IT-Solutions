@@ -9,6 +9,7 @@ import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
 import IncomeModal from './IncomeModal';
 import ExpenseModal from './ExpenseModal';
+import useExpense from '../../../hooks/HomeExpense/useExpense';
 
 const AccountsHome = () => {
     const { token } = AuthUser()
@@ -20,6 +21,17 @@ const AccountsHome = () => {
     const monthName = monthNames[month];
     const date = `${day} ${monthName} ${year}`;
     const [products, setProducts] = useState([]);
+    const expense = useExpense();
+    // const [expenseTotal, setExpenseTotal] = useState(0);
+
+    // console.log(expense.expense);
+
+
+    const expenseTotal = expense.expense?.reduce((total, expense) => {
+        return total + Number(expense.amount);
+    }, 0)
+
+
 
     const { data: orders, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
@@ -69,7 +81,7 @@ const AccountsHome = () => {
 
                     <div className='text-primary sm:py-8 pt-5  pb-2'>
                         <h1 className='font-bold text-xl'>Total Expense</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{expenseTotal}</h2>
                     </div>
                 </div>
 
