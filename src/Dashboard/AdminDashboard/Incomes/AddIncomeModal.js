@@ -6,41 +6,11 @@ import AuthUser from '../../../hooks/AuthUser/AuthUser';
 // import './AddIncomeModal.css'
 
 
-const customStyles = {
-    content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        width: '50%',
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        padding: "30px",
-        backgroundColor: "#f3f4f6",
-        border: "1px solid #8f8f8f66",
-    },
-};
-
-Modal.setAppElement("#root");
-
 
 export default function AddIncomeModal({ refetch }) {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser()
 
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
 
 
     const onSubmitForm = (data) => {
@@ -68,7 +38,6 @@ export default function AddIncomeModal({ refetch }) {
                 console.log(data)
                 refetch()
                 reset()
-                closeModal()
             }).catch(err => console.log(err))
     }
 
