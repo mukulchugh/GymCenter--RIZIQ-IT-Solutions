@@ -15,6 +15,7 @@ const Orders = () => {
 
     const [products, setProducts] = useState([]);
     const [packages, setPackages] = useState([]);
+    const [allProductState, setAllProductState] = useState(true);
     // product
     useEffect(() => {
         const url = "https://gym-management97.herokuapp.com/api/product_orders";
@@ -27,9 +28,9 @@ const Orders = () => {
         })
             .then((res) => res.json())
             .then((data) => setProducts(data.data));
-    }, [token]);
+    }, [token, allProductState]);
 
-    // console.log("products", products);
+
 
 
     useEffect(() => {
@@ -42,10 +43,21 @@ const Orders = () => {
             },
         })
             .then((res) => res.json())
-            .then((data) => setPackages(data.data));
+            .then((data) => {
+                console.log(data.data, 'packages');
+                setPackages(data.data)
+            });
     }, [token]);
 
-    console.log(userRole)
+    const handleProduct = () => {
+        setAllProductState(true);
+
+
+    }
+    const handlePackage = () => {
+        setAllProductState(false);
+
+    }
 
     return (
         <div className='p-5 mt-4'>
@@ -81,9 +93,13 @@ const Orders = () => {
                     <h1>Filter Order</h1>
                 </div> */}
                 <div className="data_field flex  md:justify-end">
-                    <button className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
+                    <button
+                        onClick={handleProduct}
+                        className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
                     <button className='btn btn-sm btn-primary rounded-md mr-2'>Products</button>
-                    <button className='btn btn-sm btn-primary rounded-md'>Packages</button>
+                    <button
+                        onClick={handlePackage}
+                        className='btn btn-sm btn-primary rounded-md'>Packages</button>
                 </div>
             </div>
             <div className='mb-5'>
@@ -91,7 +107,7 @@ const Orders = () => {
                     <table class="table table-compact w-full">
                         <thead>
                             <tr className='bg-accent'>
-                                <th className='bg-accent'></th>
+                                <th className='bg-accent'>#</th>
                                 <th className='bg-accent'>Menu</th>
                                 <th className='bg-accent'>Date</th>
                                 <th className='bg-accent'>Amount</th>
@@ -100,11 +116,28 @@ const Orders = () => {
                         </thead>
                         <tbody>
                             {
-                                products?.map((product, index) => <OrdersTable
-                                    key={product?.id}
-                                    product={product}
-                                    index={index}
-                                ></OrdersTable>)
+                                allProductState ? (
+                                    products?.map((product, index) => <OrdersTable
+                                        key={index}
+                                        product={product}
+                                        index={index}
+                                    ></OrdersTable>)
+                                ) : (
+                                    packages?.map((product, index) =>
+                                            <tr key={index} >
+                                                <th>{product?.id}</th>
+                                                <td>{product?.package?.feature[0]?.name}</td>
+                                                <td>{product?.order_date}</td>
+                                                <td className='font-bold'>৳ {product?.package?.discounted_price}</td>
+                                                {
+                                                    product?.status === 'Complete' ? <td><button className='btn btn-xs btn-success'>{product?.status}</button></td>
+                                                        :
+                                                        <td><button className='btn btn-xs btn-primary'>{product?.status}</button></td>
+                                                }
+                                            </tr>
+
+                                    )
+                                )
                             }
                             {/* {
                                 packages?.map((product, index) => <OrdersTable
@@ -117,7 +150,7 @@ const Orders = () => {
                     </table>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

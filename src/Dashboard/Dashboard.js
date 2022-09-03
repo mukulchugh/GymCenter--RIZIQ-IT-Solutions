@@ -13,7 +13,7 @@ import AuthUser from '../hooks/AuthUser/AuthUser';
 import DashLink from '../hooks/DashboardCustomLink/DashLink';
 
 const Dashboard = () => {
-    const { logout } = AuthUser()
+    const { logout, userRole } = AuthUser()
     return (
         <>
             <SharedNav />
@@ -26,62 +26,83 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <div className=" p-4 lg:w-32 w-28  bg-accent font-bold py-10 text-center min-h-[100vh]">
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/accounts-home'}> Home</DashLink>
-                            </div>
-                        </div>
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
-                            </div>
-                        </div>
+                        {
+                            userRole === 'accountant' &&
+                            <>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-home'}> Home</DashLink>
+                                    </div>
+                                </div>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
+                                    </div>
+                                </div>
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/accounts-salary'> <MdPaid className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/accounts-salary'}> Salary</DashLink>
-                            </div>
-                        </div>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-salary'> <MdPaid className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-salary'}> Salary</DashLink>
+                                    </div>
+                                </div>
 
-                        {/* <div className='flex items-center justify-center mb-4'>
+                                {/* <div className='flex items-center justify-center mb-4'>
                             <div className='hover:text-primary'>
                                 <DashLink to='/dashboard/manage-form'> <AiOutlineForm className='mx-auto xl:text-xl' /></DashLink>
                                 <DashLink className='' to={'/dashboard/manage-form'}> Form</DashLink>
                             </div>
                         </div> */}
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/manage-orders'}> Orders</DashLink>
-                            </div>
-                        </div>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/manage-orders'> <RiOrderPlayLine className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/manage-orders'}> Orders</DashLink>
+                                    </div>
+                                </div>
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/accounts-income'}> Incomes</DashLink>
-                            </div>
-                        </div>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-income'> <FaMoneyCheck className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-income'}> Incomes</DashLink>
+                                    </div>
+                                </div>
 
-                        <div className='flex items-center justify-center mb-4'>
-                            <div className='hover:text-primary'>
-                                <DashLink to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
-                                <DashLink className='' to={'/dashboard/accounts-expense'}> Expense</DashLink>
-                            </div>
-                        </div>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-expense'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-expense'}> Expense</DashLink>
+                                    </div>
+                                </div>
 
+                                <div className='flex items-center justify-center mb-4 cursor-pointer'>
+                                    <div className='hover:text-primary' onClick={logout}>
+                                        <GoSignOut className='mx-auto xl:text-xl' />
+                                        <button> LogOut</button>
+                                    </div>
+                                </div>
+                            </>
+                        }
 
-                        <div className='flex items-center justify-center mb-4 cursor-pointer'>
-                            <div className='hover:text-primary' onClick={logout}>
-                                <GoSignOut className='mx-auto xl:text-xl' />
-                                <button> LogOut</button>
-                            </div>
-                        </div>
+                        {
+                            userRole === 'user' && <>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-home'}> Home</DashLink>
+                                    </div>
+                                </div>
 
+                                <div className='flex items-center justify-center mb-4 cursor-pointer'>
+                                    <div className='hover:text-primary' onClick={logout}>
+                                        <GoSignOut className='mx-auto xl:text-xl' />
+                                        <button> LogOut</button>
+                                    </div>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
             </div>
