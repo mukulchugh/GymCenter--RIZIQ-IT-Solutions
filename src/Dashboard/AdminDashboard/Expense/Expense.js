@@ -22,8 +22,9 @@ const Expense = () => {
 
     const [allData, setAllData] = useState(true);
     const [assets, setAssets] = useState([]);
+    const [assetsBullian, setAssetsBullian] = useState(false);
     const [pettyCash, setSetPettyCash] = useState([]);
-
+    const [pettyCashBullian, setPettyCashBullian] = useState(false);
 
     const { data: expenses, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/expense`, {
@@ -50,9 +51,12 @@ const Expense = () => {
 
     const handleAssets = () => {
         setAllData(false);
+        setPettyCashBullian(false);
+        setAssetsBullian(true);
+        pettyCash.length = 0;
 
         const asset = expenses?.data?.filter(expense => {
-            if (expense.amount <= 500) {
+            if (expense.amount > 500) {
                 return expense;
             }
         }
@@ -62,9 +66,12 @@ const Expense = () => {
 
     const handlePettyCash = () => {
         setAllData(false);
+        setPettyCashBullian(true);
+        setAssetsBullian(false);
+        assets.length = 0;
 
         const pettyCash = expenses?.data?.filter(expense => {
-            if (expense.amount > 500) {
+            if (expense.amount <= 500) {
                 return expense;
             }
         }
@@ -98,10 +105,14 @@ const Expense = () => {
                         onClick={() => setAllData(true)}
                         className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
                     <button
-                        onClick={handleAssets}
+                        onClick={() => {
+                            handleAssets();
+                        }}
                         className='btn btn-sm btn-primary rounded-md mr-2'>Assets</button>
                     <button
-                        onClick={handlePettyCash}
+                        onClick={() => {
+                            handlePettyCash();
+                        }}
                         className='btn btn-sm btn-primary rounded-md'>Petty Cash</button>
                 </div>
             </div>
@@ -148,8 +159,8 @@ const Expense = () => {
                                                     </tr>
                                                 )
                                             })) :
-                                            !allData && assets?.length > 0 ?
-                                                (assets?.data?.map((expense, index) => {
+                                            assets?.length > 0 ?
+                                                (assets?.map((expense, index) => {
                                                     return (
                                                         <tr>
                                                             <th>{++index}</th>
@@ -161,7 +172,7 @@ const Expense = () => {
                                                     )
                                                 })) :
                                                 !allData && pettyCash?.length > 0 &&
-                                                (pettyCash?.data?.map((expense, index) => {
+                                                (pettyCash?.map((expense, index) => {
                                                     return (
                                                         <tr>
                                                             <th>{++index}</th>
