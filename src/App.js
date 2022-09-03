@@ -21,8 +21,11 @@ import ManageForm from './Dashboard/AdminDashboard/ManageForm/ManageForm';
 import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
 import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
+import AuthUser from './hooks/AuthUser/AuthUser';
 
 function App() {
+  const {userRole} = AuthUser()
+  console.log(userRole)
   return (
     <div>
       <Routes>

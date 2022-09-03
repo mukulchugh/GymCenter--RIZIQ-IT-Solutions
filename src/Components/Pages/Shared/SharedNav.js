@@ -14,7 +14,7 @@ const SharedNav = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
     const navigate = useNavigate();
     const { pathname } = useLocation();
-    const { email, logout } = AuthUser();
+    const { email, logout, userRole } = AuthUser();
 
     const handleDashboardNavigation = () => {
         // if (loggedInUser) {
@@ -37,7 +37,7 @@ const SharedNav = () => {
                         <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
                         {
-                            email && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                            userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>

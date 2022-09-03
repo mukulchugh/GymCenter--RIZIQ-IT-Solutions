@@ -11,7 +11,7 @@ import Navbar from './Navbar';
 const Header = () => {
     const [background, setBackground] = useState(false);
     const navigate = useNavigate();
-    const {email} = AuthUser();
+    const {email, userRole} = AuthUser();
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -44,7 +44,7 @@ const Header = () => {
                         <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
                         {
-                            email && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                            userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>
