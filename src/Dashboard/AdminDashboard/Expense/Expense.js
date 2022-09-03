@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
-import ControlledPopup from '../../Modal/ControlledPopup';
 import AddExpenseModal from './AddExpenseModal';
 import { useQuery } from 'react-query';
 
@@ -20,8 +19,12 @@ const Expense = () => {
     const date = `${day} ${monthName} ${year}`;
 
     const [selectedDate, setSelectedDate] = useState(null);
-    // const [filterExpenses, setFilterExpenses] = useState([]);
 
+    const [allData, setAllData] = useState(true);
+    const [assets, setAssets] = useState([]);
+    const [assetsBullian, setAssetsBullian] = useState(false);
+    const [pettyCash, setSetPettyCash] = useState([]);
+    const [pettyCashBullian, setPettyCashBullian] = useState(false);
 
     const { data: expenses, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/expense`, {
@@ -45,7 +48,39 @@ const Expense = () => {
     }
 
 
-    console.log(expenses)
+
+    const handleAssets = () => {
+        setAllData(false);
+        setPettyCashBullian(false);
+        setAssetsBullian(true);
+        pettyCash.length = 0;
+
+        const asset = expenses?.data?.filter(expense => {
+            if (expense.amount > 500) {
+                return expense;
+            }
+        }
+        )
+        setAssets(asset);
+    }
+
+    const handlePettyCash = () => {
+        setAllData(false);
+        setPettyCashBullian(true);
+        setAssetsBullian(false);
+        assets.length = 0;
+
+        const pettyCash = expenses?.data?.filter(expense => {
+            if (expense.amount <= 500) {
+                return expense;
+            }
+        }
+        )
+        setSetPettyCash(pettyCash);
+    }
+
+    // console.log(handlePettyCash());
+    console.log(assets, "assets", pettyCash, "pettyCash");
 
 
     return (
@@ -66,9 +101,19 @@ const Expense = () => {
                     }} className='input w-[50%] input-bordered input-md' type="date" />
                 </div>
                 <div className="data_field flex md:w-[60%] w-full md:justify-end">
-                    <button className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
-                    <button className='btn btn-sm btn-primary rounded-md mr-2'>Assets</button>
-                    <button className='btn btn-sm btn-primary rounded-md'>Petty Cash</button>
+                    <button
+                        onClick={() => setAllData(true)}
+                        className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
+                    <button
+                        onClick={() => {
+                            handleAssets();
+                        }}
+                        className='btn btn-sm btn-primary rounded-md mr-2'>Assets</button>
+                    <button
+                        onClick={() => {
+                            handlePettyCash();
+                        }}
+                        className='btn btn-sm btn-primary rounded-md'>Petty Cash</button>
                 </div>
             </div>
 
@@ -102,17 +147,43 @@ const Expense = () => {
                                             )
                                         })
                                     ) : (
-                                        expenses?.data?.map((expense, index) => {
-                                            return (
-                                                <tr>
-                                                    <th>{++index}</th>
-                                                    <td>{expense?.name}</td>
-                                                    <td>{expense?.expense_date}</td>
-                                                    <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
-                                                </tr>
-                                            )
-                                        })
+                                        allData ?
+                                            (expenses?.data?.map((expense, index) => {
+                                                return (
+                                                    <tr>
+                                                        <th>{++index}</th>
+                                                        <td>{expense?.name}</td>
+                                                        <td>{expense?.expense_date}</td>
+                                                        <td className='font-bold'>৳ {expense?.amount}</td>
+                                                        <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
+                                                    </tr>
+                                                )
+                                            })) :
+                                            assets?.length > 0 ?
+                                                (assets?.map((expense, index) => {
+                                                    return (
+                                                        <tr>
+                                                            <th>{++index}</th>
+                                                            <td>{expense?.name}</td>
+                                                            <td>{expense?.expense_date}</td>
+                                                            <td className='font-bold'>৳ {expense?.amount}</td>
+                                                            <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
+                                                        </tr>
+                                                    )
+                                                })) :
+                                                !allData && pettyCash?.length > 0 &&
+                                                (pettyCash?.map((expense, index) => {
+                                                    return (
+                                                        <tr>
+                                                            <th>{++index}</th>
+                                                            <td>{expense?.name}</td>
+                                                            <td>{expense?.expense_date}</td>
+                                                            <td className='font-bold'>৳ {expense?.amount}</td>
+                                                            <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
+                                                        </tr>
+                                                    )
+                                                }))
+
                                     )
                                 }
                             </tbody>

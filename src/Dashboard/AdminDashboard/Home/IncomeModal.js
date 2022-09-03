@@ -2,12 +2,12 @@ import React from 'react';
 import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
+import { BsPlusLg } from 'react-icons/bs';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 
 
-
-export default function AddExpenseModal({ refetch }) {
+export default function IncomeModal({ refetch }) {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser()
 
@@ -26,7 +26,7 @@ export default function AddExpenseModal({ refetch }) {
         }
         // console.log(expense)
         // post data to database 
-        fetch(`https://gym-management97.herokuapp.com/api/expense/`, {
+        fetch(`https://gym-management97.herokuapp.com/api/income/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,25 +44,24 @@ export default function AddExpenseModal({ refetch }) {
 
     return (
 
-        <div className='mt-10'>
-            <label for="my-modal-5" className='bg-accent py-5 flex items-center justify-center rounded-2xl border-dashed border-2 cursor-pointer'>
-                <div>
-                    <h1 className='font-bold text-2xl'>Add Expense</h1>
-                    <IoMdAddCircleOutline className='text-3xl font-bold mx-auto mt-2' />
+        <div className=''>
+            <label for="my-modal-6" className='cursor-pointer absolute right-5 top-2'>
+                <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer  '>
+                    <BsPlusLg className=' font-extrabold' />
                 </div>
             </label>
 
-            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-            <label for="my-modal-5" class="modal">
+            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+            <label for="my-modal-6" class="modal">
                 <label class="modal-box lg:w-[60%] relative" for="">
-                    <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-5">
-                        <label for="my-modal-5" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
+                    <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-6">
+                        <label for="my-modal-6" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
                         <div className=" mt-3">
                             <div class="form-control w-full">
                                 <label class="label">
                                     <span class="label-text">Source Name</span>
                                 </label>
-                                <input type="text" placeholder="Enter The Name of Expense Source" class="input input-bordered w-full focus:outline-none"
+                                <input type="text" placeholder="Enter The Name of Income Source" class="input input-bordered w-full focus:outline-none"
                                     {...register("name", {
                                         required: 'Name is required',
                                         minLength: {
@@ -81,7 +80,7 @@ export default function AddExpenseModal({ refetch }) {
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input type="number" placeholder="Enter The Amount of Expense" class="input input-bordered w-full focus:outline-none"
+                                <input type="number" placeholder="Enter The Amount of Income" class="input input-bordered w-full focus:outline-none"
                                     {...register("amount", {
                                         required: 'Amount is required',
                                     })}
@@ -95,7 +94,7 @@ export default function AddExpenseModal({ refetch }) {
                         <div className=" mt-3">
                             <div class="form-control w-full">
                                 <label class="label">
-                                    <span class="label-text">Expense Date</span>
+                                    <span class="label-text">Income Date</span>
                                 </label>
                                 <input type="date" class="input input-bordered w-full focus:outline-none"
                                     {...register("expense_date", {
@@ -145,7 +144,7 @@ export default function AddExpenseModal({ refetch }) {
 
                         <div className="flex gap-2 mt-12 relative">
                             <div>
-                                <label for="my-modal-5" class="btn btn-error text-white font-bold btn-sm">Close</label>
+                                <label for="my-modal-6" class="btn btn-error text-white font-bold btn-sm">Close</label>
                             </div>
                             <div className="text-end">
                                 <button

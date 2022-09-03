@@ -2,12 +2,30 @@ import React from 'react';
 import Modal from "react-modal";
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { useForm } from 'react-hook-form';
+import { BsPlusLg } from 'react-icons/bs';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 
 
+const customStyles = {
+    content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        width: '50%',
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+        padding: "30px",
+        backgroundColor: "#f3f4f6",
+        border: "1px solid #8f8f8f66",
+    },
+};
 
-export default function AddExpenseModal({ refetch }) {
+Modal.setAppElement("#root");
+
+
+export default function ExpenseModal({ refetch }) {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser()
 
@@ -45,10 +63,9 @@ export default function AddExpenseModal({ refetch }) {
     return (
 
         <div className='mt-10'>
-            <label for="my-modal-5" className='bg-accent py-5 flex items-center justify-center rounded-2xl border-dashed border-2 cursor-pointer'>
-                <div>
-                    <h1 className='font-bold text-2xl'>Add Expense</h1>
-                    <IoMdAddCircleOutline className='text-3xl font-bold mx-auto mt-2' />
+            <label for="my-modal-5" className='cursor-pointer absolute right-5 top-2'>
+                <div className='bg-primary shadow-xl text-white p-2 rounded cursor-pointer  '>
+                    <BsPlusLg className=' font-extrabold' />
                 </div>
             </label>
 

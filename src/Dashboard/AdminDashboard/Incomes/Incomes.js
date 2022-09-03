@@ -65,11 +65,11 @@ const Incomes = () => {
                         setSelectedDate(e.target.value);
                     }} className='input w-[50%] input-bordered input-md cursor-pointer' type="date" />
                 </div>
-                <div className="data_field flex md:w-[60%] w-full md:justify-end">
+                {/* <div className="data_field flex md:w-[60%] w-full md:justify-end">
                     <button className='btn btn-sm btn-primary rounded-md mr-2'>All</button>
                     <button className='btn btn-sm btn-primary rounded-md mr-2'>Assets</button>
                     <button className='btn btn-sm btn-primary rounded-md'>Petty Cash</button>
-                </div>
+                </div> */}
             </div>
 
             <AddIncomeModal refetch={refetch} />
