@@ -94,10 +94,11 @@ const Salary = () => {
 
             </div>
 
-            <AddSalaryModal />
 
-            <div className='mb-8 '>
-                03 Mar 2022, Thursday
+
+            <div className='mb-8 flex justify-between items-center'>
+                <p>03 Mar 2022, Thursday</p>
+                <AddSalaryModal refetch={refetch}/>
             </div>
             <SalaryTable salaryDetails={salaryDetails.data} />
         </div>
