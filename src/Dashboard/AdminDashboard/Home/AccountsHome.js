@@ -10,6 +10,7 @@ import Loading from '../../../hooks/Loading/Loading';
 import IncomeModal from './IncomeModal';
 import ExpenseModal from './ExpenseModal';
 import useExpense from '../../../hooks/HomeExpense/useExpense';
+import useIncome from '../../../hooks/HomeIncome/useIncome';
 
 const AccountsHome = () => {
     const { token } = AuthUser()
@@ -22,6 +23,7 @@ const AccountsHome = () => {
     const date = `${day} ${monthName} ${year}`;
     const [products, setProducts] = useState([]);
     const expense = useExpense();
+    const income = useIncome();
     // const [expenseTotal, setExpenseTotal] = useState(0);
 
     // console.log(expense.expense);
@@ -29,6 +31,9 @@ const AccountsHome = () => {
 
     const expenseTotal = expense.expense?.reduce((total, expense) => {
         return total + Number(expense.amount);
+    }, 0)
+    const incomeTotal = income.income?.reduce((total, income) => {
+        return total + Number(income.amount);
     }, 0)
 
 
@@ -89,7 +94,7 @@ const AccountsHome = () => {
                     <IncomeModal refetch={refetch} />
                     <div className='text-success sm:py-8 pt-5 pb-4'>
                         <h1 className='font-bold text-xl'>Total Income</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl font-semibold mr-4'><TbCurrencyTaka />{incomeTotal}</h2>
                     </div>
                 </div>
             </div>
