@@ -1,23 +1,18 @@
 import React from 'react';
 
-const   = () => {
+const UsersHome = () => {
     return (
-        <div>
+        <div className='p-5 mt-4'>
             <div className='flex justify-between'>
-                <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
-                <div className='flex items-center gap-3'>
-                    <p className='text-sm font-bold text-secondary'>{date}</p>
-                    <div className='bg-accent px-3 py-2 rounded cursor-pointer'>
-                        <BiSearch className='text-xl ' />
-                    </div>
-                    <div className='bg-info px-3 py-2 rounded cursor-pointer'>
-                        <VscBellDot className='text-xl' />
-                    </div>
+                <h2 className='text-2xl font-semibold'>Hello, Users!</h2>
+            </div>
 
-                </div>
+            <div className='mt-7 border-b-[1px] pb-3 mb-5'>
+                <h2 className='font-semibold'>Account Overview</h2>
+                <p className='text-secondary text-sm'>March 2022</p>
             </div>
         </div>
     );
 };
 
-export default  ;
+export default UsersHome;

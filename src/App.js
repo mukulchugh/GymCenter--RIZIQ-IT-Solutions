@@ -20,6 +20,7 @@ import Salary from './Dashboard/AdminDashboard/Salary/Salary';
 import ManageForm from './Dashboard/AdminDashboard/ManageForm/ManageForm';
 import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
 import Expense from './Dashboard/AdminDashboard/Expense/Expense';
+import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="manage-orders" element={<Orders />} />
           <Route path="accounts-income" element={<Incomes />} />
           <Route path="accounts-expense" element={<Expense />} />
+          <Route path="users-home" element={<UsersHome />} />
         </Route>
       </Routes>
       <Footer />
