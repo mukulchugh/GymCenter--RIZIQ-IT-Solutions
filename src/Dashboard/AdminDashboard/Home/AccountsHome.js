@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { VscBellDot } from 'react-icons/vsc';
 import { TbCurrencyTaka } from 'react-icons/tb';
@@ -19,6 +19,7 @@ const AccountsHome = () => {
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const monthName = monthNames[month];
     const date = `${day} ${monthName} ${year}`;
+    const [products, setProducts] = useState([]);
 
     const { data: orders, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
@@ -32,7 +33,6 @@ const AccountsHome = () => {
         return <Loading />
     }
 
-    // console.log(orders.data)
 
     return (
         <div className='p-5 mt-4'>
