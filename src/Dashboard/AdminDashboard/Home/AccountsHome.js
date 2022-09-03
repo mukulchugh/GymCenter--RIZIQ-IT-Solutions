@@ -36,6 +36,8 @@ const AccountsHome = () => {
         return total + Number(income.amount);
     }, 0)
 
+    const currentBalance = incomeTotal - expenseTotal;
+
 
 
     const { data: orders, isLoading, refetch } = useQuery('users', () =>
@@ -77,7 +79,7 @@ const AccountsHome = () => {
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white'>
                     <div className='sm:py-8 pt-5 pb-2'>
                         <h1 className='font-bold text-xl text-center'>Current Balance</h1>
-                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />100</h2>
+                        <h2 className='flex items-center justify-center sm:text-3xl text-2xl  font-semibold mr-4'><TbCurrencyTaka />{currentBalance}</h2>
                     </div>
                 </div>
 
