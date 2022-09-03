@@ -31,9 +31,7 @@ export default function AddSalaryModal({ refetch }) {
     const { token } = AuthUser()
 
 
-    function afterOpenModal() {
 
-    }
 
     function closeModal() {
         setIsOpen(false);
@@ -53,7 +51,7 @@ export default function AddSalaryModal({ refetch }) {
         }
         // console.log(expense)
         // post data to database 
-        fetch(`https://gym-management97.herokuapp.com/api/salary_overview/`, {
+        fetch(`https://gym-management97.herokuapp.com/api/income/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +63,6 @@ export default function AddSalaryModal({ refetch }) {
                 console.log(data)
                 refetch()
                 reset()
-                closeModal()
             }).catch(err => console.log(err))
     }
 
@@ -74,13 +71,13 @@ export default function AddSalaryModal({ refetch }) {
 
         <div className='my-5'>
             <div>
-                <label for="my-modal-5" class="btn btn-success text-white font-bold modal-button">  <IoMdAddCircleOutline className='sm:text-2xl text-xl font-boldmt-2 mr-1' /> Add Salary</label>
+                <label for="my-modal-5" class="btn btn-success text-white font-bold modal-button">  <IoMdAddCircleOutline className='sm:text-2xl text-xl font-bold  mr-1' /> Add Salary</label>
             </div>
             <input type="checkbox" id="my-modal-5" class="modal-toggle" />
             <label for="my-modal-5" class="modal">
                 <label class="modal-box lg:w-[60%] relative" for="">
                     <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-5">
-                        <label for="my-modal-5" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <label for="my-modal-5" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
                         <div className=" mt-3">
                             <div class="form-control w-full">
                                 <label class="label">
@@ -172,10 +169,9 @@ export default function AddSalaryModal({ refetch }) {
                                 <label for="my-modal-5" class="btn btn-error text-white font-bold btn-sm">Close</label>
                             </div>
                             <div className="text-end">
-                                <label
-                                    for="my-modal-5"
+                                <button
                                     type='submit'
-                                    className="btn  bg-green-500 text-white font-bold px-3 py-1 rounded-md cursor-pointer btn-sm">Submit</label>
+                                    className="btn  bg-green-500 text-white font-bold px-3 py-1 rounded-md cursor-pointer btn-sm">Submit</button>
                             </div>
                         </div>
                     </form>
