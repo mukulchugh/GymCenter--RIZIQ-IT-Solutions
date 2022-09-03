@@ -24,8 +24,6 @@ import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
 import AuthUser from './hooks/AuthUser/AuthUser';
 
 function App() {
-  const {userRole} = AuthUser()
-  console.log(userRole)
   return (
     <div>
       <Routes>
