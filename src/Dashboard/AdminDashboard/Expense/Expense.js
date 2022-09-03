@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
-import ControlledPopup from '../../Modal/ControlledPopup';
 import AddExpenseModal from './AddExpenseModal';
 import { useQuery } from 'react-query';
 
@@ -45,6 +44,9 @@ const Expense = () => {
     }
 
 
+    console.log(expenses)
+
+
     return (
         <div className='p-5 mt-4'>
             <div className='flex justify-between'>
@@ -53,7 +55,7 @@ const Expense = () => {
                     <p className='text-sm  font-bold text-secondary'>{date}</p>
                 </div>
             </div>
-            <h1 className='text-center md:text-2xl text-xl font-bold mt-4 md:mb-2 mb-5'>Expense History</h1>
+            <h1 className='text-center md:text-2xl text-xl font-bold mt-4 md:mb-5 mb-5'>Expense History</h1>
 
             <div className='md:flex justify-between items-center'>
                 <div className="date_field flex md:w-[40%] w-full items-center mb-5 md:mb-0">
@@ -94,7 +96,7 @@ const Expense = () => {
                                                     <td>{expense?.name}</td>
                                                     <td>{expense?.expense_date}</td>
                                                     <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
@@ -106,7 +108,7 @@ const Expense = () => {
                                                     <td>{expense?.name}</td>
                                                     <td>{expense?.expense_date}</td>
                                                     <td className='font-bold'>৳ {expense?.amount}</td>
-                                                    <td>{expense?.message}</td>
+                                                    <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                                 </tr>
                                             )
                                         })
