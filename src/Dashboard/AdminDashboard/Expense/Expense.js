@@ -45,9 +45,6 @@ const Expense = () => {
     }
 
 
-    console.log(filterExpenses)
-
-
     return (
         <div className='p-5 mt-4'>
             <div className='flex justify-between'>
