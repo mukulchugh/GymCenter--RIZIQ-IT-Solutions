@@ -7,6 +7,7 @@ import { BsPlusLg } from 'react-icons/bs';
 import { useQuery } from 'react-query';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import Loading from '../../../hooks/Loading/Loading';
+import AddSalaryModal from './AddSalaryModal';
 
 const Salary = () => {
     const { token } = AuthUser()
@@ -25,7 +26,7 @@ const Salary = () => {
         return <Loading />
     }
 
- 
+
     const salaryPaid = salaryDetails.data.filter(salary => {
         if (salary.status) {
             return salary
@@ -69,7 +70,7 @@ const Salary = () => {
                 <p className='text-secondary text-sm'>March 2022</p>
             </div>
 
-            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] lg:py-5 mb-8'>
+            <div className='grid sm:grid-cols-3 bg-[#FEEDD1] lg:py-5'>
                 <div className='flex items-center justify-center sm:border-r-2 sm:border-b-0 border-b-2 border-white'>
                     <div className='sm:py-8 pt-5 pb-2 text-center'>
                         <h1 className='font-bold text-xl text-center'>Total Pending</h1>
@@ -92,6 +93,8 @@ const Salary = () => {
                 </div>
 
             </div>
+
+            <AddSalaryModal />
 
             <div className='mb-8 '>
                 03 Mar 2022, Thursday
