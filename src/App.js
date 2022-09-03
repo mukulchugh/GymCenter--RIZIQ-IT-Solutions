@@ -25,7 +25,7 @@ import AuthUser from './hooks/AuthUser/AuthUser';
 
 function App() {
   const {userRole} = AuthUser()
-  console.log(userRole)
+  // console.log(userRole)
   return (
     <div>
       <Routes>
