@@ -46,7 +46,7 @@ const Salary = () => {
     }, 0)
 
 
-    console.log(salaryDetails.data)
+    console.log('salary' , salaryDetails.data)
 
 
     return (

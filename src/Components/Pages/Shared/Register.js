@@ -5,20 +5,66 @@ import GoogleLogo from '../../../assets/Image/Login/icons8-google.svg'
 import SharedNav from './SharedNav';
 import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const FigmaLogin = () => {
+const Register = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { http, setToken } = AuthUser();
+    const navigate = useNavigate();
 
 
+    // const onSubmitForm = async (data) => {
+    //     // console.log(data)
+    //     http.post("/users/", {name: data.name, email: data.email, password: data.password, phone: data.phone }).then((res) => {
+    //         console.log(res.data);
+    //         setToken(res.data.data.email, res.data.data.access, res.data.data.role);
+    //     });
+    //     reset();
+    // }
+
+    // post user data to the backend
     const onSubmitForm = async (data) => {
-        http.post("/auth/", { email: data.email, password: data.password }).then((res) => {
-            // console.log(res.data);
-            setToken( res.data.data.email, res.data.data.access, res.data.data.role );
-          });
-        reset();
+        console.log(data)
+        fetch('https://gym-management97.herokuapp.com/api/users/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                password: data.password,
+                phone: data.phone
+            })
+        })
+            .then((res) => {
+                console.log(res.data);
+            })
+            .then(data => navigate('/login'))
+            .catch(err => console.log(err))
     }
+
+
+    // const onSubmitForm = async (data) => {
+    //     const url = "https://gym-management97.herokuapp.com/api/users/";
+    //     const res = await fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             name: data.name, email: data.email, password: data.password, phone: data.phone
+    //         })
+    //     });
+    //     const data = await res.json();
+    //     if (data.success === true) {
+    //         navigate('/login')
+    //     } else {
+    //         console.log(data);
+    //     }
+    // }
+
+
 
     return (
         <>
@@ -35,6 +81,23 @@ const FigmaLogin = () => {
 
                     <form onSubmit={handleSubmit(onSubmitForm)} className="lg:w-[85%] md:w-full sm:w-2/3 w-full mx-auto">
                         <div className="flex  w-full mx-auto flex-col">
+                            <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>Name</label>
+                            <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="name" name="name" id="" placeholder='Your Name'
+                                {...register("name", {
+                                    required: 'Name is required',
+                                    pattern: {
+                                        value: 3,
+                                        message: 'Name must be at least 3 characters'
+                                    }
+                                })}
+                                onKeyUp={(e) => {
+                                    trigger('name')
+                                }}
+                            />
+                            <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.name?.message}</small>
+                        </div>
+
+                        <div className="flex  w-full mx-auto flex-col mt-5">
                             <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>Email</label>
                             <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="email" name="email" id="" placeholder='Email or phone number'
                                 {...register("email", {
@@ -68,7 +131,20 @@ const FigmaLogin = () => {
                             <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.password?.message}</small>
                         </div>
 
-                        <div className='flex mt-[35px] w-full mx-auto justify-between items-center'>
+                        <div className="flex  w-full mx-auto flex-col mt-5">
+                            <label className='text-[#747474] text-sm font-medium ml-1 mb-2' >Phone</label>
+                            <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="number" name="phone" id="" placeholder='Enter Phone Number'
+                                {...register('phone', {
+                                    required: 'Phone is required',
+                                })}
+                                onKeyUp={() => {
+                                    trigger('phone')
+                                }}
+                            />
+                            {/* <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.phone?.message}</small> */}
+                        </div>
+
+                        {/* <div className='flex mt-[35px] w-full mx-auto justify-between items-center mb-2'>
 
                             <div className="checkbpox_container w-[30%]">
                                 <input type="checkbox" />
@@ -77,10 +153,9 @@ const FigmaLogin = () => {
                                 <span className='remember text-[14px]'>Remember Me</span>
                                 <span className=' text-[14px] text-[#007AFF] cursor-pointer'>Forget Password</span>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="flex w-full mx-auto flex-col">
-
-                            <button className='btn bg-[#007AFF] my-[20px] border-0 text-white font-semibold text-[17px] hover:bg-transparent hover:border-[#007AFF] hover:border hover:text-[#007AFF] ' type="submit">Sign In</button>
+                            <button className='btn bg-[#007AFF] my-[20px] border-0 text-white font-semibold text-[17px] hover:bg-transparent hover:border-[#007AFF] hover:border hover:text-[#007AFF] ' type="submit">Sign Up</button>
 
                             <div className="divider">or</div>
                             <button className='flex py-[4px] justify-center items-center border border-slate-600 rounded-lg hover:bg-[#333333] hover:text-white transition-all delay-75 ease-in-out'>
@@ -88,7 +163,7 @@ const FigmaLogin = () => {
                                 <span className='font-semibold text-[17px] ml-3 '>Continue with google</span>
                             </button>
                         </div>
-                        <h1 className=' w-full text-[15px] mb-10 mx-auto text-center mt-[20px]'>Don't have an account? <Link to='/register' className='text-[#007AFF] ml-3 cursor-pointer'>Sign Up</Link></h1>
+                        <h1 className=' w-full text-[15px] mx-auto text-center mb-10 mt-[20px]'>Already have an account? <Link to='/login' className='text-[#007AFF] ml-3 cursor-pointer'>Login</Link></h1>
                     </form>
                 </div>
             </div>
@@ -96,4 +171,4 @@ const FigmaLogin = () => {
     );
 };
 
-export default FigmaLogin;
+export default Register;

@@ -1,8 +1,5 @@
 import React, { useContext } from 'react';
 import styled from "styled-components";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { MdGroupAdd } from 'react-icons/md'
-import { BsBoxArrowLeft } from "react-icons/bs";
 import CrossfitCompo from '../CrossfitCompo';
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';

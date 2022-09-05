@@ -14,6 +14,7 @@ import DashLink from '../hooks/DashboardCustomLink/DashLink';
 
 const Dashboard = () => {
     const { logout, userRole } = AuthUser()
+    console.log(userRole)
     return (
         <>
             <SharedNav />
@@ -90,8 +91,15 @@ const Dashboard = () => {
                             userRole === 'user' && <>
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                        <DashLink to='/dashboard/accounts-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/accounts-home'}> Home</DashLink>
+                                        <DashLink to='/dashboard/users-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/users-home'}> Home</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
                                     </div>
                                 </div>
 

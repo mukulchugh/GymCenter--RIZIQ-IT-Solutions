@@ -23,14 +23,11 @@ const Header = () => {
         })
     })
 
-    const handleDashboardNavigation = () => {
-        // if (loggedInUser) {
-        //     navigate('/dashboard');
-        // } else {
-        //     toast.error('Please Login to access this page');
-        //     navigate('/login');
-        // }
+    const handleDashboardAccounts = () => {
         navigate('/dashboard/accounts-home')
+    }
+    const handleDashboardUsers = () => {
+        navigate('/dashboard/users-home')
     }
 
     return (
@@ -44,7 +41,10 @@ const Header = () => {
                         <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
                         {
-                            userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardNavigation} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                            userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardAccounts} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        }
+                        {
+                            userRole === 'user' && <MdOutlineSpaceDashboard onClick={handleDashboardUsers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>
