@@ -21,6 +21,7 @@ import ManageForm from './Dashboard/AdminDashboard/ManageForm/ManageForm';
 import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
 import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
+import Register from './Components/Pages/Shared/Register';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<FigmaLogin />} />
+        <Route path='/register' element={<Register />} />
 
 
         <Route path="dashboard" element={<Dashboard />}>
