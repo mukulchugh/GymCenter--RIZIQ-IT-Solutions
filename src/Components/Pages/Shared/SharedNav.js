@@ -22,6 +22,9 @@ const SharedNav = () => {
     const handleDashboardUsers = () => {
         navigate('/dashboard/users-home')
     }
+    const handleDashboardTrainers = () => {
+        navigate('/dashboard/trainers-home')
+    }
 
     return (
         <>
@@ -37,6 +40,9 @@ const SharedNav = () => {
                         }
                         {
                             userRole === 'user' && <MdOutlineSpaceDashboard onClick={handleDashboardUsers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        }
+                        {
+                            userRole === 'admin' && <MdOutlineSpaceDashboard onClick={handleDashboardTrainers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>

@@ -9,6 +9,8 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { FaMoneyCheck } from 'react-icons/fa';
 import { RiOrderPlayLine } from 'react-icons/ri';
 import { GoSignOut } from 'react-icons/go';
+import { MdManageAccounts } from 'react-icons/md';
+import { AiFillSetting } from 'react-icons/ai';
 import AuthUser from '../hooks/AuthUser/AuthUser';
 import DashLink from '../hooks/DashboardCustomLink/DashLink';
 
@@ -100,6 +102,59 @@ const Dashboard = () => {
                                     <div className='hover:text-primary'>
                                         <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
                                         <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4 cursor-pointer'>
+                                    <div className='hover:text-primary' onClick={logout}>
+                                        <GoSignOut className='mx-auto xl:text-xl' />
+                                        <button> LogOut</button>
+                                    </div>
+                                </div>
+                            </>
+                        }
+
+                        {
+                            userRole === 'admin' && <>
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/users-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/users-home'}> Home</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                         <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-profile'> <AiOutlineForm className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Form</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/accounts-profile'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Packages</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/trainer-settings'> <AiFillSetting className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/trainer-settings'}> Settings</DashLink>
+                                    </div>
+                                </div>
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/students'> <MdManageAccounts className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/students'}> Students</DashLink>
                                     </div>
                                 </div>
 
