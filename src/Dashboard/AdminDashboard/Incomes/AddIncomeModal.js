@@ -53,7 +53,7 @@ export default function AddIncomeModal({ refetch }) {
             </label>
 
             <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-            <label for="my-modal-5" class="modal">
+            <label for="my-modal-5" class="modal pt-20 z-50">
                 <label class="modal-box lg:w-[60%] relative" for="">
                     <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-5">
                         <label for="my-modal-5" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
@@ -76,7 +76,7 @@ export default function AddIncomeModal({ refetch }) {
                                 <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.name?.message}</small>
                             </div>
                         </div>
-                        <div className=" mt-3 ">
+                        <div className="">
                             <div class="form-control w-full">
                                 <label class="label">
                                     <span class="label-text">Amount</span>
@@ -92,7 +92,7 @@ export default function AddIncomeModal({ refetch }) {
                                 <small className='text-[#FF4B2B] text-xs ml-2 font-medium my-2'>{errors?.amount?.message}</small>
                             </div>
                         </div>
-                        <div className=" mt-3">
+                        <div className="">
                             <div class="form-control w-full">
                                 <label class="label">
                                     <span class="label-text">Income Date</span>
@@ -109,7 +109,7 @@ export default function AddIncomeModal({ refetch }) {
                             </div>
                         </div>
 
-                        <div className=" mt-3">
+                        <div className="">
                             <div class="form-control w-full">
                                 <label class="label">
                                     <span class="label-text">Message</span>
@@ -143,7 +143,7 @@ export default function AddIncomeModal({ refetch }) {
                         </div>
                     </div> */}
 
-                        <div className="flex gap-2 mt-12 relative">
+                        <div className="flex gap-2 relative">
                             <div>
                                 <label for="my-modal-5" class="btn btn-error text-white font-bold btn-sm">Close</label>
                             </div>
