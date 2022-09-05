@@ -24,8 +24,15 @@ import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
 import Register from './Components/Pages/Shared/Register';
 import RequireAccounts from './Dashboard/AdminDashboard/userRoleHooks/RequireAccounts/RequireAccounts';
 import RequireUser from './Dashboard/AdminDashboard/userRoleHooks/RequireUser/RequireUser';
+import NotFound from './Components/Pages/NotFound/NotFound';
 
 function App() {
+  // const [location, setLocation] = useState(window.location.pathname);
+
+  // useEffect(() => {
+  //   setLocation(window.location.pathname);
+  // }, [location])
+
   return (
     <div>
       <Routes>
@@ -40,6 +47,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<FigmaLogin />} />
         <Route path='/register' element={<Register />} />
+        <Route path='*' element={<NotFound />} />
 
 
         <Route path="dashboard" element={<Dashboard />}>
@@ -55,7 +63,10 @@ function App() {
         </Route>
 
       </Routes>
-      <Footer />
+      {/* {
+        location === '/' || '/about' || '/crossFit' || '/programs' || '/trainers' || '/testimonials' || '/blog' || '/shop' || '/contact' ? <Footer /> : null
+      } */}
+      <Footer/>
       <Toaster
         position="top-center"
         reverseOrder={false}
