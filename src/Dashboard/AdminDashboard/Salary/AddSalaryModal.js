@@ -65,6 +65,7 @@ export default function AddSalaryModal({ refetch }) {
             }).catch(err => console.log(err))
     }, [])
 
+    // console.log(user)
 
     return (
 

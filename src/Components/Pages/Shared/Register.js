@@ -5,11 +5,12 @@ import GoogleLogo from '../../../assets/Image/Login/icons8-google.svg'
 import SharedNav from './SharedNav';
 import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { http, setToken } = AuthUser();
+    const navigate = useNavigate();
 
 
     // const onSubmitForm = async (data) => {
@@ -38,11 +39,30 @@ const Register = () => {
         })
             .then((res) => {
                 console.log(res.data);
-                setToken(res.data.data.email, res.data.data.access, res.data.data.role);
             })
-            .then(data => console.log(data))
+            .then(data => navigate('/login'))
             .catch(err => console.log(err))
     }
+
+
+    // const onSubmitForm = async (data) => {
+    //     const url = "https://gym-management97.herokuapp.com/api/users/";
+    //     const res = await fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             name: data.name, email: data.email, password: data.password, phone: data.phone
+    //         })
+    //     });
+    //     const data = await res.json();
+    //     if (data.success === true) {
+    //         navigate('/login')
+    //     } else {
+    //         console.log(data);
+    //     }
+    // }
 
 
 
@@ -116,16 +136,12 @@ const Register = () => {
                             <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="number" name="phone" id="" placeholder='Enter Phone Number'
                                 {...register('phone', {
                                     required: 'Phone is required',
-                                    minLength: {
-                                        value: 11,
-                                        message: 'Minimum 11 character required'
-                                    }
                                 })}
                                 onKeyUp={() => {
                                     trigger('phone')
                                 }}
                             />
-                            <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.phone?.message}</small>
+                            {/* <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.phone?.message}</small> */}
                         </div>
 
                         {/* <div className='flex mt-[35px] w-full mx-auto justify-between items-center mb-2'>

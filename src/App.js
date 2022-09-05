@@ -22,6 +22,8 @@ import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
 import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
 import Register from './Components/Pages/Shared/Register';
+import RequireAccounts from './Dashboard/AdminDashboard/userRoleHooks/RequireAccounts/RequireAccounts';
+import RequireUser from './Dashboard/AdminDashboard/userRoleHooks/RequireUser/RequireUser';
 
 function App() {
   return (
@@ -41,15 +43,17 @@ function App() {
 
 
         <Route path="dashboard" element={<Dashboard />}>
-          <Route path="accounts-home" element={<AccountsHome />} />
-          <Route path="accounts-profile" element={<AccountsProfile />} />
-          <Route path="accounts-salary" element={<Salary />} />
-          <Route path="manage-form" element={<ManageForm />} />
-          <Route path="manage-orders" element={<Orders />} />
-          <Route path="accounts-income" element={<Incomes />} />
-          <Route path="accounts-expense" element={<Expense />} />
-          <Route path="users-home" element={<UsersHome />} />
+          <Route path="accounts-home" element={<RequireAccounts><AccountsHome /></RequireAccounts>} />
+          <Route path="accounts-profile" element={<RequireAccounts><AccountsProfile /></RequireAccounts>} />
+          <Route path="accounts-salary" element={<RequireAccounts><Salary /></RequireAccounts>} />
+          <Route path="manage-form" element={<RequireAccounts><ManageForm /></RequireAccounts>} />
+          <Route path="manage-orders" element={<RequireAccounts><Orders /></RequireAccounts>} />
+          <Route path="accounts-income" element={<RequireAccounts><Incomes /></RequireAccounts>} />
+          <Route path="accounts-expense" element={<RequireAccounts><Expense /></RequireAccounts>} />
+
+          <Route path="users-home" element={<RequireUser><UsersHome /></RequireUser>} />
         </Route>
+
       </Routes>
       <Footer />
       <Toaster
