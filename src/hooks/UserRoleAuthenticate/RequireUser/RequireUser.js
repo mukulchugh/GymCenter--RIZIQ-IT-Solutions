@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import AuthUser from '../../../../hooks/AuthUser/AuthUser';
+import AuthUser from '../../AuthUser/AuthUser';
 
 const RequireUser = ({ children }) => {
     const location = useLocation();

@@ -22,9 +22,9 @@ import Incomes from './Dashboard/AdminDashboard/Incomes/Incomes';
 import Expense from './Dashboard/AdminDashboard/Expense/Expense';
 import UsersHome from './Dashboard/UserDashboard/UsersHome/UsersHome';
 import Register from './Components/Pages/Shared/Register';
-import RequireAccounts from './Dashboard/AdminDashboard/userRoleHooks/RequireAccounts/RequireAccounts';
-import RequireUser from './Dashboard/AdminDashboard/userRoleHooks/RequireUser/RequireUser';
 import NotFound from './Components/Pages/NotFound/NotFound';
+import RequireAccounts from './hooks/UserRoleAuthenticate/RequireAccounts/RequireAccounts';
+import RequireUser from './hooks/UserRoleAuthenticate/RequireUser/RequireUser';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
