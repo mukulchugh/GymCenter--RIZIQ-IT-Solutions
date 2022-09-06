@@ -28,18 +28,20 @@ export default function AddSalaryModal({ refetch }) {
         const selectedUser = user?.find(user => user.email === data.user)
 
 
+        // console.log(selectedUser)
         const salary = {
-            amount: data.amount,
-            date: data.expense_date,
+            amount: Number(data.amount),
+            // date: data.expense_date,
             // image: data.image,
-            name: data.name || "Staff",
-            message: data.message,
-            image: data.image || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
-            time: new Date().toLocaleTimeString(),
+            // name: data.name || "Staff",
+            // message: data.message,
+            // image: data.image || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+            // time: new Date().toLocaleTimeString(),
             // make unique id
-            id: Math.random().toString(36).substr(2, 9),
+            user_id: selectedUser.id,
             status: true,
-            user: selectedUser
+            salary_type: 1,
+            // user: data.user
         }
         console.log(salary)
         // post data to database
@@ -50,7 +52,9 @@ export default function AddSalaryModal({ refetch }) {
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify(salary)
-        }).then(res => res.json())
+        }).then(res => {
+            res.json()
+        })
             .then(data => {
                 console.log(data)
                 refetch()
@@ -94,7 +98,6 @@ export default function AddSalaryModal({ refetch }) {
 
                                     {
                                         user?.map((item, index) => {
-                                            // console.log(item, 'item')
                                             return item.is_staff && (<option key={index} value={item?.email}>{item?.email}</option>)
 
 
