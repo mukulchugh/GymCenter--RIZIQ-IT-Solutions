@@ -103,8 +103,8 @@ const Orders = () => {
                 </div>
             </div>
             <div className='mb-5'>
-                <div class="overflow-x-auto ">
-                    <table class="table table-compact w-full">
+                <div className="overflow-x-auto ">
+                    <table className="table table-compact w-full">
                         <thead>
                             <tr className='bg-accent'>
                                 <th className='bg-accent'>#</th>
@@ -124,17 +124,17 @@ const Orders = () => {
                                     ></OrdersTable>)
                                 ) : (
                                     packages?.map((product, index) =>
-                                            <tr key={index} >
-                                                <th>{product?.id}</th>
-                                                <td>{product?.package?.feature[0]?.name}</td>
-                                                <td>{product?.order_date}</td>
-                                                <td className='font-bold'>৳ {product?.package?.discounted_price}</td>
-                                                {
-                                                    product?.status === 'Complete' ? <td><button className='btn btn-xs btn-success'>{product?.status}</button></td>
-                                                        :
-                                                        <td><button className='btn btn-xs btn-primary'>{product?.status}</button></td>
-                                                }
-                                            </tr>
+                                        <tr key={index} >
+                                            <th>{product?.id}</th>
+                                            <td>{product?.package?.feature[0]?.name}</td>
+                                            <td>{product?.order_date}</td>
+                                            <td className='font-bold'>৳ {product?.package?.discounted_price}</td>
+                                            {
+                                                product?.status === 'Complete' ? <td><button className='btn btn-xs btn-success'>{product?.status}</button></td>
+                                                    :
+                                                    <td><button className='btn btn-xs btn-primary'>{product?.status}</button></td>
+                                            }
+                                        </tr>
 
                                     )
                                 )

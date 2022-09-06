@@ -29,6 +29,9 @@ const Header = () => {
     const handleDashboardUsers = () => {
         navigate('/dashboard/users-home')
     }
+    const handleDashboardTrainers = () => {
+        navigate('/dashboard/trainers-home')
+    }
 
     return (
         <>
@@ -45,6 +48,9 @@ const Header = () => {
                         }
                         {
                             userRole === 'user' && <MdOutlineSpaceDashboard onClick={handleDashboardUsers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                        }
+                        {
+                            userRole === 'trainer' && <MdOutlineSpaceDashboard onClick={handleDashboardTrainers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>

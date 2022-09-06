@@ -25,6 +25,9 @@ import Register from './Components/Pages/Shared/Register';
 import NotFound from './Components/Pages/NotFound/NotFound';
 import RequireAccounts from './hooks/UserRoleAuthenticate/RequireAccounts/RequireAccounts';
 import RequireUser from './hooks/UserRoleAuthenticate/RequireUser/RequireUser';
+import TrainersHome from './Dashboard/TrainerDashboard/TrainersHome/TrainersHome';
+import StudentList from './Dashboard/TrainerDashboard/StudentList/StudentList';
+import TrainerSettings from './Dashboard/TrainerDashboard/Settings/TrainerSettings';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -58,8 +61,10 @@ function App() {
           <Route path="manage-orders" element={<RequireAccounts><Orders /></RequireAccounts>} />
           <Route path="accounts-income" element={<RequireAccounts><Incomes /></RequireAccounts>} />
           <Route path="accounts-expense" element={<RequireAccounts><Expense /></RequireAccounts>} />
-
           <Route path="users-home" element={<RequireUser><UsersHome /></RequireUser>} />
+          <Route path="trainers-home" element={<TrainersHome />} />
+          <Route path="students" element={<StudentList />} />
+          <Route path="trainer-settings" element={<TrainerSettings />} />
         </Route>
 
       </Routes>
