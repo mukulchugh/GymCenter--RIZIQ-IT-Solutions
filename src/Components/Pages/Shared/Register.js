@@ -5,11 +5,12 @@ import GoogleLogo from '../../../assets/Image/Login/icons8-google.svg'
 import SharedNav from './SharedNav';
 import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { http, setToken } = AuthUser();
+    const navigate = useNavigate();
 
 
     // const onSubmitForm = async (data) => {
@@ -22,25 +23,26 @@ const Register = () => {
     // }
 
     // post user data to the backend
-    const onSubmitForm = async (data) => {
+    const onSubmitForm = (data) => {
+        const user = {
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            phone: data.phone
+        }
         console.log(data)
         fetch('https://gym-management97.herokuapp.com/api/users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                password: data.password,
-                phone: data.phone
-            })
+            body: JSON.stringify(user)
         })
-            .then((res) => {
-                console.log(res.data);
-                setToken(res.data.data.email, res.data.data.access, res.data.data.role);
+            .then((res) => res.json())
+            .then(data => {
+                console.log(data);
+                navigate('/login')
             })
-            .then(data => console.log(data))
             .catch(err => console.log(err))
     }
 
@@ -139,7 +141,7 @@ const Register = () => {
                             </div>
                         </div> */}
                         <div className="flex w-full mx-auto flex-col">
-                            <button className='btn bg-[#007AFF] my-[20px] border-0 text-white font-semibold text-[17px] hover:bg-transparent hover:border-[#007AFF] hover:border hover:text-[#007AFF] ' type="submit">Sign Up</button>
+                            <button className='btn bg-[rgb(0,122,255)] my-[20px] border-0 text-white font-semibold text-[17px] hover:bg-transparent hover:border-[#007AFF] hover:border hover:text-[#007AFF] ' type="submit">Sign Up</button>
 
                             <div className="divider">or</div>
                             <button className='flex py-[4px] justify-center items-center border border-slate-600 rounded-lg hover:bg-[#333333] hover:text-white transition-all delay-75 ease-in-out'>
