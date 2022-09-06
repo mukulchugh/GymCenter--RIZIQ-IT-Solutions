@@ -118,8 +118,8 @@ const Dashboard = () => {
                             userRole === 'admin' && <>
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                        <DashLink to='/dashboard/users-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/users-home'}> Home</DashLink>
+                                        <DashLink to='/dashboard/trainers-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/trainers-home'}> Home</DashLink>
                                     </div>
                                 </div>
 
