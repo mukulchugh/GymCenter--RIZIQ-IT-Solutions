@@ -30,7 +30,7 @@ const StudentList = () => {
     console.log(students.data)
 
     return (
-        <div className='p-5 mt-4'>
+        <div className='p-5 mt-4'> 
             <div className='flex justify-between'>
                 <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
                 <div className='flex items-center gap-3'>
@@ -49,7 +49,7 @@ const StudentList = () => {
             </div>
 
 
-        </div>
+         </div>
     );
 };
 
