@@ -115,7 +115,7 @@ const Dashboard = () => {
                         }
 
                         {
-                            userRole === 'admin' && <>
+                            userRole === 'trainer' && <>
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
                                         <DashLink to='/dashboard/trainers-home'> <FaHouseUser className='mx-auto xl:text-xl' /></DashLink>
