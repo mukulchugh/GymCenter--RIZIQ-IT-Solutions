@@ -16,7 +16,7 @@ const StudentList = () => {
     const date = `${day} ${monthName} ${year}`;
 
     const { data: students, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://gym-management97.herokuapp.com/api/complete_product_orders`, {
+        fetch(`https://gym-management97.herokuapp.com/api/income`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
