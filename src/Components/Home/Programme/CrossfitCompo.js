@@ -4,7 +4,7 @@ const CrossfitCompo = () => {
 
     return (
         <div className='mx-auto'>
-            <h1 className='text-md my-5'>CrossFit group classes are offered throughout the day. You can participate in upto twenty classes a month. Duration of the class is an hour. Every part of the class is coach led.about_bg</h1>
+            <h1 className='text-md my-5'>CrossFit group classes are offered throughout the day. You can participate in upto twenty classes a month. Duration of the class is an hour. Every part of the class is coach led.</h1>
 
             <div className="schedule lg:mb-20 md:mb-16 sm:mb-10 mb-10 md:flex items-center">
                 <div className="schedule_time w-full">
