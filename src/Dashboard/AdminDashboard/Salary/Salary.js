@@ -26,6 +26,7 @@ const Salary = () => {
         return <Loading />
     }
 
+    // console.log(salaryDetails)
 
     const salaryPaid = salaryDetails.data.filter(salary => {
         if (salary.status) {
@@ -46,7 +47,7 @@ const Salary = () => {
     }, 0)
 
 
-    console.log('salary' , salaryDetails.data)
+    // console.log(salaryDetails.data)
 
 
     return (
@@ -98,7 +99,7 @@ const Salary = () => {
 
             <div className='mb-8 flex justify-between items-center'>
                 <p>03 Mar 2022, Thursday</p>
-                <AddSalaryModal refetch={refetch}/>
+                <AddSalaryModal refetch={refetch} />
             </div>
             <SalaryTable salaryDetails={salaryDetails.data} />
         </div>

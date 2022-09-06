@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Spinner from './Spinner/Spinner';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
@@ -42,9 +43,19 @@ const Register = () => {
         })
             .then((res) => res.json())
             .then(data => {
-                console.log(data);
-                navigate('/login')
                 setLoading(false);
+                if (!data.success) {
+                    if (data.error === 'user with this email already exists.') {
+                        toast.error('User with this email already exists.')
+                        return;
+                    } else if (data.error) {
+                        toast.error(data.error)
+                        return;
+                    }
+                } else {
+                    toast.success('User created successfully, please login.')
+                    navigate('/login')
+                }
             })
             .catch(err => console.log(err))
     }
