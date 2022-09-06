@@ -115,7 +115,7 @@ const Register = () => {
 
                         <div className="flex  w-full mx-auto flex-col mt-5">
                             <label className='text-[#747474] text-sm font-medium ml-1 mb-2' >Phone</label>
-                            <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="number" name="phone" id="" placeholder='Enter Phone Number'
+                            <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Phone Number'
                                 {...register('phone', {
                                     required: 'Phone is required',
                                     minLength: {
