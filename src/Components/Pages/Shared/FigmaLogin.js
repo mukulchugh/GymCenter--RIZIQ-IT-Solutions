@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner/Spinner';
+import toast from 'react-hot-toast';
 
 const FigmaLogin = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
@@ -17,10 +18,13 @@ const FigmaLogin = () => {
     const onSubmitForm = async (data) => {
         setLoading(true);
         http.post("/auth/", { email: data.email, password: data.password }).then((res) => {
-            // console.log(res.data);
+            toast.success("Login Successful");
             setToken(res.data.data.email, res.data.data.access, res.data.data.role);
             setLoading(false);
-        });
+        }).catch((err) => {
+            setLoading(false);
+            toast.error("Login Failed");
+        })
         reset();
     }
 
