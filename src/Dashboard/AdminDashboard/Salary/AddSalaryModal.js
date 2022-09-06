@@ -12,39 +12,49 @@ export default function AddSalaryModal({ refetch }) {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser();
     const [user, setUser] = useState([])
-    const [selectedUser, setSelectedUser] = useState('')
-
+    const [selectedUser, setSelectedUser] = useState({})
+    const [selectedUserEmail, setSelectedUserEmail] = useState('')
 
 
 
     function closeModal() {
         setIsOpen(false);
     }
-
+    // console.log(user)
 
     const onSubmitForm = (data) => {
 
-        const expense = {
-            amount: data.amount,
-            expense_date: data.expense_date,
+        setSelectedUserEmail(data.user)
+        const selectedUser = user?.find(user => user.email === data.user)
+
+
+        // console.log(selectedUser)
+        const salary = {
+            amount: Number(data.amount),
+            // date: data.expense_date,
             // image: data.image,
-            name: data.name || "Staff",
-            message: data.message,
-            image: data.image || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+            // name: data.name || "Staff",
+            // message: data.message,
+            // image: data.image || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+            // time: new Date().toLocaleTimeString(),
             // make unique id
-            id: Math.random().toString(36).substr(2, 9),
-            status: true
+            user_id: selectedUser.id,
+            status: true,
+            salary_type: 1,
+            // user: data.user
         }
-        // console.log(expense)
-        // post data to database 
+        console.log(salary)
+        // post data to database
         fetch(`https://gym-management97.herokuapp.com/api/salary_overview/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(expense)
-        }).then(res => res.json())
+            body: JSON.stringify(salary)
+        }).then(res => {
+            res.json()
+        })
             .then(data => {
                 console.log(data)
                 refetch()
@@ -71,23 +81,25 @@ export default function AddSalaryModal({ refetch }) {
 
         <div className='my-5 '>
             <div>
-                <label for="my-modal-5" class="btn btn-success text-white font-bold modal-button">  <IoMdAddCircleOutline className='sm:text-2xl text-xl font-bold  mr-1' /> Add Salary</label>
+                <label for="my-modal-5" className="btn btn-success text-white font-bold modal-button">  <IoMdAddCircleOutline className='sm:text-2xl text-xl font-bold  mr-1' /> Add Salary</label>
             </div>
-            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-            <label for="my-modal-5" class="modal pt-20 z-50">
-                <label class="modal-box lg:w-[60%] relative" for="">
+            <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+            <label for="my-modal-5" className="modal pt-20 z-50">
+                <label className="modal-box lg:w-[60%] relative" for="">
                     <form onSubmit={handleSubmit(onSubmitForm)} id="my-modal-5">
-                        <label for="my-modal-5" class="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
+                        <label for="my-modal-5" className="btn btn-sm text-white btn-error btn-circle absolute right-2 top-2">✕</label>
                         <div className=" mt-3">
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text">Source Name</span>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Source Name</span>
                                 </label>
-                                <select type="text" placeholder="Enter The Name of Salary Source" class="input input-bordered w-full focus:outline-none text-black">
+                                <select type="text" placeholder="Enter The Name of Salary Source" className="input input-bordered w-full focus:outline-none text-black"
+                                    {...register("user", { required: true })}
+                                >
 
                                     {
                                         user?.map((item, index) => {
-                                            return item.is_staff && (<option onClick={() => setSelectedUser(item?.email)} key={index} value={item?.email}>{item?.email}</option>)
+                                            return item.is_staff && (<option key={index} value={item?.email}>{item?.email}</option>)
 
 
                                         })
@@ -97,11 +109,11 @@ export default function AddSalaryModal({ refetch }) {
                             </div>
                         </div>
                         <div className="">
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text">Amount</span>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Amount</span>
                                 </label>
-                                <input type="number" placeholder="Enter The Amount of Salary" class="input input-bordered w-full focus:outline-none"
+                                <input type="number" placeholder="Enter The Amount of Salary" className="input input-bordered w-full focus:outline-none"
                                     {...register("amount", {
                                         required: 'Amount is required',
                                     })}
@@ -113,11 +125,11 @@ export default function AddSalaryModal({ refetch }) {
                             </div>
                         </div>
                         <div className="">
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text">Salary Date</span>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Salary Date</span>
                                 </label>
-                                <input type="date" class="input input-bordered w-full focus:outline-none"
+                                <input type="date" className="input input-bordered w-full focus:outline-none"
                                     {...register("expense_date", {
                                         required: 'Date is required',
                                     })}
@@ -130,11 +142,11 @@ export default function AddSalaryModal({ refetch }) {
                         </div>
 
                         <div className="">
-                            <div class="form-control w-full">
-                                <label class="label">
-                                    <span class="label-text">Message</span>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Message</span>
                                 </label>
-                                <input placeholder="Enter your Message" type="text" class="input input-bordered w-full focus:outline-none"
+                                <input placeholder="Enter your Message" type="text" className="input input-bordered w-full focus:outline-none"
                                     {...register("message", {
                                         required: 'Message is required',
                                     })}
@@ -147,11 +159,11 @@ export default function AddSalaryModal({ refetch }) {
                         </div>
 
                         {/* <div className=" mt-3">
-                        <div class="form-control w-full">
-                            <label class="label">
-                                <span class="label-text">Upload File</span>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Upload File</span>
                             </label>
-                            <input type="file" placeholder="Write Any Message For This Income" class="input w-full focus:outline-none h-full pl-0 rounded-none shadow-none border-none"
+                            <input type="file" placeholder="Write Any Message For This Income" className="input w-full focus:outline-none h-full pl-0 rounded-none shadow-none border-none"
                                 {...register("image", {
                                     required: 'Image is required',
                                 })}
@@ -165,7 +177,7 @@ export default function AddSalaryModal({ refetch }) {
 
                         <div className="flex gap-2 relative">
                             <div>
-                                <label for="my-modal-5" class="btn btn-error text-white font-bold btn-sm">Close</label>
+                                <label for="my-modal-5" className="btn btn-error text-white font-bold btn-sm">Close</label>
                             </div>
                             <div className="text-end">
                                 <button
