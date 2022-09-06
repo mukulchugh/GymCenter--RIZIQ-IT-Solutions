@@ -12,38 +12,44 @@ export default function AddSalaryModal({ refetch }) {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const { token } = AuthUser();
     const [user, setUser] = useState([])
-    const [selectedUser, setSelectedUser] = useState('')
-
+    const [selectedUser, setSelectedUser] = useState({})
+    const [selectedUserEmail, setSelectedUserEmail] = useState('')
 
 
 
     function closeModal() {
         setIsOpen(false);
     }
-
+    // console.log(user)
 
     const onSubmitForm = (data) => {
 
-        const expense = {
+        setSelectedUserEmail(data.user)
+        const selectedUser = user?.find(user => user.email === data.user)
+
+
+        const salary = {
             amount: data.amount,
-            expense_date: data.expense_date,
+            date: data.expense_date,
             // image: data.image,
             name: data.name || "Staff",
             message: data.message,
             image: data.image || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+            time: new Date().toLocaleTimeString(),
             // make unique id
             id: Math.random().toString(36).substr(2, 9),
-            status: true
+            status: true,
+            user: selectedUser
         }
-        // console.log(expense)
-        // post data to database 
+        console.log(salary)
+        // post data to database
         fetch(`https://gym-management97.herokuapp.com/api/salary_overview/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(expense)
+            body: JSON.stringify(salary)
         }).then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -82,11 +88,14 @@ export default function AddSalaryModal({ refetch }) {
                                 <label class="label">
                                     <span class="label-text">Source Name</span>
                                 </label>
-                                <select type="text" placeholder="Enter The Name of Salary Source" class="input input-bordered w-full focus:outline-none text-black">
+                                <select type="text" placeholder="Enter The Name of Salary Source" class="input input-bordered w-full focus:outline-none text-black"
+                                    {...register("user", { required: true })}
+                                >
 
                                     {
                                         user?.map((item, index) => {
-                                            return item.is_staff && (<option onClick={() => setSelectedUser(item?.email)} key={index} value={item?.email}>{item?.email}</option>)
+                                            // console.log(item, 'item')
+                                            return item.is_staff && (<option key={index} value={item?.email}>{item?.email}</option>)
 
 
                                         })
