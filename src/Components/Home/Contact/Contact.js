@@ -4,7 +4,7 @@ import img2 from '../../../assets/Image/icon/icon-2.png';
 import img3 from '../../../assets/Image/icon/icon-3.png';
 import { BsFacebook } from "react-icons/bs";
 import { BsGlobe2 } from "react-icons/bs";
-import { MdQueryBuilder } from "react-icons/md";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { RiWhatsappFill } from "react-icons/ri";
 import { IoCall } from "react-icons/io5";
 
@@ -14,14 +14,26 @@ const Contact = () => {
             <h1 className='md:text-4xl text-3xl font-bold text-primary mb-7'>Contact us</h1>
             <div className='mb-10 grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 gap-5'>
 
-                <div className=" rounded-2xl shadow-md p-3 ">
+                <div className=" rounded-2xl shadow-md p-3">
                     <div className='flex justify-center'>
                         <img src={img1} alt="" />
                     </div>
-                    <div className='lg:ml-14 md:ml-5 sm:ml-0 ml-8 pb-5'>
-                        <span className='flex items-center  gap-3' ><MdQueryBuilder className='text-primary text-xl' /><h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2></span>
-                        <span className='flex items-center  gap-3 my-2' ><BsFacebook className='text-primary' /><h2 className=' font-semibold text-sm'>fb.com/CrossFitBoxDHK</h2></span>
-                        <span className='flex items-center  gap-3' ><BsGlobe2 className='text-primary' /><h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2></span>
+                    <div className=' pb-5 flex justify-center'>
+                        <div className='flex gap-3'>
+                            <div className='grid gap-2 mt-1'>
+                                <RiCustomerService2Fill className='text-primary' />
+                                <BsFacebook className='text-primary' />
+                                <BsGlobe2 className='text-primary' />
+                            </div>
+                            <div className='grid gap-2'>
+                                <h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2>
+                                <h2 className=' font-semibold text-sm'>fb.com/CrossFitBoxDHK</h2>
+                                <h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2>
+                            </div>
+                        </div>
+                        {/* <span className='flex items-center justify-center  gap-3' ><MdQueryBuilder className='text-primary text-xl' /><h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2></span>
+                        <span className='flex items-center justify-center gap-3 my-2' ><BsFacebook className='text-primary' /><h2 className=' font-semibold text-sm'>fb.com/CrossFitBoxDHK</h2></span>
+                        <span className='flex items-center justify-center gap-3' ><BsGlobe2 className='text-primary' /><h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2></span> */}
                     </div>
                 </div>
                 <div className=" rounded-2xl shadow-md p-3 ">
