@@ -11,7 +11,7 @@ import Navbar from './Navbar';
 const Header = () => {
     const [background, setBackground] = useState(false);
     const navigate = useNavigate();
-    const {email, userRole} = AuthUser();
+    const { email, userRole } = AuthUser();
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -67,7 +67,7 @@ const Header = () => {
                     Start Today
                 </h1>
                 <div className="button_section mt-8">
-                    <Link to="/" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold ">JOIN GYM</Link>
+                    <Link to="/login" className="btn btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] join_gym_button lg:text-lg font-bold ">JOIN GYM</Link>
                     <Link to="/programs" className="btn btn-outline ml-4 package_button btn-primary lg:w-[150px] md:w-[140px] lg:h-[50px] md:h-[45px] lg:text-lg font-bold text-white">PROGRAMS</Link>
                 </div>
             </div>
