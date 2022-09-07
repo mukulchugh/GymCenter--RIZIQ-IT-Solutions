@@ -4,6 +4,7 @@ import img2 from '../../../assets/Image/CrossFit/pic2.png'
 import Package from '../Package/Package';
 import SharedNav from '../Shared/SharedNav';
 import './CrossFit.css'
+import CrossFitTable from './CrossFitTable';
 
 const CrossFit = () => {
     return (
@@ -37,6 +38,8 @@ const CrossFit = () => {
                     </div>
 
                 </div>
+
+                <CrossFitTable/>
 
                 <h1 className='text-4xl font-bold text-primary mb-10'>Recommended <br /> Packages for you</h1>
 
