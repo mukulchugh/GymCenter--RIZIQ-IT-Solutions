@@ -9,6 +9,8 @@ import Slider from './Slider/Slider';
 import Programme from './Programme/Programme';
 import AuthUser from '../../hooks/AuthUser/AuthUser';
 import CrossfitProgramme from './Programme/CrossfitProgramme/CrossfitProgramme';
+import SecondProgramme from './Programme/SecondProgramme';
+import ThirdProgramme from './Programme/ThirdProgramme';
 
 const Home = () => {
 
@@ -22,6 +24,8 @@ const Home = () => {
             <About />
             <Table />
             <Programme />
+            <SecondProgramme />
+            <ThirdProgramme />
             <CrossfitProgramme />
             <Slider />
             <SpecialOffer />

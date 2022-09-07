@@ -18,7 +18,6 @@ const Programme = () => {
                     { to: "legion", name: "Legion" },
                     { to: "skill-session", name: "Skill Session" },
                     { to: "body-comp", name: "Body Comp Analyzer" },
-                    { to: "personal-training", name: "Personal Training" },
                 ]}
             />
 
