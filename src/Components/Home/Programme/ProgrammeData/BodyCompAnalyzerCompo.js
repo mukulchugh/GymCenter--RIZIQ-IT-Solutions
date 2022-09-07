@@ -1,13 +1,17 @@
 import React from 'react';
 
-const OnRampCompo = () => {
+const BodyCompAnalyerCompo = () => {
     return (
-        <div className='mx-auto'>
-            <h1 className='text-md my-5'>For those looking to ease their way into CrossFit, we offer an On Ramp Program. This program is designed to ramp up your fitness and give you more exposure to the movements involved in CrossFit before CrossFit general classes. This is a four classes package.</h1>
+        <div className='mx-auto mb-10'>
+            <h1 className='text-md my-5'>Segmental/Medical body composition analyzer describes the
+                analysis of the body composition , current state of body water,
+                protein, minerals, and fat to provide more precise information
+                beyond weight and BMI. Gives you a complete picture about
+                where you are and how you need to train.</h1>
 
 
 
-            <div className="schedule  mb-10 md:flex items-center">
+            {/* <div className="schedule lg:mb-20 md:mb-16 sm:mb-10 mb-10 md:flex items-center">
                 <div className="schedule_time w-full">
                     <div className="overflow-x-auto">
                         <table className="table table-zebra table_border table-compact w-full">
@@ -27,10 +31,10 @@ const OnRampCompo = () => {
                     </div>
                     <h1 className='font-semibold mt-2'>Classes: Max 20 classes per month</h1>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     );
 };
 
-export default OnRampCompo;
+export default BodyCompAnalyerCompo;

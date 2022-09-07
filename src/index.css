@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 
-/* html {
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 8px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
-} */
+    background: linear-gradient(transparent, #F05024);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #00c6ff)
+}

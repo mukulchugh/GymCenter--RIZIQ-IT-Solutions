@@ -1,12 +1,12 @@
 import React from 'react';
 
-const AssembleCompo = () => {
+const GymMemberShipCompo = () => {
     return (
         <div className='mx-auto'>
-            <h1 className='text-md mt-5 mb-3'>For those who want the best of both worlds. This is a combination of CrossFit and Legion. Which means you unlock all the classes offered in our facility.</h1>
-            <h1 className='text-md mb-3'>Class Type: <span className='text-primary'>Combination of CrossFit and Legion</span></h1>
-
-
+            <h1 className='text-md mt-5 mb-3'>This package enables gym access only. If you are confident that
+                you have a solid plan of action and have a will power strong
+                enough to keep yourself accountable towards your goal, this is
+                for you.</h1>
 
             <div className="schedule mb-10 md:flex items-center">
                 <div className="schedule_time w-full">
@@ -32,7 +32,6 @@ const AssembleCompo = () => {
                             </tbody>
                         </table>
                     </div>
-                    <h1 className='font-semibold mt-2'>Classes: Max 20 classes per month</h1>
                 </div>
             </div>
 
@@ -40,4 +39,4 @@ const AssembleCompo = () => {
     );
 };
 
-export default AssembleCompo;
+export default GymMemberShipCompo;
