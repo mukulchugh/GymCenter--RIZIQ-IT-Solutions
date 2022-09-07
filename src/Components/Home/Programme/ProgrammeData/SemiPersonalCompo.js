@@ -13,7 +13,7 @@ const SemiPersonalCompo = () => {
                     <div className="overflow-x-auto">
                         <table className="table table_border table-compact w-full">
                             <thead className='table_border rounded-2xl'>
-                                <tr >
+                                <tr className="text-center" >
                                     <th>CrossFit</th>
                                     <th>PT Certified/Other</th>
                                     <th>Uncertified</th>
