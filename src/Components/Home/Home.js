@@ -23,10 +23,12 @@ const Home = () => {
             {/* Work Schedule */}
             <About />
             <Table />
-            <Programme />
-            <SecondProgramme />
-            <ThirdProgramme />
             <CrossfitProgramme />
+            <>
+                <Programme />
+                <SecondProgramme />
+                <ThirdProgramme />
+            </>
             <Slider />
             <SpecialOffer />
             <Contact />
