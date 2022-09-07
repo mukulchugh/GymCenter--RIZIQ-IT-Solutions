@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import styled from "styled-components";
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
-import LegionCompo from '../ProgrammeData/LegionCompo';
-import SkillSessionCompo from '../ProgrammeData/SkillSessionCompo';
-import BodyCompAnalyerCompo from '../ProgrammeData/BodyCompAnalyzerCompo';
+import PersonalizedFoodCompo from '../ProgrammeData/PersonalizedFoodCompo';
+import GymMemberShipCompo from '../ProgrammeData/GymMemberShipCompo';
+import SingleDayCompo from '../ProgrammeData/SingleDayCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -34,10 +34,10 @@ const TabItem = styled.li`
   }
 `;
 
-const Tabs = props => {
+const ThirdTab = props => {
     const activeRef = React.createRef();
     const none = React.createRef();
-    const [selected, setSelected] = React.useState("on-ramp");
+    const [selected, setSelected] = React.useState("personalized-food");
     const [offset, setOffset] = React.useState(0);
     const [width, setWidth] = React.useState(0);
     React.useEffect(() => {
@@ -49,16 +49,12 @@ const Tabs = props => {
 
 
     let section;
-    if (selected === "on-ramp") {
-        section = <OnRampCompo />;
-    } else if (selected === "assemble") {
-        section = <AssembleCompo />
-    } else if (selected === "legion") {
-        section = <LegionCompo />
-    } else if (selected === "skill-session") {
-        section = <SkillSessionCompo />
-    } else if (selected === "body-comp") {
-        section = <BodyCompAnalyerCompo />
+    if (selected === "personalized-food") {
+        section = <PersonalizedFoodCompo />;
+    } else if (selected === "gym-membership") {
+        section = <GymMemberShipCompo />
+    } else {
+        section = <SingleDayCompo />
     }
 
     return (
@@ -92,6 +88,6 @@ const Tabs = props => {
     );
 };
 
-export default Tabs;
+export default ThirdTab;
 
 

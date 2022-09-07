@@ -7,12 +7,14 @@ import SpecialOffer from './SpecialOffer/SpecialOffer';
 import Table from './Table/Table';
 import Slider from './Slider/Slider';
 import Programme from './Programme/Programme';
-import Testimonials from '../Pages/Testimonials/Testimonials';
 import AuthUser from '../../hooks/AuthUser/AuthUser';
+import CrossfitProgramme from './Programme/CrossfitProgramme/CrossfitProgramme';
+import SecondProgramme from './Programme/SecondProgramme';
+import ThirdProgramme from './Programme/ThirdProgramme';
 
 const Home = () => {
 
-    const {email} = AuthUser()
+    const { email } = AuthUser()
     console.log(email)
 
     return (
@@ -22,6 +24,9 @@ const Home = () => {
             <About />
             <Table />
             <Programme />
+            <SecondProgramme />
+            <ThirdProgramme />
+            <CrossfitProgramme />
             <Slider />
             <SpecialOffer />
             <Contact />

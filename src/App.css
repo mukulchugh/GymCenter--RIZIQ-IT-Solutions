@@ -319,6 +319,13 @@ input[type="checkbox"]:checked:after {
     height: calc(100vh - 98px);
 }
 
+/* Table */
+.nested_table_header {
+    background-color: #E6E6E6 !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
 
 @media only screen and (max-width: 1280px) {
     .mid-container {

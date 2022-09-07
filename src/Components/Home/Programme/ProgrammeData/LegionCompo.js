@@ -1,10 +1,19 @@
 import React from 'react';
 
-const AssembleCompo = () => {
+const LegionCompo = () => {
     return (
         <div className='mx-auto'>
-            <h1 className='text-md mt-5 mb-3'>For those who want the best of both worlds. This is a combination of CrossFit and Legion. Which means you unlock all the classes offered in our facility.</h1>
-            <h1 className='text-md mb-3'>Class Type: <span className='text-primary'>Combination of CrossFit and Legion</span></h1>
+            <h1 className='text-md mt-5 mb-3'>Apart from CrossFit, we offer a diverse range of training options.
+                By enrolling in the "Legion" package you unlock all of these
+                classes stated below Power Hour- Strength training based on
+                Compound lifts. HIIT- High Intensity Interval Training conducted
+                by the only HIIT certified coach in the country. Mobilizer- A rehab
+                focused program. It's good for everyone but people with injuries
+                or disabilities, postural deviations, people just out of surgery may immensely benefit from this class. Martial Arts- Being able to
+                defend yourself and your loved ones when necessary is a
+                mandatory skill for everyone. So we have a program designed
+                with real life scenarios in mind.</h1>
+            <h1 className='text-md mb-3'>Class Type: <span className='text-primary'>: Power Hour, HIIT, Mobilizer, Martial Arts</span></h1>
 
 
 
@@ -40,4 +49,4 @@ const AssembleCompo = () => {
     );
 };
 
-export default AssembleCompo;
+export default LegionCompo;

@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import styled from "styled-components";
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
-import LegionCompo from '../ProgrammeData/LegionCompo';
-import SkillSessionCompo from '../ProgrammeData/SkillSessionCompo';
-import BodyCompAnalyerCompo from '../ProgrammeData/BodyCompAnalyzerCompo';
+import PersonalTrainingCompo from '../ProgrammeData/PersonalTrainingCompo';
+import SemiPersonalCompo from '../ProgrammeData/SemiPersonalCompo';
+import IndividualCOachingCompo from '../ProgrammeData/IndividualCoachingCompo';
+import FamilyCoachingCompo from '../ProgrammeData/FamilyCoachingCompo';
+import FollowUpCoachingCompo from '../ProgrammeData/FollowUpCoachingCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -34,10 +36,10 @@ const TabItem = styled.li`
   }
 `;
 
-const Tabs = props => {
+const SecondTab = props => {
     const activeRef = React.createRef();
     const none = React.createRef();
-    const [selected, setSelected] = React.useState("on-ramp");
+    const [selected, setSelected] = React.useState("personal-training");
     const [offset, setOffset] = React.useState(0);
     const [width, setWidth] = React.useState(0);
     React.useEffect(() => {
@@ -49,16 +51,16 @@ const Tabs = props => {
 
 
     let section;
-    if (selected === "on-ramp") {
-        section = <OnRampCompo />;
-    } else if (selected === "assemble") {
-        section = <AssembleCompo />
-    } else if (selected === "legion") {
-        section = <LegionCompo />
-    } else if (selected === "skill-session") {
-        section = <SkillSessionCompo />
-    } else if (selected === "body-comp") {
-        section = <BodyCompAnalyerCompo />
+    if (selected === "personal-training") {
+        section = <PersonalTrainingCompo />;
+    } else if (selected === "semi-personal") {
+        section = <SemiPersonalCompo />
+    } else if (selected === "individual-coaching") {
+        section = <IndividualCOachingCompo />
+    } else if (selected === "family-coaching") {
+        section = <FamilyCoachingCompo />
+    } else if (selected === "followup-coaching") {
+        section = <FollowUpCoachingCompo />
     }
 
     return (
@@ -92,6 +94,6 @@ const Tabs = props => {
     );
 };
 
-export default Tabs;
+export default SecondTab;
 
 
