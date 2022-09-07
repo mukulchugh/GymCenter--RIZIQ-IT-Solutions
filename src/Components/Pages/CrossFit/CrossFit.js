@@ -87,15 +87,3 @@ const CrossFit = () => {
 };
 
 export default CrossFit;
-
-
-
-
-
-// Daif is a CrossFit Level-2 trainer. He's coaching CrossFit for the last 5 years. Being a black belt in Karate, he's used to living a disciplined life from an early age. Resultantly, his coaching reflects the values of a balanced lifestyle. As a  personal trainer and nutritionist, he is proficient at navigating clients journey through different stages of change. It's not always about the training or nutrition that is challenging, sometimes people struggle with progress due to setbacks in other areas of their lives. Learning from and overcoming his own challenges, Daif is a life coach who's passionate about  helping people overcome life hurdles, set goals and follow their passion and purpose. 
-
-
-/* Shahid is a CrossFit level-1 trainer. He's passionate about helping people be in control of their lives and he wants to do that by making them move better in their day to day lives. He's working as a coach for the last nine years. He's a certified personal trainer who has a knack for corrective and adaptive exercise and many of our clients with injuries and other physical limitations are reaping the benefit of that. 
-These days, busy life leaves little room for exercise for many of us. A short intensive class can solve that. Shahid here is a HIIT certified coach who delivers short intense and fun classes at CFA regularly. 
-As it's not always about training and factors like nutrition, sleep, stress and support system plays important roles in a person's growth, Shahid is efficient at not just showing the path but also leading the way every step of the journey.
-  */
