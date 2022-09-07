@@ -4,7 +4,7 @@ import Tabs from './Tab/Tab';
 // import Tabs from './Tabs';
 
 const SecondProgramme = () => {
-    const [selectedTab, setSelectedTab] = React.useState('1all');
+    const [selectedTab, setSelectedTab] = React.useState('personal-training');
     // console.log(selectedTab)
     return (
         <div name='article' className="mid-container main_tabs">

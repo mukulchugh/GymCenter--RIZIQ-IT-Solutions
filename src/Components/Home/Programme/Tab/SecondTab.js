@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import styled from "styled-components";
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
+import PersonalTrainingCompo from '../ProgrammeData/PersonalTrainingCompo';
+import SemiPersonalCompo from '../ProgrammeData/SemiPersonalCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -47,9 +49,9 @@ const SecondTab = props => {
 
     let section;
     if (selected === "personal-training") {
-        section = <OnRampCompo />;
-    } else {
-        section = <AssembleCompo />;
+        section = <PersonalTrainingCompo />;
+    } else if (selected === "semi-personal") {
+        section = <SemiPersonalCompo />
     }
 
     return (
