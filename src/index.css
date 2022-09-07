@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-html {
+/* html {
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -14,4 +14,4 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
-}
+} */

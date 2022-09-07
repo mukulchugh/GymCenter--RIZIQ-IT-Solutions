@@ -75,11 +75,11 @@ const CrossFit = () => {
 
                     </div>
                 </div>
-
-
+                <div className='flex my-16 justify-center border-y-2 py-10'>
+                    <a href="https://journal.crossfit.com" target="_blank" title="CrossFit Journal: The Performance-Based Lifestyle Resource"><img src="https://de45qwmlmgefw.cloudfront.net/badges/black-300x150.png" width="200px" height="130" alt="CrossFit Journal: The Performance-Based Lifestyle Resource" /></a>
+                </div>
 
                 <h1 className='md:text-4xl text-3xl font-bold text-primary mb-6'>Recommended <br /> Packages for you</h1>
-
                 <Package />
             </div>
         </>

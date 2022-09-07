@@ -13,7 +13,7 @@ const Package = () => {
                     <img className='w-full' src={img1} alt="Shoes" />
                 </div>
                 <div className="card-body pt-0">
-                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>2999<TbCurrencyTaka className='text-4xl m-0' /> <span className='text-xl mt-3'>/yr</span></span></h1>
+                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>5%<span className='text-xl mt-3'>/3Months</span></span></h1>
                     <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
@@ -35,7 +35,7 @@ const Package = () => {
                     <img className='w-full' src={img2} alt="Shoes" />
                 </div>
                 <div className="card-body pt-0">
-                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>4999<TbCurrencyTaka className='text-4xl m-0' /> <span className='text-xl mt-3'>/yr</span></span></h1>
+                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>10%<span className='text-xl mt-3'>/6Months</span></span></h1>
                     <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
@@ -57,7 +57,7 @@ const Package = () => {
                     <img className='w-full' src={img3} alt="Shoes" />
                 </div>
                 <div className="card-body pt-0">
-                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>8999<TbCurrencyTaka className='text-4xl m-0' /> <span className='text-xl mt-3'>/yr</span></span></h1>
+                    <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>15%<span className='text-xl mt-3'>/1Year</span></span></h1>
                     <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
