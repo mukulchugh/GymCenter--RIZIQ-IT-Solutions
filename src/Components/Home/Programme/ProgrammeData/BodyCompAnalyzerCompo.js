@@ -2,7 +2,7 @@ import React from 'react';
 
 const BodyCompAnalyerCompo = () => {
     return (
-        <div className='mx-auto lg:mb-20 md:mb-16 sm:mb-10 mb-10'>
+        <div className='mx-auto mb-10'>
             <h1 className='text-md my-5'>Segmental/Medical body composition analyzer describes the
                 analysis of the body composition , current state of body water,
                 protein, minerals, and fat to provide more precise information

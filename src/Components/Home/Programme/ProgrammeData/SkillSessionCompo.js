@@ -12,7 +12,7 @@ const SkillSessionCompo = () => {
 
 
 
-            <div className="schedule lg:mb-20 md:mb-16 sm:mb-10 mb-10 md:flex items-center">
+            <div className="schedule mb-10 md:flex items-center">
                 <div className="schedule_time w-full">
 
                     <h1 className='font-semibold mt-2'>Notes: No package offering. Per Class Only</h1>

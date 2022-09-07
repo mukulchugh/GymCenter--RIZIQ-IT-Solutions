@@ -4,6 +4,9 @@ import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
 import PersonalTrainingCompo from '../ProgrammeData/PersonalTrainingCompo';
 import SemiPersonalCompo from '../ProgrammeData/SemiPersonalCompo';
+import IndividualCOachingCompo from '../ProgrammeData/IndividualCoachingCompo';
+import FamilyCoachingCompo from '../ProgrammeData/FamilyCoachingCompo';
+import FollowUpCoachingCompo from '../ProgrammeData/FollowUpCoachingCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -52,6 +55,12 @@ const SecondTab = props => {
         section = <PersonalTrainingCompo />;
     } else if (selected === "semi-personal") {
         section = <SemiPersonalCompo />
+    } else if (selected === "individual-coaching") {
+        section = <IndividualCOachingCompo />
+    } else if (selected === "family-coaching") {
+        section = <FamilyCoachingCompo />
+    } else if (selected === "followup-coaching") {
+        section = <FollowUpCoachingCompo />
     }
 
     return (

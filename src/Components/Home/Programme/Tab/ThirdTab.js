@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import styled from "styled-components";
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
+import PersonalizedFoodCompo from '../ProgrammeData/PersonalizedFoodCompo';
+import GymMemberShipCompo from '../ProgrammeData/GymMemberShipCompo';
+import SingleDayCompo from '../ProgrammeData/SingleDayCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -47,9 +50,11 @@ const ThirdTab = props => {
 
     let section;
     if (selected === "personalized-food") {
-        section = <OnRampCompo />;
+        section = <PersonalizedFoodCompo />;
+    } else if (selected === "gym-membership") {
+        section = <GymMemberShipCompo />
     } else {
-        section = <AssembleCompo />;
+        section = <SingleDayCompo />
     }
 
     return (

@@ -3,12 +3,12 @@ import React from 'react';
 const SemiPersonalCompo = () => {
 
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto mb-10'>
             <h1 className='text-md my-5'>Group Personal training at its best. Suitable for spouse, family members, friends, and groups. Basically, for people with similar goals. Personal Training in groups helps with  accountability and creates a competitive environment</h1>
 
 
 
-            <div className="schedule mb-10 md:flex items-center">
+            <div className="schedule md:flex items-center">
                 <div className="schedule_time w-full">
                     <div className="overflow-x-auto">
                         <table className="table table_border table-compact w-full">
@@ -115,7 +115,7 @@ const SemiPersonalCompo = () => {
             </div>
 
 
-            <div className="schedule lg:mb-20 md:mb-16 sm:mb-10 mb-10 md:flex items-center">
+            <div className="schedule mb-10 md:flex items-center">
                 <div className="schedule_time w-full">
                     <div className="overflow-x-auto">
                         <table className="table table-zebra table_border table-compact w-full">
