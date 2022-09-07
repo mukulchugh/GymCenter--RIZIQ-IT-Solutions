@@ -3,6 +3,8 @@ import styled from "styled-components";
 import OnRampCompo from '../OnRampCompo';
 import AssembleCompo from '../AssembleCompo';
 import LegionCompo from '../ProgrammeData/LegionCompo';
+import SkillSessionCompo from '../ProgrammeData/SkillSessionCompo';
+import BodyCompAnalyerCompo from '../ProgrammeData/BodyCompAnalyzerCompo';
 
 const TabsWrapper = styled.div`
   border-bottom: 1px solid #E0E0E0;
@@ -54,7 +56,9 @@ const Tabs = props => {
     } else if (selected === "legion") {
         section = <LegionCompo />
     } else if (selected === "skill-session") {
+        section = <SkillSessionCompo />
     } else if (selected === "body-comp") {
+        section = <BodyCompAnalyerCompo />
     }
 
     return (
