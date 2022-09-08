@@ -13,7 +13,7 @@ const Fitness = () => {
                     <span className='bg-[#dbdce0] text-xs sm:text-sm md:text-md p-2 rounded-3xl text-[#071B46]'><button className="btn btn-xs hover:bg-slate-400 border-0 rounded-3xl bg-white text-[#071B46]">NEW</button> High Intensity workout to burn calories</span>
 
                     <h1 className='md:text-[100px] text-[50px] my-5 text-primary font-bold'>KICK<br /><span>BOXING</span></h1>
-                    <p className='text-[#071B46] mb-5'>
+                    <p className='text-[#071B46] mb-5 text-justify'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <div className=''>
@@ -32,7 +32,7 @@ const Fitness = () => {
                 </div>
                 <div className="fitness_content right_to_left mt-0">
                     <h1 className='md:text-[100px] text-[50px] my-5 text-primary font-bold'>NUTRIT<br /><span>ION</span></h1>
-                    <p className='text-[#071B46] mb-5'>
+                    <p className='text-[#071B46] mb-5 text-justify'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <div className=''>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const GymMemberShipCompo = () => {
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto lg:mb-20 md:mb-16 sm:mb-10 mb-10'>
             <h1 className='text-md mt-5 mb-3'>This package enables gym access only. If you are confident that
                 you have a solid plan of action and have a will power strong
                 enough to keep yourself accountable towards your goal, this is
