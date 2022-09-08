@@ -15,7 +15,7 @@ import ThirdProgramme from './Programme/ThirdProgramme';
 const Home = () => {
 
     const { email } = AuthUser()
-    console.log(email)
+    // console.log(email)
 
     return (
         <div>

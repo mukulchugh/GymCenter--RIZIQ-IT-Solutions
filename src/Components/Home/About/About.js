@@ -15,17 +15,17 @@ const About = () => {
                         <div className='mb-10'>
                             <div className='mb-5'>
                                 <h1 className='text-2xl font-bold mb-2 text-primary about'>Mission</h1>
-                                <p className='text-secondary'>We want to forge a community through elite functional fitness that drives people to be fit and live a healthy life.</p>
+                                <p className='text-secondary text-justify'>We want to forge a community through elite functional fitness that drives people to be fit and live a healthy life.</p>
                             </div>
 
                             <div className='mb-5'>
                                 <h1 className='text-2xl font-bold text-primary about mb-2'>Vision</h1>
-                                <p className='text-secondary'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
+                                <p className='text-secondary text-justify'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
                             </div>
 
                             <div>
                                 <h1 className='text-2xl vision font-bold text-primary about mb-2'>Core Values</h1>
-                                <p className='text-secondary'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
+                                <p className='text-secondary text-justify'>We envision to be a hub of health & fitness; a place people can rely on to reach their goals and a platform where they can share their experiences that will enlighten the path for others.</p>
                             </div>
                         </div>
 

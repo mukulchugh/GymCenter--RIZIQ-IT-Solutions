@@ -20,7 +20,7 @@ const Shop = () => {
                                 <p className='text-xl font-bold text-primary flex mt-2 mr-2'><TbCurrencyTaka className='text-2xl' />199</p>
                                 <p className='text-sm flex items-center mt-2'><TbCurrencyTaka className='text-xl mb-1' /><del>369</del></p>
                             </div>
-                            <p className='mt-3 text-sm text-secondary'>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in</p>
+                            <p className='mt-3 text-sm text-secondary text-justify'>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in</p>
                             <p className='mt-3 text-sm font-bold'>Quantity: <span className='text-xs'>05/10 Available</span></p>
 
                             <button className='px-5 py-3 mt-5 rounded text-black font-bold bg-[#FBB848]' type=""><h1>Add To Cart</h1></button>
