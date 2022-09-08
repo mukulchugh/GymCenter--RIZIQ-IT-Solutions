@@ -17,7 +17,7 @@ const CrossFit = () => {
                     <div className='flex items-center '>
                         <div>
                             <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CROSSFIT?</h1>
-                            <p className='font-bold lg:w-[90%] '>CrossFit is a strength & conditioning program based on general physical preparedness (GPP). In the CrossFit method of training, real life movements like running, lifting, swimming, cycling, carrying loads to distance, climbing, pushing or pulling heavy objects etc. are programmed into effective and fun workouts designed by CrossFit trainers. </p>
+                            <p className='font-bold lg:w-[90%] text-justify'>CrossFit is a strength & conditioning program based on general physical preparedness (GPP). In the CrossFit method of training, real life movements like running, lifting, swimming, cycling, carrying loads to distance, climbing, pushing or pulling heavy objects etc. are programmed into effective and fun workouts designed by CrossFit trainers. </p>
 
                             <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                         </div>
@@ -33,7 +33,7 @@ const CrossFit = () => {
                     <div className='flex items-center md:order-2 order-1'>
                         <div>
                             <h1 className='text-3xl text-primary font-extrabold mb-5'>All sessions are led by a fully qualified CrossFit coach.</h1>
-                            <p className='font-bold lg:w-[90%] '>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!</p>
+                            <p className='font-bold lg:w-[90%] text-justify'>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!</p>
 
                             <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                         </div>
@@ -51,7 +51,7 @@ const CrossFit = () => {
                         <div className='lg:w-[65%] md:w-[55%]'>
                             <div>
                                 <h1 className='text-3xl text-primary font-extrabold mb-5 uppercase'>Daif Salemoon </h1>
-                                <p className=''>Daif is a CrossFit Level-2 trainer. He's coaching CrossFit for the last 5 years. Being a black belt in Karate, he's used to living a disciplined life from an early age. Resultantly, his coaching reflects the values of a balanced lifestyle. As a  personal trainer and nutritionist, he is proficient at navigating clients journey through different stages of change. It's not always about the training or nutrition that is challenging, sometimes people struggle with progress due to setbacks in other areas of their lives. Learning from and overcoming his own challenges, Daif is a life coach who's passionate about  helping people overcome life hurdles, set goals and follow their passion and purpose.</p>
+                                <p className='text-justify'>Daif is a CrossFit Level-2 trainer. He's coaching CrossFit for the last 5 years. Being a black belt in Karate, he's used to living a disciplined life from an early age. Resultantly, his coaching reflects the values of a balanced lifestyle. As a  personal trainer and nutritionist, he is proficient at navigating clients journey through different stages of change. It's not always about the training or nutrition that is challenging, sometimes people struggle with progress due to setbacks in other areas of their lives. Learning from and overcoming his own challenges, Daif is a life coach who's passionate about  helping people overcome life hurdles, set goals and follow their passion and purpose.</p>
 
                                 <button className='custom-btn btn-15 mt-5 p-3'>see more</button>
                             </div>
@@ -65,7 +65,7 @@ const CrossFit = () => {
                         <div className='lg:w-[65%] md:w-[55%] md:order-1 order-2'>
                             <div>
                                 <h1 className='text-3xl text-primary font-extrabold mb-5 uppercase'>Shahidur Rahman </h1>
-                                <p className=''>Shahid is a CrossFit level-1 trainer. He's passionate about helping people be in control of their lives and he wants to do that by making them move better in their day to day lives. He's working as a coach for the last nine years. He's a certified personal trainer who has a knack for corrective and adaptive exercise and many of our clients with injuries and other physical limitations are reaping the benefit of that. <br /><br />
+                                <p className='text-justify'>Shahid is a CrossFit level-1 trainer. He's passionate about helping people be in control of their lives and he wants to do that by making them move better in their day to day lives. He's working as a coach for the last nine years. He's a certified personal trainer who has a knack for corrective and adaptive exercise and many of our clients with injuries and other physical limitations are reaping the benefit of that. <br /><br />
                                     These days, busy life leaves little room for exercise for many of us. A short intensive class can solve that. Shahid here is a HIIT certified coach who delivers short intense and fun classes at CFA regularly. <br /><br />
                                     As it's not always about training and factors like nutrition, sleep, stress and support system plays important roles in a person's growth, Shahid is efficient at not just showing the path but also leading the way every step of the journey.</p>
 
