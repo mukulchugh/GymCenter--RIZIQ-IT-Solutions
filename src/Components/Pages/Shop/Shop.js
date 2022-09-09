@@ -15,24 +15,14 @@ const Shop = () => {
     const [pageNumber, setPageNumber] = useState(1);
     const [allProductsCount, setAllProductsCount] = useState(0);
     const [products, setProducts] = useState([]);
-    // const [allProducts, setAllProducts] = useState(0)
+   
 
-    // const { data: products, isLoading, refetch } = useQuery('users', () =>
-    //     fetch(`https://gym-management97.herokuapp.com/api/products`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'authorization': `Bearer ${token}`
-    //         }
-    //     }).then(res => res.json())
-    // )
-    // if (isLoading) {
-    //     return <Loading />
-    // }
-
+    
     useEffect(() => {
         fetch(`https://gym-management97.herokuapp.com/api/products`)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 // console.log(data.data.length)
                 const count = Math.ceil(data.data.length / productsCount)
                 setAllProductsCount(data.data.length)
@@ -44,8 +34,10 @@ const Shop = () => {
         fetch(`https://gym-management97.herokuapp.com/api/products?page=${pageNumber}&limit=${productsCount}`)
             .then(res => res.json())
             .then(data => {
+
                 setProducts(data)
             }, [pageNumber, productsCount])
+
     })
 
     let active = pageNumber;
@@ -60,12 +52,12 @@ const Shop = () => {
 
 
 
-    // console.log(allProducts)
+    // console.log(products)
     return (
         <>
             <SharedNav />
             <div className='mid-container h-[100vh]'>
-                <div className='my-16 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
+                <div className='my-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
                     {
                         products?.data?.map(product => <Products
                             key={product._id}
