@@ -11,8 +11,8 @@ import Products from './Products';
 const Shop = () => {
     const { token } = AuthUser()
     const [pageCount, setPageCount] = useState(0);
-    const [productsCount, setProductsCount] = useState(2);
-    const [pageNumber, setPageNumber] = useState(0);
+    const [productsCount, setProductsCount] = useState(4);
+    const [pageNumber, setPageNumber] = useState(1);
     const [allProductsCount, setAllProductsCount] = useState(0);
     const [products, setProducts] = useState([]);
     // const [allProducts, setAllProducts] = useState(0)
@@ -35,6 +35,7 @@ const Shop = () => {
             .then(data => {
                 // console.log(data.data.length)
                 const count = Math.ceil(data.data.length / productsCount)
+                setAllProductsCount(data.data.length)
                 setPageCount(count)
             }, [])
     })
@@ -50,10 +51,9 @@ const Shop = () => {
     let active = pageNumber;
     let button = [];
     for (let number = 1; number <= pageCount; number++) {
-        console.log(active === number)
         button.push(
-            <div key={number} className={number === active ? ' btn-active' : ''}>
-                <button onClick={() => setPageNumber(number)} className="btn">{number}</button>
+            <div key={number}>
+                <button onClick={() => setPageNumber(number)} className={` btn ${number === active ? ' btn-active' : ''}`}>{number}</button>
             </div>
         );
     }
@@ -74,43 +74,35 @@ const Shop = () => {
                     }
                 </div>
 
-                <div className="btn-group">
-                    <button className="btn">1</button>
-                    <button className="btn btn-active">2</button>
-                    <button className="btn">3</button>
-                    <button className="btn">4</button>
-                </div>
-
-                <div className="btn-group my-10">
-                    <div className="flex">
-                        <button disabled={pageNumber === 1 && true} onClick={() => setPageNumber(pageNumber - 1)} className="btn bg-transparent outline-0 border-none mx-2">PRE</button>
-                        {
-                            button.slice(0, 2).map(user => user)
-                        }
-                        {/* <li> */}
-                        <button>.....</button>
-                        {/* </li> */}
-                        {
-                            pageNumber > 2 &&
-                            <div className={`${active ? "btn-active" : ""}`}>
-                                <button className={` mx-1 text-xs md:text-base`}>{pageNumber} </button>
-                            </div>
-                        }
-                        <button onClick={() => setPageNumber(pageNumber + 1)} className="btn bg-transparent outline-0 border-none mx-2">NEX</button>
-
-                        <div>
-                            <select
-                                onChange={(e) => {
-                                    setPageCount(e.target.value);
-                                    setPageNumber(1);
-                                }}
-                                className="md:text-lg md:ml-2 text-md mt-5 md:mt-0 text-center font-bold bg-primary-focus text-white px-2 py-2 md:px-2 md:py-[10px] rounded-lg"
-                            >
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value={allProductsCount}>All</option>
-                            </select>
+                <div className="flex btn-group">
+                    <button disabled={pageNumber === 1 && true} onClick={() => setPageNumber(pageNumber - 1)} className="btn outline-0 border-none mx-2">PRE</button>
+                    {
+                        button.slice(0, 2).map(user => user)
+                    }
+                    {/* <li> */}
+                    <button>.....</button>
+                    {/* </li> */}
+                    {
+                        pageNumber > 2 &&
+                        <div >
+                            <button className={` btn ${active ? ' btn-active' : ''}`}>{pageNumber} </button>
                         </div>
+                    }
+                    <button onClick={() => setPageNumber(pageNumber + 1)} className="btn outline-0 border-none mx-2">NEX</button>
+
+                    <div>
+                        <select
+                            onChange={(e) => {
+                                setPageCount(e.target.value);
+                                setProductsCount(e.target.value);
+                                setPageNumber(1);
+                            }}
+                            className="md:text-lg md:ml-2 text-md mt-5 md:mt-0 text-center font-bold btn-active text-white px-2 py-2 md:px-2 md:py-[10px] rounded-lg"
+                        >
+                            <option value="4">4</option>
+                            <option value="8">8</option>
+                            <option value={allProductsCount}>All</option>
+                        </select>
                     </div>
                 </div>
             </div>
