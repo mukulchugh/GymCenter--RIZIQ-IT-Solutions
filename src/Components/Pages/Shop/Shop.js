@@ -17,12 +17,13 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState('');
+    const [allProducts, setAllProducts] = useState([]);
 
+    // console.log(products)
     const handleSearch = (e) => {
 
-        const searchResult = products?.filter(product => product?.name.toLowerCase().includes(searchValue.toLowerCase()));
+        const searchResult = allProducts?.filter(product => product?.name.toLowerCase().includes(searchValue.toLowerCase()));
         setSearchResult(searchResult);
-        console.log(searchResult)
     }
 
 
@@ -30,6 +31,7 @@ const Shop = () => {
         fetch(`https://gym-management97.herokuapp.com/api/products`)
             .then(res => res.json())
             .then(data => {
+                setAllProducts(data.data)
                 const count = Math.ceil(data.data.length / productsCount)
                 setAllProductsCount(data.data.length)
                 setPageCount(count)
@@ -62,7 +64,7 @@ const Shop = () => {
     return (
         <>
             <SharedNav />
-            <div className='mid-container h-[100vh]'>
+            <div className='mid-container'>
                 <div className="form-control">
                     <div className="input-group">
                         <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input input-bordered" />
@@ -77,10 +79,17 @@ const Shop = () => {
 
                 <div className='my-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
                     {
-                        products?.data?.map(product => <Products
-                            key={product._id}
-                            product={product}
-                        ></Products>)
+                        searchResult.length >= 1 ? (
+                            searchResult?.map(product => <Products
+                                key={product._id}
+                                product={product}
+                            ></Products>)
+                        ) : (
+                            products?.data?.map(product => <Products
+                                key={product._id}
+                                product={product}
+                            ></Products>)
+                        )
                     }
                 </div>
 
