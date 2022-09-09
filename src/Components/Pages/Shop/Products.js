@@ -8,7 +8,7 @@ const Products = ({product}) => {
                 {/* <img src={img} alt="Shoes" className="w-full" /> */}
             </figure>
             <div className="card-body items-center text-center px-0 pb-0 pt-3">
-                <h2 className="card-title font-semibold">Product Name</h2>
+                <h2 className="card-title font-semibold">{product?.name}</h2>
                 <p className='text-xl font-bold text-primary flex'><TbCurrencyTaka className='text-2xl' />199</p>
                 <p className='text-secondary text-sm mb-2'>05/10 available</p>
                 <div className="bg-[#FBB848] p-3 w-full cursor-pointer">
