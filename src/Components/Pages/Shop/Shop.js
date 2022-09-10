@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import SharedNav from '../Shared/SharedNav';
-import img from '../../../assets/Image/HomeShop/glo-p-img.png'
-import { TbCurrencyTaka } from 'react-icons/tb';
-import banner from '../../../assets/Image/shopPage/banner.jpg'
-import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { useQuery } from 'react-query';
-import Loading from '../../../hooks/Loading/Loading';
 import Products from './Products';
+import './Shop.css'
 
 const Shop = () => {
-    const { token } = AuthUser()
     const [pageCount, setPageCount] = useState(0);
-    const [productsCount, setProductsCount] = useState(4);
+    const [productsCount, setProductsCount] = useState(12);
     const [pageNumber, setPageNumber] = useState(1);
     const [allProductsCount, setAllProductsCount] = useState(0);
     const [products, setProducts] = useState([]);
@@ -53,7 +47,7 @@ const Shop = () => {
     for (let number = 1; number <= pageCount; number++) {
         button.push(
             <div key={number}>
-                <button onClick={() => setPageNumber(number)} className={` btn ${number === active ? ' btn-active' : ''}`}>{number}</button>
+                <button onClick={() => setPageNumber(number)} className={` mx-1 btn ${number === active ? ' btn-active' : ''}`}>{number}</button>
             </div>
         );
     }
@@ -64,6 +58,16 @@ const Shop = () => {
     return (
         <>
             <SharedNav />
+            <div className='bg-img lg:py-36 md:py-28 py-20'>
+                <div className=" breadcrumbs mid-container flex justify-center">
+                    <ul className='font-semibold md:text-xl text-white '>
+                        <li className='hover:text-primary'><a>Home</a></li>
+                        <li className='hover:text-primary'><a>Products</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
             <div className='mid-container'>
                 <div className="form-control">
                     <div className="input-group">
@@ -93,21 +97,20 @@ const Shop = () => {
                     }
                 </div>
 
-                <div className="flex btn-group">
-                    <button disabled={pageNumber === 1 && true} onClick={() => setPageNumber(pageNumber - 1)} className="btn outline-0 border-none mx-2">PRE</button>
+                <div className="flex btn-group mb-36">
+                    <button disabled={pageNumber === 1 && true} onClick={() => setPageNumber(pageNumber - 1)} className="btn outline-0 border-none mr-1">PRE</button>
                     {
                         button.slice(0, 2).map(user => user)
                     }
-                    {/* <li> */}
-                    <button>.....</button>
-                    {/* </li> */}
+                    {/* <button>.....</button> */}
                     {
                         pageNumber > 2 &&
                         <div >
                             <button className={` btn ${active ? ' btn-active' : ''}`}>{pageNumber} </button>
                         </div>
                     }
-                    <button onClick={() => setPageNumber(pageNumber + 1)} className="btn outline-0 border-none mx-2">NEX</button>
+                    
+                    <button onClick={() => setPageNumber(pageNumber + 1)} className="btn outline-0 border-none ">NEX</button>
 
                     <div>
                         <select
