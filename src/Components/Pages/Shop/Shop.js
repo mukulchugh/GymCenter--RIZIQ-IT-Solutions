@@ -35,18 +35,18 @@ const Shop = () => {
                 const count = Math.ceil(data.data.length / productsCount)
                 setAllProductsCount(data.data.length)
                 setPageCount(count)
-            }, [])
-    })
+            })
+    }, [])
 
     useEffect(() => {
         fetch(`https://gym-management97.herokuapp.com/api/products?page=${pageNumber}&limit=${productsCount}`)
             .then(res => res.json())
             .then(data => {
-
+                console.log(data)
                 setProducts(data)
-            }, [pageNumber, productsCount])
+            })
 
-    })
+    }, [pageNumber, productsCount])
 
     let active = pageNumber;
     let button = [];
