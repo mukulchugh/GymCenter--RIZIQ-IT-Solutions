@@ -14,7 +14,7 @@ const Package = () => {
                 </div>
                 <div className="card-body pt-0">
                     <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>5%<span className='text-xl mt-3'>/3Months</span></span></h1>
-                    <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
+                    <p className='text-sm text-secondary text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
                         <li className='text-sm mb-3'>600 Full-Length Workout Videos</li>
@@ -36,7 +36,7 @@ const Package = () => {
                 </div>
                 <div className="card-body pt-0">
                     <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>10%<span className='text-xl mt-3'>/6Months</span></span></h1>
-                    <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
+                    <p className='text-sm text-secondary text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
                         <li className='text-sm mb-3'>600 Full-Length Workout Videos</li>
@@ -58,7 +58,7 @@ const Package = () => {
                 </div>
                 <div className="card-body pt-0">
                     <h1 className="card-title text-4xl font-bold text-primary mx-auto"><span className='flex'>15%<span className='text-xl mt-3'>/1Year</span></span></h1>
-                    <p className='text-sm text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
+                    <p className='text-sm text-secondary text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et, vel mattis elit id eget habitant turpis.</p>
                     <h2 className='text-xl font-bold mt-3'>Facilities</h2>
                     <div className='ml-4 mt-3'>
                         <li className='text-sm mb-3'>600 Full-Length Workout Videos</li>

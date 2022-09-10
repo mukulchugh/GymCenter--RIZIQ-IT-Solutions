@@ -15,7 +15,7 @@ import ThirdProgramme from './Programme/ThirdProgramme';
 const Home = () => {
 
     const { email } = AuthUser()
-    console.log(email)
+    // console.log(email)
 
     return (
         <div>
@@ -23,10 +23,12 @@ const Home = () => {
             {/* Work Schedule */}
             <About />
             <Table />
-            <Programme />
-            <SecondProgramme />
-            <ThirdProgramme />
             <CrossfitProgramme />
+            <>
+                <Programme />
+                <SecondProgramme />
+                <ThirdProgramme />
+            </>
             <Slider />
             <SpecialOffer />
             <Contact />
