@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { VscBellDot } from 'react-icons/vsc';
+import AuthUser from '../../../hooks/AuthUser/AuthUser';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 const TrainersHome = () => {
+    const { token } = AuthUser();
     const today = new Date();
     const day = today.getDate();
     const month = today.getMonth();
@@ -12,6 +16,21 @@ const TrainersHome = () => {
     const date = `${day} ${monthName} ${year}`;
 
     const [selectedDate, setSelectedDate] = useState(null);
+    const [packages, setPackages] = useState([])
+
+    useEffect(() => {
+        fetch('https://gym-management97.herokuapp.com/api/package_users?package=6', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => setPackages(data))
+
+    }, [])
+
+    console.log(packages)
 
     return (
         <div className='p-5  mt-4'>
@@ -28,8 +47,8 @@ const TrainersHome = () => {
                 </div>
             </div>
 
-            <div className="grid mt-16 grid-cols-1 lg:grid-cols-3 gap-10">
-                <div className="">
+            <div className="grid mt-16 grid-cols-1 lg:grid-cols-3">
+                <div className="border-r px-5">
                     <div className="flex items-center lg:justify-between">
                         <h1 className='text-md font-bold'>Workout Post</h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
@@ -47,9 +66,34 @@ const TrainersHome = () => {
                             }} className='input w-[50%] input-bordered input-md cursor-pointer' type="date" />
                         </div>
                     </div>
+
+                    {/* Packages part */}
+                    <div className='mt-10'>
+                        {
+                            packages?.data?.map((pack, index) => {
+                                return (
+                                    <div className='my-8' key={index}>
+                                        <h1 className='texxt-xl font-bold text-primary border-primary border w-fit px-5 py-1'>{pack?.package?.package_type?.package_title}</h1>
+                                        <div className="bg-primary package_card text-white flex items-center justify-between px-4 py-2">
+                                            <div className="">
+                                                <h1 className='text-xl'>Total Time: <span className='font-bold'>{pack?.package?.duration_days} Days</span></h1>
+                                                <div>
+                                                    <h1>Total Class: {pack?.package?.total_class}</h1>
+                                                    <h1>Total Consultation: {pack?.package?.total_consultation}</h1>
+                                                </div>
+
+                                            </div>
+                                            <BsFillArrowRightCircleFill className='h-8 cursor-pointer w-8' />
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </div>
                 </div>
 
-                <div className="">
+                <div className="px-5 border-r">
                     <div className="flex items-center lg:justify-between">
                         <h1 className='text-md font-bold'>Nutrition Post</h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
@@ -68,7 +112,7 @@ const TrainersHome = () => {
                         </div>
                     </div>
                 </div>
-                <div className="">
+                <div className="px-5">
                     <div className='w-1/4 text-center mx-auto'>
                         <img className='rounded-lg' src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
                     </div>
@@ -80,6 +124,8 @@ const TrainersHome = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };
