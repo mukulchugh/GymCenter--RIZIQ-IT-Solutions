@@ -4,16 +4,18 @@ import SharedNav from '../Shared/SharedNav';
 import Products from './Products';
 import './Shop.css'
 import { BsChevronDoubleRight } from 'react-icons/bs';
+import Loading from '../../../hooks/Loading/Loading';
 
 const Shop = () => {
     const [pageCount, setPageCount] = useState(0);
-    const [productsCount, setProductsCount] = useState(5);
+    const [productsCount, setProductsCount] = useState(12);
     const [pageNumber, setPageNumber] = useState(1);
     const [allProductsCount, setAllProductsCount] = useState(0);
     const [products, setProducts] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [allProducts, setAllProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     // console.log(products)
     const handleSearch = (e) => {
@@ -24,9 +26,11 @@ const Shop = () => {
 
 
     useEffect(() => {
+        setLoading(true);
         fetch(`https://gym-management97.herokuapp.com/api/products`)
             .then(res => res.json())
             .then(data => {
+                setLoading(false);
                 setAllProducts(data.data)
                 const count = Math.ceil(data.data.length / productsCount)
                 setAllProductsCount(data.data.length)
@@ -64,18 +68,19 @@ const Shop = () => {
                 <div className=" breadcrumbs mid-container flex justify-center">
                     <ul className='font-semibold  text-white flex items-center justify-center gap-2'>
                         <Link to='/' className='hover:text-primary'><a >Home</a></Link>
-                        <BsChevronDoubleRight/>
+                        <BsChevronDoubleRight />
                         <Link to='/shop' className='hover:text-primary'><a >Shop</a></Link>
                     </ul>
                 </div>
             </div>
 
 
+
             <div className='mid-container'>
                 <div className='flex justify-end'>
-                    <div className="form-control my-5">
+                    <div className="form-control my-8">
                         <div className="input-group">
-                            <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input input-bordered " />
+                            <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input input-bordered focus:outline-none w-72" />
                             <button
                                 onClick={handleSearch}
                                 className="btn btn-square">
@@ -85,22 +90,24 @@ const Shop = () => {
                     </div>
                 </div>
 
-
-                <div className='mb-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
-                    {
-                        searchResult.length >= 1 ? (
-                            searchResult?.map(product => <Products
-                                key={product._id}
-                                product={product}
-                            ></Products>)
-                        ) : (
-                            products?.data?.map(product => <Products
-                                key={product._id}
-                                product={product}
-                            ></Products>)
-                        )
-                    }
-                </div>
+                {
+                    loading ? <Loading /> :
+                        <div className='mb-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
+                            {
+                                searchResult.length >= 1 ? (
+                                    searchResult?.map(product => <Products
+                                        key={product._id}
+                                        product={product}
+                                    ></Products>)
+                                ) : (
+                                    products?.data?.map(product => <Products
+                                        key={product._id}
+                                        product={product}
+                                    ></Products>)
+                                )
+                            }
+                        </div>
+                }
 
                 <div className="flex btn-group mb-36">
                     <button disabled={pageNumber === 1 && true} onClick={() => setPageNumber(pageNumber - 1)} className="btn outline-0 border-none mr-1">PRE</button>
@@ -126,8 +133,8 @@ const Shop = () => {
                             }}
                             className="md:text-lg md:ml-2 text-md  md:mt-0 text-center font-bold btn-active text-white px-2 py-2 md:px-2 md:py-[10px] rounded-lg"
                         >
-                            <option value="4">4</option>
-                            <option value="8">8</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
                             <option value={allProductsCount}>All</option>
                         </select>
                     </div>

@@ -6,16 +6,16 @@ const Products = ({ product }) => {
 
     const goToDetails = useNavigate();
     const handleClick = () => {
-      goToDetails(`/product/${product?.id}`);
+        goToDetails(`/product/${product?.id}`);
     };
 
 
     return (
-        <div 
-        onClick={()=>handleClick(product?.id)}
-        className="card bg-accent border rounded cursor-pointer">
-            <figure className="w-full h-48 overflow-hidden">
-                <img src={product?.image} alt="Shoes" className="w-full h-full" />
+        <div onClick={() => handleClick(product?.id)}
+            className="card shadow rounded cursor-pointer">
+
+            <figure className="w-full h-48 overflow-hidden p-3 rounded">
+                <img src={product?.image} alt="Shoes" className="w-full h-full rounded" />
             </figure>
             <div className="card-body items-center text-center px-0 pb-0 pt-3">
                 <h2 className="card-title font-semibold">{product?.name}</h2>
