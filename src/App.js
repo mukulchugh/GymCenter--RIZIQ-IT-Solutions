@@ -28,6 +28,7 @@ import RequireUser from './hooks/UserRoleAuthenticate/RequireUser/RequireUser';
 import TrainersHome from './Dashboard/TrainerDashboard/TrainersHome/TrainersHome';
 import StudentList from './Dashboard/TrainerDashboard/StudentList/StudentList';
 import TrainerSettings from './Dashboard/TrainerDashboard/Settings/TrainerSettings';
+import ProductDetails from './Components/Pages/Shop/ProductDetails';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -52,6 +53,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='*' element={<NotFound />} />
 
+        <Route path="/product/:productId" element={<ProductDetails />}></Route>
 
         <Route path="dashboard" element={<Dashboard />}>
           <Route path="accounts-home" element={<RequireAccounts><AccountsHome /></RequireAccounts>} />

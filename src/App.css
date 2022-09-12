@@ -326,6 +326,11 @@ input[type="checkbox"]:checked:after {
     border-bottom-left-radius: 0px !important;
 }
 
+.btn-active {
+    background-color: #FBB848 !important;
+    color: #fff !important;
+}
+
 
 @media only screen and (max-width: 1280px) {
     .mid-container {

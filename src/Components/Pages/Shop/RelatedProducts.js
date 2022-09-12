@@ -1,14 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Products = ({ product }) => {
-
+const RelatedProducts = ({ product }) => {
     const goToDetails = useNavigate();
     const handleClick = () => {
         goToDetails(`/product/${product?.id}`);
     };
-
-
     return (
         <div onClick={() => handleClick(product?.id)}
             className="card shadow rounded cursor-pointer">
@@ -29,4 +26,4 @@ const Products = ({ product }) => {
     );
 };
 
-export default Products;
+export default RelatedProducts;
