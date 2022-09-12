@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { BsChevronDoubleRight } from 'react-icons/bs';
+import { AiOutlineRight } from 'react-icons/ai';
 import { FiMinusCircle } from 'react-icons/fi';
 import { FiPlusCircle } from 'react-icons/fi';
 import Loading from '../../../hooks/Loading/Loading';
@@ -43,9 +42,9 @@ const ProductDetails = () => {
                 <div className=" breadcrumbs mid-container">
                     <ul className='font-semibold  flex gap-2'>
                         <Link to='/' className='hover:text-primary'>Home</Link>
-                        <BsChevronDoubleRight />
+                        <AiOutlineRight />
                         <Link to='/shop' className='hover:text-primary'>Shop</Link>
-                        <BsChevronDoubleRight />
+                        <AiOutlineRight />
                         <li to='/product/:productId' className='hover:text-primary cursor-pointer'>Product Details</li>
                     </ul>
                 </div>
@@ -54,11 +53,11 @@ const ProductDetails = () => {
             {
                 loading ? <Loading /> :
                 <div className='mid-container'>
-                <div className='flex items-center gap-5 bg-white shadow'>
-                    <div className='w-[45%]  p-10 overflow-hidden'>
+                <div className='md:flex items-center gap-5 bg-white md:shadow'>
+                    <div className='md:w-[45%]  p-10 overflow-hidden'>
                         <img className='w-full' src={product?.image} alt="" />
                     </div>
-                    <div className='w-[55%] pt-5 pr-5'>
+                    <div className='md:w-[55%] md:pt-5 md:pr-5'>
                         <h1 className='text-2xl font-bold mb-2'>{product?.name}</h1>
                         <p className='text-gray-500 text-sm text-justify'>{product?.description}</p>
                         <p className=' text-2xl mt-3 font-bold text-primary'>৳ {product?.discounted_price
@@ -72,7 +71,7 @@ const ProductDetails = () => {
                             <FiPlusCircle className='text-2xl bg-accent cursor-pointer' />
                         </div>
 
-                        <div className='mt-8'>
+                        <div className='my-8'>
                             <button className='btn btn-warning text-white mr-2'>Buy Now</button>
                             <button className='btn btn-primary'>Add To Cart</button>
                         </div>
