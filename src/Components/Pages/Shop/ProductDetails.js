@@ -15,6 +15,7 @@ const ProductDetails = () => {
     const allProduct = useAllProducts()
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         setLoading(true);
@@ -31,10 +32,37 @@ const ProductDetails = () => {
     }, [token, productId]);
 
 
+    const handleQuantity = (type) => {
+        if (type === 'decrease') {
+            if (quantity > 1) {
+                setQuantity(quantity - 1)
+            }
+        }
+        if (type === 'increase') {
+            setQuantity(quantity + 1)
+        }
+    }
+
+    const handleCart = (id) => {
+        fetch('https://gym-management97.herokuapp.com/api/product_cart/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                product_id: id
+            })
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
     const relatedProduct = allProduct.allProduct?.filter(products => products?.name?.toLowerCase().includes(product?.name?.toLowerCase()))
 
 
-    console.log(product)
+    // console.log(product)
     return (
         <>
             <SharedNav />
@@ -52,32 +80,34 @@ const ProductDetails = () => {
 
             {
                 loading ? <Loading /> :
-                <div className='mid-container'>
-                <div className='md:flex items-center gap-5 bg-white md:shadow'>
-                    <div className='md:w-[45%]  p-10 overflow-hidden'>
-                        <img className='w-full' src={product?.image} alt="" />
-                    </div>
-                    <div className='md:w-[55%] md:pt-5 md:pr-5'>
-                        <h1 className='text-2xl font-bold mb-2'>{product?.name}</h1>
-                        <p className='text-gray-500 text-sm text-justify'>{product?.description}</p>
-                        <p className=' text-2xl mt-3 font-bold text-primary'>৳ {product?.discounted_price
-                        }</p>
-                        <p className=' text-sm  text-secondary'><del>৳ {product?.original_price}</del></p>
+                    <div className='mid-container'>
+                        <div className='md:flex items-center gap-5 bg-white md:shadow'>
+                            <div className='md:w-[45%]  p-10 overflow-hidden'>
+                                <img className='w-full' src={product?.image} alt="" />
+                            </div>
+                            <div className='md:w-[55%] md:pt-5 md:pr-5 select-none'>
+                                <h1 className='text-2xl font-bold mb-2'>{product?.name}</h1>
+                                <p className='text-gray-500 text-sm text-justify'>{product?.description}</p>
+                                <p className=' text-2xl mt-3 font-bold text-primary'>৳ {product?.discounted_price
+                                }</p>
+                                <p className=' text-sm  text-secondary'><del>৳ {product?.original_price}</del></p>
 
-                        <div className='flex items-center gap-3 mt-5'>
-                            <h2 className='text-gray-500'>Quantity: </h2>
-                            <FiMinusCircle className='text-2xl bg-accent cursor-pointer' />
-                            <span className=''>25</span>
-                            <FiPlusCircle className='text-2xl bg-accent cursor-pointer' />
-                        </div>
+                                <div className='flex items-center gap-3 mt-5'>
+                                    <h2 className='text-gray-500 select-none'>Quantity: </h2>
+                                    <FiMinusCircle onClick={() => handleQuantity('decrease')} className='text-2xl bg-accent cursor-pointer' />
+                                    <span className='select-none'>{quantity}</span>
+                                    <FiPlusCircle onClick={() => handleQuantity('increase')} className='text-2xl bg-accent cursor-pointer' />
+                                </div>
 
-                        <div className='my-8'>
-                            <button className='btn btn-warning text-white mr-2'>Buy Now</button>
-                            <button className='btn btn-primary'>Add To Cart</button>
+                                <div className='my-8'>
+                                    <button className='btn btn-warning text-white mr-2'>Add To Wishlist</button>
+                                    <button
+                                        onClick={() => handleCart(product?.id)}
+                                        className='btn btn-primary'>Add To Cart</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
             }
 
             <div className='mid-container'>
