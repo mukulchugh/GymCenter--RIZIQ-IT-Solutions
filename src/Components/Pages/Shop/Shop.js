@@ -36,7 +36,6 @@ const Shop = () => {
         fetch(`https://gym-management97.herokuapp.com/api/products?page=${pageNumber}&limit=${productsCount}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setProducts(data)
             })
 
