@@ -60,7 +60,7 @@ const Shop = () => {
 
 
 
-    console.log(allProducts)
+    // console.log(allProducts)
     return (
         <>
             <SharedNav />

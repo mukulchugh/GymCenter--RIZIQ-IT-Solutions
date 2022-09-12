@@ -1,32 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { BsChevronDoubleRight } from 'react-icons/bs';
 import { FiMinusCircle } from 'react-icons/fi';
 import { FiPlusCircle } from 'react-icons/fi';
 import Loading from '../../../hooks/Loading/Loading';
 import SharedNav from '../Shared/SharedNav';
+import useAllProducts from './useAllProducts';
+import RelatedProducts from './RelatedProducts';
 
 const ProductDetails = () => {
     const { productId } = useParams();
     const { token } = AuthUser()
-    // const [product, setProduct] = useState([])
-    // const [loading, setLoading] = useState(false);
+    const allProduct = useAllProducts()
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const { data: product, isLoading, refetch } = useQuery('users', () =>
+    useEffect(() => {
+        setLoading(true);
         fetch(`https://gym-management97.herokuapp.com/api/products/${productId}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
-    )
-    if (isLoading) {
-        return <Loading />
-    }
+            .then(data => {
+                setLoading(false);
+                setProduct(data)
+            })
+    }, [token, productId]);
 
-    // console.log(product)
+
+    const relatedProduct = allProduct.allProduct?.filter(products => products?.name?.toLowerCase().includes(product?.name?.toLowerCase()))
+
+
+    console.log(product)
     return (
         <>
             <SharedNav />
@@ -42,27 +51,46 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            <div className='mid-container flex items-center gap-5 bg-white shadow-2xl'>
-                <div className='w-[45%]  p-10 overflow-hidden'>
-                    <img className='w-full' src={product?.image} alt="" />
-                </div>
-                <div className='w-[55%] pt-5 pr-3'>
-                    <h1 className='text-2xl font-bold mb-2'>{product?.name}</h1>
-                    <p className='text-gray-500 text-sm text-justify'>{product?.description}</p>
-                    <p className=' text-2xl mt-3 font-bold text-primary'>৳ {product?.discounted_price
-                    }</p>
-                    <p className=' text-sm  text-secondary'><del>৳ {product?.original_price}</del></p>
-
-                    <div className='flex items-center gap-3 mt-5'>
-                        <h2 className='text-gray-500'>Quantity: </h2>
-                        <FiMinusCircle className='text-2xl bg-accent cursor-pointer' />
-                        <span className=''>25</span>
-                        <FiPlusCircle className='text-2xl bg-accent cursor-pointer' />
+            {
+                loading ? <Loading /> :
+                <div className='mid-container'>
+                <div className='flex items-center gap-5 bg-white shadow'>
+                    <div className='w-[45%]  p-10 overflow-hidden'>
+                        <img className='w-full' src={product?.image} alt="" />
                     </div>
+                    <div className='w-[55%] pt-5 pr-5'>
+                        <h1 className='text-2xl font-bold mb-2'>{product?.name}</h1>
+                        <p className='text-gray-500 text-sm text-justify'>{product?.description}</p>
+                        <p className=' text-2xl mt-3 font-bold text-primary'>৳ {product?.discounted_price
+                        }</p>
+                        <p className=' text-sm  text-secondary'><del>৳ {product?.original_price}</del></p>
 
-                    <div className='mt-8'>
-                        <button className='btn btn-warning text-white mr-2'>Buy Now</button>
-                        <button className='btn btn-primary'>Add To Cart</button>
+                        <div className='flex items-center gap-3 mt-5'>
+                            <h2 className='text-gray-500'>Quantity: </h2>
+                            <FiMinusCircle className='text-2xl bg-accent cursor-pointer' />
+                            <span className=''>25</span>
+                            <FiPlusCircle className='text-2xl bg-accent cursor-pointer' />
+                        </div>
+
+                        <div className='mt-8'>
+                            <button className='btn btn-warning text-white mr-2'>Buy Now</button>
+                            <button className='btn btn-primary'>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+            <div className='mid-container'>
+                <div className='my-10 pb-10'>
+                    <h1 className='lg:text-4xl md:text-3xl text-2xl font-bold mb-5 mt-16'>Related Products</h1>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5'>
+                        {
+                            relatedProduct?.map(product => <RelatedProducts
+                                key={product?.id}
+                                product={product}
+                            ></RelatedProducts>)
+                        }
                     </div>
                 </div>
             </div>
