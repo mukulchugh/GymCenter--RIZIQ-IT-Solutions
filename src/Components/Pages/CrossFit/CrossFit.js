@@ -61,7 +61,7 @@ const CrossFit = () => {
 
         <div className="mb-16">
           <h1 className="md:text-4xl text-3xl font-bold text-primary mb-6">
-            Put Coaches
+            Our Coaches
           </h1>
           <div className="md:flex gap-10 items-center">
             <div className="lg:w-[35%] md:w-[45%] overflow-hidden rounded-xl">
