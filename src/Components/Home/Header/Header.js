@@ -41,7 +41,7 @@ const Header = () => {
                 <div className="mid-container">
                     <div className="flex sm:justify-end justify-evenly items-center text-white py-2 ">
                         <Link className='hover:text-primary ' to="#"><BsBell ></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
+                        <Link to="/cart"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
                         {
                             userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardAccounts} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
