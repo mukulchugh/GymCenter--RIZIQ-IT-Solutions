@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../..//assets/Image/profile/WhatsApp Image 2022-08-29 at 11.31.14 PM.jpeg'
+import img from '../../../assets/Image/profile/WhatsApp Image 2022-08-29 at 11.31.14 PM.jpeg'
 
 const AccountsProfile = () => {
     return (
