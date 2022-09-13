@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { ImCancelCircle } from 'react-icons/im';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
@@ -14,28 +15,29 @@ const CartProductItem = ({ product, refetch }) => {
             }
         }).then(res => res.json())
             .then(data => {
+                toast.success('Product deleted successfully')
                 refetch()
                 console.log(data)
             })
     }
 
     // update quantity
-    const handleQuantity = (type, id) => {
-        fetch(`https://gym-management97.herokuapp.com/api/product_cart/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                quantity: type === 'increase' ? product.quantity + 1 : product.quantity - 1
-            })
-        }).then(res => res.json())
-            .then(data => {
-                refetch()
-                console.log(data)
-            })
-    }
+    // const handleQuantity = (type, id) => {
+    //     fetch(`https://gym-management97.herokuapp.com/api/product_cart/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'authorization': `Bearer ${token}`
+    //         },
+    //         body: JSON.stringify({
+    //             quantity: type === 'increase' ? product.quantity + 1 : product.quantity - 1
+    //         })
+    //     }).then(res => res.json())
+    //         .then(data => {
+    //             refetch()
+    //             console.log(data)
+    //         })
+    // }
 
     return (
         <div className='my-3 flex justify-between items-center border px-5 py-3 rounded'>
