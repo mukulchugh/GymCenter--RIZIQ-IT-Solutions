@@ -27,7 +27,7 @@ const CartProduct = () => {
 
 
     const initialValue = 0;
-    const totalPrice = cartProducts?.data?.reduce((accumulator,current) => accumulator + current.sub_total_price * current.quantity, initialValue)
+    const totalPrice = cartProducts?.data?.reduce((accumulator, current) => accumulator + current.sub_total_price * current.quantity, initialValue)
 
 
     const handleCheckout = () => {
@@ -40,7 +40,7 @@ const CartProduct = () => {
         <div>
             <SharedNav />
 
-            <div className='mid-container'>
+            <div className='mid-container min-h-screen'>
                 <div className=" breadcrumbs my-5">
                     <ul className='font-semibold  flex gap-2'>
                         <Link to='/' className='hover:text-primary'>Home</Link>
