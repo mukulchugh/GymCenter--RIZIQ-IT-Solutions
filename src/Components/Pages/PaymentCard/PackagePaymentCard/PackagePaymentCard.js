@@ -1,72 +1,58 @@
 import React, { useState } from 'react';
-import SharedNav from '../Shared/SharedNav';
-import './PaymentCard.css'
-import bkash from '../../../assets/Image/payment/bkash.png'
-import nagad from '../../../assets/Image/payment/nagad.png'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import AuthUser from '../../../hooks/AuthUser/AuthUser';
-import { useQuery } from 'react-query';
-import Loading from '../../../hooks/Loading/Loading';
+import '../PaymentCard.css'
+import bkash from '../../../../assets/Image/payment/bkash.png'
+import nagad from '../../../../assets/Image/payment/nagad.png'
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import AuthUser from '../../../../hooks/AuthUser/AuthUser';
+// import { useQuery } from 'react-query';
+// import Loading from '../../../hooks/Loading/Loading';
 import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
+import SharedNav from '../../Shared/SharedNav';
+import { useEffect } from 'react';
 
-const PaymentCard = () => {
+const PackagePaymentCard = () => {
     const { token } = AuthUser();
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const [openTransaction, setOpenTransaction] = useState(false);
     const [openBkash, setOpenBkash] = useState(false);
     const [openNagad, setOpenNagad] = useState(false);
+    const [packages, setPackages] = useState({});
+    const { id } = useParams()
     const navigate = useNavigate()
 
-    const { data: cartProducts, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://gym-management97.herokuapp.com/api/product_cart/`, {
+    useEffect(() => {
+        fetch(`https://gym-management97.herokuapp.com/api/packages/${id}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
             }
         }).then(res => res.json())
-    )
-    if (isLoading) {
-        return <Loading />
-    }
+            .then(data => {
+                setPackages(data)
+            })
+    }, [id, token])
 
-    let productsArr = [];
-    if (cartProducts) {
-        productsArr = cartProducts.data?.map(product => [product.product.id, product.quantity])
-    }
-
-    console.log(productsArr, 'productArr', cartProducts, 'cartProducts');
-
-    const initialValue = 0;
-    const totalPrice = cartProducts?.data?.reduce((accumulator, current) => accumulator + current.sub_total_price * current.quantity, initialValue)
-    // get total quantity 
-    const totalQuantity = cartProducts?.data?.reduce((accumulator, current) => accumulator + current.quantity, initialValue)
-
+    // console.log(packages)
 
     // confirm order
     const handleConfirmOrder = (data) => {
 
-        fetch('https://gym-management97.herokuapp.com/api/product_orders/', {
+        fetch('https://gym-management97.herokuapp.com/api/package_order/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                product_details: productsArr,
-                address: data.address,
-                city: data.city,
-                email: data.email,
-                phone: data.phone,
-                sub_total_price: totalPrice,
-                delivery_charge: 40,
-                total_price: totalPrice + 40,
+                package_id: [id],
                 payment_type: (openBkash || openNagad) ? 'mobile_banking' : 'cash_on_delivery',
                 transaction_number: data.transaction || ""
             })
         })
             .then((res) => res.json())
             .then(data => {
+                console.log(data)
                 if (!data.success) {
                     if (data.error === 'Something went wrong') {
                         toast.error('User with this email already exists.')
@@ -76,43 +62,31 @@ const PaymentCard = () => {
                         return;
                     }
                 } else {
-                    toast.success('Product Order Successfully')
-                    refetch();
+                    toast.success('Package Order Successfully')
                     reset();
-                    navigate('/shop')
+                    navigate('/')
                 }
             })
             .catch(err => console.log(err))
     }
 
-
+    // console.log(packages)
     return (
         <>
             <SharedNav />
 
             <div className='mid-container min-h-[85vh]'>
-                <h2 className='md:mt-16 sm:mt-10 mt-5 text-2xl font-semibold mb-5'>Payment</h2>
+                <h2 className='mt-8 text-2xl font-semibold mb-5'>Payment</h2>
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
                 <div className='md:flex gap-5 mb-20'>
                     <div className='md:w-[30%] md:order-2 order-1 mb-5'>
                         <div className=' shadow p-5'>
                             <h2 className='text-xl font-semibold mb-3'>Order Summery</h2>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Quantity</h2>
-                                <h2>{totalQuantity} Items</h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
+                            <div className='flex justify-between '>
                                 <h2 className='font-semibold'>Total Amount</h2>
-                                <h2>৳ {totalPrice}</h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Delivery</h2>
-                                <h2>৳ 40</h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Subtotal</h2>
-                                <h2>৳ {totalPrice + 40}</h2>
+                                <h2>৳ {packages?.discounted_price
+                                }</h2>
                             </div>
                         </div>
                     </div>
@@ -303,4 +277,4 @@ const PaymentCard = () => {
     );
 };
 
-export default PaymentCard;
+export default PackagePaymentCard;

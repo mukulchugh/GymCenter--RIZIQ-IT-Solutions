@@ -34,6 +34,9 @@ import PaymentCard from './Components/Pages/PaymentCard/PaymentCard';
 import TrainerPackages from './Dashboard/TrainerDashboard/TrainerPackages/TrainerPackages';
 import UsersProfile from './Dashboard/UserDashboard/UsersProfile/UsersProfile';
 import UsersWorkout from './Dashboard/UserDashboard/UsersWorkout/UsersWorkout';
+import TrainerProfile from './Dashboard/TrainerDashboard/TrainerProfile/TrainerProfile';
+import PackagePaymentCard from './Components/Pages/PaymentCard/PackagePaymentCard/PackagePaymentCard';
+import AllSchedule from './Dashboard/TrainerDashboard/AllSchedule/AllSchedule';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -58,6 +61,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<CartProduct />} />
         <Route path='/checkout' element={<PaymentCard />} />
+        <Route path='/payment/:id' element={<PackagePaymentCard />} />
         <Route path='*' element={<NotFound />} />
 
         <Route path="/product/:productId" element={<ProductDetails />}></Route>
@@ -77,6 +81,8 @@ function App() {
           <Route path="students" element={<StudentList />} />
           <Route path="trainer-settings" element={<TrainerSettings />} />
           <Route path="trainer-package" element={<TrainerPackages />} />
+          <Route path="trainer-profile" element={<TrainerProfile />} />
+          <Route path="all-schedule" element={<AllSchedule />} />
         </Route>
 
       </Routes>

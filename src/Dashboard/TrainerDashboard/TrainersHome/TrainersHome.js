@@ -6,9 +6,11 @@ import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import studentImage from '../../../assets/Image/TrainerDashboard/total_students.png'
 import classesImage from '../../../assets/Image/TrainerDashboard/total_classes.png'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const TrainersHome = () => {
     const { token } = AuthUser();
+    const navigate = useNavigate()
     const today = new Date();
     const day = today.getDate();
     const month = today.getMonth();
@@ -19,7 +21,6 @@ const TrainersHome = () => {
 
     const [selectedDate, setSelectedDate] = useState(null);
     const [packages, setPackages] = useState([])
-    const [showSchedule, setShowSchedule] = useState(false);
     const [packageDetails, setPackageDetails] = useState(null);
     const [packageId, setPackageId] = useState(6);
     const [totalStudents, setTotalStudents] = useState(0);
@@ -50,7 +51,6 @@ const TrainersHome = () => {
     }, [])
 
     const handlePackageClick = (id) => {
-        setShowSchedule(false)
         setPackageId(id)
         fetch(`https://gym-management97.herokuapp.com/api/package_users?package=${id}`, {
             method: 'GET',
@@ -76,6 +76,8 @@ const TrainersHome = () => {
             })
 
     }, [])
+
+
     return (
         <div className='p-5  mt-4'>
             <div className='flex justify-between'>
@@ -94,7 +96,7 @@ const TrainersHome = () => {
             <div className="grid mt-16 grid-cols-1 lg:grid-cols-3">
                 <div className="border-r px-5">
                     <div className="flex items-center lg:justify-between">
-                        <h1 className='text-md font-bold'>Workout Post</h1>
+                        <h1 className='text-md font-bold'>Programs Post</h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
                     </div>
 
@@ -141,7 +143,7 @@ const TrainersHome = () => {
 
                 <div className="px-5 border-r">
                     <div className="flex items-center lg:justify-between">
-                        <h1 className='text-md font-bold'>Nutrition Post</h1>
+                        <h1 className='text-md font-bold'>Students </h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
                     </div>
 
@@ -159,7 +161,7 @@ const TrainersHome = () => {
                     </div>
 
                     {
-                        !showSchedule && packageDetails?.data?.map((pack, index) => {
+                        packageDetails?.data?.map((pack, index) => {
                             return (
                                 <div className='my-8' key={index}>
 
@@ -188,21 +190,21 @@ const TrainersHome = () => {
                     }
 
                     <button
-                        onClick={() => { setShowSchedule(true) }}
+                        onClick={() => navigate('/dashboard/all-schedule')}
                         className='btn btn-primary'>All Schedule</button>
                 </div>
-                <div className="px-5">
+                <div className="px-5 md:mt-0 mt-5">
                     <div className='w-1/4 text-center mx-auto'>
                         <img className='rounded-lg' src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
                     </div>
                     <div className='flex justify-center items-center gap-3 mt-3'>
                         <div className='text-center'>
-                            <h1 className='text-[#3D3270] font-bold text-lg'>First Name & Last Name</h1>
+                            <h1 className='text-[#3D3270] font-bold text-lg'>Trainer Name</h1>
                             <h1 className='text-primary font-bold text-md'>Trainer</h1>
                         </div>
                     </div>
 
-                    <div className="mt-5 flex items-center lg:justify-between lg:gap-0 gap-10 justify-center">
+                    <div className="mt-5 flex items-center first-letter: justify-between lg:gap-0 gap-10 ">
                         <div>
                             <h1 className='text-[#3D3270] font-bold text-lg'>Total Students</h1>
                             <h1 className='text-primary font-bold text-2xl'>{totalStudents}</h1>
@@ -212,7 +214,7 @@ const TrainersHome = () => {
                         </div>
                     </div>
 
-                    <div className="mt-5 flex items-center lg:justify-between lg:gap-0 gap-10 justify-center">
+                    <div className="mt-5 flex items-center justify-between lg:gap-0 gap-10 ">
                         <div>
                             <h1 className='text-[#3D3270] font-bold text-lg'>Total Classes</h1>
                             <h1 className='text-primary font-bold text-2xl'>{totalClasses}</h1>

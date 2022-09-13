@@ -1,10 +1,10 @@
 import React from 'react';
 import img from '../../../assets/Image/profile/WhatsApp Image 2022-08-29 at 11.31.14 PM.jpeg'
 
-const AccountsProfile = () => {
+const TrainerProfile = () => {
     return (
         <div className='p-5 mt-4'>
-            <h2 className='text-2xl font-semibold'>Hello, Accounts!</h2>
+            <h2 className='text-2xl font-semibold'>Hello, Trainer!</h2>
 
             <div className='flex gap-7 mt-8'>
                 <div className=''>
@@ -16,8 +16,8 @@ const AccountsProfile = () => {
                 </div>
                 <div>
                     <h1 className='text-xl font-bold mb-3 text-warning'>Access Level:</h1>
-                    <div className='grid sm:grid-cols-3 gap-3'>
-                        <button className='btn btn-accent btn-sm font-bold ' >Transaction</button>
+                    <div className='grid sm:grid-cols-3 grid-cols-1 gap-3'>
+                        <button className='btn btn-accent btn-sm font-bold' >Transaction</button>
                         <button className='btn btn-accent btn-sm font-bold ' >Purchase</button>
                         <button className='btn btn-accent btn-sm font-bold' >Salary</button>
                     </div>
@@ -90,4 +90,4 @@ const AccountsProfile = () => {
     );
 };
 
-export default AccountsProfile;
+export default TrainerProfile;

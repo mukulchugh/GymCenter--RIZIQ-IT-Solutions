@@ -44,7 +44,7 @@ const Orders = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.data, 'packages');
+                // console.log(data.data, 'packages');
                 setPackages(data.data)
             });
     }, [token]);
@@ -58,6 +58,8 @@ const Orders = () => {
         setAllProductState(false);
 
     }
+
+    console.log(products)
 
     return (
         <div className='p-5 mt-4'>
