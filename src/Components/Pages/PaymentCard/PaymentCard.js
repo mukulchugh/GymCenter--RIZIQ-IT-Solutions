@@ -3,7 +3,7 @@ import SharedNav from '../Shared/SharedNav';
 import './PaymentCard.css'
 import bkash from '../../../assets/Image/payment/bkash.png'
 import nagad from '../../../assets/Image/payment/nagad.png'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { useQuery } from 'react-query';
 import Loading from '../../../hooks/Loading/Loading';
@@ -16,6 +16,7 @@ const PaymentCard = () => {
     const [openTransaction, setOpenTransaction] = useState(false);
     const [openBkash, setOpenBkash] = useState(false);
     const [openNagad, setOpenNagad] = useState(false);
+    const navigate = useNavigate()
 
     const { data: cartProducts, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/product_cart/`, {
@@ -71,11 +72,14 @@ const PaymentCard = () => {
                         toast.error('User with this email already exists.')
                         return;
                     } else if (data.error) {
-                        toast.error(data.error)
+                        toast.error('Phone number should be start with +880')
                         return;
                     }
                 } else {
                     toast.success('Product Order Successfully')
+                    refetch();
+                    reset();
+                    navigate('/shop')
                 }
             })
             .catch(err => console.log(err))
@@ -86,8 +90,8 @@ const PaymentCard = () => {
         <>
             <SharedNav />
 
-            <div className='mid-container '>
-                <h2 className='mt-8 text-2xl font-semibold mb-5'>Payment</h2>
+            <div className='mid-container min-h-[85vh]'>
+                <h2 className='md:mt-16 sm:mt-10 mt-5 text-2xl font-semibold mb-5'>Payment</h2>
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
                 <div className='md:flex gap-5 mb-20'>

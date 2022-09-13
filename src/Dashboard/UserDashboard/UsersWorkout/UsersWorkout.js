@@ -47,7 +47,7 @@ const UsersWorkout = () => {
                 // console.log(data)
                 setPurchedPackages(data);
             })
-    }, [])
+    }, [token])
 
     const handlePackageClick = (id) => {
         setShowSchedule(false)
@@ -64,6 +64,8 @@ const UsersWorkout = () => {
                 // console.log(data)
             })
     }
+
+    console.log(purchedPackages)
 
     const handleConfirm = (schedule_id, package_id) => {
         // console.log(schedule_id, package_id)

@@ -49,7 +49,7 @@ const Register = () => {
                         toast.error('User with this email already exists.')
                         return;
                     } else if (data.error) {
-                        toast.error(data.error)
+                        toast.error('Phone number should be start with +880')
                         return;
                     }
                 } else {

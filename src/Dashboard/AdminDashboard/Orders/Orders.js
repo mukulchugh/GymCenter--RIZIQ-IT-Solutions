@@ -44,7 +44,7 @@ const Orders = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.data, 'packages');
+                // console.log(data.data, 'packages');
                 setPackages(data.data)
             });
     }, [token]);

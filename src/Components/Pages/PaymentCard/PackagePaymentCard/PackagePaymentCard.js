@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../PaymentCard.css'
 import bkash from '../../../../assets/Image/payment/bkash.png'
 import nagad from '../../../../assets/Image/payment/nagad.png'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import AuthUser from '../../../../hooks/AuthUser/AuthUser';
 // import { useQuery } from 'react-query';
 // import Loading from '../../../hooks/Loading/Loading';
@@ -19,6 +19,7 @@ const PackagePaymentCard = () => {
     const [openNagad, setOpenNagad] = useState(false);
     const [packages, setPackages] = useState({});
     const { id } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(`https://gym-management97.herokuapp.com/api/packages/${id}`, {
@@ -57,11 +58,13 @@ const PackagePaymentCard = () => {
                         toast.error('User with this email already exists.')
                         return;
                     } else if (data.error) {
-                        toast.error(data.error)
+                        toast.error('Phone number should be start with +880')
                         return;
                     }
                 } else {
                     toast.success('Package Order Successfully')
+                    reset();
+                    navigate('/')
                 }
             })
             .catch(err => console.log(err))
@@ -72,7 +75,7 @@ const PackagePaymentCard = () => {
         <>
             <SharedNav />
 
-            <div className='mid-container '>
+            <div className='mid-container min-h-[85vh]'>
                 <h2 className='mt-8 text-2xl font-semibold mb-5'>Payment</h2>
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
