@@ -31,6 +31,9 @@ import TrainerSettings from './Dashboard/TrainerDashboard/Settings/TrainerSettin
 import ProductDetails from './Components/Pages/Shop/ProductDetails';
 import CartProduct from './Components/Pages/CartProduct/CartProduct';
 import PaymentCard from './Components/Pages/PaymentCard/PaymentCard';
+import TrainerPackages from './Dashboard/TrainerDashboard/TrainerPackages/TrainerPackages';
+import UsersProfile from './Dashboard/UserDashboard/UsersProfile/UsersProfile';
+import UsersWorkout from './Dashboard/UserDashboard/UsersWorkout/UsersWorkout';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -68,16 +71,19 @@ function App() {
           <Route path="accounts-income" element={<RequireAccounts><Incomes /></RequireAccounts>} />
           <Route path="accounts-expense" element={<RequireAccounts><Expense /></RequireAccounts>} />
           <Route path="users-home" element={<RequireUser><UsersHome /></RequireUser>} />
+          <Route path="user-profile" element={<RequireUser><UsersProfile /></RequireUser>} />
+          <Route path="user-package" element={<RequireUser><UsersWorkout /></RequireUser>} />
           <Route path="trainers-home" element={<TrainersHome />} />
           <Route path="students" element={<StudentList />} />
           <Route path="trainer-settings" element={<TrainerSettings />} />
+          <Route path="trainer-package" element={<TrainerPackages />} />
         </Route>
 
       </Routes>
       {/* {
         location === '/' || '/about' || '/crossFit' || '/programs' || '/trainers' || '/testimonials' || '/blog' || '/shop' || '/contact' ? <Footer /> : null
       } */}
-      <Footer/>
+      <Footer />
       <Toaster
         position="top-center"
         reverseOrder={false}
