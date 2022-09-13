@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SharedNav from '../Shared/SharedNav';
 import './PaymentCard.css'
 import bkash from '../../../assets/Image/payment/bkash.png'
@@ -13,6 +13,8 @@ import { useForm } from 'react-hook-form';
 const PaymentCard = () => {
     const { token } = AuthUser();
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
+    const [openTransaction, setOpenTransaction] = useState(false);
+    const [openBkash, setOpenBkash] = useState(false);
 
     const { data: cartProducts, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/product_cart/`, {
@@ -26,6 +28,12 @@ const PaymentCard = () => {
         return <Loading />
     }
 
+    let productsArr = [];
+    if (cartProducts) {
+        productsArr = cartProducts.data?.map(product => [product.id, product.quantity])
+    }
+
+    console.log(cartProducts)
 
     const initialValue = 0;
     const totalPrice = cartProducts?.data?.reduce((accumulator, current) => accumulator + current.sub_total_price * current.quantity, initialValue)
@@ -35,7 +43,7 @@ const PaymentCard = () => {
 
     // confirm order
     const handleConfirmOrder = (data) => {
-        console.log(data)
+
         fetch('https://gym-management97.herokuapp.com/api/product_orders/', {
             method: 'POST',
             headers: {
@@ -43,14 +51,14 @@ const PaymentCard = () => {
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                product_details: [[2, 1], [3, 1]],
+                product_details: productsArr,
                 address: data.address,
                 city: data.city,
                 email: data.email,
                 phone: data.phone,
-                sub_total_price: 1400,
+                sub_total_price: totalPrice,
                 delivery_charge: 40,
-                total_price: 1440,
+                total_price: totalPrice + 40,
                 payment_type: data.banking || 'cash_on_delivery',
                 transaction_number: data.transaction || ""
             })
@@ -107,16 +115,28 @@ const PaymentCard = () => {
 
                     <div className='md:w-[70%] shadow p-5  md:order-1 order-2'>
                         <div className='grid grid-cols-3 lg:gap-7 gap-3'>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center cursor-pointer py-3 px-1'>
+                            <div
+                                onClick={() => setOpenTransaction(false)}
+                                className='bg-accent rounded-xl border flex justify-center items-center cursor-pointer py-3 px-1'>
                                 <div>
                                     <img className='mx-auto lg:w-12 w-7' src="https://laz-img-cdn.alicdn.com/tfs/TB1utb_r8jTBKNjSZFwXXcG4XXa-80-80.png" alt="" />
                                     <h1 className=' text-gray-500 text-center lg:text-[14px]text-sm'>Cash On Delivery</h1>
                                 </div>
                             </div>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
+                            <div
+                                onClick={() => {
+                                    setOpenTransaction(true)
+                                    setOpenBkash(true)
+                                }}
+                                className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
                                 <img className='lg:w-32 w-20' src={bkash} alt="" />
                             </div>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
+                            <div
+                                onClick={() => {
+                                    setOpenTransaction(true)
+                                    setOpenBkash(false)
+                                }}
+                                className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
                                 <img className='lg:w-32 w-20' src={nagad} alt="" />
                             </div>
                         </div>
@@ -212,41 +232,45 @@ const PaymentCard = () => {
 
                                 </div>
 
-                                <div>
-                                    <h2 className='font-semibold mt-5 text-xl'>Payment Info</h2>
+                                {
+                                    openTransaction && (
+                                        <div>
+                                            <h2 className='font-semibold mt-5 text-xl'>Payment Info</h2>
 
-                                    {/* <div className="flex  w-full mx-auto flex-col mt-3">
+                                            <div className="flex  w-full mx-auto flex-col mt-3">
 
-                                        <input className='py-2 rounded-md border px-3 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Bkash Account Number'
-                                            {...register('banking', {
-                                                required: 'Account is required',
-                                                minLength: {
-                                                    value: 11,
-                                                    message: 'Minimum 11 character required'
-                                                }
-                                            })}
-                                            onKeyUp={() => {
-                                                trigger('banking')
-                                            }}
-                                        />
-                                        <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.banking?.message}</small>
-                                    </div>
+                                                <input className='py-2 rounded-md border px-3 focus:outline-0' type="text" name="phone" id="" placeholder={`${openBkash ? 'Enter Bkash Account Number' : 'Enter Nagad Account Number'}`}
+                                                    {...register('banking', {
+                                                        required: 'Account is required',
+                                                        minLength: {
+                                                            value: 11,
+                                                            message: 'Minimum 11 character required'
+                                                        }
+                                                    })}
+                                                    onKeyUp={() => {
+                                                        trigger('banking')
+                                                    }}
+                                                />
+                                                <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.banking?.message}</small>
+                                            </div>
 
-                                    <div className="flex  w-full mx-auto flex-col mt-3">
+                                            <div className="flex  w-full mx-auto flex-col mt-3">
 
-                                        <input className='py-2 px-3 rounded-md border focus:outline-0' type="text" name="phone" id="" placeholder='Enter TxnID'
-                                            {...register('transaction', {
-                                                required: 'TxnID is required',
-                                            })}
-                                            onKeyUp={() => {
-                                                trigger('transaction')
-                                            }}
-                                        />
-                                        <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.transaction?.message}</small>
-                                    </div> */}
+                                                <input className='py-2 px-3 rounded-md border focus:outline-0' type="text" name="phone" id="" placeholder='Enter TxnID'
+                                                    {...register('transaction', {
+                                                        required: 'TxnID is required',
+                                                    })}
+                                                    onKeyUp={() => {
+                                                        trigger('transaction')
+                                                    }}
+                                                />
+                                                <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.transaction?.message}</small>
+                                            </div>
 
 
-                                </div>
+                                        </div>
+                                    )
+                                }
                                 <div className='mt-10 sm:flex items-center  gap-5'>
                                     <div className='hidden sm:block'>
                                         <Link to='/shop'><button
