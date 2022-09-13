@@ -3,13 +3,14 @@ import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import SharedNav from '../Shared/SharedNav';
 import { AiOutlineRight } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CartProductItem from './CartProductItem';
 import { useQuery } from 'react-query';
 import Loading from '../../../hooks/Loading/Loading';
 
 const CartProduct = () => {
     const { token } = AuthUser()
+    const navigate = useNavigate()
 
 
     const { data: cartProducts, isLoading, refetch } = useQuery('users', () =>
@@ -29,6 +30,9 @@ const CartProduct = () => {
     const totalPrice = cartProducts?.data?.reduce((accumulator,current) => accumulator + current.sub_total_price * current.quantity, initialValue)
 
 
+    const handleCheckout = () => {
+        navigate('/checkout')
+    }
 
     // console.log(totalPrice)
 
@@ -83,7 +87,7 @@ const CartProduct = () => {
                             <h2>৳ {totalPrice}</h2>
                         </div>
 
-                        <button className='btn btn-primary md:mt-8 mt-3' type="">Proceed To Checkout</button>
+                        <button onClick={handleCheckout} className='btn btn-primary md:mt-8 mt-3' type="">Proceed To Checkout</button>
                     </div>
 
                 </div>
