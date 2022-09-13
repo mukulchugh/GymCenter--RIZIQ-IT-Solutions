@@ -27,7 +27,7 @@ const Products = ({ product }) => {
             .then(data => {
                 if (data?.success) {
                     toast.success("Product add to cart Successfully");
-                }else{
+                } else {
                     toast.error("Product already added to cart");
                 }
                 console.log(data)
@@ -37,7 +37,7 @@ const Products = ({ product }) => {
 
     return (
         <div
-            onClick={() => handleCart(product?.id)}
+
             className="card shadow rounded ">
             <figure className="w-full sm:h-48 h-40 overflow-hidden sm:p-3 p-2 rounded">
                 <img src={product?.image} alt="Shoes" className="w-full h-full rounded" />
@@ -48,7 +48,9 @@ const Products = ({ product }) => {
                 }<span className='text-sm ml-2 text-secondary '> <del>
                     {product?.original_price}
                 </del> </span></p>
-                <div className="bg-[#FBB848] p-3 w-full cursor-pointer">
+                <div
+                    onClick={() => handleCart(product?.id)}
+                    className="bg-[#FBB848] p-3 w-full cursor-pointer">
                     <h1 className='font-bold'>Add to cart</h1>
                 </div>
             </div>

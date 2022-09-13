@@ -114,7 +114,7 @@ const PaymentCard = () => {
                 </div>
             </article> */}
 
-            <div className='mid-container '>
+            <div className='mid-container h-[100vh]'>
                 <h2 className='mt-16 text-2xl font-semibold mb-5'>Payment</h2>
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
@@ -134,17 +134,52 @@ const PaymentCard = () => {
                                 <img className='w-32' src={nagad} alt="" />
                             </div>
                         </div>
+                        <div>
+                            <h2 className='font-semibold mt-5 text-xl'>Billing Info</h2>
+                            <form className=' mt-5'>
+                                <div className='grid grid-cols-2 gap-5'>
+                                    <div className='w-full'>
+                                        <label className='text-gray-500' htmlFor="">Full Name</label>
+                                        <input className='w-full border rounded-md p-2' type="text" />
+                                    </div>
+
+                                    <div>
+                                        <label className='text-gray-500 mt-5' htmlFor="">Billing Address</label>
+                                        <input className='w-full border rounded-md p-2' type="text" />
+                                    </div>
+
+                                    <div>
+                                        <label className='text-gray-500 mt-5' htmlFor="">Email</label>
+                                        <input className='w-full border rounded-md p-2' type="email" />
+                                    </div>
+
+                                    <div>
+                                        <label className='text-gray-500 mt-5' htmlFor="">City</label>
+                                        <input className='w-full border rounded-md p-2' type="text" />
+                                    </div>
+
+                                    <div>
+                                        <label className='text-gray-500 mt-5' htmlFor="">Phone</label>
+                                        <input className='w-full border rounded-md p-2' type="phone" />
+                                    </div>
+
+                                </div>
+                                <button className='btn btn-primary mt-10 w-full' type="submit">Confirm Order</button>
+                            </form>
+                        </div>
                     </div>
 
-                    <div className='w-[30%] shadow p-5'>
-                        <h2 className='font-semibold mb-3'>Order Summery</h2>
-                        <div className='flex justify-between'>
-                            <h2>Total Amount</h2>
-                            <h2>4800.00</h2>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h2>Quantity</h2>
-                            <h2>4800.00</h2>
+                    <div className='w-[30%]'>
+                        <div className=' shadow p-5'>
+                            <h2 className='font-semibold mb-3'>Order Summery</h2>
+                            <div className='flex justify-between'>
+                                <h2>Total Amount</h2>
+                                <h2>4800.00</h2>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h2>Quantity</h2>
+                                <h2>4800.00</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
