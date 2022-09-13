@@ -98,7 +98,7 @@ const UsersWorkout = () => {
         <div className="grid mt-16 grid-cols-1 lg:grid-cols-2">
             <div className="border-r px-5">
                 <div className="flex items-center lg:justify-between">
-                    <h1 className='text-md font-bold'>Packages</h1>
+                    <h1 className='text-md font-bold'>Programs</h1>
                     {/* <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button> */}
                 </div>
 

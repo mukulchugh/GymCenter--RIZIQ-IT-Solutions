@@ -39,13 +39,15 @@ const UsersProfile = () => {
                 <div className='flex flex-col'>
                     <div>
                         <h1 className='text-xl font-bold mb-3 text-warning'>Workout Plan:</h1>
-                        <button className='btn btn-primary btn-sm font-bold mr-3' >CrossFit</button>
-                        <button className='btn btn-accent btn-sm font-bold mr-3' >Yoga</button>
-                        <button className='btn btn-accent btn-sm font-bold' >Freehand</button>
+                        <div className='grid sm:grid-cols-3 gap-3'>
+                            <button className='btn btn-primary btn-sm font-bold ' >CrossFit</button>
+                            <button className='btn btn-accent btn-sm font-bold ' >Yoga</button>
+                            <button className='btn btn-accent btn-sm font-bold' >Freehand</button>
+                        </div>
                     </div>
                     <div className='mt-5'>
                         <h1 className='text-lg font-bold mb-3 text-[#595085]'>Subscriber Plan:</h1>
-                        <button className='btn btn-primary btn-sm font-bold mr-3' >Monthly</button>
+                        <button className='btn btn-primary btn-sm font-bold mr-3 mb-3' >Monthly</button>
                         <button className='btn btn-accent btn-sm font-bold mr-3' >12 Days left</button>
                     </div>
                 </div>
