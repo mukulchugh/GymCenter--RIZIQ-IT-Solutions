@@ -89,7 +89,6 @@ const CartProduct = () => {
 
                         <button onClick={handleCheckout} className='btn btn-primary md:mt-8 mt-3' type="">Proceed To Checkout</button>
                     </div>
-
                 </div>
             </div>
         </div>
