@@ -74,24 +74,47 @@ const PaymentCard = () => {
         <>
             <SharedNav />
 
-            <div className='mid-container h-[100vh]'>
-                <h2 className='mt-16 text-2xl font-semibold mb-5'>Payment</h2>
+            <div className='mid-container '>
+                <h2 className='mt-8 text-2xl font-semibold mb-5'>Payment</h2>
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
-                <div className='flex gap-5'>
-                    <div className='w-[70%] shadow p-5'>
-                        <div className='grid grid-cols-3 gap-7'>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center cursor-pointer'>
+                <div className='md:flex gap-5 mb-20'>
+                <div className='md:w-[30%] md:order-2 order-1 mb-5'>
+                        <div className=' shadow p-5'>
+                            <h2 className='text-xl font-semibold mb-3'>Order Summery</h2>
+                            <div className='flex justify-between mb-2'>
+                                <h2 className='font-semibold'>Quantity</h2>
+                                <h2>{totalQuantity} Items</h2>
+                            </div>
+                            <div className='flex justify-between mb-2'>
+                                <h2 className='font-semibold'>Total Amount</h2>
+                                <h2>৳ {totalPrice}</h2>
+                            </div>
+                            <div className='flex justify-between mb-2'>
+                                <h2 className='font-semibold'>Delivery</h2>
+                                <h2>৳ 40</h2>
+                            </div>
+                            <div className='flex justify-between mb-2'>
+                                <h2 className='font-semibold'>Subtotal</h2>
+                                <h2>৳ {totalPrice + 40}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className='md:w-[70%] shadow p-5  md:order-1 order-2'>
+                        <div className='grid grid-cols-3 lg:gap-7 gap-3'>
+                            <div className='bg-accent rounded-xl border flex justify-center items-center cursor-pointer py-3 px-1'>
                                 <div>
-                                    <img className='mx-auto w-12' src="https://laz-img-cdn.alicdn.com/tfs/TB1utb_r8jTBKNjSZFwXXcG4XXa-80-80.png" alt="" />
-                                    <h1 className=' text-gray-500'>Cash On Delivery</h1>
+                                    <img className='mx-auto lg:w-12 w-7' src="https://laz-img-cdn.alicdn.com/tfs/TB1utb_r8jTBKNjSZFwXXcG4XXa-80-80.png" alt="" />
+                                    <h1 className=' text-gray-500 text-center lg:text-[14px]text-sm'>Cash On Delivery</h1>
                                 </div>
                             </div>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer'>
-                                <img className='w-32' src={bkash} alt="" />
+                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
+                                <img className='lg:w-32 w-20' src={bkash} alt="" />
                             </div>
-                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer'>
-                                <img className='w-32' src={nagad} alt="" />
+                            <div className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
+                                <img className='lg:w-32 w-20' src={nagad} alt="" />
                             </div>
                         </div>
                         <div>
@@ -99,10 +122,10 @@ const PaymentCard = () => {
                             <form
                                 onSubmit={handleSubmit(handleConfirmOrder)}
                                 className=' mt-5'>
-                                <div className='grid grid-cols-2 gap-5'>
+                                <div className='grid md:grid-cols-2 md:gap-x-5'>
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>Name</label>
-                                        <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="name" name="name" id="" placeholder='Your Name'
+                                        <input className='py-2 px-3 bg-[#F2F2F2] rounded-md focus:outline-0' type="name" name="name" id="" placeholder='Your Name'
                                             {...register("name", {
                                                 required: 'Name is required',
                                                 pattern: {
@@ -118,7 +141,7 @@ const PaymentCard = () => {
                                     </div>
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>Address</label>
-                                        <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="text" name="address" id="" placeholder='Your Address'
+                                        <input className='py-2 px-3 bg-[#F2F2F2] rounded-md focus:outline-0' type="text" name="address" id="" placeholder='Your Address'
                                             {...register("address", {
                                                 required: 'Address is required',
                                                 pattern: {
@@ -135,7 +158,7 @@ const PaymentCard = () => {
 
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>Email</label>
-                                        <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="email" name="email" id="" placeholder='Your Email'
+                                        <input className='py-2 px-3 bg-[#F2F2F2] rounded-md focus:outline-0' type="email" name="email" id="" placeholder='Your Email'
                                             {...register("email", {
                                                 required: 'Email is required',
                                                 pattern: {
@@ -152,7 +175,7 @@ const PaymentCard = () => {
 
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2'>City</label>
-                                        <input className='py-3 px-5 bg-[#F2F2F2] rounded-md focus:outline-0' type="text" name="city" id="" placeholder='City'
+                                        <input className='py-2 px-3 bg-[#F2F2F2] rounded-md focus:outline-0' type="text" name="city" id="" placeholder='City'
                                             {...register("city", {
                                                 required: 'City is required',
                                                 pattern: {
@@ -169,7 +192,7 @@ const PaymentCard = () => {
 
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2' >Phone</label>
-                                        <input className='py-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Phone Number'
+                                        <input className='py-2 px-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Phone Number'
                                             {...register('phone', {
                                                 required: 'Phone is required',
                                                 minLength: {
@@ -185,28 +208,57 @@ const PaymentCard = () => {
                                     </div>
 
                                 </div>
-                                <div className='mt-10 flex items-center gap-5'>
-                                    <Link className='bg-accent py-3 px-8 border rounded' to='/shop'>Back to Shop</Link>
-                                    <button
-                                        className='btn btn-primary ' type="submit">Confirm Order</button>
+
+                                <div>
+                                    <h2 className='font-semibold mt-5 text-xl'>Payment Info</h2>
+
+                                    <div className="flex  w-full mx-auto flex-col mt-3">
+
+                                        <input className='py-2 px-3 rounded-md border px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Bkash Account Number'
+                                            {...register('banking', {
+                                                required: 'Account is required',
+                                                minLength: {
+                                                    value: 11,
+                                                    message: 'Minimum 11 character required'
+                                                }
+                                            })}
+                                            onKeyUp={() => {
+                                                trigger('banking')
+                                            }}
+                                        />
+                                        <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.banking?.message}</small>
+                                    </div>
+
+                                    <div className="flex  w-full mx-auto flex-col mt-3">
+
+                                        <input className='py-2 px-3 rounded-md border px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter TxnID'
+                                            {...register('transaction', {
+                                                required: 'TxnID is required',
+                                            })}
+                                            onKeyUp={() => {
+                                                trigger('transaction')
+                                            }}
+                                        />
+                                        <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.transaction?.message}</small>
+                                    </div>
+
+
+                                </div>
+                                <div className='mt-10 sm:flex items-center  gap-5'>
+                                    <div className='hidden sm:block'>
+                                        <Link to='/shop'><button
+                                            className='btn btn-accent' type="submit">Back to shop</button></Link>
+                                    </div>
+                                    <div>
+                                        <button
+                                            className='btn btn-primary w-full' type="submit">Confirm Order</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div className='w-[30%]'>
-                        <div className=' shadow p-5'>
-                            <h2 className='text-xl font-semibold mb-3'>Order Summery</h2>
-                            <div className='flex justify-between'>
-                                <h2 className='font-semibold'>Total Amount</h2>
-                                <h2>৳ {totalPrice}</h2>
-                            </div>
-                            <div className='flex justify-between'>
-                                <h2 className='font-semibold'>Quantity</h2>
-                                <h2>{totalQuantity} Items</h2>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </>
