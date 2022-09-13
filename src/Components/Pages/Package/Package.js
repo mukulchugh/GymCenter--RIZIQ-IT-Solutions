@@ -39,7 +39,7 @@ const Package = () => {
                                 index === 2 && <h1 className='text-center text-3xl font-bold mt-4 mb-2'>Premium Plan</h1>
                             }
 
-                            <div className='w-36 mx-auto'>
+                            <div className='w-28 mx-auto'>
                                 {
                                     index === 0 && <img className='w-full' src={img1} alt="Shoes" />
                                 }
@@ -53,7 +53,7 @@ const Package = () => {
 
                             <div className="card-body pt-0">
                                 <div className='text-center'>
-                                    <h1 className="text-3xl font-bold text-primary mx-auto flex justify-center items-end">৳ {item?.discounted_price.split('.')[0]}/<span className='text-gray-500 font-normal text-xl'>
+                                    <h1 className="text-2xl font-bold text-primary mx-auto flex justify-center items-end">৳ {item?.discounted_price.split('.')[0]}/<span className='text-gray-500 font-normal text-sm'>
                                         {
                                             item?.duration_days === 30 && <h2>30Days</h2>
                                         }
@@ -81,7 +81,9 @@ const Package = () => {
                                     <li className='text-sm mb-3'>Health and Fitness Articles</li>
                                     <li className='text-sm'>No Credit Card Needed</li>
                                 </div>
-                                <div className="card-actions justify-center mt-5">
+                                <div 
+
+                                className="card-actions justify-center mt-5">
                                     <button className="btn btn-primary w-full">Choose Plan</button>
                                 </div>
                             </div>
