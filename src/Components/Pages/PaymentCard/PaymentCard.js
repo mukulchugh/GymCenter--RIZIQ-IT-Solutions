@@ -43,13 +43,16 @@ const PaymentCard = () => {
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
+                product_details: [[2, 1], [3, 1]],
                 address: data.address,
                 city: data.city,
                 email: data.email,
                 phone: data.phone,
                 sub_total_price: 1400,
                 delivery_charge: 40,
-                payment_type: 'cash_on_delivery',
+                total_price: 1440,
+                payment_type: data.banking || 'cash_on_delivery',
+                transaction_number: data.transaction || ""
             })
         })
             .then((res) => res.json())
@@ -79,7 +82,7 @@ const PaymentCard = () => {
 
                 <h1 className='text-xl mb-5'>Choose payment method below</h1>
                 <div className='md:flex gap-5 mb-20'>
-                <div className='md:w-[30%] md:order-2 order-1 mb-5'>
+                    <div className='md:w-[30%] md:order-2 order-1 mb-5'>
                         <div className=' shadow p-5'>
                             <h2 className='text-xl font-semibold mb-3'>Order Summery</h2>
                             <div className='flex justify-between mb-2'>
@@ -192,7 +195,7 @@ const PaymentCard = () => {
 
                                     <div className="flex  w-full mx-auto flex-col">
                                         <label className='text-[#747474] text-sm font-medium ml-1 mb-2' >Phone</label>
-                                        <input className='py-2 px-3 rounded-md bg-[#F2F2F2] px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Phone Number'
+                                        <input className='py-2 px-3 rounded-md bg-[#F2F2F2] focus:outline-0' type="text" name="phone" id="" placeholder='Enter Phone Number'
                                             {...register('phone', {
                                                 required: 'Phone is required',
                                                 minLength: {
@@ -212,9 +215,9 @@ const PaymentCard = () => {
                                 <div>
                                     <h2 className='font-semibold mt-5 text-xl'>Payment Info</h2>
 
-                                    <div className="flex  w-full mx-auto flex-col mt-3">
+                                    {/* <div className="flex  w-full mx-auto flex-col mt-3">
 
-                                        <input className='py-2 px-3 rounded-md border px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Bkash Account Number'
+                                        <input className='py-2 rounded-md border px-3 focus:outline-0' type="text" name="phone" id="" placeholder='Enter Bkash Account Number'
                                             {...register('banking', {
                                                 required: 'Account is required',
                                                 minLength: {
@@ -231,7 +234,7 @@ const PaymentCard = () => {
 
                                     <div className="flex  w-full mx-auto flex-col mt-3">
 
-                                        <input className='py-2 px-3 rounded-md border px-5 focus:outline-0' type="text" name="phone" id="" placeholder='Enter TxnID'
+                                        <input className='py-2 px-3 rounded-md border focus:outline-0' type="text" name="phone" id="" placeholder='Enter TxnID'
                                             {...register('transaction', {
                                                 required: 'TxnID is required',
                                             })}
@@ -240,7 +243,7 @@ const PaymentCard = () => {
                                             }}
                                         />
                                         <small className='text-[#FF4B2B] ml-2 text-xs font-medium my-2'>{errors?.transaction?.message}</small>
-                                    </div>
+                                    </div> */}
 
 
                                 </div>
@@ -258,7 +261,7 @@ const PaymentCard = () => {
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </>
