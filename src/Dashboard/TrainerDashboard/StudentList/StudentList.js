@@ -16,7 +16,7 @@ const StudentList = () => {
     const date = `${day} ${monthName} ${year}`;
 
     const { data: students, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://gym-management97.herokuapp.com/api/income`, {
+        fetch(`https://gym-management97.herokuapp.com/api/all_students_of_trainer`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
@@ -45,7 +45,7 @@ const StudentList = () => {
                 </div>
             </div>
             <div className='mt-7 border-b-[1px] pb-2 mb-5'>
-                <h1 className='font-bold text-xl'>Student List </h1> 
+                <h1 className='font-bold text-xl'>Student List </h1>
             </div>
 
             <div className='mt-10'>
@@ -57,9 +57,8 @@ const StudentList = () => {
                                     <th className='bg-accent'>#</th>
                                     <th className='bg-accent'>Image</th>
                                     <th className='bg-accent'>Name</th>
-                                    <th className='bg-accent'>Join Date</th>
-                                    <th className='bg-accent'>Checked In Task</th>
-                                    <th className='bg-accent'>Package</th>
+                                    <th className='bg-accent'>email</th>
+                                    <th className='bg-accent'>Mobile No</th>
                                     <th className='bg-accent'>Action</th>
                                 </tr>
                             </thead>
@@ -69,11 +68,11 @@ const StudentList = () => {
                                         return (
                                             <tr>
                                                 <th>{++index}</th>
+                                                <td><img className='w-10 rounded-full h-10' src={student?.profile_image
+                                                } alt=""/></td>
                                                 <td>{student?.name}</td>
-                                                <td>{student?.name}</td>
-                                                <td>{student?.name}</td>
-                                                <td>{student?.expense_date}</td>
-                                                <td className='font-bold'>৳ {student?.amount}</td>
+                                            <td>{student?.email}</td>
+                                                <td>{student?.phone}</td>
                                                 <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                             </tr>
                                         )

@@ -332,6 +332,16 @@ input[type="checkbox"]:checked:after {
 }
 
 
+/* Trainer packages */
+.package_card {
+    border-radius: 0 10px 10px 10px;
+}
+
+.student_card {
+    border-radius: 10px 10px 10px 10px;
+}
+
+
 @media only screen and (max-width: 1280px) {
     .mid-container {
         padding: 0 70px;
