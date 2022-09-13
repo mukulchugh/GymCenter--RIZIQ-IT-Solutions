@@ -1,4 +1,6 @@
+import { success } from 'daisyui/src/colors';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
@@ -23,6 +25,11 @@ const Products = ({ product }) => {
             })
         }).then(res => res.json())
             .then(data => {
+                if (data?.success) {
+                    toast.success("Product add to cart Successfully");
+                }else{
+                    toast.error("Product already added to cart");
+                }
                 console.log(data)
             })
     }

@@ -19,6 +19,23 @@ const CartProductItem = ({ product, refetch }) => {
             })
     }
 
+    // update quantity
+    const handleQuantity = (type, id) => {
+        fetch(`https://gym-management97.herokuapp.com/api/product_cart/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                quantity: type === 'increase' ? product.quantity + 1 : product.quantity - 1
+            })
+        }).then(res => res.json())
+            .then(data => {
+                refetch()
+                console.log(data)
+            })
+    }
 
     return (
         <div className='my-3 flex justify-between items-center border px-5 py-3 rounded'>
@@ -28,10 +45,11 @@ const CartProductItem = ({ product, refetch }) => {
             </div>
             <h2 className='sm:w-[20%] w-[20%] text-center '>{product?.quantity
             }</h2>
-            <div className='sm:w-[20%] w-[40%] flex items-center justify-between gap-2'>
-                <h2 className='w-[80%] text-center flex gap-2 justify-center items-center'>৳ {product?.product?.discounted_price
+            {/* <input onClick={()=>handleQuantity(`'increase', {product?.id}`)} type="number" id="quantity" name="quantity" min="1"/> */}
 
-                } </h2>
+
+            <div className='sm:w-[20%] w-[40%] flex items-center justify-between gap-2'>
+                <h2 className='w-[80%] text-center flex gap-2 justify-center items-center'>৳ {product?.sub_total_price } </h2>
                 <span
                     onClick={() => handleDelete(product?.id)}
                     className=' w-[20%] flex sm:justify-center justify-end'> <ImCancelCircle className='text-xl cursor-pointer' /></span>
