@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
+import toast from 'react-hot-toast';
 
 const UsersWorkout = () => {
     const { token } = AuthUser();
@@ -15,20 +16,23 @@ const UsersWorkout = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [purchedPackages, setPurchedPackages] = useState([]);
     const [showSchedule, setShowSchedule] = useState(false);
-    const [packageDetails, setPackageDetails] = useState(null);
+    const [packageSchedule, setPackageSchedule] = useState(null);
     const [packageId, setPackageId] = useState(6);
 
 
     useEffect(() => {
-        fetch(`https://gym-management97.herokuapp.com/api/package_users?package=${packageId}`, {
+        fetch(`https://gym-management97.herokuapp.com/api/shedule?package=${packageId}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
             }
         })
             .then(res => res.json())
-            .then(data => setPackageDetails(data))
-    }, [])
+            .then(data => {
+                console.log(data)
+                setPackageSchedule(data)
+            })
+    }, [packageId, token])
 
     useEffect(() => {
         fetch('https://gym-management97.herokuapp.com/api/user_package_order', {
@@ -40,14 +44,15 @@ const UsersWorkout = () => {
         })
             .then(res => res.json())
             .then(data => {
+                // console.log(data)
                 setPurchedPackages(data);
             })
-    }, [])
+    }, [token])
 
     const handlePackageClick = (id) => {
         setShowSchedule(false)
         setPackageId(id)
-        fetch(`https://gym-management97.herokuapp.com/api/package_users?package=${id}`, {
+        fetch(`https://gym-management97.herokuapp.com/api/shedule?package=${id}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
@@ -55,18 +60,47 @@ const UsersWorkout = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setPackageDetails(data)
-                console.log(data)
+                setPackageSchedule(data)
+                // console.log(data)
             })
     }
 
-    console.log(purchedPackages);
+    console.log(purchedPackages)
+
+    const handleConfirm = (schedule_id, package_id) => {
+        // console.log(schedule_id, package_id)
+        fetch(`https://gym-management97.herokuapp.com/api/confirm_shedule`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                shedule: schedule_id,
+                package: package_id
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    if (!data.success && data.error === "The fields user_id, shedule_id must make a unique set.") {
+                        toast.error('You have already booked this schedule')
+                    } else if (!data.success) {
+                        toast.error('Something went wrong')
+                    } else {
+                        toast.success('Schedule confirmed')
+                    }
+                }
+            })
+    }
+
+    // console.log(packageSchedule);
 
     return (
         <div className="grid mt-16 grid-cols-1 lg:grid-cols-2">
             <div className="border-r px-5">
                 <div className="flex items-center lg:justify-between">
-                    <h1 className='text-md font-bold'>Packages</h1>
+                    <h1 className='text-md font-bold'>Programs</h1>
                     {/* <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button> */}
                 </div>
 
@@ -131,7 +165,7 @@ const UsersWorkout = () => {
                 </div>
 
                 {
-                    !showSchedule && packageDetails?.data?.map((pack, index) => {
+                    !showSchedule && packageSchedule?.data?.map((pack, index) => {
                         return (
                             <div className='my-8' key={index}>
 
@@ -141,14 +175,16 @@ const UsersWorkout = () => {
                                     <div className="flex items-center gap-5">
                                         <div>
                                             <h1 className='text-[#3D3270] font-extrabold text-xl'>
-                                                Jul 23, 2022
+                                                {pack?.day}
                                             </h1>
-                                            <h1 className='text-[#3D3270] font-extrabold text-sm'>10:12 AM - 10:12 AM</h1>
+                                            <h1 className='text-[#3D3270] font-extrabold text-sm'>{pack?.from_time} AM - {pack?.to_time} AM</h1>
                                         </div>
 
                                     </div>
                                     <div>
-                                        <button className="btn btn-primary btn-xs">Confirm</button>
+                                        <button
+                                            onClick={() => { handleConfirm(pack.id, packageId) }}
+                                            className="btn btn-primary btn-xs">Confirm</button>
                                     </div>
                                 </div>
                             </div>

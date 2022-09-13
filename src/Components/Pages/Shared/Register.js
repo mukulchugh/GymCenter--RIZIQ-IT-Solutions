@@ -49,7 +49,7 @@ const Register = () => {
                         toast.error('User with this email already exists.')
                         return;
                     } else if (data.error) {
-                        toast.error(data.error)
+                        toast.error('Phone number should be start with +880')
                         return;
                     }
                 } else {
@@ -180,11 +180,11 @@ const Register = () => {
                                     <div className="flex w-full mx-auto flex-col">
                                         <button className='btn bg-[rgb(0,122,255)] my-[20px] border-0 text-white font-semibold text-[17px] hover:bg-transparent hover:border-[#007AFF] hover:border hover:text-[#007AFF] ' type="submit">Sign Up</button>
 
-                                        <div className="divider">or</div>
+                                        {/* <div className="divider">or</div>
                                         <button className='flex py-[4px] justify-center items-center border border-slate-600 rounded-lg hover:bg-[#333333] hover:text-white transition-all delay-75 ease-in-out'>
                                             <img className='w-[40px]' src={GoogleLogo} alt="" />
                                             <span className='font-semibold text-[17px] ml-3 '>Continue with google</span>
-                                        </button>
+                                        </button> */}
                                     </div>
                                     <h1 className=' w-full text-[15px] mx-auto text-center mb-10 mt-[20px]'>Already have an account? <Link to='/login' className='text-[#007AFF] ml-3 cursor-pointer'>Login</Link></h1>
                                 </form>
