@@ -4,6 +4,8 @@ import { BiSearch } from 'react-icons/bi';
 import { VscBellDot } from 'react-icons/vsc';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
+import studentImage from '../../../assets/Image/TrainerDashboard/total_students.png'
+import classesImage from '../../../assets/Image/TrainerDashboard/total_classes.png'
 
 const TrainersHome = () => {
     const { token } = AuthUser();
@@ -20,6 +22,8 @@ const TrainersHome = () => {
     const [showSchedule, setShowSchedule] = useState(false);
     const [packageDetails, setPackageDetails] = useState(null);
     const [packageId, setPackageId] = useState(6);
+    const [totalStudents, setTotalStudents] = useState(0);
+    const [totalClasses, setTotalClasses] = useState(0);
 
     useEffect(() => {
         fetch('https://gym-management97.herokuapp.com/api/trainer_package', {
@@ -58,7 +62,20 @@ const TrainersHome = () => {
             .then(data => setPackageDetails(data))
     }
 
-    console.log(packageDetails);
+    useEffect(() => {
+        fetch(`https://gym-management97.herokuapp.com/api/trainer_activity`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setTotalStudents(data.data.total_students)
+                setTotalClasses(data.data.total_class)
+            })
+
+    }, [])
     return (
         <div className='p-5  mt-4'>
             <div className='flex justify-between'>
@@ -182,6 +199,26 @@ const TrainersHome = () => {
                         <div className='text-center'>
                             <h1 className='text-[#3D3270] font-bold text-lg'>First Name & Last Name</h1>
                             <h1 className='text-primary font-bold text-md'>Trainer</h1>
+                        </div>
+                    </div>
+
+                    <div className="mt-5 flex items-center lg:justify-between lg:gap-0 gap-10 justify-center">
+                        <div>
+                            <h1 className='text-[#3D3270] font-bold text-lg'>Total Students</h1>
+                            <h1 className='text-primary font-bold text-2xl'>{totalStudents}</h1>
+                        </div>
+                        <div>
+                            <img src={studentImage} alt="" />
+                        </div>
+                    </div>
+
+                    <div className="mt-5 flex items-center lg:justify-between lg:gap-0 gap-10 justify-center">
+                        <div>
+                            <h1 className='text-[#3D3270] font-bold text-lg'>Total Classes</h1>
+                            <h1 className='text-primary font-bold text-2xl'>{totalClasses}</h1>
+                        </div>
+                        <div>
+                            <img src={classesImage} alt="" />
                         </div>
                     </div>
                 </div>
