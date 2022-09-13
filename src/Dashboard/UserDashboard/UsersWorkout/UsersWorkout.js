@@ -148,7 +148,7 @@ const UsersWorkout = () => {
 
                                     </div>
                                     <div>
-                                        <button onClick={() => setConfirmState(true)} className="btn btn-primary btn-xs">Confirm</button>
+                                        <button className="btn btn-primary btn-xs">Confirm</button>
                                     </div>
                                 </div>
                             </div>
