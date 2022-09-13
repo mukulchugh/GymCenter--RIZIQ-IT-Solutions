@@ -96,7 +96,7 @@ const TrainersHome = () => {
             <div className="grid mt-16 grid-cols-1 lg:grid-cols-3">
                 <div className="border-r px-5">
                     <div className="flex items-center lg:justify-between">
-                        <h1 className='text-md font-bold'>Workout Post</h1>
+                        <h1 className='text-md font-bold'>Programs Post</h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
                     </div>
 
@@ -143,7 +143,7 @@ const TrainersHome = () => {
 
                 <div className="px-5 border-r">
                     <div className="flex items-center lg:justify-between">
-                        <h1 className='text-md font-bold'>Nutrition Post</h1>
+                        <h1 className='text-md font-bold'>Students </h1>
                         <button className='bg-primary rounded-full h-8 text-2xl font-bold text-white w-8 ml-5 lg:ml-0'>+</button>
                     </div>
 
@@ -199,7 +199,7 @@ const TrainersHome = () => {
                     </div>
                     <div className='flex justify-center items-center gap-3 mt-3'>
                         <div className='text-center'>
-                            <h1 className='text-[#3D3270] font-bold text-lg'>First Name & Last Name</h1>
+                            <h1 className='text-[#3D3270] font-bold text-lg'>Trainer Name</h1>
                             <h1 className='text-primary font-bold text-md'>Trainer</h1>
                         </div>
                     </div>
