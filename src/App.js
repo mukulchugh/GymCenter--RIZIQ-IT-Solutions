@@ -35,6 +35,7 @@ import TrainerPackages from './Dashboard/TrainerDashboard/TrainerPackages/Traine
 import UsersProfile from './Dashboard/UserDashboard/UsersProfile/UsersProfile';
 import UsersWorkout from './Dashboard/UserDashboard/UsersWorkout/UsersWorkout';
 import TrainerProfile from './Dashboard/TrainerDashboard/TrainerProfile/TrainerProfile';
+import PackagePaymentCard from './Components/Pages/PaymentCard/PackagePaymentCard/PackagePaymentCard';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -59,6 +60,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<CartProduct />} />
         <Route path='/checkout' element={<PaymentCard />} />
+        <Route path='/payment/:id' element={<PackagePaymentCard />} />
         <Route path='*' element={<NotFound />} />
 
         <Route path="/product/:productId" element={<ProductDetails />}></Route>

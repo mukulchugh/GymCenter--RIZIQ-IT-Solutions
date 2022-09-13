@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import img1 from '../../../assets/Image/pricing/Fitness tracker-amico.png'
 import img3 from '../../../assets/Image/pricing/Workout-amico.png'
 import img2 from '../../../assets/Image/pricing/Workout-rafiki.png'
@@ -8,6 +9,24 @@ import Loading from '../../../hooks/Loading/Loading';
 
 const Package = () => {
     const { token } = AuthUser()
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     fetch('https://gym-management97.herokuapp.com/api/package_order/', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Authorization': `Bearer ${token}`
+    //         },
+    //         body: JSON.stringify({
+    //             package: packageId
+    //         })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //         })
+    // }, [])
 
     const { data: packages, isLoading, refetch } = useQuery('users', () =>
         fetch(`https://gym-management97.herokuapp.com/api/package_by_type?package_type=1`, {
@@ -21,7 +40,8 @@ const Package = () => {
         return <Loading />
     }
 
-    console.log(packages)
+
+    // console.log(packages)
 
     return (
         <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-7 md:mb-16 mb-10'>
@@ -81,9 +101,11 @@ const Package = () => {
                                     <li className='text-sm mb-3'>Health and Fitness Articles</li>
                                     <li className='text-sm'>No Credit Card Needed</li>
                                 </div>
-                                <div 
-
-                                className="card-actions justify-center mt-5">
+                                <div
+                                    onClick={() => {
+                                        navigate(`/payment/${item?.id}`)
+                                    }}
+                                    className="card-actions justify-center mt-5">
                                     <button className="btn btn-primary w-full">Choose Plan</button>
                                 </div>
                             </div>

@@ -41,6 +41,7 @@ const UsersWorkout = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 setPurchedPackages(data);
             })
     }, [])
