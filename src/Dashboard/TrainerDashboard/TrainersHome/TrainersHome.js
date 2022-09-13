@@ -17,9 +17,12 @@ const TrainersHome = () => {
 
     const [selectedDate, setSelectedDate] = useState(null);
     const [packages, setPackages] = useState([])
+    const [showSchedule, setShowSchedule] = useState(false);
+    const [packageDetails, setPackageDetails] = useState(null);
+    const [packageId, setPackageId] = useState(6);
 
     useEffect(() => {
-        fetch('https://gym-management97.herokuapp.com/api/package_users?package=6', {
+        fetch('https://gym-management97.herokuapp.com/api/trainer_package', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${token}`
@@ -30,8 +33,32 @@ const TrainersHome = () => {
 
     }, [])
 
-    console.log(packages)
 
+    useEffect(() => {
+        fetch(`https://gym-management97.herokuapp.com/api/package_users?package=${packageId}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => setPackageDetails(data))
+    }, [])
+
+    const handlePackageClick = (id) => {
+        setShowSchedule(false)
+        setPackageId(id)
+        fetch(`https://gym-management97.herokuapp.com/api/package_users?package=${id}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => setPackageDetails(data))
+    }
+
+    console.log(packageDetails);
     return (
         <div className='p-5  mt-4'>
             <div className='flex justify-between'>
@@ -74,7 +101,9 @@ const TrainersHome = () => {
                                 return (
                                     <div className='my-8' key={index}>
                                         <h1 className='texxt-xl font-bold text-primary border-primary border w-fit px-5 py-1'>{pack?.package?.package_type?.package_title}</h1>
-                                        <div className="bg-primary package_card text-white flex items-center justify-between px-4 py-2">
+                                        <div
+                                            onClick={() => { handlePackageClick(pack.package.id) }}
+                                            className="bg-primary package_card text-white flex items-center justify-between px-4 py-2">
                                             <div className="">
                                                 <h1 className='text-xl'>Total Time: <span className='font-bold'>{pack?.package?.duration_days} Days</span></h1>
                                                 <div>
@@ -111,6 +140,39 @@ const TrainersHome = () => {
                             }} className='input w-[50%] input-bordered input-md cursor-pointer' type="date" />
                         </div>
                     </div>
+
+                    {
+                        !showSchedule && packageDetails?.data?.map((pack, index) => {
+                            return (
+                                <div className='my-8' key={index}>
+
+                                    <div
+
+                                        className="bg-white border-2 border-[#3D3270] student_card text-black flex items-center justify-between px-4 py-2">
+                                        <div className="flex items-center gap-5">
+                                            <div className='lg:w-1/4 w-1/5'>
+                                                <img className='rounded-full' src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" />
+                                            </div>
+                                            <div>
+                                                <h1 className='text-[#3D3270] font-bold text-lg'>
+                                                    {pack?.user?.name ? pack?.user?.name : 'Student Name'}
+                                                </h1>
+                                                <h1 className='text-[#3D3270] font-bold text-sm'>{pack?.package?.package_type?.package_title}</h1>
+                                            </div>
+
+                                        </div>
+                                        <div>
+                                            <BsFillArrowRightCircleFill className='h-8 cursor-pointer w-8' />
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+
+                    <button
+                        onClick={() => { setShowSchedule(true) }}
+                        className='btn btn-primary'>All Schedule</button>
                 </div>
                 <div className="px-5">
                     <div className='w-1/4 text-center mx-auto'>

@@ -334,7 +334,11 @@ input[type="checkbox"]:checked:after {
 
 /* Trainer packages */
 .package_card {
-    border-radius: 0 10px 10px 10px ;
+    border-radius: 0 10px 10px 10px;
+}
+
+.student_card {
+    border-radius: 10px 10px 10px 10px;
 }
 
 
