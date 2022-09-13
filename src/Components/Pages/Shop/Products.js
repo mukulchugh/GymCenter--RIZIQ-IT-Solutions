@@ -36,7 +36,7 @@ const Products = ({ product }) => {
                 <img src={product?.image} alt="Shoes" className="w-full h-full rounded" />
             </figure>
             <div className="card-body items-center text-center px-0 pb-0 sm:pt-3 pt-0">
-                <h2 onClick={() => handleClick(product?.id)} className="card-title sm:text-xl text-sm font-semibold cursor-pointer">{product?.name}</h2>
+                <h2 onClick={() => handleClick(product?.id)} className="card-title sm:text-xl text-sm font-semibold cursor-pointer hover:text-primary">{product?.name}</h2>
                 <p className='font-bold text-primary flex items-center sm:text-xl text-sm'>৳{product?.discounted_price
                 }<span className='text-sm ml-2 text-secondary '> <del>
                     {product?.original_price}
