@@ -92,7 +92,7 @@ const UsersWorkout = () => {
             })
     }
 
-    console.log(packageSchedule);
+    // console.log(packageSchedule);
 
     return (
         <div className="grid mt-16 grid-cols-1 lg:grid-cols-2">
