@@ -16,7 +16,7 @@ import DashLink from '../hooks/DashboardCustomLink/DashLink';
 
 const Dashboard = () => {
     const { logout, userRole } = AuthUser()
-    console.log(userRole)
+    // console.log(userRole)
     return (
         <>
             <SharedNav />
@@ -100,8 +100,16 @@ const Dashboard = () => {
 
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                        <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
+                                        <DashLink to='/dashboard/user-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/user-profile'}> Profile</DashLink>
+                                    </div>
+                                </div>
+
+
+                                <div className='flex items-center justify-center mb-4'>
+                                    <div className='hover:text-primary'>
+                                        <DashLink to='/dashboard/user-package'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/user-package'}> Workout</DashLink>
                                     </div>
                                 </div>
 
@@ -125,22 +133,22 @@ const Dashboard = () => {
 
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                         <DashLink to='/dashboard/accounts-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Profile</DashLink>
+                                        <DashLink to='/dashboard/trainer-profile'> <FaUser className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/trainer-profile'}> Profile</DashLink>
                                     </div>
                                 </div>
 
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                        <DashLink to='/dashboard/accounts-profile'> <AiOutlineForm className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Form</DashLink>
+                                        <DashLink to='/dashboard/trainer-form'> <AiOutlineForm className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/trainer-form'}> Form</DashLink>
                                     </div>
                                 </div>
 
                                 <div className='flex items-center justify-center mb-4'>
                                     <div className='hover:text-primary'>
-                                        <DashLink to='/dashboard/accounts-profile'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
-                                        <DashLink className='' to={'/dashboard/accounts-profile'}> Packages</DashLink>
+                                        <DashLink to='/dashboard/trainer-package'> <HiShoppingCart className='mx-auto xl:text-xl' /></DashLink>
+                                        <DashLink className='' to={'/dashboard/trainer-package'}> Packages</DashLink>
                                     </div>
                                 </div>
 
