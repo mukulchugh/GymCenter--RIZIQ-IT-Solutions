@@ -71,7 +71,7 @@ const StudentList = () => {
                                                 <td><img className='w-10 rounded-full h-10' src={student?.profile_image
                                                 } alt=""/></td>
                                                 <td>{student?.name}</td>
-                                                <td>{student?.email}</td>
+                                            <td>{student?.email}</td>
                                                 <td>{student?.phone}</td>
                                                 <td><button className='btn lg:btn-sm btn-xs btn-warning text-white'>Details</button></td>
                                             </tr>

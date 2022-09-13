@@ -34,7 +34,7 @@ const SharedNav = () => {
                     <div className="flex sm:justify-end justify-evenly text-white py-2">
 
                         <Link className='hover:text-primary' to="#"><BsBell ></BsBell></Link>
-                        <Link to="#"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
+                        <Link to="/cart"><BsCart3 className='ml-8 hover:text-primary'></BsCart3></Link>
                         <Link to="#"><HiOutlineUser className='ml-8 hover:text-primary'></HiOutlineUser></Link>
                         {
                             userRole === 'accountant' && <MdOutlineSpaceDashboard onClick={handleDashboardAccounts} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
@@ -43,7 +43,7 @@ const SharedNav = () => {
                             userRole === 'user' && <MdOutlineSpaceDashboard onClick={handleDashboardUsers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                         {
-                            userRole === 'admin' && <MdOutlineSpaceDashboard onClick={handleDashboardTrainers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
+                            userRole === 'trainer' && <MdOutlineSpaceDashboard onClick={handleDashboardTrainers} className='ml-8 cursor-pointer hover:text-primary'></MdOutlineSpaceDashboard>
                         }
                     </div>
                 </div>

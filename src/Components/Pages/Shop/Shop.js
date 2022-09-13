@@ -47,6 +47,7 @@ const Shop = () => {
             })
     }, [pageNumber, productsCount])
 
+   
 
     let active = pageNumber;
     let button = [];
