@@ -36,6 +36,7 @@ import UsersProfile from './Dashboard/UserDashboard/UsersProfile/UsersProfile';
 import UsersWorkout from './Dashboard/UserDashboard/UsersWorkout/UsersWorkout';
 import TrainerProfile from './Dashboard/TrainerDashboard/TrainerProfile/TrainerProfile';
 import PackagePaymentCard from './Components/Pages/PaymentCard/PackagePaymentCard/PackagePaymentCard';
+import AllSchedule from './Dashboard/TrainerDashboard/AllSchedule/AllSchedule';
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -81,6 +82,7 @@ function App() {
           <Route path="trainer-settings" element={<TrainerSettings />} />
           <Route path="trainer-package" element={<TrainerPackages />} />
           <Route path="trainer-profile" element={<TrainerProfile />} />
+          <Route path="all-schedule" element={<AllSchedule />} />
         </Route>
 
       </Routes>
