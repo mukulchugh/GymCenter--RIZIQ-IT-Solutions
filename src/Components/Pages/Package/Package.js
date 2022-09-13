@@ -73,7 +73,7 @@ const Package = () => {
 
                             <div className="card-body pt-0">
                                 <div className='text-center'>
-                                    <h1 className="text-2xl font-bold text-primary mx-auto flex justify-center items-end">৳ {item?.discounted_price.split('.')[0]}/<span className='text-gray-500 font-normal text-sm'>
+                                    <h1 className="text-2xl font-bold text-primary mx-auto flex justify-center items-end">৳ {item?.discounted_price?.split('.')[0]}/<span className='text-gray-500 font-normal text-sm'>
                                         {
                                             item?.duration_days === 30 && <h2>30Days</h2>
                                         }

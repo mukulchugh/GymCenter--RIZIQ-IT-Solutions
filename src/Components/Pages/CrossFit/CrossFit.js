@@ -16,7 +16,7 @@ const CrossFit = () => {
                 <div className='grid md:grid-cols-2 gap-10  mt-16'>
                     <div className='flex items-center '>
                         <div>
-                            <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CROSSFIT?</h1>
+                            <h1 className='text-3xl text-primary font-extrabold mb-5'>WHAT IS CrossFit?</h1>
                             <p className='font-bold lg:w-[90%] text-justify'>CrossFit is a strength & conditioning program based on general physical preparedness (GPP). In the CrossFit method of training, real life movements like running, lifting, swimming, cycling, carrying loads to distance, climbing, pushing or pulling heavy objects etc. are programmed into effective and fun workouts designed by CrossFit trainers. </p>
 
                             <button className='custom-btn btn-15 mt-5 p-3'>see more</button>

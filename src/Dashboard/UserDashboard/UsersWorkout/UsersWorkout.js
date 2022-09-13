@@ -28,7 +28,10 @@ const UsersWorkout = () => {
             }
         })
             .then(res => res.json())
-            .then(data => setPackageSchedule(data))
+            .then(data => {
+                console.log(data)
+                setPackageSchedule(data)
+            })
     }, [packageId, token])
 
     useEffect(() => {
@@ -41,7 +44,7 @@ const UsersWorkout = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setPurchedPackages(data);
             })
     }, [])

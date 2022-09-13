@@ -16,6 +16,7 @@ const PackagePaymentCard = () => {
     const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const [openTransaction, setOpenTransaction] = useState(false);
     const [openBkash, setOpenBkash] = useState(false);
+    const [openNagad, setOpenNagad] = useState(false);
     const [packages, setPackages] = useState({});
     const { id } = useParams()
 
@@ -29,9 +30,9 @@ const PackagePaymentCard = () => {
             .then(data => {
                 setPackages(data)
             })
-    }, [])
+    }, [id, token])
 
-    console.log(packages)
+    // console.log(packages)
 
     // confirm order
     const handleConfirmOrder = (data) => {
@@ -44,12 +45,13 @@ const PackagePaymentCard = () => {
             },
             body: JSON.stringify({
                 package_id: [id],
-                payment_type: data.banking || 'cash_on_delivery',
+                payment_type: (openBkash || openNagad) ? 'mobile_banking' : 'cash_on_delivery',
                 transaction_number: data.transaction || ""
             })
         })
             .then((res) => res.json())
             .then(data => {
+                console.log(data)
                 if (!data.success) {
                     if (data.error === 'Something went wrong') {
                         toast.error('User with this email already exists.')
@@ -65,7 +67,7 @@ const PackagePaymentCard = () => {
             .catch(err => console.log(err))
     }
 
-
+    // console.log(packages)
     return (
         <>
             <SharedNav />
@@ -78,21 +80,10 @@ const PackagePaymentCard = () => {
                     <div className='md:w-[30%] md:order-2 order-1 mb-5'>
                         <div className=' shadow p-5'>
                             <h2 className='text-xl font-semibold mb-3'>Order Summery</h2>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Quantity</h2>
-                                <h2> Items</h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
+                            <div className='flex justify-between '>
                                 <h2 className='font-semibold'>Total Amount</h2>
-                                <h2>৳ </h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Delivery</h2>
-                                <h2>৳ 40</h2>
-                            </div>
-                            <div className='flex justify-between mb-2'>
-                                <h2 className='font-semibold'>Subtotal</h2>
-                                <h2>৳ </h2>
+                                <h2>৳ {packages?.discounted_price
+                                }</h2>
                             </div>
                         </div>
                     </div>
@@ -101,7 +92,11 @@ const PackagePaymentCard = () => {
                     <div className='md:w-[70%] shadow p-5  md:order-1 order-2'>
                         <div className='grid grid-cols-3 lg:gap-7 gap-3'>
                             <div
-                                onClick={() => setOpenTransaction(false)}
+                                onClick={() => {
+                                    setOpenBkash(false)
+                                    setOpenNagad(false)
+                                    setOpenTransaction(false)
+                                }}
                                 className='bg-accent rounded-xl border flex justify-center items-center cursor-pointer py-3 px-1'>
                                 <div>
                                     <img className='mx-auto lg:w-12 w-7' src="https://laz-img-cdn.alicdn.com/tfs/TB1utb_r8jTBKNjSZFwXXcG4XXa-80-80.png" alt="" />
@@ -112,6 +107,7 @@ const PackagePaymentCard = () => {
                                 onClick={() => {
                                     setOpenTransaction(true)
                                     setOpenBkash(true)
+                                    setOpenNagad(false)
                                 }}
                                 className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
                                 <img className='lg:w-32 w-20' src={bkash} alt="" />
@@ -120,6 +116,7 @@ const PackagePaymentCard = () => {
                                 onClick={() => {
                                     setOpenTransaction(true)
                                     setOpenBkash(false)
+                                    setOpenNagad(true)
                                 }}
                                 className='bg-accent rounded-xl border flex justify-center items-center  cursor-pointer py-3  px-1'>
                                 <img className='lg:w-32 w-20' src={nagad} alt="" />
