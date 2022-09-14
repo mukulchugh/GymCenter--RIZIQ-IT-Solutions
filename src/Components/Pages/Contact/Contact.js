@@ -29,8 +29,8 @@ const Contact = () => {
                             <p>email@mailserver.com</p>
 
                             <h2 className='text-xl font-bold uppercase mt-5'>Call us</h2>
-                            <p>+000-0-000-000</p>
-                            <p>+000-0-000-000</p>
+                            <p>88018475-46080</p>
+                            <p>88018475-46081</p>
                         </div>
 
 

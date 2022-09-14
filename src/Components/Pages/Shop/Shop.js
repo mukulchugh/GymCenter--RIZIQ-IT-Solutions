@@ -47,7 +47,7 @@ const Shop = () => {
             })
     }, [pageNumber, productsCount])
 
-   
+
 
     let active = pageNumber;
     let button = [];
@@ -78,36 +78,40 @@ const Shop = () => {
 
 
             <div className='mid-container'>
-                <div className='flex justify-end'>
-                    <div className="form-control my-8">
-                        <div className="input-group">
-                            <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input input-bordered focus:outline-none w-72" />
-                            <button
-                                onClick={handleSearch}
-                                className="btn btn-square">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+                
                 {
                     loading ? <Loading /> :
-                        <div className='mb-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
-                            {
-                                searchResult.length >= 1 ? (
-                                    searchResult?.map(product => <Products
-                                        key={product._id}
-                                        product={product}
-                                    ></Products>)
-                                ) : (
-                                    products?.data?.map(product => <Products
-                                        key={product._id}
-                                        product={product}
-                                    ></Products>)
-                                )
-                            }
-                        </div>
+                        <>
+                            <div className='flex justify-end'>
+                                <div className="form-control my-8">
+                                    <div className="input-group">
+                                        <input onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Search…" className="input input-bordered focus:outline-none w-72" />
+                                        <button
+                                            onClick={handleSearch}
+                                            className="btn btn-square">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className='mb-16 grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-6 gap-4'>
+                                {
+                                    searchResult.length >= 1 ? (
+                                        searchResult?.map(product => <Products
+                                            key={product._id}
+                                            product={product}
+                                        ></Products>)
+                                    ) : (
+                                        products?.data?.map(product => <Products
+                                            key={product._id}
+                                            product={product}
+                                        ></Products>)
+                                    )
+                                }
+                            </div>
+                        </>
                 }
 
                 <div className="flex btn-group mb-36">
