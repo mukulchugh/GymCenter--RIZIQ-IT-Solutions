@@ -22,11 +22,12 @@ const Contact = () => {
                                 Our experts are available to answer any questions you might have. We’ve got the answers.</p>
 
                             <h2 className='text-xl font-bold uppercase mt-3'>Visit us</h2>
-                            <p>Office no. G-02. Building 1, Ground Floor. Dubai</p>
-                            <p>Dubai Media City – Dubai</p>
+                            <p>Green Grandeur (8th floor) 58/E,
+                                Kemal Ataturk Avenue</p>
+                            <p>Banani, Dhaka, Bangladesh</p>
 
                             <h2 className='text-xl font-bold uppercase mt-5'>Email us</h2>
-                            <p>email@mailserver.com</p>
+                            <p>crossfitassemble@gmail.com</p>
 
                             <h2 className='text-xl font-bold uppercase mt-5'>Call us</h2>
                             <p>88018475-46080</p>
@@ -52,9 +53,9 @@ const Contact = () => {
 
                             <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Office</h1>
-                                <p className='mb-5 text-sm'>Office no. G-02.<br />
-                                    Building 1, Ground Floor.<br />
-                                    Dubai Media City - Dubai
+                                <p className='mb-5 text-sm'>Green Grandeur (8th floor) 58/E,
+                                Kemal Ataturk Avenue
+                                    Banani, Dhaka, Bangladesh
                                 </p>
                                 <span className='font-bold text-sm'>
                                     Available Everyday<br />
@@ -75,21 +76,19 @@ const Contact = () => {
                             <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Contact Us</h1>
                                 <h1 className='mb-2 text-lg'>Call Us</h1>
-                                <p className='text-sm'>+000-0-000-0000<br />
-                                    +000-0-000-0000</p>
+                                <p className='text-sm'>88018475-46080<br />
+                                    88018475-46081</p>
                                 <h1 className='mt-2 mb-1 text-lg'>Email Us</h1>
-                                <p className='text-sm'>info@mailserver.com</p>
+                                <p className='text-sm'>crossfitassemble@gmail.com</p>
                                 <h1 className='mt-2 text-lg'>Fax Us</h1>
-                                <p className='text-sm'>+000-0-000-0000<br />
-                                    +000-0-000-0000</p>
+                                <p className='text-sm'>88018475-46080<br />
+                                    88018475-46081</p>
                             </div>
                             <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Services</h1>
                                 <p className='text-sm mb-2'>Digital Management</p>
                                 <p className='text-sm'>Media Art Production</p>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

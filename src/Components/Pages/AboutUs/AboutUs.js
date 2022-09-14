@@ -17,26 +17,74 @@ const AboutUs = () => {
                     <div className='border-l-[3px] border-warning mt-20 py-3'>
                         <div className='ml-3'>
                             <h1 className='text-2xl font-bold mb-5'><span className='border-b-[3px] border-warning'>Why Us</span> </h1>
-                            <p className='text-justify'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                            <p className='text-justify'>We are the first CrossFit affiliated box in
+                                Bangladesh. We offer an all-around guidance to
+                                maintain a healthy lifestyle which encompasses
+                                physical training, nutrition coaching, stress
+                                management, sleep and support system.</p>
                         </div>
                     </div>
 
                     <div className='border-r-[3px] border-indigo-400 mt-20 py-3'>
                         <div className='mr-3'>
                             <h1 className='text-2xl font-bold mb-5  text-end'><span className='border-b-[3px] border-indigo-400'>Mission &  Vision</span> </h1>
-                            <p className='text-justify'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                            <p className='text-justify '>We want to forge a
+                                community through
+                                elite functional fitness
+                                that drives people to
+                                be fit and live a healthy
+                                life.We envision to be a hub of
+                                health & fitness; a place
+                                people can rely on to reach
+                                their goals and a platform
+                                where they can share their
+                                experiences that will
+                                enlighten the path for
+                                others.</p>
                         </div>
                     </div>
                     <div className='border-l-[3px] border-warning mt-20 py-3 mb-24'>
                         <div className='ml-3'>
                             <h1 className='text-2xl font-bold mb-5'><span className='border-b-[3px] border-warning'>Core Values</span> </h1>
-                            <p className='text-justify'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                            <p className='text-justify'>
+                                <h2 className='font-semibold  mt-2 text-[18px]'>Cooperation</h2>
+                                <p>Cooperation
+                                    We have created a synergy by
+                                    bridging between coaches
+                                    and clients to reach individual
+                                    and collective goals.</p>
+                            </p>
+                            <h2 className='font-semibold mt-3 text-xl text-[18px]' >Growth</h2>
+                            <p>Growth
+                                Experience makes one grow.
+                                Our premium lifestyle
+                                coaching is designed to
+                                navigate your journey towards
+                                personal development.
+                            </p>
+                            <h2 className='font-semibold mt-3 text-xl text-[18px]' >Effectiveness</h2>
+                            <p>Effectiveness
+                                The results do the talking so
+                                we can focus on coaching.
+                            </p>
+
+                            <h2 className='font-semibold mt-3 text-xl text-[18px]' >Effectiveness</h2>
+                            <p>Effectiveness
+                                The results do the talking so
+                                we can focus on coaching.
+                            </p>
+                            <h2 className='font-semibold mt-3 text-xl text-[18px]' >Community</h2>
+                            <p>It's at the heart of what we
+                                do. An energetic group with
+                                similar goals makes the
+                                journey worthwhile.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 

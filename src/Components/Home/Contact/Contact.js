@@ -27,7 +27,8 @@ const Contact = () => {
                             </div>
                             <div className='grid gap-2'>
                                 <h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2>
-                                <h2 className=' font-semibold text-sm'>fb.com/CrossFitBoxDHK</h2>
+                                <a target='blank' className=' font-bold ' href="https://www.facebook.com/crossfitassemblebd/">CrossFitassemblebd</a>
+
                                 <h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2>
                             </div>
                         </div>
