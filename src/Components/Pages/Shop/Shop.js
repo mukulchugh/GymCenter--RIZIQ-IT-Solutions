@@ -65,7 +65,7 @@ const Shop = () => {
     return (
         <>
             <SharedNav />
-            <div className='bg-img lg:py-28 md:py-28 py-20'>
+            <div className='bg-img lg:py-32 md:py-28 py-20'>
                 <div className=" breadcrumbs mid-container flex justify-center">
                     <ul className='font-semibold  text-white flex items-center justify-center gap-2'>
                         <Link to='/' className='hover:text-primary'><a >Home</a></Link>

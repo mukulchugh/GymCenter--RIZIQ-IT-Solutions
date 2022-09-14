@@ -36,7 +36,7 @@ const TrainersHome = () => {
             .then(res => res.json())
             .then(data => setPackages(data))
 
-    }, [])
+    }, [token])
 
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const TrainersHome = () => {
         })
             .then(res => res.json())
             .then(data => setPackageDetails(data))
-    }, [])
+    }, [token, packageId])
 
     const handlePackageClick = (id) => {
         setPackageId(id)
@@ -129,7 +129,6 @@ const TrainersHome = () => {
                                                     <h1>Total Class: {pack?.package?.total_class}</h1>
                                                     <h1>Total Consultation: {pack?.package?.total_consultation}</h1>
                                                 </div>
-
                                             </div>
                                             <BsFillArrowRightCircleFill className='h-8 cursor-pointer w-8' />
                                         </div>
