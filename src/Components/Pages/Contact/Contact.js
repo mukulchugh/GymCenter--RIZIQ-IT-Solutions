@@ -2,6 +2,11 @@ import React from 'react';
 import SharedNav from '../Shared/SharedNav';
 import logo from '../../../assets/Image/Logo/logo2.png'
 import img from '../../../assets/Image/contact/Contact.png'
+import { GrInstagram } from 'react-icons/gr';
+import { ImFacebook2 } from 'react-icons/im';
+import { MdOutlineEmail } from 'react-icons/md';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { IoCallSharp } from 'react-icons/io5';
 import Form from './Form';
 
 const Contact = () => {
@@ -26,12 +31,23 @@ const Contact = () => {
                                 Kemal Ataturk Avenue</p>
                             <p>Banani, Dhaka, Bangladesh</p>
 
-                            <h2 className='text-xl font-bold uppercase mt-5'>Email us</h2>
-                            <p>crossfitassemble@gmail.com</p>
-
                             <h2 className='text-xl font-bold uppercase mt-5'>Call us</h2>
-                            <p>88018475-46080</p>
-                            <p>88018475-46081</p>
+                            <p className='flex gap-1 items-center mt-2'><IoLogoWhatsapp className=' ' />88018475-46080</p>
+                            <p className='flex gap-1 items-center mt-2'><IoCallSharp className=' ' />88018475-46081</p>
+
+                            <h2 className='text-xl font-bold uppercase mt-5'>Email us</h2>
+                            <p className='flex gap-1 items-center mt-2'><MdOutlineEmail className='text-xl ' />info@crossfitassemble.com</p>
+
+                            <h2 className='text-xl font-bold uppercase mt-5'>Follow us</h2>
+                            <div className='flex items-center gap-2 mt-2'>
+                                <ImFacebook2 /><a target='blank' className=' font-bold ' href="https://www.facebook.com/crossfitassemblebd/">CrossFitassemblebd</a>
+                            </div>
+
+                            <div className='flex items-center gap-2 mt-2'>
+                                <GrInstagram /><a target='blank' className=' font-bold ' href="https://www.instagram.com/crossfitassemble/">Instagram</a>
+                            </div>
+
+
                         </div>
 
 
@@ -54,7 +70,7 @@ const Contact = () => {
                             <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Office</h1>
                                 <p className='mb-5 text-sm'>Green Grandeur (8th floor) 58/E,
-                                Kemal Ataturk Avenue
+                                    Kemal Ataturk Avenue
                                     Banani, Dhaka, Bangladesh
                                 </p>
                                 <span className='font-bold text-sm'>
@@ -79,10 +95,15 @@ const Contact = () => {
                                 <p className='text-sm'>88018475-46080<br />
                                     88018475-46081</p>
                                 <h1 className='mt-2 mb-1 text-lg'>Email Us</h1>
-                                <p className='text-sm'>crossfitassemble@gmail.com</p>
+                                <p className='text-sm'>info@crossfitassemble.com</p>
                                 <h1 className='mt-2 text-lg'>Fax Us</h1>
-                                <p className='text-sm'>88018475-46080<br />
-                                    88018475-46081</p>
+                                <div className='flex items-center gap-2 mt-2 text-sm'>
+                                    <ImFacebook2 /><a target='blank' className=' ' href="https://www.facebook.com/crossfitassemblebd/">CrossFitassemblebd</a>
+                                </div>
+
+                                <div className='flex items-center gap-2 mt-2 text-sm'>
+                                    <GrInstagram /><a target='blank' className='' href="https://www.instagram.com/crossfitassemble/">Instagram</a>
+                                </div>
                             </div>
                             <div>
                                 <h1 className='text-2xl mb-3 font-semibold'>Services</h1>

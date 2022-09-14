@@ -7,6 +7,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { RiWhatsappFill } from "react-icons/ri";
 import { IoCall } from "react-icons/io5";
+import { GrInstagram } from "react-icons/gr";
 
 const Contact = () => {
     return (
@@ -23,13 +24,13 @@ const Contact = () => {
                             <div className='grid gap-2 mt-1'>
                                 <RiCustomerService2Fill className='text-primary' />
                                 <BsFacebook className='text-primary' />
-                                <BsGlobe2 className='text-primary' />
+                                <GrInstagram className='text-primary' />
                             </div>
                             <div className='grid gap-2'>
                                 <h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2>
                                 <a target='blank' className=' font-bold ' href="https://www.facebook.com/crossfitassemblebd/">CrossFitassemblebd</a>
 
-                                <h2 className=' font-semibold text-sm'>@CrossFitBoxDHK</h2>
+                                <a target='blank' className=' font-bold ' href="https://www.instagram.com/crossfitassemble/">Instagram</a>
                             </div>
                         </div>
                         {/* <span className='flex items-center justify-center  gap-3' ><MdQueryBuilder className='text-primary text-xl' /><h2 className=' font-semibold text-sm'>7:00AM To 10:30PM</h2></span>

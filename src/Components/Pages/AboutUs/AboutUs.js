@@ -10,9 +10,14 @@ const AboutUs = () => {
             <img className="banner -mt-[68px] z-0 w-full flex items-center justify-center flex-col" src={img} alt="" />
             <div>
                 <div className='mid-container'>
-                    <h1 className='text-center text-5xl font-bold mb-16 mt-10 mx-auto'>Lorem Ipsum is simple dummy text of the printing</h1>
+                    <h1 className='text-center text-5xl font-bold mb-16 mt-10 mx-auto'>Let's know about our CrossFit Assemble</h1>
 
-                    <p className='text-center text-secondary mx-auto text-justify'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                    <p className='text-center text-secondary mx-auto text-justify'>CrossFit is a Strength & Conditioning Program
+                        that’s based on functional movements. The
+                        workouts are programmed in combination of
+                        weightlifting, gymnastics and mono structural
+                        metabolic conditioning. The intensity is high and
+                        workouts are different everyday.</p>
 
                     <div className='border-l-[3px] border-warning mt-20 py-3'>
                         <div className='ml-3'>
