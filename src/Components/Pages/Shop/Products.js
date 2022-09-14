@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthUser from '../../../hooks/AuthUser/AuthUser';
 
 const Products = ({ product }) => {
-
+    const navigate = useNavigate()
     const { token } = AuthUser()
     const goToDetails = useNavigate();
     const handleClick = () => {
@@ -25,9 +25,13 @@ const Products = ({ product }) => {
             })
         }).then(res => res.json())
             .then(data => {
+                console.log(data)
                 if (data?.success) {
                     toast.success("Product add to cart Successfully");
-                } else {
+                } else if (data?.code === 'token_not_valid') {
+                    navigate('/login')
+                }
+                else {
                     toast.error("Product already added to cart");
                 }
                 console.log(data)
