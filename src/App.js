@@ -37,6 +37,7 @@ import UsersWorkout from './Dashboard/UserDashboard/UsersWorkout/UsersWorkout';
 import TrainerProfile from './Dashboard/TrainerDashboard/TrainerProfile/TrainerProfile';
 import PackagePaymentCard from './Components/Pages/PaymentCard/PackagePaymentCard/PackagePaymentCard';
 import AllSchedule from './Dashboard/TrainerDashboard/AllSchedule/AllSchedule';
+import Careers from "./Components/Pages/Careers/Careers";
 
 function App() {
   // const [location, setLocation] = useState(window.location.pathname);
@@ -48,43 +49,173 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<AboutUs />} />
-        <Route path='/crossFit' element={<CrossFit />} />
-        <Route path='/programs' element={<Fitness />} />
-        <Route path='/trainers' element={<Trainers />} />
-        <Route path='/testimonials' element={<Testimonials />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/shop' element={<Shop />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/login' element={<FigmaLogin />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/cart' element={<CartProduct />} />
-        <Route path='/checkout' element={<PaymentCard />} />
-        <Route path='/payment/:id' element={<PackagePaymentCard />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/about"
+          element={<AboutUs />}
+        />
+        <Route
+          path="/crossFit"
+          element={<CrossFit />}
+        />
+        <Route
+          path="/programs"
+          element={<Fitness />}
+        />
+        <Route
+          path="/careers"
+          element={<Careers />}
+        />
+        <Route
+          path="/trainers"
+          element={<Trainers />}
+        />
+        <Route
+          path="/testimonials"
+          element={<Testimonials />}
+        />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/login"
+          element={<FigmaLogin />}
+        />
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+        <Route
+          path="/cart"
+          element={<CartProduct />}
+        />
+        <Route
+          path="/checkout"
+          element={<PaymentCard />}
+        />
+        <Route
+          path="/payment/:id"
+          element={<PackagePaymentCard />}
+        />
+        <Route path="*" element={<NotFound />} />
 
-        <Route path="/product/:productId" element={<ProductDetails />}></Route>
+        <Route
+          path="/product/:productId"
+          element={<ProductDetails />}
+        ></Route>
 
-        <Route path="dashboard" element={<Dashboard />}>
-          <Route path="accounts-home" element={<RequireAccounts><AccountsHome /></RequireAccounts>} />
-          <Route path="accounts-profile" element={<RequireAccounts><AccountsProfile /></RequireAccounts>} />
-          <Route path="accounts-salary" element={<RequireAccounts><Salary /></RequireAccounts>} />
-          <Route path="manage-form" element={<RequireAccounts><ManageForm /></RequireAccounts>} />
-          <Route path="manage-orders" element={<RequireAccounts><Orders /></RequireAccounts>} />
-          <Route path="accounts-income" element={<RequireAccounts><Incomes /></RequireAccounts>} />
-          <Route path="accounts-expense" element={<RequireAccounts><Expense /></RequireAccounts>} />
-          <Route path="users-home" element={<RequireUser><UsersHome /></RequireUser>} />
-          <Route path="user-profile" element={<RequireUser><UsersProfile /></RequireUser>} />
-          <Route path="user-package" element={<RequireUser><UsersWorkout /></RequireUser>} />
-          <Route path="trainers-home" element={<TrainersHome />} />
-          <Route path="students" element={<StudentList />} />
-          <Route path="trainer-settings" element={<TrainerSettings />} />
-          <Route path="trainer-package" element={<TrainerPackages />} />
-          <Route path="trainer-profile" element={<TrainerProfile />} />
-          <Route path="all-schedule" element={<AllSchedule />} />
+        <Route
+          path="dashboard"
+          element={<Dashboard />}
+        >
+          <Route
+            path="accounts-home"
+            element={
+              <RequireAccounts>
+                <AccountsHome />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="accounts-profile"
+            element={
+              <RequireAccounts>
+                <AccountsProfile />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="accounts-salary"
+            element={
+              <RequireAccounts>
+                <Salary />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="manage-form"
+            element={
+              <RequireAccounts>
+                <ManageForm />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="manage-orders"
+            element={
+              <RequireAccounts>
+                <Orders />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="accounts-income"
+            element={
+              <RequireAccounts>
+                <Incomes />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="accounts-expense"
+            element={
+              <RequireAccounts>
+                <Expense />
+              </RequireAccounts>
+            }
+          />
+          <Route
+            path="users-home"
+            element={
+              <RequireUser>
+                <UsersHome />
+              </RequireUser>
+            }
+          />
+          <Route
+            path="user-profile"
+            element={
+              <RequireUser>
+                <UsersProfile />
+              </RequireUser>
+            }
+          />
+          <Route
+            path="user-package"
+            element={
+              <RequireUser>
+                <UsersWorkout />
+              </RequireUser>
+            }
+          />
+          <Route
+            path="trainers-home"
+            element={<TrainersHome />}
+          />
+          <Route
+            path="students"
+            element={<StudentList />}
+          />
+          <Route
+            path="trainer-settings"
+            element={<TrainerSettings />}
+          />
+          <Route
+            path="trainer-package"
+            element={<TrainerPackages />}
+          />
+          <Route
+            path="trainer-profile"
+            element={<TrainerProfile />}
+          />
+          <Route
+            path="all-schedule"
+            element={<AllSchedule />}
+          />
         </Route>
-
       </Routes>
       {/* {
         location === '/' || '/about' || '/crossFit' || '/programs' || '/trainers' || '/testimonials' || '/blog' || '/shop' || '/contact' ? <Footer /> : null
