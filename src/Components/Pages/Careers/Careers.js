@@ -73,11 +73,124 @@ const Careers = () => {
 
 export default Careers;
 
+// const Accordion = ({ title, description }) => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleAccordion = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   return (
+//     <div className="bg-white shadow-md rounded-lg mt-4">
+//       <div
+//         className="border-b border-gray-200"
+//         onClick={toggleAccordion}
+//         role="button"
+//       >
+//         <button className="flex items-center justify-between w-full px-4 py-3 text-left focus:outline-none">
+//           <span className="text-lg font-medium text-gray-800">
+//             {title}
+//           </span>
+//           <svg
+//             className={`w-4 h-4 text-gray-600 transition-transform ${
+//               isOpen ? "transform rotate-180" : ""
+//             }`}
+//             viewBox="0 0 20 20"
+//             fill="currentColor"
+//           >
+//             <path
+//               fillRule="evenodd"
+//               d="M6 8a1 1 0 0 1 1.7-.7l3.59 3.58L16.29 7.3a1 1 0 1 1 1.42 1.4l-6 6a1 1 0 0 1-1.42 0l-4-4A1 1 0 0 1 6 8z"
+//             />
+//           </svg>
+//         </button>
+//       </div>
+//       {isOpen && (
+//         <div className="p-4">
+//           <h4
+//             className="font-bold 
+//             text-gray-700
+//           "
+//           >
+//             About
+//           </h4>
+//           <p className="text-gray-700">
+//             {description.content}
+//           </p>
+//           <h4
+//             className="mt-4
+//             font-bold
+//           "
+//           >
+//             Required Skills
+//           </h4>
+//           <ul className="list-disc list-inside text-gray-700">
+//             {description.requiredSkills.map(
+//               (skill) => (
+//                 <li>{skill}</li>
+//               )
+//             )}
+//           </ul>
+
+//           <h4 className="mt-4 font-bold">
+//             Qualifications
+//           </h4>
+//           <ul className="list-disc list-inside text-gray-700">
+//             {description.qualifications.map(
+//               (qualification) => (
+//                 <li>{qualification}</li>
+//               )
+//             )}
+//           </ul>
+
+//           <h4 className="mt-4 font-bold">
+//             Other Details
+//           </h4>
+//           <ul className="list-disc list-inside text-gray-700">
+//             <li>
+//               <b>Experience: </b>
+//               {
+//                 description.otherDetails
+//                   .experience
+//               }
+//             </li>
+//             {/* compensation: "10 LPA to 12 LPA",
+//             experience: "5-8 Years", position:
+//             "Full time", contact: "Please send
+//             your resume to
+//             marketingcareers@example.com", */}
+//             <li>
+//               <b>Compensation: </b>
+//               {
+//                 description.otherDetails
+//                   .compensation
+//               }
+//             </li>
+//             <li>
+//               <b>Position: </b>
+//               {description.otherDetails.position}
+//             </li>
+//             <p className="mt-4">
+//               {description.otherDetails.contact}
+//             </p>
+//           </ul>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
 const Accordion = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleApply = () => {
+    // Implement your logic for applying to the job here
+    // For example, you can open a modal or redirect to an application page
+    console.log(`Applying for job: ${title}`);
   };
 
   return (
@@ -107,27 +220,19 @@ const Accordion = ({ title, description }) => {
       </div>
       {isOpen && (
         <div className="p-4">
-          <h4
-            className="font-bold 
-            text-gray-700
-          "
-          >
+          <h4 className="font-bold text-gray-700">
             About
           </h4>
           <p className="text-gray-700">
             {description.content}
           </p>
-          <h4
-            className="mt-4
-            font-bold
-          "
-          >
+          <h4 className="mt-4 font-bold">
             Required Skills
           </h4>
           <ul className="list-disc list-inside text-gray-700">
             {description.requiredSkills.map(
               (skill) => (
-                <li>{skill}</li>
+                <li key={skill}>{skill}</li>
               )
             )}
           </ul>
@@ -138,7 +243,9 @@ const Accordion = ({ title, description }) => {
           <ul className="list-disc list-inside text-gray-700">
             {description.qualifications.map(
               (qualification) => (
-                <li>{qualification}</li>
+                <li key={qualification}>
+                  {qualification}
+                </li>
               )
             )}
           </ul>
@@ -154,11 +261,6 @@ const Accordion = ({ title, description }) => {
                   .experience
               }
             </li>
-            {/* compensation: "10 LPA to 12 LPA",
-            experience: "5-8 Years", position:
-            "Full time", contact: "Please send
-            your resume to
-            marketingcareers@example.com", */}
             <li>
               <b>Compensation: </b>
               {
@@ -174,11 +276,241 @@ const Accordion = ({ title, description }) => {
               {description.otherDetails.contact}
             </p>
           </ul>
+
+          <ModalDialog />
         </div>
       )}
     </div>
   );
 };
+
+const ModalDialog = () => {
+  const [isDialogOpen, setIsDialogOpen] =
+    useState(false);
+  const [jobApplication, setJobApplication] =
+    useState({
+      name: "",
+      email: "",
+      phone: "",
+      resume: "",
+      coverLetter: "",
+      linkedin: "",
+      github: "",
+    });
+
+  const [submitSuccess, setSubmitSuccess] =
+    useState(true);
+
+  const handleShowDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setIsDialogOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setJobApplication((prevApplication) => ({
+      ...prevApplication,
+      [name]: value,
+    }));
+  };
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setJobApplication((prevApplication) => ({
+        ...prevApplication,
+        resume: event.target.result,
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleConfirm = (e) => {
+    e.preventDefault();
+
+    setSubmitSuccess(!submitSuccess);
+    console.log(jobApplication);
+
+    setTimeout(() => {
+      setIsDialogOpen(false);
+    }, 1000);
+  };
+
+  return (
+    <div>
+      <button
+        id="showDialog"
+        onClick={handleShowDialog}
+        className="btn btn-primary"
+      >
+        Apply
+      </button>
+
+      {isDialogOpen && (
+        <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50">
+          <dialog
+            id="favDialog"
+            open
+            className="bg-white rounded-lg shadow-lg w-2/4"
+          >
+            {!submitSuccess ? (
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-2xl font-bold text-green-500">
+                  Application Submitted
+                  Successfully
+                </h1>
+              </div>
+            ) : (
+              <form className="p-6">
+                <p>
+                  <label className="block mb-2">
+                    Name:
+                    <input
+                      type="text"
+                      name="name"
+                      value={jobApplication.name}
+                      onChange={handleInputChange}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+                    "
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label className="block mb-2">
+                    Email:
+                    <input
+                      type="email"
+                      name="email"
+                      value={jobApplication.email}
+                      onChange={handleInputChange}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+                    "
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label className="block mb-2">
+                    Phone:
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={jobApplication.phone}
+                      onChange={handleInputChange}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+                    "
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label className="block mb-2">
+                    Resume:
+                    <input
+                      type="file"
+                      name="resume"
+                      accept=".pdf,.doc,.docx"
+                      onChange={handleFileUpload}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+                    "
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label className="block mb-2">
+                    Cover Letter:
+                    <textarea
+                      name="coverLetter"
+                      value={
+                        jobApplication.coverLetter
+                      }
+                      onChange={handleInputChange}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+
+                    "
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label className="block mb-2">
+                    LinkedIn Profile:
+                    <input
+                      type="url"
+                      name="linkedin"
+                      value={
+                        jobApplication.linkedin
+                      }
+                      onChange={handleInputChange}
+                      className="block mt-1 w-full form-input
+                      border-gray-300 
+                      focus:border-indigo-300
+                      focus:ring focus:ring-indigo-200
+                      focus:ring-opacity-50
+                      border
+
+                    "
+                    />
+                  </label>
+                </p>
+
+                <div className="flex justify-end mt-4">
+                  <button
+                    type="button"
+                    onClick={handleCloseDialog}
+                    className="mr-2 btn btn-secondary"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    onClick={handleConfirm}
+                    className="btn btn-primary"
+                  >
+                    Confirm
+                  </button>
+                </div>
+              </form>
+            )}
+          </dialog>
+        </div>
+      )}
+    </div>
+  );
+};
+
+
 
 const jobListings = [
   {
